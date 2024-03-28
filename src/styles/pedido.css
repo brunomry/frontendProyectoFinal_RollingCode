@@ -1,0 +1,33 @@
+body {
+  background-color: #f5ebdc !important;
+}
+
+.orderTitle {
+  font-family: 'Oswald', sans-serif;
+}
+
+.orderTable {
+  font-family: 'Exo', sans-serif;
+}
+
+.img-order {
+  border-radius: 10px;
+  border: 0.5px solid;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.resumeCardContainer {
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', sans-serif;
+}
+
+.resumeCard {
+  width: 400px;
+}
+
+.resumeCard > div {
+  background-color: #f9f7c9 !important;
+}
