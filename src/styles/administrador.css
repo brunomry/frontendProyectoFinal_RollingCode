@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainSection {
+  flex-grow: 1;
+  background-image: url("../assets/imgbg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.managementOptions {
+  width: 100%;
+  height: 350px;
+  background-color: #0005;
+  border-radius: 0;
+}
+
+.managementOptions div {
+  width: 100%;
+}
+
+.managementOptions div button {
+  width: 100%;
+}
+
+.btnManagement {
+  background-color: rgba(114, 67, 67, 0.533);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btnManagement:hover {
+  background-color: rgba(55, 20, 20, 0.533);
+  transition: 1s;
+  color: #fca9a9;
+  transform: scale(1.1);
+}
+
+
