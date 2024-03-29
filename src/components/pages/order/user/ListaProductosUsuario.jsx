@@ -5,7 +5,7 @@ import ItemProductoUsuario from './ItemProductoUsuario';
 const ListaProductosUsuario = () => {
   return (
     <div className='orderTable'>
-      <Table striped bordered hover>
+      <Table responsive striped bordered hover>
         <thead>
           <tr>
             <th className='text-center align-middle'>Imagen</th>
