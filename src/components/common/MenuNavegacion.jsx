@@ -4,7 +4,7 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 const MenuNavegacion = () => {
   return (
     <>
-      <header className="d-flex justify-content-between p-3 align-items-center">
+      <header className="p-3 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between">
         <div>
           <i className="fa-brands fa-facebook-f fa-2xl me-3"> </i>{" "}
           <i className="fa-brands fa-instagram fa-2xl me-3"></i>{" "}
@@ -20,17 +20,17 @@ const MenuNavegacion = () => {
           </p>
         </div>
       </header>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container className="text-center">
+      <Navbar expand="lg" className="bg-body-tertiary navLinks">
+        <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-                <Nav.Link href="#home">Inicio</Nav.Link>
-                <Nav.Link href="#link">Menu</Nav.Link>
-                <Nav.Link href="#home">Nosotros</Nav.Link>
-                <Nav.Link href="#link">Contacto</Nav.Link>
-                <Nav.Link href="#home">Mi cuenta</Nav.Link>
-                <Nav.Link href="#link">Mi pedido</Nav.Link>
+            <Nav className="mx-auto">
+                <Nav.Link href="#">Inicio</Nav.Link>
+                <Nav.Link href="#">Menu</Nav.Link>
+                <Nav.Link href="#">Nosotros</Nav.Link>
+                <Nav.Link href="#">Contacto</Nav.Link>
+                <Nav.Link href="#">Mi cuenta</Nav.Link>
+                <Nav.Link href="#">Mi pedido</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
