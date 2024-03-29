@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 const ItemProductoUsuario = () => {
   return (
     <tr>
-      <td className='text-center align-middle'>1</td>
       <td className='text-center align-middle'>
         <img
           className='img-order p-2'
@@ -16,7 +15,9 @@ const ItemProductoUsuario = () => {
       <td className='text-center align-middle'>$1500</td>
       <td className='text-center align-middle'>1</td>
       <td className='text-center align-middle'>
-        <Button variant='danger'>Borrar</Button>
+        <Button variant='danger'>
+          <i className='fa-solid fa-trash'></i>
+        </Button>
       </td>
     </tr>
   );

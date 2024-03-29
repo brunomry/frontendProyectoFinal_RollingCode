@@ -8,7 +8,6 @@ const ListaProductosUsuario = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th className='text-center align-middle'>#</th>
             <th className='text-center align-middle'>Imagen</th>
             <th className='text-center align-middle'>Producto</th>
             <th className='text-center align-middle'>Precio</th>
