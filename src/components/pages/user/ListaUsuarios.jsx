@@ -7,7 +7,7 @@ const ListaUsuarios = () => {
   return (
     <section className="mainSection py-5">
       <div className="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-        <h1>Usuarios registrados</h1>
+        <h1>Gestión de usuarios</h1>
         <Button className="btn btn-primary" title="Nuevo usuario" as={Link} to="/administrador/crearUsuario">
           <i className="fa-solid fa-plus"></i> Nuevo usuario
         </Button>
