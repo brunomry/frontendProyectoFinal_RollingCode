@@ -20,7 +20,7 @@ const ListaUsuarios = () => {
       <Table
         responsive
         hover
-        className="container text-center mx-2 mx-sm-auto bgTable mt-3 mt-sm-5"
+        className="container text-center mx-2 mx-sm-auto mt-3 mt-sm-5"
       >
         <thead>
           <tr className="text-center">
