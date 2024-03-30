@@ -7,7 +7,7 @@ const ItemPedido = () => {
       <td>juan</td>
       <td>2024-04-15</td>
       <td>pizza de metro</td>
-      <td>activo</td>
+      <td>Pendiente</td>
       <td>
         <Link
           to={`/administrador/editarEstado/id`}
