@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/navbar.css";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import {Container, Nav, Navbar } from "react-bootstrap";
 const MenuNavegacion = () => {
   return (
     <>
