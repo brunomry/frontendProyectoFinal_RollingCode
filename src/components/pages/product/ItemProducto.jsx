@@ -19,14 +19,14 @@ const ItemProducto = () => {
       <td className="d-flex flex-column gap-2 align-items-center flex-lg-row d-lg-table-cell">
         <Link
           title="Ver producto"
-          to={`/administrador/verProducto/id`}
+          to={`/administrador/productos/verProducto/id`}
           className="me-lg-2 btn btn-secondary text-dark"
         >
           <i className="fa-solid fa-eye"></i>
         </Link>
         <Link
           title="Editar producto"
-          to={`/administrador/editarProducto/id`}
+          to={`/administrador/productos/editarProducto/id`}
           className="me-lg-2 btn btn-warning"
         >
           <i className="fa-solid fa-pen-to-square"></i>

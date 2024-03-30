@@ -17,6 +17,8 @@ function App() {
           <Route path="/administrador/pedidos" element={<ListaPedidos></ListaPedidos>}></Route>
           <Route path="/administrador/productos" element={<ListaProductos></ListaProductos>}></Route>
           <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
+          <Route path="/administrador/productos/editarProducto/id" element={<FormularioProducto />}></Route>
+          <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route>
         </Routes>
       </BrowserRouter>
     </>

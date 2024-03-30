@@ -45,20 +45,24 @@
 }
 
 .btnNewUser:hover,
-.btnNewProduct:hover{
+.btnNewProduct:hover {
   background-color: rgba(55, 20, 20, 0.533);
   transition: 1s;
   transform: scale(1.1);
 }
 
-.imgProduct{
+.imgProduct {
   width: 100px;
   height: 100px;
 }
 
-.formProduct{
+.formProduct {
   width: 100%;
-  background-color: #0007;
+  background-color: #0009;
+}
+
+.formProduct .textarea {
+  resize: none;
 }
 
 @media all and (min-width: 576px) {
@@ -91,5 +95,25 @@
     transition: 1s;
     color: #fca9a9;
     transform: scale(1.1);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .formProduct{
+    width: 750px;
+  }
+
+  .formProduct,
+  .formProduct .btnAdd,
+  .formProduct .btnCancel {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .formProduct,
+  .formProduct .btnAdd,
+  .formProduct .btnCancel {
+    font-size: 19px;
   }
 }
