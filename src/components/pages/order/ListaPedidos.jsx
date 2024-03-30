@@ -21,6 +21,8 @@ const ListaPedidos = () => {
       </thead>
       <tbody>
         <ItemPedido></ItemPedido>
+        <ItemPedido></ItemPedido>
+        <ItemPedido></ItemPedido>
       </tbody>
     </Table>
   </section>

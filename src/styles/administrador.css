@@ -27,7 +27,8 @@
   width: 100%;
 }
 
-.btnManagement {
+.btnManagement,
+.btnNewUser {
   background-color: rgba(114, 67, 67, 0.533);
   color: #fff;
   border: none;
@@ -39,6 +40,12 @@
   background-color: rgba(55, 20, 20, 0.533);
   transition: 1s;
   color: #fca9a9;
+  transform: scale(1.1);
+}
+
+.btnNewUser:hover{
+  background-color: rgba(55, 20, 20, 0.533);
+  transition: 1s;
   transform: scale(1.1);
 }
 
