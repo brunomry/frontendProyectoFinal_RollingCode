@@ -9,5 +9,10 @@ h1{
 
 .navLinks{
     font-family: "Exo", sans-serif;
-    font-size: 1.5vw;
+}
+header{
+    background-color: #fda674;
+}
+.navbarBackground{
+    background-color: #f5ebdc;
 }
