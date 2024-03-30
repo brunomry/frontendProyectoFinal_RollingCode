@@ -67,12 +67,12 @@ const FormularioProducto = () => {
             <Button
               type="submit"
               variant="success"
-              className="btnAdd px-5 me-2"
+              className="btnAdd px-4 px-sm-5 me-2"
             >
               Guardar
             </Button>
             <Link
-              className="btnCancel btn btn-secondary px-5"
+              className="btnCancel btn btn-secondary px-3 px-sm-5"
               to={"/administrador/productos"}
             >
               Cancelar

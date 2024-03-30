@@ -108,12 +108,13 @@
   .formProduct .btnCancel {
     font-size: 18px;
   }
+
 }
 
 @media all and (min-width: 992px) {
   .formProduct,
   .formProduct .btnAdd,
-  .formProduct .btnCancel {
+  .formProduct .btnCancel{
     font-size: 19px;
   }
 }

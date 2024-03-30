@@ -3,7 +3,7 @@ import "../../styles/administrador.css";
 
 const Administracion = () => {
   return (
-    <section className="mainSection m-0">
+    <section className="mainSection px-2">
       <h1 className="text-center my-5">Bienvenido "Administrador"</h1>
       <article className="me-2 mx-sm-auto d-flex justify-content-center border border border-1 border-dark managementOptions px-3 px-sm-5">
         <div className="d-flex gap-3 flex-column justify-content-center align-items-center">
