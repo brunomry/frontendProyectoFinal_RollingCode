@@ -19,7 +19,7 @@ const MenuNavegacion = () => {
           </p>
         </div>
       </header>
-        <Navbar expand="lg"  className="navLinks navbarBackground mt-3">
+        <Navbar expand="md"  className="navLinks navbarBackground mt-3">
           <Container>
             <Navbar.Brand href="#home" className="d-block d-md-none">
               MARCA/LOGO
