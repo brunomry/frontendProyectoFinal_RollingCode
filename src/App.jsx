@@ -5,6 +5,7 @@ import ListaUsuarios from "./components/pages/user/ListaUsuarios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListaPedidos from "./components/pages/order/ListaPedidos";
 import ListaProductos from "./components/pages/product/ListaProductos.jsx";
+import FormularioProducto from "./components/pages/product/FormularioProducto.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/administrador/usuarios" element={<ListaUsuarios></ListaUsuarios>}></Route>
           <Route path="/administrador/pedidos" element={<ListaPedidos></ListaPedidos>}></Route>
           <Route path="/administrador/productos" element={<ListaProductos></ListaProductos>}></Route>
+          <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
         </Routes>
       </BrowserRouter>
     </>
