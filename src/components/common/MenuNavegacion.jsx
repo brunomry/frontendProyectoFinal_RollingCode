@@ -2,6 +2,8 @@ import React from "react";
 import "../../styles/navbar.css";
 import {Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import logo from "../../assets/logo.png"
+import { Link, NavLink } from "react-router-dom";
+
 const MenuNavegacion = () => {
   return (
     <>
@@ -22,23 +24,23 @@ const MenuNavegacion = () => {
       </header>
         <Navbar expand="md"  className="navLinks navbarBackground">
           <Container>
-            <Navbar.Brand href="#home" className="d-block d-md-none">
-              MARCA/LOGO
+            <Navbar.Brand className="d-block d-md-none" as={Link} to="/">
+              <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logoMobile" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto align-items-center">
-                <Nav.Link className="navLink" href="#"><b>Inicio</b></Nav.Link>
-                <Nav.Link className="navLink" href="#"><b>Menu</b></Nav.Link>
-                <Nav.Link className="navLink" href="#"><b>Nosotros</b></Nav.Link>
-                <Nav.Link className="navLink" href="#"><b>Contacto</b></Nav.Link>
-                <Nav.Link className="navLink" href="#">
+                <NavLink className="navLink nav-link" to="/"><b>Inicio</b></NavLink>
+                <NavLink className="navLink nav-link" to="/menu"><b>Menu</b></NavLink>
+                <NavLink className="navLink nav-link" to="/nosotros"><b>Nosotros</b></NavLink>
+                <NavLink className="navLink nav-link" to="/contacto"><b>Contacto</b></NavLink>
+                <NavLink className="navLink nav-link" to="/miPedido">
                   {" "}
                   <i className="fa-solid fa-cart-shopping fa-2xl"></i><b>Mi pedido</b>
-                </Nav.Link>
-                <Nav.Link className="border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Iniciar sesión</b></Nav.Link>
-                <Nav.Link className="border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Registrarme</b></Nav.Link>
-                <Nav.Link className="d-none border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Cerrar sesión</b></Nav.Link>
+                </NavLink>
+                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/login"><b>Iniciar sesión</b></NavLink>
+                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/registrarme"><b>Registrarme</b></NavLink>
+                <NavLink className="nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>Cerrar sesión</b></NavLink>
               </Nav>
             </Navbar.Collapse>
           </Container>

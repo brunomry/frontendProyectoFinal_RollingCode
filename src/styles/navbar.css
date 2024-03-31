@@ -32,4 +32,10 @@ header {
 .logo{
     width: 35vh;
 }
+.logoMobile{
+    width: 20vh;
+    background-color: #9a5534;
+    border-radius: 15px;
+    padding: 8px;
+}
 

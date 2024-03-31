@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/administracion" element="#"></Route>
           <Route exact path="/login" element="#"></Route>
           <Route exact path="/registro" element="#"></Route>
-          <Route exact path="/pedido" element="#"></Route>
+          <Route exact path="/miPedido" element="#"></Route>
           <Route exact path="/nosotros" element="#"></Route>
           <Route exact path="/login" element="#"></Route>
           <Route exact path="/detalleProducto/:id" element="#"></Route>
