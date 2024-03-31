@@ -36,7 +36,7 @@ const MenuNavegacion = () => {
                 <NavLink className="navLink nav-link" to="/contacto"><b>Contacto</b></NavLink>
                 <NavLink className="navLink nav-link" to="/miPedido">
                   {" "}
-                  <i className="fa-solid fa-cart-shopping fa-2xl"></i><b>Mi pedido</b>
+                  <i class="fa-solid fa-cart-shopping fa-xl"></i><b>Mi pedido</b>
                 </NavLink>
                 <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/login"><b>Iniciar sesión</b></NavLink>
                 <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/registrarme"><b>Registrarme</b></NavLink>
