@@ -35,10 +35,9 @@ const MenuNavegacion = () => {
                   {" "}
                   <i className="fa-solid fa-cart-shopping fa-2xl"></i><b>Mi pedido</b>
                 </Nav.Link>
-                <NavDropdown title="Mi cuenta" id="dopdownUser" drop="end" className="fw-bold navLink">
-                  <NavDropdown.Item href="#">Iniciar Sesion</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Registrarse</NavDropdown.Item>
-                </NavDropdown>
+                <Nav.Link className="border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Iniciar sesión</b></Nav.Link>
+                <Nav.Link className="border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Registrarme</b></Nav.Link>
+                <Nav.Link className="d-none border border-1 border-dark rounded-2 me-2 my-1" href="#"><b>Cerrar sesión</b></Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
