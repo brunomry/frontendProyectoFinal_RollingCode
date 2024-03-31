@@ -1,21 +1,22 @@
 import React from "react";
 import "../../styles/navbar.css";
 import {Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import logo from "../../assets/logo.png"
 const MenuNavegacion = () => {
   return (
     <>
       <header className="p-3 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between align-items-center">
         <div>
-          <i className="fa-brands fa-facebook-f fa-2xl me-3"> </i>
-          <i className="fa-brands fa-instagram fa-2xl me-3"></i>
-          <i className="fa-brands fa-x-twitter fa-2xl"></i>
+          <a href=""><i className="fa-brands fa-facebook-f fa-2xl mx-3 link-primary"> </i></a>
+          <a href=""><i className="fa-brands fa-instagram fa-2xl me-3 link-light"></i></a>
+          <a href=""><i className="fa-brands fa-x-twitter fa-2xl link-secondary"></i></a>
         </div>
         <div>
-          <h1>MARCA/LOGO</h1>
+          <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logo" />
         </div>
         <div>
-          <p>
-            <i className="fa-brands fa-whatsapp fa-2xl"></i> 123-1234567
+          <p className="me-3">
+            <i className="fa-brands fa-whatsapp fa-2xl link-success"></i> 123-1234567
           </p>
         </div>
       </header>
