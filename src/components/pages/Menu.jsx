@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/menu.css";
-import bannerMenu from "../../assets/bannerMenuProvisorio.png";
-import { Button, Card, Form } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import imagenProducto from "../../assets/imagenProductoPrueba.png";
 
 const Menu = () => {
   return (
@@ -36,18 +36,44 @@ const Menu = () => {
           Buscar
         </Button>
       </Form>
-      <Card style={{width: '18rem'}}>
-        <Card.Body className="cardBody">
-          <Card.Title>Papas fritas acordeón</Card.Title>
-          <Card.Text>Papas muy ricas y crujientes. Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </Card.Text>
-          <Button variant="warning">Detalles</Button>
-        </Card.Body>
-        <Card.Img
-          variant="bottom"
-          src="https://images.pexels.com/photos/14696271/pexels-photo-14696271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          className="cardIMG"
-        />
-      </Card>
+      <Container>
+        <Row>
+          <Col>
+            <Card className="d-flex flex-row cardContainer">
+              <Card.Body className="cardBody">
+                <Card.Title>Papas fritas acordeón</Card.Title>
+                <Card.Text>
+                  Papas muy ricas y crujientes. Lorem ipsum Lorem ipsum Lorem
+                  ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
+                </Card.Text>
+                <Button variant="warning">Detalles</Button>
+              </Card.Body>
+              <Card.Img
+                variant="bottom"
+                src={imagenProducto}
+                className="cardIMG"
+              />
+            </Card>
+          </Col>
+          <Col>
+            <Card className="d-flex flex-row cardContainer">
+              <Card.Body className="cardBody">
+                <Card.Title>Papas fritas acordeón</Card.Title>
+                <Card.Text>
+                  Papas muy ricas y crujientes. Lorem ipsum Lorem ipsum Lorem
+                  ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
+                </Card.Text>
+                <Button variant="warning">Detalles</Button>
+              </Card.Body>
+              <Card.Img
+                variant="bottom"
+                src={imagenProducto}
+                className="cardIMG"
+              />
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

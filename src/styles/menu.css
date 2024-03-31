@@ -20,9 +20,10 @@ h3 {
 .searchBTN{
     height: 100%;
 }
-.cardBody{
-
+.cardContainer{
+  max-width: 35vw;
+  max-height: 200px;
 }
-.cardIMG{
-
+.cardBody{
+  max-width: 18rem;
 }
