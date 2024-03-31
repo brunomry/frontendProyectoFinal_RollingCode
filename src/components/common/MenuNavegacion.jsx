@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/navbar.css";
-import {Container, Nav, Navbar } from "react-bootstrap";
+import {Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 const MenuNavegacion = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const MenuNavegacion = () => {
           </p>
         </div>
       </header>
-        <Navbar expand="md"  className="navLinks navbarBackground mt-3">
+        <Navbar expand="md"  className="navLinks navbarBackground">
           <Container>
             <Navbar.Brand href="#home" className="d-block d-md-none">
               MARCA/LOGO
@@ -27,18 +27,18 @@ const MenuNavegacion = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto align-items-center">
-                <Nav.Link href="#">Inicio</Nav.Link>
-                <Nav.Link href="#">Menu</Nav.Link>
-                <Nav.Link href="#">Nosotros</Nav.Link>
-                <Nav.Link href="#">Contacto</Nav.Link>
-                <Nav.Link href="#">
+                <Nav.Link className="navLink" href="#"><b>Inicio</b></Nav.Link>
+                <Nav.Link className="navLink" href="#"><b>Menu</b></Nav.Link>
+                <Nav.Link className="navLink" href="#"><b>Nosotros</b></Nav.Link>
+                <Nav.Link className="navLink" href="#"><b>Contacto</b></Nav.Link>
+                <Nav.Link className="navLink" href="#">
                   {" "}
-                  <i className="fa-regular fa-circle-user fa-2xl"></i> Mi cuenta
+                  <i className="fa-solid fa-cart-shopping fa-2xl"></i><b>Mi pedido</b>
                 </Nav.Link>
-                <Nav.Link href="#">
-                  {" "}
-                  <i className="fa-solid fa-cart-shopping fa-2xl"></i> Mi pedido
-                </Nav.Link>
+                <NavDropdown title="Mi cuenta" id="dopdownUser" drop="end" className="fw-bold navLink">
+                  <NavDropdown.Item href="#">Iniciar Sesion</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Registrarse</NavDropdown.Item>
+                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>

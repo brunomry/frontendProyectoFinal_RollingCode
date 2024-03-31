@@ -1,18 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
-p{
-    font-family: "Exo", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+p {
+  font-family: "Exo", sans-serif;
 }
-h1{
-    font-family: "Oswald", sans-serif;
+h1 {
+  font-family: "Oswald", sans-serif;
 }
 
-.navLinks{
-    font-family: "Exo", sans-serif;
+.navLinks {
+  font-family: "Exo", sans-serif;
 }
-header{
-    background-color: #fda674;
+header {
+  background-color: #fda674;
 }
-.navbarBackground{
-    background-color: #f5ebdc;
+.navbarBackground {
+  background-color: #f5ebdc;
+}
+.navLink {
+    text-decoration: none; 
+    position: relative;
+}
+
+.navLink:hover::after {
+    content: '';
+    position: absolute; 
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    border-bottom: 2px solid black;
 }
