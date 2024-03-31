@@ -10,9 +10,6 @@
   background-size: cover;
   background-position: center;
   height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .bannerOpacity{
@@ -25,34 +22,27 @@
 .banner .bannerContent{ 
   width: 75%;
   height: 18.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  color: #fff;
   z-index: 99;
 }
 
-.bannerContent h1{
+.bannerContent .bannerTitle{
   font-family: "Oswald";
+  font-size: 40px;
   text-align: center;
-  color: rgba(251, 135, 40, 0.946);
-  color: rgba(255, 143, 51, 0.862);
+  /* color: rgba(251, 135, 40, 0.946);
+  color: rgba(255, 143, 51, 0.862); */
   color:#9a5534;
   -webkit-text-stroke: .5px #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
-.bannerContent p,
-.address,
+.bannerContent .bannerDescription,
+.bannerSubtitle,
 .btnBanner{
   font-family: "Exo";
-  text-align: center;
 }
 
 .btnBanner{
-  background-color: rgba(215, 115, 33, 0.533);
+  /* background-color: rgba(215, 115, 33, 0.533); */
   background-color: #9a5534;
   /* background-color: rgba(251, 135, 40, 0.946); */
   color: #fff;
@@ -60,8 +50,33 @@
 }
 
 .btnBanner:hover {
-  /* background-color: rgba(225, 121, 36, 0.801); */
   transition: .7s;
   color: #fca9a9;
   transform: scale(1.1);
+}
+
+@media all and (min-width:768px){
+  .bannerContent .bannerTitle{
+    font-family: "Oswald";
+    font-size: 65px;
+  }
+
+  .bannerContent .bannerDescription,
+  .bannerContent .bannerSubtitle,
+  .btnBanner{
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width:1200px){
+  .bannerContent .bannerTitle{
+    font-family: "Oswald";
+    font-size: 75px;
+  }
+
+  .bannerContent .bannerDescription,
+  .bannerContent .bannerSubtitle,
+  .btnBanner{
+    font-size: 20px;
+}
 }

@@ -5,16 +5,23 @@ import { Link } from "react-router-dom";
 const Inicio = () => {
   return (
     <>
-      <section className="banner">
+      <section className="banner d-flex justify-content-center align-items-center">
         <div className="bannerOpacity"></div>
-        <article className="bannerContent pb-md-5">
-          <small className="fw-bold text-center"><i class="fa-solid fa-location-dot"></i> General Paz 576, San Miguel de Tucumán, Tucumán</small>
-          <div>
-            <p className="address fs-5 fw-bold">- Restaurante -</p>
-            <h1 className="display-2">Ambiente Bohemio</h1>
+        <article className="bannerContent d-flex flex-column justify-content-center align-items-center gap-3 gap-md-4 gap-lg-3 gap-xl-5 pb-md-5 text-white">
+          <small className="fw-bold text-center bannerAddress mt-lg-2 mt-xl-0">
+            <i className="fa-solid fa-location-dot fs-5"></i> General Paz 576,
+            San Miguel de Tucumán, Tucumán
+          </small>
+          <div className="mt-3 mt-md-0">
+            <p className="mb-0 fw-bold bannerSubtitle text-center">- Restaurante -</p>
+            <h1 className="bannerTitle text-center">
+              <i className="fa-solid fa-pizza-slice"></i> Ambiente Bohemio
+            </h1>
           </div>
-          <p className="fs-5 fw-bold">Te esperamos para una experiencia gastronómica inolvidable.</p>
-          <Link className="border border-3 border-white rounded-5 px-2 px-md-3 py-3 text-decoration-none text-white btnBanner fw-bold fs-5">
+          <p className="fw-bold bannerDescription text-center">
+            Te esperamos para una experiencia gastronómica inolvidable.
+          </p>
+          <Link className="text-center border border-3 border-white rounded-5 px-2 px-md-3 py-2 py-md-3 text-decoration-none text-white btnBanner fw-bold">
             CONOCE NUESTRO MENÚ
           </Link>
         </article>
