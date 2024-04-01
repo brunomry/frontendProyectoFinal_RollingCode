@@ -57,8 +57,22 @@
   .cardProduct {
     height: 130px;
   }
+  .cardInformation {
+    font-size: 14px;
+  }
+  .cardPrice {
+    font-size: 14px;
+  }
   .cardBTN {
     padding: 4px 6px;
+    font-size: 12px;
+  }
+  .cardIMG {
+    object-fit: cover;
+    width: 100px;
+    height: 100%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
   }
 }
 

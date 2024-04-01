@@ -17,7 +17,7 @@ const CardProducto = () => {
           </div>
           <div className="d-flex justify-content-between">
             <div className="cardPrice text-center">
-              <p>~ $55555 ~</p>
+              <p>$55555</p>
             </div>
             <div className="text-center">
               {" "}
