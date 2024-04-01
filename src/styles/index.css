@@ -5,7 +5,7 @@
 .banner{
   width: 100%;
   position: relative;
-  background-image: url("../assets/banner1.jpg");
+  background-image: url("../assets/Inicio/banner1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -78,5 +78,20 @@
   .bannerContent .bannerSubtitle,
   .btnBanner{
     font-size: 20px;
-}
+  }
+
+  .categories{
+    background: #F1E4C3;
+  }
+
+  .categories h2{
+    color: #9a5534;
+    font-family: "Oswald";
+  }
+
+  .cardCategory .imgCategory{
+    width: 400px;
+    height: 400px;
+    object-fit: fill;
+  }
 }
