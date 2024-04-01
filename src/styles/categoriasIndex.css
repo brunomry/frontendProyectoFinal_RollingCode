@@ -16,6 +16,10 @@
   height: 300px;
 }
 
+.carousel .carousel-indicators{
+  display: none;
+}
+
 @media all and (min-width:375px){
   .cardCategory .imgCategory{
     width: 325px;

@@ -1,26 +1,10 @@
-.schedulesAndServices{
+.schedules{
   background: #fbf8ef;
 }
 
-.containerCarrouselServices{
+.imgInterior{
   width: 100%;
-  height: 500px;
-   padding-left: 120px;
-}
-
-.carrouselServices .imgService{
- 
-  width: 400px;
-  height: 500px;
-}
-
-.carrouselServices .carousel-control-next,
-.carrouselServices .carousel-control-prev{
-  display: none;
-}
-
-.carrouselServices .carousel-indicators{
-  display: none;
+  height: 300px;
 }
 
 .schedulesAndServices h2{
@@ -28,9 +12,6 @@
   font-family: "Oswald";
 }
 
-.textSize{
-  font-size: 20px;
-}
 
 .containerSchedule{
   width: 250px;
@@ -44,4 +25,26 @@
 .btnMenu:hover{
   transform: scale(0.95);
   transition: .7s;
+}
+
+@media all and (min-width:768px){
+  .containerSchedule{
+    font-size: 18px;
+  }
+
+  .imgInterior{
+    width: 550px;
+    height: 500px;
+  }
+}
+
+@media all and (min-width:1200px){
+  .containerSchedule{
+    font-size: 20px;
+  }
+
+  .imgInterior{
+    width: 650px;
+    height: 500px;
+  }
 }
