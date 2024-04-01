@@ -1,9 +1,26 @@
-body {
-  background-color: #f5ebdc !important;
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: #f5ebdc;
+}
+
+.breadcrumb a,
+p {
+  font-size: 20px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: black;
 }
 
 .orderTitle {
   font-family: 'Oswald', sans-serif;
+  text-align: center;
 }
 
 .orderTable {
@@ -13,8 +30,8 @@ body {
 .img-order {
   border-radius: 10px;
   border: 0.5px solid;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -26,9 +43,35 @@ body {
 
 .resumeCard {
   width: 400px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border: 1px solid black;
+  border-radius: 7px;
 }
 
 .resumeCard > div {
-  background-color: #f9f7c9 !important;
+  background-color: #d6b069cb;
 }
 
+@media all and (min-width: 768px) {
+  .orderTable,
+  .card-body,
+  .card-footer {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .quantityProductos {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .orderTable,
+  .card-body,
+  .card-footer {
+    font-size: 20px;
+  }
+}
