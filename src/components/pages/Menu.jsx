@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/menu.css";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import imagenProducto from "../../assets/imagenProductoPrueba.png";
+import CardProducto from "./product/CardProducto";
 
 const Menu = () => {
   return (
@@ -39,7 +40,7 @@ const Menu = () => {
       <Container>
         <Row>
           <Col>
-            
+            <CardProducto></CardProducto>
           </Col>
         </Row>
       </Container>
