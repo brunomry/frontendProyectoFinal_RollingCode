@@ -2,6 +2,27 @@
   background: #fbf8ef;
 }
 
+.containerCarrouselServices{
+  width: 100%;
+  height: 500px;
+   padding-left: 120px;
+}
+
+.carrouselServices .imgService{
+ 
+  width: 400px;
+  height: 500px;
+}
+
+.carrouselServices .carousel-control-next,
+.carrouselServices .carousel-control-prev{
+  display: none;
+}
+
+.carrouselServices .carousel-indicators{
+  display: none;
+}
+
 .schedulesAndServices h2{
   color: #9a5534;
   font-family: "Oswald";
@@ -17,9 +38,10 @@
 
 .btnMenu{
   transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .btnMenu:hover{
-  transform: scale(1.02);
+  transform: scale(0.95);
   transition: .7s;
 }
