@@ -13,12 +13,14 @@ const CardProducto = () => {
             básica sobre el mismo
           </p>
         </div>
-        <div className="cardPrice text-center">
-          <p>~ $55555 ~</p>
-        </div>
-        <div className="text-center">
-          {" "}
-          <button className="cardBTN">Ver más</button>
+        <div className="d-flex justify-content-between">
+          <div className="cardPrice text-center">
+            <p>~ $55555 ~</p>
+          </div>
+          <div className="text-center">
+            {" "}
+            <button className="cardBTN">Ver más</button>
+          </div>
         </div>
       </div>
       <div className="cardIMGContainer">

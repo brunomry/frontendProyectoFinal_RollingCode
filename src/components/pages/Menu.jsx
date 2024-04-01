@@ -39,7 +39,16 @@ const Menu = () => {
       </Form>
       <Container>
         <Row>
-          <Col>
+          <Col lg={6}>
+            <CardProducto></CardProducto>
+          </Col>
+          <Col lg={6}>
+            <CardProducto></CardProducto>
+          </Col>
+          <Col lg={6}>
+            <CardProducto></CardProducto>
+          </Col>
+          <Col lg={6}>
             <CardProducto></CardProducto>
           </Col>
         </Row>
