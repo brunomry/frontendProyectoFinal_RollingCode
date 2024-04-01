@@ -1,9 +1,44 @@
-.cardProducto{
-    width: 350px;
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
+
+.cardProduct {
+  width: 400px;
+  border: solid 2px #9a5534;
+  border-radius: 15px;
 }
-.cardInformacion{
+.cardInformation {
+  padding: 15px;
+  font-family: "Exo", sans-serif;
+  font-size: 15px;
 }
-.cardIMGContainer{
+.cardTitle {
+  border-bottom: 1px solid black;
+  margin-bottom: 2px;
+  font-family: "Oswald", sans-serif;
 }
-.cardIMG{
+.cardDescription {
+}
+.cardPrice {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+.cardBTN {
+  font-size: 16px;
+  background-color: #9a5534;
+  color: #fff;
+  border-radius: 7px;
+  border: 1px solid white;
+  padding: 8px 12px;
+}
+.cardBTN:hover {
+  transition: 0.7s;
+  background-color: #f5ebdc;
+  color: black;
+  border: solid 1px black;
+}
+.cardIMGContainer {
+}
+.cardIMG {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }

@@ -2,17 +2,23 @@ import React from "react";
 import "../../../styles/cardProducto.css";
 const CardProducto = () => {
   return (
-    <div className="cardProducto d-flex">
-      <div className="cardInformacion">
-        <h3>Título producto</h3>
-        <p>
-          Aquí va una descripción breve del producto que contenga informacion
-          básica sobre el mismo
-        </p>
-        <p>$55555</p>
-        <div>
+    <div className="cardProduct d-flex">
+      <div className="cardInformation">
+        <div className="cardTitle">
+          <h5>Título producto</h5>
+        </div>
+        <div className="cardDescription">
+          <p>
+            Aquí va una descripción breve del producto que contenga informacion
+            básica sobre el mismo
+          </p>
+        </div>
+        <div className="cardPrice text-center">
+          <p>~ $55555 ~</p>
+        </div>
+        <div className="text-center">
           {" "}
-          <button className="btn btn-primary">Detalles</button>
+          <button className="cardBTN">Ver más</button>
         </div>
       </div>
       <div className="cardIMGContainer">
