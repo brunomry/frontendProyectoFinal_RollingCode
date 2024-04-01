@@ -39,38 +39,7 @@ const Menu = () => {
       <Container>
         <Row>
           <Col>
-            <Card className="d-flex flex-row cardContainer">
-              <Card.Body className="cardBody">
-                <Card.Title>Papas fritas acordeón</Card.Title>
-                <Card.Text>
-                  Papas muy ricas y crujientes. Lorem ipsum Lorem ipsum Lorem
-                  ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
-                </Card.Text>
-                <Button variant="warning">Detalles</Button>
-              </Card.Body>
-              <Card.Img
-                variant="bottom"
-                src={imagenProducto}
-                className="cardIMG"
-              />
-            </Card>
-          </Col>
-          <Col>
-            <Card className="d-flex flex-row cardContainer">
-              <Card.Body className="cardBody">
-                <Card.Title>Papas fritas acordeón</Card.Title>
-                <Card.Text>
-                  Papas muy ricas y crujientes. Lorem ipsum Lorem ipsum Lorem
-                  ipsum Lorem ipsum Lorem ipsum Lorem ipsum{" "}
-                </Card.Text>
-                <Button variant="warning">Detalles</Button>
-              </Card.Body>
-              <Card.Img
-                variant="bottom"
-                src={imagenProducto}
-                className="cardIMG"
-              />
-            </Card>
+            
           </Col>
         </Row>
       </Container>

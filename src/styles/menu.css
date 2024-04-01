@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
+#root {
+  background-color: #f5ebdc;
+}
 p {
   font-family: "Exo", sans-serif;
 }
@@ -10,7 +13,7 @@ h3 {
   font-family: "Oswald", sans-serif;
 }
 .title{
-  color: #fda674;
+  color: rgba(251, 135, 40, 0.946);
 }
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
@@ -25,10 +28,10 @@ h3 {
 .searchBTN{
     height: 100%;
 }
-.cardContainer{
-  max-width: 35vw;
-  max-height: 200px;
+.card {
+  background-color: #dfbb92 !important;
 }
-.cardBody{
-  max-width: 18rem;
+.cardIMG{
+  width: 150px;
+  height: 100%;
 }
