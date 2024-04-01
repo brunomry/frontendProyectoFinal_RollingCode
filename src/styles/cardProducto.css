@@ -39,8 +39,8 @@
 }
 .cardIMG {
   object-fit: cover;
-}
-.cardIMG {
+  width: 150px;
+  height: 100%;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -54,10 +54,10 @@
     white-space: normal;
     text-overflow: ellipsis;
   }
-  .cardProduct{
+  .cardProduct {
     height: 130px;
   }
-  .cardBTN{
+  .cardBTN {
     padding: 4px 6px;
   }
 }
@@ -78,8 +78,8 @@
     padding: 6px 8px;
   }
 }
-@media all and (min-width: 1200px){
-    .cardProduct{
-        width: 550px;
-    }
+@media all and (min-width: 1200px) {
+  .cardProduct {
+    width: 550px;
+  }
 }
