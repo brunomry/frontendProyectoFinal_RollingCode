@@ -18,9 +18,9 @@
   font-family: "Oswald", sans-serif;
 }
 .cardPrice {
-    font-size: 18px;
-    font-weight: bold;
-    color: green;
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
 }
 .cardBTN {
   font-size: 16px;
@@ -36,10 +36,44 @@
   color: black;
   border: solid 1px black;
 }
-.cardIMG{
-    object-fit: cover;
+.cardIMG {
+  object-fit: cover;
 }
 .cardIMG {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+
+@media all and (min-width: 0px) and (max-width: 767px) {
+  .cardParagraph {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    white-space: normal;
+    text-overflow: ellipsis;
+  }
+  .cardProduct{
+    height: 130px;
+  }
+  .cardBTN{
+    padding: 4px 6px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .cardProduct {
+    width: 350px;
+    height: 190px;
+  }
+  .cardInformation {
+    font-size: 14px;
+  }
+  .cardPrice {
+    font-size: 16px;
+  }
+  .cardBTN {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
 }
