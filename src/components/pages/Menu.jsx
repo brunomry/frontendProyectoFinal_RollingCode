@@ -37,10 +37,33 @@ const Menu = () => {
           Buscar
         </Button>
       </Form>
-      <Container>
+      <Container className="mb-5">
+        <h2 className="categoryTitle">Categoría 1</h2>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+      </Container>
+      <Container className="mb-5">
+        <h2 className="categoryTitle">Categoría 2</h2>
+        <Row>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+      </Container>
+      <Container className="mb-5">
+        <h2 className="categoryTitle">Categoría 3</h2>
+        <Row>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+      </Container>
+      <Container className="mb-5">
+        <h2 className="categoryTitle">Categoría 4</h2>
+        <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
