@@ -7,8 +7,8 @@ const Menu = () => {
   return (
     <>
       <section className="text-center bannerMenu d-flex flex-column justify-content-center">
-        <h1>Nuestro Menu</h1>
-        <p>elegí el plato que más prefieras</p>
+        <h1 className="title">Nuestro Menu</h1>
+        <p>¡Descubre nuestro festín de sabores!</p>
         <a className="link-light" href="#">
           descargar el menú
         </a>

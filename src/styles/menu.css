@@ -9,10 +9,15 @@ h2,
 h3 {
   font-family: "Oswald", sans-serif;
 }
+.title{
+  color: #fda674;
+}
 .bannerMenu{
-    background-image: url(../assets/bannerMenuProvisorio.png);
+    background-image: url(../assets/menu/bannerMenu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
-    height: 300px;
+    height: 60vh;
 }
 .searchForm{
     width: 300px;
