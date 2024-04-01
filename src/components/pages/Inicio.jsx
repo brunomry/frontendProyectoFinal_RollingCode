@@ -1,4 +1,4 @@
-import { Button, Col, Row } from "react-bootstrap";
+import { Button, Col, Row, Container } from "react-bootstrap";
 import "../../styles/index.css";
 import { Link } from "react-router-dom";
 import CarruselCategorias from "./Inicio/CarruselCategorias";
@@ -37,8 +37,8 @@ const Inicio = () => {
         <h2 className="pb-3">- Nuestras Opciones -</h2>
         <CarruselCategorias></CarruselCategorias>
       </section>
-      <section className="container-md schedulesAndServices py-5">
-        <HorariosYServicios></HorariosYServicios>    
+      <section className="schedulesAndServices py-5">
+        <HorariosYServicios></HorariosYServicios>         
       </section>
     </>
   );

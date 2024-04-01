@@ -1,0 +1,25 @@
+.schedulesAndServices{
+  background: #fbf8ef;
+}
+
+.schedulesAndServices h2{
+  color: #9a5534;
+  font-family: "Oswald";
+}
+
+.textSize{
+  font-size: 20px;
+}
+
+.containerSchedule{
+  width: 250px;
+}
+
+.btnMenu{
+  transition: transform 0.3s ease;
+}
+
+.btnMenu:hover{
+  transform: scale(1.02);
+  transition: .7s;
+}
