@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/nosotros.css';
 import CardNosotros from './nosotros/CardNosotros';
+import CarruselNosotros from './nosotros/CarruselNosotros';
 
 const Nosotros = () => {
   return (
@@ -22,13 +23,16 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-      <div className='cardsContainer'>
+      <div className='cardsContainer d-none d-md-block'>
         <div className='row m-0'>
           <CardNosotros />
           <CardNosotros />
           <CardNosotros />
           <CardNosotros />
         </div>
+      </div>
+      <div>
+        <CarruselNosotros />
       </div>
     </section>
   );
