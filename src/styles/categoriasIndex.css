@@ -1,0 +1,33 @@
+.categories{
+  background: #F1E4C3;
+}
+
+.categories h2{
+  color: #9a5534;
+  font-family: "Oswald";
+}
+
+.cardCategory{
+  width: 100%;
+}
+
+.cardCategory .imgCategory{
+  width: 250px;
+  height: 300px;
+}
+
+@media all and (min-width:375px){
+  .cardCategory .imgCategory{
+    width: 325px;
+    height: 400px;
+    object-fit: fill;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardCategory .imgCategory{
+    width: 400px;
+    height: 450px;
+    object-fit: fill;
+  }
+}
