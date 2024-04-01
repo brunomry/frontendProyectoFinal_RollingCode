@@ -77,3 +77,8 @@
     padding: 6px 8px;
   }
 }
+@media all and (min-width: 1200px){
+    .cardProduct{
+        width: 550px;
+    }
+}
