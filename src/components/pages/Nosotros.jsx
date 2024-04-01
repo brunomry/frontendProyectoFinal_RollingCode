@@ -31,7 +31,7 @@ const Nosotros = () => {
           <CardNosotros />
         </div>
       </div>
-      <div>
+      <div className='carouselSM'>
         <CarruselNosotros />
       </div>
     </section>

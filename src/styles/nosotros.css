@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+#root {
+  background-color: #f1e4c3;
+}
+
 .bannerContainer {
   background-image: url('https://images.pexels.com/photos/1148565/pexels-photo-1148565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   color: white;
@@ -23,7 +27,9 @@
 
 .bannerContainer h1,
 p {
+  font-family: 'Oswald';
   text-align: center;
+  font-size: 25px;
   width: 50vw;
 }
 
@@ -34,55 +40,73 @@ p {
 
 .imgContainer {
   position: relative;
+  width: 350px;
 }
 
-.imgContainer > div {
-  cursor: pointer;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.527);
-  border-radius: 100%;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
+.linkContainer i {
+  font-size: 40px;
 }
 
-.imgContainer i {
-  font-size: 4rem;
-  color: white;
+.fa-linkedin {
+  color: blue;
+}
+
+.fa-linkedin:hover {
+  color: rgb(96, 96, 255);
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-github:hover {
+  color: rgb(97, 97, 97);
 }
 
 .imgProfileP {
-  border-radius: 100%;
+  border-radius: 15px;
   width: 100%;
   object-fit: cover;
-  cursor: pointer;
 }
 
-.imgProfileP:hover {
-  filter: opacity(0.8);
-}
-
-@media (width <= 1150px) {
+@media all and (max-width: 1150px) {
   .bannerContainer h1 {
-    font-size: 3vw;
+    font-size: 6vw;
   }
 
   .bannerContainer p {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
 }
 
-@media (width > 1150px) {
+@media all and (min-width: 1149px) {
   .bannerContainer h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .bannerContainer p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
 
-@media (width >= 3000px) {
+@media all and (min-width: 768px) {
+  .carouselSM {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .bannerContainer h1 {
+    font-size: 2rem;
+  }
+
+  .bannerContainer p {
+    font-size: 15px;
+    width: 90vw;
+  }
+}
+
+@media all and (min-width: 3000px) {
   .bannerContainer p {
     width: 100rem;
   }

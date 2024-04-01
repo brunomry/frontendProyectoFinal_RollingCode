@@ -5,18 +5,26 @@ import CardNosotros from './CardNosotros';
 
 const CarruselNosotros = () => {
   return (
-    <Carousel>
+    <Carousel interval={5000} indicators={0}>
       <CarouselItem>
-        <CardNosotros />
+        <div className='d-flex justify-content-center'>
+          <CardNosotros />
+        </div>
       </CarouselItem>
       <CarouselItem>
-        <CardNosotros />
+        <div className='d-flex justify-content-center'>
+          <CardNosotros />
+        </div>
       </CarouselItem>
       <CarouselItem>
-        <CardNosotros />
+        <div className='d-flex justify-content-center'>
+          <CardNosotros />
+        </div>
       </CarouselItem>
       <CarouselItem>
-        <CardNosotros />
+        <div className='d-flex justify-content-center'>
+          <CardNosotros />
+        </div>
       </CarouselItem>
     </Carousel>
   );
