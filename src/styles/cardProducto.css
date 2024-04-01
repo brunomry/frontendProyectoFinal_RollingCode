@@ -6,6 +6,7 @@
   border: solid 2px #9a5534;
   border-radius: 15px;
   margin: 5px 0px;
+  background-color: #dfbb92;
 }
 .cardInformation {
   padding: 10px;
@@ -27,7 +28,7 @@
   background-color: #9a5534;
   color: #fff;
   border-radius: 7px;
-  border: 1px solid white;
+  border: 1px solid #9a5534;
   padding: 8px 12px;
 }
 .cardBTN:hover {
