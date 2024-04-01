@@ -19,6 +19,7 @@ header {
 .navLink {
     text-decoration: none; 
     position: relative;
+    width: 100%;
 }
 
 .navLink:hover::after {
@@ -39,3 +40,8 @@ header {
     padding: 8px;
 }
 
+@media all and (min-width: 768px){
+  .navLink{
+    width:inherit;
+  }
+}

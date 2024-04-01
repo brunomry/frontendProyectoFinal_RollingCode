@@ -23,23 +23,24 @@ const MenuNavegacion = () => {
         </div>
       </header>
         <Navbar expand="md"  className="navLinks navbarBackground">
-          <Container>
+          <Container fluid>
             <Navbar.Brand className="d-block d-md-none" as={Link} to="/">
               <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logoMobile" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto align-items-center">
-                <NavLink className="navLink nav-link" to="/"><b>Inicio</b></NavLink>
-                <NavLink className="navLink nav-link" to="/menu"><b>Menu</b></NavLink>
-                <NavLink className="navLink nav-link" to="/nosotros"><b>Nosotros</b></NavLink>
-                <NavLink className="navLink nav-link" to="/contacto"><b>Contacto</b></NavLink>
-                <NavLink className="navLink nav-link" to="/miPedido">
+                <NavLink className="navLink nav-link text-center" to="/"><b>Inicio</b></NavLink>
+                <NavLink className="navLink nav-link text-center" to="/menu"><b>Menu</b></NavLink>
+                <NavLink className="navLink nav-link text-center " to="/nosotros"><b>Nosotros</b></NavLink>
+                <NavLink className="navLink nav-link text-center" to="/contacto"><b>Contacto</b></NavLink>
+                <NavLink className="navLink nav-link d-none text-center" to="/administracion"><b>Administracion</b></NavLink>
+                <NavLink className="navLink nav-link text-center" to="/miPedido">
                   {" "}
-                  <i class="fa-solid fa-cart-shopping fa-xl"></i><b>Mi pedido</b>
+                  <i className="fa-solid fa-cart-shopping fa-xl me-2"></i><b>Mi pedido</b>
                 </NavLink>
-                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/login"><b>Iniciar sesión</b></NavLink>
-                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1" to="/registrarme"><b>Registrarme</b></NavLink>
+                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/login"><b>Iniciar sesión</b></NavLink>
+                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/registrarme"><b>Registrarme</b></NavLink>
                 <NavLink className="nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>Cerrar sesión</b></NavLink>
               </Nav>
             </Navbar.Collapse>
