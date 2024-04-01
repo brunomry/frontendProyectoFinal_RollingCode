@@ -39,16 +39,19 @@ const Menu = () => {
       </Form>
       <Container>
         <Row>
-          <Col lg={6}>
+          <Col lg={6} className="d-flex justify-content-center">
             <CardProducto></CardProducto>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} className="d-flex justify-content-center">
             <CardProducto></CardProducto>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} className="d-flex justify-content-center">
             <CardProducto></CardProducto>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} className="d-flex justify-content-center">
+            <CardProducto></CardProducto>
+          </Col>
+          <Col lg={6} className="d-flex justify-content-center">
             <CardProducto></CardProducto>
           </Col>
         </Row>
