@@ -41,7 +41,7 @@ const Inicio = () => {
       <section className="schedulesAndServices py-5">
         <HorariosYServicios></HorariosYServicios>         
       </section>
-      <section className="opinions ">
+      <section className="opinions">
         <div className="container containerOpinions py-5 d-flex flex-column align-items-center gap-3">
           <h2 className="mb-4">- Opiniones -</h2>
           <Opiniones></Opiniones>
