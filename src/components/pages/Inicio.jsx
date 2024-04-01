@@ -14,7 +14,9 @@ const Inicio = () => {
             San Miguel de Tucumán, Tucumán
           </small>
           <div className="mt-3 mt-md-0">
-            <p className="mb-0 fw-bold bannerSubtitle text-center">- Restaurante -</p>
+            <p className="mb-0 fw-bold bannerSubtitle text-center">
+              - Restaurante -
+            </p>
             <h1 className="bannerTitle text-center">
               <i className="fa-solid fa-pizza-slice"></i> Ambiente Bohemio
             </h1>
@@ -22,7 +24,10 @@ const Inicio = () => {
           <p className="fw-bold bannerDescription text-center">
             Te esperamos para una experiencia gastronómica inolvidable.
           </p>
-          <Link className="text-center border border-3 border-white rounded-5 px-2 px-md-3 py-2 py-md-3 text-decoration-none text-white btnBanner fw-bold">
+          <Link
+            className="text-center border border-3 border-white rounded-5 px-2 px-md-3 py-2 py-md-3 text-decoration-none text-white btnBanner fw-bold"
+            to={"/menu"}
+          >
             CONOCE NUESTRO MENÚ
           </Link>
         </article>
@@ -31,7 +36,6 @@ const Inicio = () => {
         <h2 className="pb-3">- Nuestras Opciones -</h2>
         <CarruselCategorias></CarruselCategorias>
       </section>
-     
     </>
   );
 };
