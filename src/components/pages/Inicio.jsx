@@ -3,6 +3,7 @@ import "../../styles/index.css";
 import { Link } from "react-router-dom";
 import CarruselCategorias from "./Inicio/CarruselCategorias";
 import HorariosYServicios from "./Inicio/HorariosYServicios";
+import Opiniones from "./Inicio/Opiniones";
 
 const Inicio = () => {
   return (
@@ -39,6 +40,12 @@ const Inicio = () => {
       </section>
       <section className="schedulesAndServices py-5">
         <HorariosYServicios></HorariosYServicios>         
+      </section>
+      <section className="opinions ">
+        <div className="container containerOpinions py-5 d-flex flex-column align-items-center gap-3">
+          <h2 className="mb-4">- Opiniones -</h2>
+          <Opiniones></Opiniones>
+        </div>           
       </section>
     </>
   );
