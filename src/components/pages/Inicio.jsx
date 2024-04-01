@@ -1,7 +1,8 @@
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import "../../styles/index.css";
 import { Link } from "react-router-dom";
 import CarruselCategorias from "./Inicio/CarruselCategorias";
+import HorariosYServicios from "./Inicio/HorariosYServicios";
 
 const Inicio = () => {
   return (
@@ -35,6 +36,9 @@ const Inicio = () => {
       <section className="categories d-flex flex-column justify-content-center align-items-center py-5">
         <h2 className="pb-3">- Nuestras Opciones -</h2>
         <CarruselCategorias></CarruselCategorias>
+      </section>
+      <section className="container-md schedulesAndServices py-5">
+        <HorariosYServicios></HorariosYServicios>    
       </section>
     </>
   );
