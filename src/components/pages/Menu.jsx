@@ -18,19 +18,29 @@ const Menu = () => {
           </a>
         </button>
       </section>
-      <div className="border-bottom border-black d-flex justify-content-center py-3 pe-2 menuCategoryContainer">
+      <div className="border-bottom border-secondary d-flex justify-content-center py-3 pe-2 menuCategoryContainer position-sticky top-0">
         <Button className="me-3" variant="warning">
-          Pizzas
+          <a className="link-dark text-decoration-none" href="#pizzas">
+            Pizzas
+          </a>
         </Button>
         <Button className="me-3" variant="warning">
-          Hamburguesas
+          <a className="link-dark text-decoration-none" href="#hamburguesas">
+            Hamburguesas
+          </a>
         </Button>
         <Button className="me-3" variant="warning">
-          Pastas
+          <a className="link-dark text-decoration-none" href="#pastas">
+            Pastas
+          </a>
         </Button>
-        <Button variant="warning">Empanadas</Button>
+        <Button variant="warning">
+          <a className="link-dark text-decoration-none" href="#empanadas">
+            Empanadas
+          </a>
+        </Button>
       </div>
-      <Form className="d-flex justify-content-center my-3">
+      <Form className="d-flex justify-content-center my-3 px-2">
         <Form.Group className="mb-3 searchForm" controlId="buscarMenu">
           <Form.Control
             type="email"
@@ -42,7 +52,7 @@ const Menu = () => {
         </Button>
       </Form>
       <Container className="mb-5">
-        <div className="categoryPizza d-flex align-items-center">
+        <div className="categoryPizza d-flex align-items-center" id="pizzas">
           <h2 className="categoryTitle">Pizzas</h2>
         </div>
         <Row>
@@ -52,7 +62,7 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
-        <div className="categoryBurger d-flex align-items-center">
+        <div className="categoryBurger d-flex align-items-center" id="hamburguesas">
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
         <Row>
@@ -62,7 +72,9 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
+        <div id="pastas">
         <h2 className="categoryTitle">Pastas</h2>
+        </div>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
@@ -70,7 +82,9 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
+        <div id="empanadas">
         <h2 className="categoryTitle">Empanadas</h2>
+        </div>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>

@@ -13,10 +13,20 @@
   font-family: "Exo", sans-serif;
   font-size: 15px;
 }
+.cardParagraph{
+  padding-top: 8px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
 .cardTitle {
   border-bottom: 1px solid black;
   margin-bottom: 2px;
   font-family: "Oswald", sans-serif;
+
 }
 .cardPrice {
   font-size: 18px;
@@ -47,12 +57,7 @@
 
 @media all and (min-width: 0px) and (max-width: 767px) {
   .cardParagraph {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     -webkit-line-clamp: 1;
-    white-space: normal;
-    text-overflow: ellipsis;
   }
   .cardProduct {
     height: 130px;
@@ -79,10 +84,7 @@
 @media all and (min-width: 768px) and (max-width: 991px) {
   .cardProduct {
     width: 350px;
-    height: 190px;
-  }
-  .cardInformation {
-    font-size: 14px;
+    height: 160px;
   }
   .cardPrice {
     font-size: 16px;
@@ -91,9 +93,18 @@
     font-size: 14px;
     padding: 6px 8px;
   }
+  .cardParagraph{
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 992px){
 }
 @media all and (min-width: 1200px) {
   .cardProduct {
     width: 550px;
   }
+  .cardParagraph{
+    font-size: 18px;
+  }
+  
 }

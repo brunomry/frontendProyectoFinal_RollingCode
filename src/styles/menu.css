@@ -4,6 +4,9 @@
 #root {
   background-color: #f5ebdc;
 }
+*{
+  scroll-margin-top: 75px;
+}
 p {
   font-family: "Exo", sans-serif;
 }
@@ -47,6 +50,7 @@ h3 {
 .menuCategoryContainer{
   overflow-x: scroll;
   padding-left: 190px;
+  background-color: #e9dfd2 ;
 }
 @media all and (min-width: 375px){
   .menuCategoryContainer{
