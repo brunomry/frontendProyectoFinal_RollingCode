@@ -9,7 +9,9 @@ const Menu = () => {
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
         <h1 className="title fw-bold">Nuestro Menu</h1>
-        <p className="fw-bold bannerText">¡Descubre nuestro festín de sabores!</p>
+        <p className="fw-bold bannerText">
+          ¡Descubre nuestro festín de sabores!
+        </p>
         <button className="bannerBTN">
           <a href="" className="link-light fw-bold">
             ~ Descargar el menú ~
@@ -40,7 +42,9 @@ const Menu = () => {
         </Button>
       </Form>
       <Container className="mb-5">
-        <h2 className="categoryTitle">Categoría 1</h2>
+        <div className="categoryPizza d-flex align-items-center">
+          <h2 className="categoryTitle">Pizzas</h2>
+        </div>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
@@ -48,7 +52,9 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
-        <h2 className="categoryTitle">Categoría 2</h2>
+        <div className="categoryBurger d-flex align-items-center">
+          <h2 className="categoryTitle">Hamburguesas</h2>
+        </div>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
@@ -56,7 +62,7 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
-        <h2 className="categoryTitle">Categoría 3</h2>
+        <h2 className="categoryTitle">Pastas</h2>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
@@ -64,7 +70,7 @@ const Menu = () => {
         </Row>
       </Container>
       <Container className="mb-5">
-        <h2 className="categoryTitle">Categoría 4</h2>
+        <h2 className="categoryTitle">Empanadas</h2>
         <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>

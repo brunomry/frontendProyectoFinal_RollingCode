@@ -47,7 +47,6 @@ h3 {
 .menuCategoryContainer{
   overflow-x: scroll;
 }
-
 @media all and (min-width: 768px){
   .title{
     font-size: 65px;
