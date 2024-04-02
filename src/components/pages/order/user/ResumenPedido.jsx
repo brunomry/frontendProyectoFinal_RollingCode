@@ -19,7 +19,7 @@ const ResumenPedido = () => {
             </CardTitle>
           </CardHeader>
           <CardBody className='text-white'>
-            <div className='my-2'>
+            <div className='my-2 d-flex'>
               <input
                 type='radio'
                 id='delivery'
@@ -29,7 +29,7 @@ const ResumenPedido = () => {
               />
               <label htmlFor='delivery'>{'Delivery (Gratis)'}</label>
             </div>
-            <div>
+            <div className='d-flex'>
               <input type='radio' id='local' name='grup' className='mx-2' />
               <label htmlFor='local'>{'Retiro en el local'}</label>
             </div>

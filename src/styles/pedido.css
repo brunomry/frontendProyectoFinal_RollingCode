@@ -8,9 +8,8 @@
   background-color: #f5ebdc;
 }
 
-.breadcrumb a,
-p {
-  font-size: 20px;
+.breadcrumb {
+  font-family: 'Exo', sans-serif;
 }
 
 .breadcrumb a {
@@ -20,6 +19,7 @@ p {
 
 .orderTitle {
   font-family: 'Oswald', sans-serif;
+  color: #9a5534;
   text-align: center;
 }
 

@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 const ItemProductoUsuario = () => {
-  const [productCount, setProductCount] = useState(1);
-  const sumCount = () => {
-    setProductCount(productCount + 1);
-  };
-  const resCount = () => {
-    setProductCount(productCount - 1);
-    if (productCount === 1) {
-      alert('La cantidad minima de un minimo producto no puede ser 0.');
-      setProductCount(1);
-    }
-  };
   return (
     <tr>
       <td className='text-center align-middle'>
@@ -26,11 +15,11 @@ const ItemProductoUsuario = () => {
       <td className='text-center align-middle'>Guiso de fideos moñito</td>
       <td className='text-center align-middle'>$1500</td>
       <td className='text-center align-middle quantityProductos'>
-        <Button className='mx-3 mx-sm-3' variant='secondary' onClick={resCount}>
+        <Button className='mx-3 mx-sm-3' variant='secondary'>
           -
         </Button>
-        {productCount}
-        <Button className='mx-3 mx-sm-3' variant='secondary' onClick={sumCount}>
+        {1}
+        <Button className='mx-3 mx-sm-3' variant='secondary'>
           +
         </Button>
       </td>
