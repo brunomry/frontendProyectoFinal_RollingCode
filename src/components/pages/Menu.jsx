@@ -7,24 +7,26 @@ import CardProducto from "./product/CardProducto";
 const Menu = () => {
   return (
     <>
-      <section className="text-center bannerMenu d-flex flex-column justify-content-center">
-        <h1 className="title">Nuestro Menu</h1>
-        <p>¡Descubre nuestro festín de sabores!</p>
-        <a className="link-light" href="#">
-          descargar el menú
-        </a>
+      <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
+        <h1 className="title fw-bold">Nuestro Menu</h1>
+        <p className="fw-bold">¡Descubre nuestro festín de sabores!</p>
+        <button className="bannerBTN">
+          <a href="" className="link-light fw-bold">
+            ~ Descargar el menú ~
+          </a>
+        </button>
       </section>
-      <div className="border-bottom border-black d-flex justify-content-center p-3">
+      <div className="border-bottom border-black d-flex justify-content-center p-3 menuCategoryContainer">
         <Button className="me-3" variant="warning">
-          Categoría 1
+          Pizzas
         </Button>
         <Button className="me-3" variant="warning">
-          Categoría 2
+          Hamburguesas
         </Button>
         <Button className="me-3" variant="warning">
-          Categoría 3
+          Pastas
         </Button>
-        <Button variant="warning">Categoría 4</Button>
+        <Button variant="warning">Empanadas</Button>
       </div>
       <Form className="d-flex justify-content-center my-3">
         <Form.Group className="mb-3 searchForm" controlId="buscarMenu">

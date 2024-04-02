@@ -14,6 +14,7 @@ h3 {
 }
 .title{
   color: rgba(251, 135, 40, 0.946);
+  font-size: 40px;
 }
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
@@ -22,9 +23,26 @@ h3 {
     color: white;
     height: 60vh;
 }
+.bannerBTN{
+  width: 200px;
+  font-size: 16px;
+  background-color: #9a5534;
+  color: #fff;
+  border-radius: 7px;
+  border: 1px solid #9a5534;
+  padding: 5px 10px;
+  transition: transform 0.3s ease;
+}
+.bannerBTN:hover{
+  transition: .7s;
+  transform: scale(1.1);
+}
 .searchForm{
     width: 300px;
 }
 .searchBTN{
     height: 100%;
+}
+.menuCategoryContainer{
+  overflow-x: scroll;
 }
