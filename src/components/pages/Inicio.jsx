@@ -39,13 +39,22 @@ const Inicio = () => {
         <CarruselCategorias></CarruselCategorias>
       </section>
       <section className="schedulesAndServices py-5">
-        <HorariosYServicios></HorariosYServicios>         
+        <HorariosYServicios></HorariosYServicios>
       </section>
       <section className="opinions">
         <div className="container containerOpinions py-5 d-flex flex-column align-items-center gap-3">
           <h2 className="mb-4">- Opiniones -</h2>
+          <div className="text-center border border-1 border-primary p-2 rounded-2 btnOpinion shadow">
+            <a
+              href="https://www.google.com.ar/"
+              target="_blank"
+              className="text-decoration-none fw-bold "
+            >
+              Déjanos tu opinión en Google
+            </a>
+          </div>
           <Opiniones></Opiniones>
-        </div>           
+        </div>
       </section>
     </>
   );
