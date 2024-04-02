@@ -18,7 +18,7 @@ const Menu = () => {
           </a>
         </button>
       </section>
-      <div className="border-bottom border-black d-flex justify-content-center p-3 menuCategoryContainer">
+      <div className="border-bottom border-black d-flex justify-content-center py-3 pe-2 menuCategoryContainer">
         <Button className="me-3" variant="warning">
           Pizzas
         </Button>

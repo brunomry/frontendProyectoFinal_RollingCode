@@ -46,6 +46,17 @@ h3 {
 }
 .menuCategoryContainer{
   overflow-x: scroll;
+  padding-left: 190px;
+}
+@media all and (min-width: 375px){
+  .menuCategoryContainer{
+    padding-left: 100px;
+  }
+}
+@media all and (min-width: 576px){
+  .menuCategoryContainer{
+    padding-left: 0px;
+  }
 }
 @media all and (min-width: 768px){
   .title{
