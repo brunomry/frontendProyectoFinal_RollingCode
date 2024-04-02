@@ -30,6 +30,15 @@ header {
     width: 100%;
     border-bottom: 2px solid black;
 }
+.navLinkBTN{
+  transition: transform 0.3s ease;
+}
+.navLinkBTN:hover{
+  transition: .4s;
+  background-color: #fda674;
+  transform: scale(1.05);
+}
+
 .logo{
     width: 200px;
 }

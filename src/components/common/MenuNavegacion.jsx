@@ -39,9 +39,9 @@ const MenuNavegacion = () => {
                   {" "}
                   <i className="fa-solid fa-cart-shopping fa-xl me-2"></i><b>MI PEDIDO</b>
                 </NavLink>
-                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/login"><b>INICIAR SESIÓN</b></NavLink>
-                <NavLink className="nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/registrarme"><b>REGISTRARME</b></NavLink>
-                <NavLink className="nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>CERRAR SESIÓN</b></NavLink>
+                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/login"><b>INICIAR SESIÓN</b></NavLink>
+                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/registrarme"><b>REGISTRARME</b></NavLink>
+                <NavLink className="navLinkBTN nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>CERRAR SESIÓN</b></NavLink>
               </Nav>
             </Navbar.Collapse>
           </Container>
