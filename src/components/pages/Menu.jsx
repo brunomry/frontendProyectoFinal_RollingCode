@@ -9,7 +9,7 @@ const Menu = () => {
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
         <h1 className="title fw-bold">Nuestro Menu</h1>
-        <p className="fw-bold">¡Descubre nuestro festín de sabores!</p>
+        <p className="fw-bold bannerText">¡Descubre nuestro festín de sabores!</p>
         <button className="bannerBTN">
           <a href="" className="link-light fw-bold">
             ~ Descargar el menú ~

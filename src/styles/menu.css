@@ -14,7 +14,6 @@ h3 {
 }
 .title{
   color: rgba(251, 135, 40, 0.946);
-  font-size: 40px;
 }
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
@@ -45,4 +44,32 @@ h3 {
 }
 .menuCategoryContainer{
   overflow-x: scroll;
+}
+
+@media all and (min-width: 768px){
+  .title{
+    font-size: 65px;
+  }
+  .bannerText{
+    font-size: 18px;
+  }
+  .bannerMenu{
+    height: 75vh;
+  }
+}
+
+@media all and (min-width: 1200px){
+  .title{
+    font-size: 75px;
+  }
+  .bannerText{
+    font-size: 20px;
+  }
+  .bannerBTN{
+    width: 240px;
+    font-size: 20px;
+  }
+  .bannerMenu{
+    height: 75vh;
+  }
 }
