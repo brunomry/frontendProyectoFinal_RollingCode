@@ -53,7 +53,7 @@ const Menu = () => {
       </Form>
       <Container className="mb-5">
         <div className="categoryPizza d-flex align-items-center" id="pizzas">
-          <h2 className="categoryTitle">Pizzas</h2>
+          <h2 className="categoryTitle ">Pizzas</h2>
         </div>
         <Row>
           <CardProducto></CardProducto>
