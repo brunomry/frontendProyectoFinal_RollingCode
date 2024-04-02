@@ -13,7 +13,9 @@ h3 {
   font-family: "Oswald", sans-serif;
 }
 .title{
-  color: rgba(251, 135, 40, 0.946);
+  color: #9a5534;
+  -webkit-text-stroke-width: .01px;
+  -webkit-text-stroke-color: #fff;
 }
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
@@ -27,9 +29,9 @@ h3 {
   font-size: 16px;
   background-color: #9a5534;
   color: #fff;
-  border-radius: 7px;
-  border: 1px solid #9a5534;
-  padding: 5px 10px;
+  border-radius: 50px;
+  border: 2px solid #ffffff;
+  padding: 8px 10px;
   transition: transform 0.3s ease;
 }
 .bannerBTN:hover{
