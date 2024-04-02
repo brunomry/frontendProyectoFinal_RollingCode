@@ -29,8 +29,17 @@
 p {
   font-family: 'Oswald';
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5rem;
   width: 50vw;
+}
+
+.bannerContainer h1 {
+  color: #9a5534;
+}
+
+h2 {
+  font-family: 'Oswald';
+  font-size: 1.5rem;
 }
 
 .cardsContainer {
@@ -44,7 +53,7 @@ p {
 }
 
 .linkContainer i {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .fa-linkedin {
@@ -71,11 +80,11 @@ p {
 
 @media all and (max-width: 1150px) {
   .bannerContainer h1 {
-    font-size: 6vw;
+    font-size: 3rem;
   }
 
   .bannerContainer p {
-    font-size: 2vw;
+    font-size: 1.3rem;
   }
 }
 
@@ -93,6 +102,15 @@ p {
   .carouselSM {
     display: none;
   }
+
+  .bannerContainer h1 {
+    font-size: 3rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.5rem;
+    width: 90vw;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -101,7 +119,7 @@ p {
   }
 
   .bannerContainer p {
-    font-size: 15px;
+    font-size: 1.1rem;
     width: 90vw;
   }
 }
@@ -109,5 +127,15 @@ p {
 @media all and (min-width: 3000px) {
   .bannerContainer p {
     width: 100rem;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .bannerContainer {
+    height: 200vw;
+  }
+
+  .imgContainer {
+    width: 250px;
   }
 }

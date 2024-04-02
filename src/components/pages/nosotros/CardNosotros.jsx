@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const CardNosotros = () => {
   return (
-    <div className='col-12 col-sm-6 p-0 p-4 cardCustom'>
-      <div className='d-flex flex-column align-items-center p-3'>
+    <div className='col-12 col-sm-6 p-0 p-4 '>
+      <div className='d-flex flex-column align-items-center p-3 cardCustom'>
         <div className='imgContainer'>
           <img
             className='img-fluid imgProfileP'

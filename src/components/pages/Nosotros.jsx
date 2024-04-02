@@ -10,19 +10,18 @@ const Nosotros = () => {
         <div className='bannerContainer'>
           <div className='d-flex flex-column align-items-center justify-content-center'>
             <h1>Ambiente Bohemio</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Laudantium ut reiciendis modi perferendis maxime quis enim!
-              Tempora ullam, facere sequi at iusto, labore quidem debitis
-              dolorem excepturi et fuga sapiente. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Animi ratione fuga similique
-              inventore nisi officiis totam repellendus, exercitationem
-              temporibus minima quos hic excepturi, rem, error ducimus. Optio
-              aspernatur earum accusantium?
+            <p className='fw-bold'>
+              Ambiente Bohemio surgió para brindar experiencias gastronómicas
+              excepcionales. Nuestra pasión por la gastronomía se refleja en
+              cada plato que servimos. Nuestro equipo está comprometido en
+              ofrecer un servicio de alta calidad. Descubre un lugar donde la
+              comida y la atmósfera se fusionan para crear momentos
+              inolvidables!
             </p>
           </div>
         </div>
       </div>
+      <h2 className='text-center m-0 mt-4'>- Nuestro equipo -</h2>
       <div className='cardsContainer d-none d-md-block'>
         <div className='row m-0'>
           <CardNosotros />

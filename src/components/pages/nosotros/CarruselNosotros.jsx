@@ -5,7 +5,7 @@ import CardNosotros from './CardNosotros';
 
 const CarruselNosotros = () => {
   return (
-    <Carousel interval={5000} indicators={0}>
+    <Carousel interval={3000} indicators={false}>
       <CarouselItem>
         <div className='d-flex justify-content-center'>
           <CardNosotros />
