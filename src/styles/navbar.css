@@ -31,10 +31,10 @@ header {
     border-bottom: 2px solid black;
 }
 .logo{
-    width: 35vh;
+    width: 200px;
 }
 .logoMobile{
-    width: 20vh;
+    width: 120px;
     background-color: #9a5534;
     border-radius: 15px;
     padding: 8px;
