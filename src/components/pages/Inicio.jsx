@@ -11,7 +11,7 @@ const Inicio = () => {
       <section className="banner d-flex justify-content-center align-items-center">
         <div className="bannerOpacity"></div>
         <article className="bannerContent d-flex flex-column justify-content-center align-items-center gap-3 gap-md-4 gap-lg-3 gap-xl-5 pb-md-5 text-white">
-          <small className="fw-bold text-center bannerAddress mt-lg-2 mt-xl-0">
+          <small className="fw-bold text-center bannerAddress mt-2 mt-lg-2 mt-xl-0">
             <i className="fa-solid fa-location-dot fs-5"></i> General Paz 576,
             San Miguel de Tucumán, Tucumán
           </small>
@@ -23,7 +23,7 @@ const Inicio = () => {
               <i className="fa-solid fa-pizza-slice"></i> Ambiente Bohemio
             </h1>
           </div>
-          <p className="fw-bold bannerDescription text-center">
+          <p className="fw-bold bannerDescription text-center mb-0">
             Te esperamos para una experiencia gastronómica inolvidable.
           </p>
           <Link
@@ -34,15 +34,15 @@ const Inicio = () => {
           </Link>
         </article>
       </section>
-      <section className="categories d-flex flex-column justify-content-center align-items-center py-5">
+      <section className="categories d-flex flex-column justify-content-center align-items-center py-4 py-sm-5">
         <h2 className="pb-3">- Nuestras Opciones -</h2>
         <CarruselCategorias></CarruselCategorias>
       </section>
-      <section className="schedulesAndServices py-5">
+      <section className="schedulesAndServices py-4 py-sm-5">
         <HorariosYServicios></HorariosYServicios>
       </section>
       <section className="opinions">
-        <div className="container containerOpinions py-5 d-flex flex-column align-items-center gap-3">
+        <div className="container containerOpinions py-4 py-sm-5 d-flex flex-column align-items-center gap-3">
           <h2 className="mb-4">- Opiniones -</h2>
           <div className="text-center border border-1 border-primary p-2 rounded-2 btnOpinion shadow">
             <a
