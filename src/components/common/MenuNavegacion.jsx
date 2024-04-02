@@ -22,7 +22,7 @@ const MenuNavegacion = () => {
           </p>
         </div>
       </header>
-        <Navbar expand="md"  className="navLinks navbarBackground">
+        <Navbar expand="md"  className="navLinks navbarBackground mb-3">
           <Container fluid>
             <Navbar.Brand className="d-block d-md-none" as={Link} to="/">
               <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logoMobile" />
@@ -37,10 +37,10 @@ const MenuNavegacion = () => {
                 <NavLink className="navLink nav-link d-none text-center" to="/administracion"><b>ADMINISTRACIÓN</b></NavLink>
                 <NavLink className="navLink nav-link text-center" to="/miPedido">
                   {" "}
-                  <i className="fa-solid fa-cart-shopping fa-xl me-2"></i><b>MI PEDIDO</b>
+                  <i className="fa-solid fa-cart-shopping fa-xl"></i><b>MI PEDIDO</b>
                 </NavLink>
-                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/login"><b>INICIAR SESIÓN</b></NavLink>
-                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 me-2 my-1 px-2" to="/registrarme"><b>REGISTRARME</b></NavLink>
+                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2" to="/login"><b>INICIAR SESIÓN</b></NavLink>
+                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2" to="/registrarme"><b>REGISTRARME</b></NavLink>
                 <NavLink className="navLinkBTN nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>CERRAR SESIÓN</b></NavLink>
               </Nav>
             </Navbar.Collapse>
