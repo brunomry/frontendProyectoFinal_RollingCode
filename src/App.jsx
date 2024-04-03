@@ -1,19 +1,19 @@
-import Inicio from "./components/pages/Inicio";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Administrador from "./components/pages/Administracion";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ListaUsuarios from "./components/pages/user/ListaUsuarios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Inicio from "./components/pages/Inicio";
+import Administracion from "./components/pages/Administracion";
+import Menu from "./components/pages/Menu";
+import ListaUsuarios from "./components/pages/user/ListaUsuarios";
 import ListaPedidos from "./components/pages/order/ListaPedidos";
-import ListaProductos from "./components/pages/product/ListaProductos.jsx";
-import FormularioProducto from "./components/pages/product/FormularioProducto.jsx";
+import ListaProductos from "./components/pages/product/ListaProductos";
+import ModalDetalleProducto from "./components/pages/product/ModalDetalleProducto";
+import FormularioProducto from "./components/pages/product/FormularioProducto";
 import Nosotros from './components/pages/Nosotros';
 import MenuNavegacion from "./components/common/MenuNavegacion";
 import Pedido from './components/pages/Pedido';
+import Error404 from "./components/pages/Error404";
 
 function App() {
   return (
