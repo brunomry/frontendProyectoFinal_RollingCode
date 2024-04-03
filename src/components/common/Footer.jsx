@@ -72,7 +72,7 @@ const Footer = () => {
                   type="submit"
                   id="button-addon2"
                 >
-                  Button
+                  Enviar
                 </button>
               </div>
             </Form>
