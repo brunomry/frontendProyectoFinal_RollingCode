@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
 
 .cardProduct {
-  width: 430px;
+  width: 100%;
   height: 180px;
-  border: solid 2px #9a5534;
-  border-radius: 15px;
+  border: solid 1px #000;
+  border-radius: 8px;
   margin: 5px 0px;
-  background-color: #dfbb92;
+  background-color: #fbf8ea;
+  box-shadow: rgba(0, 0,0,0.3) 5px 5px 12px 1px;
 }
 .cardInformation {
   padding: 10px;
   font-family: "Exo", sans-serif;
-  font-size: 15px;
 }
 .cardParagraph{
   padding-top: 8px;
@@ -21,6 +21,7 @@
   -webkit-line-clamp: 2;
   white-space: normal;
   text-overflow: ellipsis;
+  font-size: 16px;
 }
 .cardTitle {
   border-bottom: 1px solid black;
@@ -51,8 +52,8 @@
   object-fit: cover;
   width: 150px;
   height: 100%;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .categoryTitle{
   color: #9a5534 ;
@@ -86,7 +87,6 @@
 
 @media all and (min-width: 768px) and (max-width: 991px) {
   .cardProduct {
-    width: 350px;
     height: 160px;
   }
   .cardPrice {
@@ -96,18 +96,9 @@
     font-size: 14px;
     padding: 6px 8px;
   }
-  .cardParagraph{
-    font-size: 16px;
-  }
 }
 @media all and (min-width: 992px){
-}
-@media all and (min-width: 1200px) {
-  .cardProduct {
-    width: 550px;
+  .cardIMG{
+    width: 180px;
   }
-  .cardParagraph{
-    font-size: 18px;
-  }
-  
 }
