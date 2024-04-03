@@ -14,6 +14,7 @@ import Pedido from './components/pages/Pedido';
 function App() {
   return (
     <>
+      <BrowserRouter>
        <MenuNavegacion></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
