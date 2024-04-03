@@ -9,7 +9,7 @@ const Footer = () => {
         <Col
           md={12}
           lg={3}
-          className="d-flex align-items-center justify-content-center mb-3"
+          className="d-flex justify-content-center mb-3"
         >
           <img
             src={logo}
@@ -60,15 +60,15 @@ const Footer = () => {
               Suscríbete para recibir más información
             </h4>
             <Form className="contactForm d-flex">
-              <div class="input-group mb-3">
+              <div className="input-group mb-3">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="ejemplo@correo.com"
                   required
                 />
                 <button
-                  class="btn btn-warning"
+                  className="btn btn-warning"
                   type="submit"
                   id="button-addon2"
                 >
