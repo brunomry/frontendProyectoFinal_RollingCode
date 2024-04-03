@@ -15,7 +15,7 @@ const ListaPedidos = () => {
         </Link>
       </div>
       <div className="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-        <h1>Gestión de Pedidos</h1>
+        <h1 className="titleColor">Gestión de Pedidos</h1>
       </div>
       <hr className="container" />
       <Table
@@ -29,7 +29,6 @@ const ListaPedidos = () => {
             <th>Fecha</th>
             <th>Productos</th>
             <th>Estado</th>
-            <th>Opción</th>
           </tr>
         </thead>
         <tbody>

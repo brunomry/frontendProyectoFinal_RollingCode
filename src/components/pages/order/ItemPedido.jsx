@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "../../../styles/administrador.css";
 
 const ItemPedido = () => {
@@ -7,14 +7,12 @@ const ItemPedido = () => {
       <td>juan</td>
       <td>2024-04-15</td>
       <td>pizza de metro</td>
-      <td>Pendiente</td>
       <td>
-        <Link
-          to={`/administrador/editarEstado/id`}
+        <Button
           className="me-lg-2 btn btn-warning"
         >
-          <i className="fa-solid fa-pen-to-square"></i>
-        </Link>
+          Pendiente
+        </Button>
       </td>
     </tr>
   );

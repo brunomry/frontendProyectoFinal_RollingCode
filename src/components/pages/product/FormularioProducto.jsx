@@ -6,11 +6,11 @@ const FormularioProducto = () => {
   return (
     <section className="mainSection px-2">
       <div className="container-md">
-        <h1 className="mt-5">Nuevo producto</h1>
+        <h1 className="mt-5 titleColor">Nuevo producto</h1>
         <hr className="container-md text-start my-0 mb-4" />
       </div>
-      <Form className="my-4 mx-auto border border border-1 border-dark formProduct px-3 px-sm-5 py-4 rounded-2">
-        <p className="mb-4">
+      <Form className="my-4 mx-auto border border border-1 border-white formProduct px-3 px-sm-5 py-4 rounded-2">
+        <p className="mb-4 fw-bold">
           Los campos obligatorios están marcados con{" "}
           <span className="text-danger fw-bold">*</span>
         </p>
@@ -67,12 +67,12 @@ const FormularioProducto = () => {
             <Button
               type="submit"
               variant="success"
-              className="btnAddProduct border border-white fw-bold px-4 px-sm-5 me-2"
+              className="btnAddProduct border border-white border-2 fw-bold px-4 px-sm-5 me-2"
             >
               Agregar
             </Button>
             <Link
-              className="btnCancel btn border border-white text-white fw-bold px-3 px-sm-5"
+              className="btnCancel btn border border-white border-2 text-white fw-bold px-3 px-sm-5"
               to={"/administrador/productos"}
             >
               Cancelar

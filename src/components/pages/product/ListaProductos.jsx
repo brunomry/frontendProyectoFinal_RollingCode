@@ -15,7 +15,7 @@ const ListaProductos = () => {
         </Link>
       </div>
       <div className="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-        <h1>Gestión de productos</h1>
+        <h1 className="titleColor">Gestión de productos</h1>
         <Link
           className="btnNewProduct border border-1 border-white fw-bold p-2 rounded-2 text-decoration-none"
           to="/administrador/productos/crearProducto"
@@ -43,11 +43,7 @@ const ListaProductos = () => {
           <ItemProducto></ItemProducto>
           <ItemProducto></ItemProducto>
           <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
+     
         </tbody>
       </Table>
     </section>
