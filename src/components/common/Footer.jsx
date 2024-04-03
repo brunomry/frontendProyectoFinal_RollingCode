@@ -42,7 +42,7 @@ const Footer = () => {
                 <i className="fa-solid fa-location-dot fa-xl"></i> Gral. Paz 576
               </p>
             </div>
-            <div className="socialMedia">
+            <div className="socialMedia d-md-flex flex-column gap-3">
               <a href="https://www.instagram.com/" target="_blank">
                 <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 link-dark"></i>
               </a>
@@ -54,15 +54,27 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="formContainer">
-            <h4 className="formTitle"> Suscríbete para recibir más información</h4>
+          <div className="formContainer pt-2">
+            <h4 className="formTitle">
+              {" "}
+              Suscríbete para recibir más información
+            </h4>
             <Form className="contactForm d-flex">
-              <Form.Group>
-                <Form.Control type="email" placeholder="ejemplo@correo.com" />
-              </Form.Group>
-              <Button className="formBTN" variant="warning" type="submit">
-                Enviar
-              </Button>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="ejemplo@correo.com"
+                  required
+                />
+                <button
+                  class="btn btn-warning"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  Button
+                </button>
+              </div>
             </Form>
           </div>
         </Col>
