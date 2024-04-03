@@ -1,8 +1,7 @@
 import { Button, Form, FormCheck } from "react-bootstrap";
-import logo from "../../assets/logo.png";
 import imgRegistro from "../../assets/imgRegistro.jpg";
-import "../../styles/registro.css";
 import { Link } from "react-router-dom";
+import "../../styles/registro.css";
 
 const Registro = () => {
   return (
@@ -35,10 +34,10 @@ const Registro = () => {
             <p>Recibir Descuentos y Promociones por Email</p>
           </div>
           <a href="#" className="btn btn-outline-primary w-100 mb-3">
-            Registrarme con Google
+          <i className="fa-brands fa-google"></i> Registrarme con Google
           </a>
           <a href="#" className="btn btn-outline-primary w-100 mb-3 mb-md-5">
-            Registrarme con Facebook
+          <i className="fa-brands fa-facebook"></i> Registrarme con Facebook
           </a>
           <p className="text-center">
             ¿Ya tienes una cuenta? <Link to={"/login"}>iniciar sesion</Link>
