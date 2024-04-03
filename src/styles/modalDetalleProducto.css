@@ -39,11 +39,3 @@ h1,h2,h3,h4,h5,h6{
         padding-bottom: 5px;
     }
 }
-@media all and (min-width: 992px){
-    .price{
-    }
-}
-@media all and (min-width: 1200px){
-    .price{
-    }
-}
