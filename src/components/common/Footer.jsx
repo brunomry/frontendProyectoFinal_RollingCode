@@ -79,6 +79,7 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
+      <p className="text-center mt-3">&copy; Rolling Code Todos los derechos reservados 2024</p>
     </Container>
   );
 };
