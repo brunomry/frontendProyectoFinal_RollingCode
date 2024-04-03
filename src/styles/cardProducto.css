@@ -21,7 +21,7 @@
   -webkit-line-clamp: 2;
   white-space: normal;
   text-overflow: ellipsis;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .cardTitle {
   border-bottom: 1px solid black;
@@ -30,12 +30,12 @@
 
 }
 .cardPrice {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: green;
 }
 .cardBTN {
-  font-size: 16px;
+  font-size: 1rem;
   background-color: #9a5534;
   color: #fff;
   border-radius: 7px;
@@ -67,14 +67,14 @@
     height: 130px;
   }
   .cardInformation {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .cardPrice {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .cardBTN {
     padding: 4px 6px;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .cardIMG {
     object-fit: cover;
@@ -90,10 +90,10 @@
     height: 160px;
   }
   .cardPrice {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .cardBTN {
-    font-size: 14px;
+    font-size: 0.875rem;
     padding: 6px 8px;
   }
 }

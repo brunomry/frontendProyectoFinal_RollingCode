@@ -49,48 +49,48 @@ const Menu = () => {
             placeholder="categoría, nombre de producto"
           />
         </Form.Group>
-        <Button className="ms-2 searchBTN" variant="warning" type="submit">
+        <Button className="ms-2 searchBTN" variant="secondary" type="submit">
           Buscar
         </Button>
       </Form>
-      <Container className="mb-5">
+      <Container className="pb-5">
         <div className="categoryPizza d-flex align-items-center" id="pizzas">
           <h2 className="categoryTitle ">Pizzas</h2>
         </div>
-        <Row>
+        <Row className="gy-2 gx-3">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
         </Row>
       </Container>
-      <Container className="mb-5">
+      <Container className="pb-5">
         <div
           className="categoryBurger d-flex align-items-center"
           id="hamburguesas"
         >
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
-        <Row>
+        <Row className="gy-2 gx-3">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
         </Row>
       </Container>
-      <Container className="mb-5">
+      <Container className="pb-5">
         <div id="pastas">
           <h2 className="categoryTitle">Pastas</h2>
         </div>
-        <Row>
+        <Row className="gy-2 gx-3">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
         </Row>
       </Container>
-      <Container className="mb-5">
+      <Container className="pb-5">
         <div id="empanadas">
           <h2 className="categoryTitle">Empanadas</h2>
         </div>
-        <Row>
+        <Row className="gy-2 gx-3">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
