@@ -30,3 +30,30 @@ h6 {
 .contactForm{
     width: 250px;
 }
+
+@media all and (min-width: 0px) and (max-width:767px){
+  .containerInformation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .containerContact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+}
+
+@media all and (min-width: 992px){
+  p{
+    margin-top: 7px;
+  }
+}
+@media all and (min-width: 1200px){
+  p{
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
