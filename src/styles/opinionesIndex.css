@@ -1,6 +1,7 @@
 .opinions {
   background: #F1E4C3;
   min-height: 700px;
+  font-family: "Exo";
 }
 
 .opinions .containerOpinions{
@@ -15,6 +16,10 @@
 .btnOpinion{
   background: #fbf8ef;
   cursor: pointer;
+}
+
+.btnOpinion a{
+  color: #16509c;
 }
 
 .btnOpinion:hover{

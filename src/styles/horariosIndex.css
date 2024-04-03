@@ -1,5 +1,6 @@
 .schedules{
   background: #fbf8ef;
+  font-family: "Exo";
 }
 
 .imgInterior{
@@ -7,7 +8,8 @@
   height: 300px;
 }
 
-.schedulesAndServices h2{
+.schedulesAndServices h2, 
+h4{
   color: #9a5534;
   font-family: "Oswald";
 }

@@ -17,7 +17,6 @@ const CarruselCategorias = () => {
               className="imgCategory"
               alt="opción de pizza"
               title="opción de pizzas"
-              loading="lazy"
             />
             <Card.Body>
               <Card.Title className="text-center fs-4">Pizzas</Card.Title>
@@ -32,7 +31,6 @@ const CarruselCategorias = () => {
               className="imgCategory"
               alt="opción de hamburguesa"
               title="opción de hamburguesa"
-              loading="lazy"
             />
             <Card.Body>
               <Card.Title className="text-center fs-4">Hamburguesas</Card.Title>
@@ -47,7 +45,6 @@ const CarruselCategorias = () => {
               className="imgCategory"
               alt="opción de pastas"
               title="opción de pastas"
-              loading="lazy"
             />
             <Card.Body>
               <Card.Title className="text-center fs-4">Pastas</Card.Title>
@@ -62,7 +59,6 @@ const CarruselCategorias = () => {
               className="imgCategory"
               alt="opción de empanadas"
               title="opción de empanadas"
-              loading="lazy"
             />
             <Card.Body>
               <Card.Title className="text-center fs-4">Empanadas</Card.Title>
@@ -81,7 +77,6 @@ const CarruselCategorias = () => {
                   className="imgCategory"
                   alt="opción de pizza"
                   title="opción de pizza"
-                  loading="lazy"
                 />
                 <Card.Body>
                   <Card.Title className="text-center fs-4">Pizzas</Card.Title>
@@ -96,7 +91,6 @@ const CarruselCategorias = () => {
                   className="imgCategory"
                   alt="opción de hamburguesa"
                   title="opción de hamburguesa"
-                  loading="lazy"
                 />
                 <Card.Body>
                   <Card.Title className="text-center fs-4">
@@ -117,7 +111,7 @@ const CarruselCategorias = () => {
                   className="imgCategory"
                   alt="opción de pastas"
                   title="opción de pastas"
-                  loading="lazy"
+
                 />
                 <Card.Body>
                   <Card.Title className="text-center fs-4">Pastas</Card.Title>
@@ -132,7 +126,6 @@ const CarruselCategorias = () => {
                   className="imgCategory"
                   alt="opción de empanadas"
                   title="opción de empanadas"
-                  loading="lazy"
                 />
                 <Card.Body>
                   <Card.Title className="text-center fs-4">

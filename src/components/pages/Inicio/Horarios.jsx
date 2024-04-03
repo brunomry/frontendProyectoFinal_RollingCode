@@ -20,27 +20,27 @@ const HorariosYServicios = () => {
         <div className="d-flex flex-column align-items-center textSize align-items-lg-start">
           <div className="mb-1 d-flex justify-content-between containerSchedule">
             <span className="fw-medium me-2">Lunes</span>
-            <span>12:00 - 23:00</span>
+            <span>12:00 - 00:00</span>
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Martes</span>12:00 - 23:00
+            <span className="fw-medium me-2">Martes</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Miércoles</span>12:00 - 23:00
+            <span className="fw-medium me-2">Miércoles</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Jueves</span>12:00 - 23:00
+            <span className="fw-medium me-2">Jueves</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Viernes</span>12:00 - 23:00
+            <span className="fw-medium me-2">Viernes</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Sábado</span>12:00 - 23:00
+            <span className="fw-medium me-2">Sábado</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
         </div>
@@ -60,6 +60,7 @@ const HorariosYServicios = () => {
         <img
           src={interior}
           alt="interior del restaurante"
+          title="interior del restaurante"
           className="imgInterior rounded-2 shadow"
         />
       </article>

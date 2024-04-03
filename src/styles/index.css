@@ -10,6 +10,7 @@
   background-size: cover;
   background-position: center;
   height: 60vh;
+  font-family: "Exo";
 }
 
 .bannerOpacity{
@@ -29,23 +30,13 @@
   font-family: "Oswald";
   font-size: 2.1875rem;
   text-align: center;
-  /* color: rgba(251, 135, 40, 0.946);
-  color: rgba(255, 143, 51, 0.862); */
   color:#9a5534;
   -webkit-text-stroke: .5px #fff;
 }
 
-.bannerContent .bannerDescription,
-.bannerSubtitle,
 .btnBanner{
-  font-family: "Exo";
-}
-
-.btnBanner{
-  /* background-color: rgba(215, 115, 33, 0.533); */
-  background-color: #9a5534;
-  /* background-color: rgba(251, 135, 40, 0.946); */
   color: #fff;
+  background-color: #9a5534;
   transition: transform 0.3s ease;
 }
 
@@ -57,7 +48,6 @@
 
 @media all and (min-width:768px){
   .bannerContent .bannerTitle{
-    font-family: "Oswald";
     font-size: 65px;
   }
 
@@ -70,7 +60,6 @@
 
 @media all and (min-width:1200px){
   .bannerContent .bannerTitle{
-    font-family: "Oswald";
     font-size: 75px;
   }
 

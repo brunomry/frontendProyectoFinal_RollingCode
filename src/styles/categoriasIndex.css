@@ -16,6 +16,10 @@
   height: 300px;
 }
 
+.card .card-title{
+  font-family: "Oswald";
+}
+
 .carousel .carousel-indicators{
   display: none;
 }
