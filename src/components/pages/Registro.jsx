@@ -13,7 +13,7 @@ const Registro = () => {
         <div className="text-center">
           <h1 className="mt-3">Regístrate</h1>
         </div>
-        <Form className="px-2 px-md-5">
+        <Form className="px-2 px-md-5 formText">
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Nombre:</Form.Label>
             <Form.Control type="text" placeholder="nombre" />
