@@ -7,16 +7,43 @@ p{
 h1,h2,h3,h4,h5,h6{
     font-family: "Oswald", sans-serif;
 }
-.modalHeaderIMGContainer{
-    width: 500px;
-    height: 300px;
-}
 .modalIMG{
     border-radius: 8px;
-    width: 500px;
+    width: 100%;
     height: 280px;
     object-fit: cover;
 }
 .addBTN{
-    width: 100%;
+    width: 45%;
+}
+.closeBTN{
+    width: 45%;
+}
+.price{
+    font-size: 20px;
+}
+@media all and (min-width:0px) and (max-width:767px){
+    p{
+        font-size: 15px;
+    }
+    .modalIMG{
+        height: 230px;
+    }
+    .addBTN{
+        font-size: 15px;
+    }
+    .closeBTN{
+        font-size: 15px;
+    }
+    .modalHeaderIMGContainer{
+        padding-bottom: 5px;
+    }
+}
+@media all and (min-width: 992px){
+    .price{
+    }
+}
+@media all and (min-width: 1200px){
+    .price{
+    }
 }
