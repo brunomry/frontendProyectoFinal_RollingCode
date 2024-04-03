@@ -17,8 +17,9 @@ h3 {
 }
 .title{
   color: #9a5534;
-  -webkit-text-stroke-width: .01px;
+  -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: #fff;
+  font-size: 35px;
 }
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
@@ -69,9 +70,6 @@ h3 {
   .bannerText{
     font-size: 18px;
   }
-  .bannerMenu{
-    height: 75vh;
-  }
 }
 
 @media all and (min-width: 1200px){
@@ -84,8 +82,5 @@ h3 {
   .bannerBTN{
     width: 240px;
     font-size: 20px;
-  }
-  .bannerMenu{
-    height: 75vh;
   }
 }

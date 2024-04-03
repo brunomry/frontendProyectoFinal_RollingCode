@@ -8,15 +8,11 @@ const Menu = () => {
   return (
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
-        <h1 className="title fw-bold">Nuestro Menu</h1>
-        <p className="fw-bold bannerText">
+        <h1 className="title pb-3">Nuestro Menu</h1>
+        <p className="fw-bold bannerText pb-3">
           ¡Descubre nuestro festín de sabores!
         </p>
-        <button className="bannerBTN">
-          <a href="" className="link-light fw-bold">
-            ~ Descargar el menú ~
-          </a>
-        </button>
+        <a className="bannerBTN text-center py-3 text-decoration-none" href="">DESCARGAR MENÚ</a>
       </section>
       <div className="border-bottom border-secondary d-flex justify-content-center py-3 pe-2 menuCategoryContainer position-sticky top-0">
         <Button className="me-3" variant="warning">
