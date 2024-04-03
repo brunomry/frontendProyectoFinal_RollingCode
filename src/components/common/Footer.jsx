@@ -29,7 +29,7 @@ const Footer = () => {
         </Col>
         <Col xs={12} md={3} className="containerContact">
           <h4 className="footerTitleSection">Contacto</h4>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between containerSocialMedia">
             <div>
               <p>
                 <i className="fa-brands fa-whatsapp fa-xl"></i> 123-1234567
@@ -38,19 +38,18 @@ const Footer = () => {
                 <i className="fa-solid fa-location-dot fa-xl"></i> Gral. Paz 576
               </p>
             </div>
-            <div>
+            <div className="socialMedia">
               <a href="https://www.instagram.com/">
-                <i className="fa-brands fa-instagram fa-2xl me-md-2 me-lg-4 link-dark"></i>
+                <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-4 link-dark"></i>
               </a>
               <a href="https://www.facebook.com/">
-                <i className="fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-4 link-dark"></i>
+                <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-4 link-dark"></i>
               </a>
               <a href="https://twitter.com/home">
                 <i className="fa-brands fa-facebook-f fa-2xl link-dark"></i>
               </a>
             </div>
           </div>
-
           <h4>Suscríbete para recibir más información</h4>
           <Form className="contactForm d-flex">
             <Form.Group>
