@@ -6,7 +6,11 @@ const Footer = () => {
   return (
     <Container fluid className="footerContainer py-5">
       <Row>
-        <Col md={12} lg={3} className="d-flex align-items-center justify-content-center mb-3">
+        <Col
+          md={12}
+          lg={3}
+          className="d-flex align-items-center justify-content-center mb-3"
+        >
           <img
             src={logo}
             alt="Logo de ambiente bohemio"
@@ -20,14 +24,14 @@ const Footer = () => {
           <p>Nosotros</p>
           <p>Contacto</p>
         </Col>
-        <Col xs={12} md={3} className="containerInformation">
+        <Col xs={12} md={4} lg={3} className="containerInformation">
           <h4 className="footerTitleSection">Información</h4>
           <p>Políticas de privacidad</p>
           <p>Legal</p>
           <p>Promociones</p>
           <p>Horarios de atención</p>
         </Col>
-        <Col xs={12} md={3} className="containerContact">
+        <Col xs={12} md={4} lg={3} className="containerContact">
           <h4 className="footerTitleSection">Contacto</h4>
           <div className="d-flex justify-content-between containerSocialMedia">
             <div>
@@ -39,26 +43,28 @@ const Footer = () => {
               </p>
             </div>
             <div className="socialMedia">
-              <a href="https://www.instagram.com/">
-                <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-4 link-dark"></i>
+              <a href="https://www.instagram.com/" target="_blank">
+                <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 link-dark"></i>
               </a>
-              <a href="https://www.facebook.com/">
-                <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-4 link-dark"></i>
+              <a href="https://www.facebook.com/" target="_blank">
+                <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-2 link-dark"></i>
               </a>
-              <a href="https://twitter.com/home">
+              <a href="https://twitter.com/home" target="_blank">
                 <i className="fa-brands fa-facebook-f fa-2xl link-dark"></i>
               </a>
             </div>
           </div>
-          <h4>Suscríbete para recibir más información</h4>
-          <Form className="contactForm d-flex">
-            <Form.Group>
-              <Form.Control type="email" placeholder="ejemplo@correo.com" />
-            </Form.Group>
-            <Button className="formBTN" variant="warning" type="submit">
-              Enviar
-            </Button>
-          </Form>
+          <div className="formContainer">
+            <h4 className="formTitle"> Suscríbete para recibir más información</h4>
+            <Form className="contactForm d-flex">
+              <Form.Group>
+                <Form.Control type="email" placeholder="ejemplo@correo.com" />
+              </Form.Group>
+              <Button className="formBTN" variant="warning" type="submit">
+                Enviar
+              </Button>
+            </Form>
+          </div>
         </Col>
       </Row>
     </Container>
