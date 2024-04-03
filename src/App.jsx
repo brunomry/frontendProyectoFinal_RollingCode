@@ -1,3 +1,7 @@
+import Inicio from "./components/pages/Inicio";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Administrador from "./components/pages/Administracion";
 import "./App.css";
