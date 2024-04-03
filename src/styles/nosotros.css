@@ -14,32 +14,54 @@
   max-width: 1920px;
   max-height: 35rem;
   height: 60vw;
-  margin-inline: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
 .bannerContainer > div {
-  background-color: rgba(0, 0, 0, 0.473);
   height: 100%;
 }
 
 .bannerContainer h1,
-p {
+.bannerContainer p {
   font-family: 'Oswald';
   text-align: center;
+  -webkit-text-stroke: 0.5px #fff;
+}
+
+.bannerContainer h1 {
+  font-size: 4.6875rem;
+}
+
+.bannerContainer p {
   font-size: 1.5rem;
-  width: 50vw;
 }
 
 .bannerContainer h1 {
   color: #9a5534;
 }
 
-h2 {
+.bannerContent {
+  width: 75%;
+  height: 18.75rem;
+  z-index: 99;
+}
+
+.bannerOpacity {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.team h2 {
+  color: #9a5534;
   font-family: 'Oswald';
-  font-size: 1.5rem;
+}
+
+.team h3 {
+  font-family: 'Exo', sans-serif;
 }
 
 .cardsContainer {
@@ -88,9 +110,9 @@ h2 {
   }
 }
 
-@media all and (min-width: 1149px) {
+@media all and (min-width: 1200px) {
   .bannerContainer h1 {
-    font-size: 2.8rem;
+    font-size: 4.6875rem;
   }
 
   .bannerContainer p {
@@ -104,7 +126,7 @@ h2 {
   }
 
   .bannerContainer h1 {
-    font-size: 3rem;
+    font-size: 4.0625rem;
   }
 
   .bannerContainer p {
@@ -132,10 +154,20 @@ h2 {
 
 @media all and (max-width: 700px) {
   .bannerContainer {
-    height: 200vw;
+    height: 200vh;
   }
 
   .imgContainer {
     width: 250px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .bannerContainer h1 {
+    font-size: 4.6875rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.5rem;
   }
 }

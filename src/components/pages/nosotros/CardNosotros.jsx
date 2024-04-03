@@ -12,7 +12,7 @@ const CardNosotros = () => {
           />
         </div>
         <div>
-          <p>Leonel Cordero</p>
+          <h3 className='py-3'>Leonel Cordero</h3>
         </div>
         <div className='linkContainer'>
           <a href='' className='mx-2'>
