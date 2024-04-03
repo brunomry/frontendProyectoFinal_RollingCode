@@ -60,6 +60,7 @@ h3 {
 }
 @media all and (min-width: 576px){
   .menuCategoryContainer{
+    overflow-x: hidden;
     padding-left: 0px;
   }
 }
