@@ -1,3 +1,4 @@
+import Nosotros from './components/pages/Nosotros';
 import MenuNavegacion from "./components/common/MenuNavegacion";
 import Pedido from './components/pages/Pedido';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,5 +22,5 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-
+                                                            
 export default App;
