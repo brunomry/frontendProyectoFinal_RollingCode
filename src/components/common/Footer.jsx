@@ -8,11 +8,7 @@ const Footer = () => {
   return (
     <Container fluid className="footerContainer pt-5 pb-1">
       <Row>
-        <Col
-          md={12}
-          lg={3}
-          className="d-flex justify-content-center mb-3"
-        >
+        <Col md={12} lg={3} className="d-flex justify-content-center mb-3">
           <img
             src={logo}
             alt="Logo de ambiente bohemio"
@@ -21,17 +17,16 @@ const Footer = () => {
         </Col>
         <Col className="d-none d-md-block">
           <h4 className="footerTitleSection">Opciones</h4>
-          <p>Inicio</p>
-          <p>Menú</p>
-          <p>Nosotros</p>
-          <p>Contacto</p>
+          <p as={Link} to="/">Inicio</p>
+          <p as={Link} to="/nosotros">Nosotros</p>
+          <p as={Link} to="/contacto">Contacto</p>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerInformation">
           <h4 className="footerTitleSection">Información</h4>
-          <p>Políticas de privacidad</p>
-          <p>Legal</p>
-          <p>Promociones</p>
-          <p>Horarios de atención</p>
+          <p as={Link} to="*">Políticas de privacidad</p>
+          <p as={Link} to="*">Legal</p>
+          <p as={Link} to="*">Promociones</p>
+          <p as={Link} to="*">Horarios de atención</p>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerContact">
           <h4 className="footerTitleSection">Contacto</h4>
@@ -81,7 +76,10 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
-      <p className="text-center mt-3">&copy; AmbienteBohemio. Todos los derechos reservados. 2024. Desarrollado por Grupo 2</p>
+      <p className="text-center mt-3">
+        &copy; AmbienteBohemio. Todos los derechos reservados. 2024.
+        Desarrollado por Grupo 2
+      </p>
     </Container>
   );
 };
