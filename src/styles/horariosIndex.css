@@ -1,0 +1,51 @@
+.schedules{
+  background: #fbf8ef;
+  font-family: "Exo";
+}
+
+.imgInterior{
+  width: 100%;
+  height: 300px;
+}
+
+.schedulesAndServices h2, 
+h4{
+  color: #9a5534;
+  font-family: "Oswald";
+}
+
+.containerSchedule{
+  width: 250px;
+}
+
+.btnMenu{
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btnMenu:hover{
+  transform: scale(0.95);
+  transition: .7s;
+}
+
+@media all and (min-width:768px){
+  .containerSchedule{
+    font-size: 18px;
+  }
+
+  .imgInterior{
+    width: 550px;
+    height: 500px;
+  }
+}
+
+@media all and (min-width:1200px){
+  .containerSchedule{
+    font-size: 20px;
+  }
+
+  .imgInterior{
+    width: 650px;
+    height: 500px;
+  }
+}
