@@ -1,8 +1,20 @@
-import React from "react";
 import "../../../styles/cardProducto.css";
-import { Col } from "react-bootstrap";
+import { Button, Col, Modal } from "react-bootstrap";
+import { useState } from "react";
+import ModalDetalleProducto from "../product/ModalDetalleProducto";
+
+
 const CardProducto = () => {
+
+ const [show, setShow] = useState(false);
+
+ const handleClose = () => setShow(false);
+ const handleShow = () => setShow(true);
+
+
+
   return (
+    <>
     <Col md={6} lg={6} className="d-flex justify-content-center">
       <div className="cardProduct d-flex">
         <div className="cardInformation">
@@ -21,7 +33,7 @@ const CardProducto = () => {
             </div>
             <div className="text-center">
               {" "}
-              <button className="cardBTN shadow px-md-3">ver más</button>
+              <Button className="cardBTN shadow px-md-3 border border-dark border-1" onClick={handleShow}>ver más</Button>
             </div>
           </div>
         </div>
@@ -34,6 +46,15 @@ const CardProducto = () => {
         </div>
       </div>
     </Col>
+    <ModalDetalleProducto
+        show={show}
+        setShow={setShow}
+        useState={useState}
+        handleClose={handleClose}
+        handleShow={handleShow}
+      ></ModalDetalleProducto>
+    </>
+    
   );
 };
 

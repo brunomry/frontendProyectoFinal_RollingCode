@@ -28,12 +28,12 @@ const ModalDetalleProducto = ({
         </p>
         <Form>
           <Form.Group className="mb-3">
-            <div className="text-center align-middle quantityProductos">
-              <Button className="mx-3 mx-sm-3" variant="secondary">
+            <div className="d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2">
+              <Button className="mx-sm-3" variant="secondary">
                 -
               </Button>
               {1}
-              <Button className="mx-3 mx-sm-3" variant="secondary">
+              <Button className="mx-sm-3" variant="secondary">
                 +
               </Button>
             </div>

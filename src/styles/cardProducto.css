@@ -37,12 +37,10 @@
 }
 
 .cardBTN {
-  font-size: 1rem;
   background-color: #e5a95b;
   color: #000;
   border-radius: 7px;
   border: 1px solid #000;
-  padding: 8px 12px;
 }
 
 .cardBTN:hover {
@@ -68,17 +66,8 @@
     height: 130px;
   }
 
-  .cardInformation {
-    font-size: 0.875rem;
-  }
-
-  .cardPrice {
-    font-size: 0.875rem;
-  }
-
   .cardBTN {
     padding: 4px 6px;
-    font-size: 0.75rem;
   }
 
   .cardIMG {
@@ -95,12 +84,7 @@
     height: 160px;
   }
 
-  .cardPrice {
-    font-size: 1rem;
-  }
-
   .cardBTN {
-    font-size: 0.875rem;
     padding: 6px 8px;
   }
 }
