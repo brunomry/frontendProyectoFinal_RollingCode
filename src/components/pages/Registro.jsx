@@ -7,7 +7,7 @@ const Registro = () => {
   return (
     <div className="d-flex">
       <section className="sectionRegistroImage d-none d-sm-block">
-        <img src={imgRegistro} alt="" className="imgRegistro" />
+        <img src={imgRegistro} alt="imagen del registro" className="imgRegistro h-100" />
       </section>
       <section className="sectionRegistro bg-white">
         <div className="text-center">
