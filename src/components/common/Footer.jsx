@@ -2,9 +2,11 @@ import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import "../../styles/footer.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <Container fluid className="footerContainer py-5">
+    <Container fluid className="footerContainer pt-5 pb-1">
       <Row>
         <Col
           md={12}
@@ -79,7 +81,7 @@ const Footer = () => {
           </div>
         </Col>
       </Row>
-      <p className="text-center mt-3">&copy; Rolling Code Todos los derechos reservados 2024</p>
+      <p className="text-center mt-3">&copy; AmbienteBohemio. Todos los derechos reservados. 2024. Desarrollado por Grupo 2</p>
     </Container>
   );
 };

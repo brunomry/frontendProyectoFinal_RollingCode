@@ -70,6 +70,10 @@ h6 {
   .formTitle{
     text-align: center;
   }
+  .footerIMG{
+    width: 150px;
+    height: 80px;
+  }
 }
 
 @media all and (min-width: 992px){
