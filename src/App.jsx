@@ -18,6 +18,7 @@ import Footer from "./components/common/Footer";
 function App() {
   return (
     <>
+      <BrowserRouter>
        <MenuNavegacion></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
