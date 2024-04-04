@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="d-flex">
       <section className="d-none d-sm-block">
-        <img src={imgLogin} alt="imagen del login" className="imgLogin" />
+        <img src={imgLogin} alt="mesero sirviendo a clientes" title="mesero sirviendo a clientes" className="imgLogin" />
       </section>
       <section className="sectionLogin bg-white">
         <div className="text-center">
@@ -25,13 +25,13 @@ const Login = () => {
           <Button className="w-100 mb-3" variant="success" type="submit">
             Ingresar
           </Button>
-          <a href="#">¿Has olvidado tu contraseña?</a>
-          <a href="#" className="btn btn-outline-danger w-100 mb-3 mt-5">
+          <Link to="./error404">¿Has olvidado tu contraseña?</Link>
+          <Link to="./error404" className="btn btn-outline-danger w-100 mb-3 mt-5">
           <i className="fa-brands fa-google"></i> Ingresar con Google
-          </a>
-          <a href="#" className="btn btn-outline-primary w-100 mb-3 mb-md-5">
+          </Link>
+          <Link to="./error404" className="btn btn-outline-primary w-100 mb-3 mb-md-5">
           <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
-          </a>
+          </Link>
           <p className="text-center">
             ¿Aún no te creaste una cuenta? <Link to={"/registro"}>Crear cuenta</Link>
           </p>
