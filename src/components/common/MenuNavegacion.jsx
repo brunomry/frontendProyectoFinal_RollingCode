@@ -9,12 +9,12 @@ const MenuNavegacion = () => {
     <>
       <header className="p-2 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between align-items-center">
         <div>
-          <a href=""><i className="fa-brands fa-facebook-f fa-2xl mx-3 link-primary"> </i></a>
-          <a href=""><i className="fa-brands fa-instagram fa-2xl me-3 link-light"></i></a>
-          <a href=""><i className="fa-brands fa-x-twitter fa-2xl link-secondary"></i></a>
+          <Link to="*" target="_blank"><i className="fa-brands fa-facebook-f fa-2xl mx-3 link-primary"> </i></Link>
+          <Link to="*" target="_blank"><i className="fa-brands fa-instagram fa-2xl me-3 link-danger"></i></Link>
+          <Link to="*" target="_blank"><i className="fa-brands fa-x-twitter fa-2xl link-dark"></i></Link>
         </div>
         <div>
-          <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logo" />
+          <Link to="/"><img src={logo} alt="Logo ambiente bohemio" className="img-fluid logo" /></Link>
         </div>
         <div>
           <p className="me-3">
@@ -22,7 +22,7 @@ const MenuNavegacion = () => {
           </p>
         </div>
       </header>
-        <Navbar expand="md"  className="navLinks navbarBackground mb-3">
+        <Navbar expand="md" className="navLinks navbarBackground">
           <Container fluid>
             <Navbar.Brand className="d-block d-md-none" as={Link} to="/">
               <img src={logo} alt="Logo ambiente bohemio" className="img-fluid logoMobile" />
@@ -40,7 +40,7 @@ const MenuNavegacion = () => {
                   <i className="fa-solid fa-cart-shopping fa-xl"></i><b>MI PEDIDO</b>
                 </NavLink>
                 <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2" to="/login"><b>INICIAR SESIÓN</b></NavLink>
-                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2" to="/registrarme"><b>REGISTRARME</b></NavLink>
+                <NavLink className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2" to="/registro"><b>REGISTRARME</b></NavLink>
                 <NavLink className="navLinkBTN nav-link d-none border border-1 border-dark rounded-2 me-2 my-1" to="#"><b>CERRAR SESIÓN</b></NavLink>
               </Nav>
             </Navbar.Collapse>

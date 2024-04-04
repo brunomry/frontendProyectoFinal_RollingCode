@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Error404 = () => {
   return (
-    <section className='errorSection d-flex align-items-center justify-content-center'>
-      <div className='d-flex flex-column gap-4'>
+    <section className='errorSection d-flex justify-content-center py-2'>
+      <div className='d-flex flex-column gap-2'>
         <article className=''>
           <img
             className=''
@@ -14,7 +14,7 @@ const Error404 = () => {
             alt=''
           />
         </article>
-        <article className=''>
+        <article className='pb-2'>
           <div className='text-center'>
             <i className='fa-solid fa-triangle-exclamation fs-1'></i>
           </div>
@@ -22,7 +22,7 @@ const Error404 = () => {
             Ocurrió un error inesperado
           </h1>
           <p className='text-center fs-4 fw-bold'>Página no encontrada.</p>
-          <div className='text-center mx-3'>
+          <div className='text-center mx-3 pb-2'>
             <Button
               variant='dark'
               className='px-2 py-2 px-md-4 mt-3 fs-5'

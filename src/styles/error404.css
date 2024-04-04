@@ -1,40 +1,7 @@
-html {
+.errorSection{
   background-color: #e7e4dd;
-}
-
-#root {
-  background-color: #e7e4dd;
-}
-
-.errorSection {
-  height: 100vh;
-}
-
-.errorSection h1,
-i {
-  font-family: 'Oswald', sans-serif;
-  color: #9a5534;
-}
-
-.errorSection p {
-  font-family: 'Exo', sans-serif;
 }
 
 img {
   width: 100%;
 }
-/* .errorSection {
-  height: 100vh;
-}
-
-.contentContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-img {
-  min-width: 35vw;
-} */

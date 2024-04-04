@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 
 const FormularioProducto = () => {
   return (
-    <section className="mainSection px-2">
+    <section className="mainSection px-2 pt-2 pb-5">
       <div className="container-md">
         <h1 className="mt-5 titleColor">Nuevo producto</h1>
         <hr className="container-md text-start my-0 mb-4" />

@@ -24,27 +24,15 @@
   height: 100%;
 }
 
-.bannerContainer h1,
-.bannerContainer p {
+.bannerContainer h1{
   font-family: 'Oswald';
   text-align: center;
   -webkit-text-stroke: 0.5px #fff;
-}
-
-.bannerContainer h1 {
   font-size: 4.6875rem;
 }
 
-.bannerContainer p {
-  font-size: 1.5rem;
-}
-
-.bannerContainer h1 {
-  color: #9a5534;
-}
-
 .bannerContent {
-  width: 75%;
+  width: 100%;
   height: 18.75rem;
   z-index: 99;
 }
@@ -53,15 +41,6 @@
   position: absolute;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-.team h2 {
-  color: #9a5534;
-  font-family: 'Oswald';
-}
-
-.team h3 {
-  font-family: 'Exo', sans-serif;
 }
 
 .cardsContainer {
@@ -106,17 +85,7 @@
   }
 
   .bannerContainer p {
-    font-size: 1.3rem;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .bannerContainer h1 {
-    font-size: 4.6875rem;
-  }
-
-  .bannerContainer p {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -130,8 +99,12 @@
   }
 
   .bannerContainer p {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     width: 90vw;
+  }
+
+  .bannerContent {
+    width: 85%;
   }
 }
 
@@ -141,14 +114,7 @@
   }
 
   .bannerContainer p {
-    font-size: 1.1rem;
     width: 90vw;
-  }
-}
-
-@media all and (min-width: 3000px) {
-  .bannerContainer p {
-    width: 100rem;
   }
 }
 
@@ -168,6 +134,14 @@
   }
 
   .bannerContainer p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .bannerContainer p {
+    width: 600px;
+  }
+
+  .bannerContent {
+    width: 50%;
   }
 }

@@ -1,18 +1,16 @@
-import React from "react";
 import "../../styles/menu.css";
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
-import imagenProducto from "../../assets/imagenProductoPrueba.png";
+import { Button, Container, Form, Row } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
 
 const Menu = () => {
   return (
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
-        <h1 className="title pb-3">Nuestro Menu</h1>
+        <h1 className="title pb-3">Nuestro Menú</h1>
         <p className="fw-bold bannerText pb-3">
           ¡Descubre nuestro festín de sabores!
         </p>
-        <a className="bannerBTN text-center py-3 text-decoration-none" href="">
+        <a className="bannerBTN text-center py-3 text-decoration-none fw-bold" href="">
           DESCARGAR MENÚ
         </a>
       </section>

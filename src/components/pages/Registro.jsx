@@ -31,7 +31,7 @@ const Registro = () => {
           </Button>
           <div className="d-flex mb-3">
             <FormCheck className="pe-2"></FormCheck>
-            <p>Recibir Descuentos y Promociones por Email</p>
+            <p className="fw-normal mt-0">Recibir Descuentos y Promociones por Email</p>
           </div>
           <Link to="./error404" className="btn btn-outline-danger w-100 mb-3">
           <i className="fa-brands fa-google"></i> Registrarme con Google

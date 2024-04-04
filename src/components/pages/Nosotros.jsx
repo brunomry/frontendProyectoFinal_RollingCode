@@ -8,9 +8,9 @@ const Nosotros = () => {
     <>
       <section className='d-flex flex-column align-items-center justify-content-center mx-auto bannerContainer'>
         <div className='bannerOpacity'> </div>
-        <div className='d-flex flex-column align-items-center justify-content-center bannerContent'>
+        <div className='d-flex flex-column align-items-center justify-content-center bannerContent pb-5'>
           <h1>Ambiente Bohemio</h1>
-          <p className='fw-bold w-100'>
+          <p className='w-100 text-center'>
             Ambiente Bohemio surgió para brindar experiencias gastronómicas
             excepcionales. Nuestra pasión por la gastronomía se refleja en cada
             plato que servimos. Nuestro equipo está comprometido en ofrecer un

@@ -42,15 +42,15 @@ const Footer = () => {
               </p>
             </div>
             <div className="socialMedia d-md-flex flex-column gap-3">
-              <a href="https://www.instagram.com/" target="_blank">
+              <Link to="*" target="_blank">
                 <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 link-dark"></i>
-              </a>
-              <a href="https://www.facebook.com/" target="_blank">
+              </Link>
+              <Link to="*" target="_blank">
                 <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-2 link-dark"></i>
-              </a>
-              <a href="https://twitter.com/home" target="_blank">
+              </Link>
+              <Link to="*" target="_blank">
                 <i className="fa-brands fa-facebook-f fa-2xl link-dark"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="formContainer pt-2">
