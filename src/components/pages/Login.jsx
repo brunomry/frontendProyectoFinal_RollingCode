@@ -7,13 +7,13 @@ const Login = () => {
   return (
     <div className="d-flex">
       <section className="d-none d-sm-block">
-        <img src={imgLogin} alt="mesero sirviendo a clientes" title="mesero sirviendo a clientes" className="imgLogin" />
+        <img src={imgLogin} alt="mesero sirviendo a clientes" title="mesero sirviendo a clientes" className="imgLogin h-100" />
       </section>
       <section className="sectionLogin bg-white">
         <div className="text-center">
           <h1 className="my-4">Inicia sesión</h1>
         </div>
-        <Form className="px-2 px-md-5 formText">
+        <Form className="px-2 px-md-5 pb-2 formText">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
             <Form.Control type="email" placeholder="email" />
