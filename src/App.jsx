@@ -1,4 +1,3 @@
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,11 +13,11 @@ import Nosotros from './components/pages/Nosotros';
 import MenuNavegacion from "./components/common/MenuNavegacion";
 import Pedido from './components/pages/Pedido';
 import Error404 from "./components/pages/Error404";
+import Footer from "./components/common/Footer";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
        <MenuNavegacion></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
@@ -37,6 +36,7 @@ function App() {
           <Route exact path="/detalleProducto/:id" element={<ModalDetalleProducto></ModalDetalleProducto>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
     </>
   );
