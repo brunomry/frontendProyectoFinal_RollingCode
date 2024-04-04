@@ -2,6 +2,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/pages/Login";
 import Inicio from "./components/pages/Inicio";
 import Administracion from "./components/pages/Administracion";
 import Menu from "./components/pages/Menu";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
           <Route path="/administrador/productos/editarProducto/id" element={<FormularioProducto />}></Route>
           <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route> */}
+          <Route exact path="/login" element={<Login></Login>}></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
