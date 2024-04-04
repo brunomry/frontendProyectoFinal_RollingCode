@@ -10,7 +10,7 @@ const CardProducto = () => {
             <h5>Título producto</h5>
           </div>
           <div className="cardDescription">
-            <p className="cardParagraph">
+            <p className="cardParagraph mb-2">
               Aquí va una descripción breve del producto que contenga
               informacion básica sobre el mismo
             </p>
@@ -21,7 +21,7 @@ const CardProducto = () => {
             </div>
             <div className="text-center">
               {" "}
-              <button className="cardBTN">Ver más</button>
+              <button className="cardBTN shadow px-md-3">ver más</button>
             </div>
           </div>
         </div>

@@ -84,8 +84,8 @@
   transform: scale(1.02);
 }
 
-.titleColor{
-  color: #fd2a00;
+#root .titleColor{
+  color: #fd6100ce;
 }
 
 @media all and (min-width: 576px) {

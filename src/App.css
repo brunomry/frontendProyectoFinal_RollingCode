@@ -7,6 +7,21 @@
   font-family: "Exo", sans-serif;
 }
 
-h1{
+#root h1, 
+#root h2,
+#root h3,
+#root h4,
+#root h5{
   font-family: "Oswald", sans-serif;
+}
+
+#root h1, 
+#root h2{
+  color: #9a5534;
+}
+
+#root a,
+#root p,
+#root .btn{
+  font-family: "Exo", sans-serif;
 }

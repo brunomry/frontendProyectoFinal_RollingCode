@@ -4,23 +4,18 @@
 #root {
   background-color: #f5ebdc;
 }
+
 *{
   scroll-margin-top: 75px;
 }
-p {
-  font-family: "Exo", sans-serif;
-}
-h1,
-h2,
-h3 {
-  font-family: "Oswald", sans-serif;
-}
+
 .title{
   color: #9a5534;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: #fff;
   font-size: 35px;
 }
+
 .bannerMenu{
     background-image: url(../assets/menu/bannerMenu.jpg);
     background-size: cover;
@@ -28,6 +23,7 @@ h3 {
     color: white;
     height: 60vh;
 }
+
 .bannerBTN{
   width: 200px;
   font-size: 16px;
@@ -38,32 +34,39 @@ h3 {
   padding: 8px 10px;
   transition: transform 0.3s ease;
 }
+
 .bannerBTN:hover{
   transition: .7s;
   transform: scale(1.1);
 }
+
 .searchForm{
     width: 300px;
 }
+
 .searchBTN{
     height: 100%;
 }
+
 .menuCategoryContainer{
   overflow-x: scroll;
   padding-left: 190px;
   background-color: #e9dfd2 ;
 }
+
 @media all and (min-width: 375px){
   .menuCategoryContainer{
     padding-left: 100px;
   }
 }
+
 @media all and (min-width: 576px){
   .menuCategoryContainer{
     overflow-x: hidden;
     padding-left: 0px;
   }
 }
+
 @media all and (min-width: 768px){
   .title{
     font-size: 65px;

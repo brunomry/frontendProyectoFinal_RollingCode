@@ -1,15 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 #root {
   background-color: #f5ebdc;
-}
-
-.breadcrumb {
-  font-family: 'Exo', sans-serif;
 }
 
 .breadcrumb a {
@@ -17,13 +12,7 @@
 }
 
 .orderTitle {
-  font-family: 'Oswald', sans-serif;
-  color: #9a5534;
   text-align: center;
-}
-
-.orderTable {
-  font-family: 'Exo', sans-serif;
 }
 
 .img-order {
@@ -37,7 +26,6 @@
 .resumeCardContainer {
   display: flex;
   justify-content: center;
-  font-family: 'Exo', sans-serif;
 }
 
 .resumeCard {
@@ -49,7 +37,7 @@
 }
 
 .resumeCard > div {
-  background-color: #d6b069cb;
+  background-color: #f6edcb;
 }
 
 @media all and (min-width: 768px) {

@@ -6,46 +6,46 @@ import interior from "../../../assets/Inicio/interior.jpg";
 const HorariosYServicios = () => {
   return (
     <div className="mx-2 containerSchedules d-flex flex-column align-items-center flex-lg-row justify-content-center gap-5">
-      <article className="textSize order-0 order-lg-2 text-center text-lg-start">
-        <h2 className="mb-4">
+      <article className="textSize order-0 order-lg-2 text-center text-lg-start align-items-center">
+        <h2 className="mb-4 text-center">
           Disfruta de una buena comida en{" "}
           <span className="d-block">
             - <i className="fa-solid fa-pizza-slice fs-3"></i> Ambiente Bohemio
             -
           </span>
         </h2>
-        <h4 className="mb-3 border-2 rounded-5 px-4 border-bottom py-3 d-inline-block border-warning">
+        <h4 className="mb-3 border-2 rounded-5 px-4 border-bottom py-3  border-warning text-center mx-auto">
           Horarios de Atención
         </h4>
-        <div className="d-flex flex-column align-items-center textSize align-items-lg-start">
+        <div className="d-flex flex-column align-items-center textSize">
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Lunes</span>
+            <span className="fw-bold me-2">Lunes</span>
             <span>12:00 - 00:00</span>
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Martes</span>12:00 - 00:00
+            <span className="fw-bold me-2">Martes</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Miércoles</span>12:00 - 00:00
+            <span className="fw-bold me-2">Miércoles</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Jueves</span>12:00 - 00:00
+            <span className="fw-bold me-2">Jueves</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Viernes</span>12:00 - 00:00
+            <span className="fw-bold me-2">Viernes</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
           <div className="mb-1 d-flex justify-content-between containerSchedule">
-            <span className="fw-medium me-2">Sábado</span>12:00 - 00:00
+            <span className="fw-bold me-2">Sábado</span>12:00 - 00:00
           </div>
           <hr className="containerSchedule my-0" />
         </div>
 
-        <div className="mt-4">
+        <div className="mt-4 text-center">
           <Button
             as={Link}
             variant="warning"

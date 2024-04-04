@@ -37,7 +37,7 @@ const Inicio = () => {
         <h2 className="pb-3">- Nuestras Opciones -</h2>
         <CarruselCategorias></CarruselCategorias>
       </section>
-      <section className="schedulesAndServices py-4 py-sm-5">
+      <section className="schedules py-4 py-sm-5">
         <Horarios></Horarios>
       </section>
       <section className="opinions">

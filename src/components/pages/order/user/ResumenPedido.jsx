@@ -12,13 +12,13 @@ const ResumenPedido = () => {
   return (
     <div className='resumeCardContainer'>
       <div className='resumeCard my-5'>
-        <Card>
+        <Card className='text-dark'>
           <CardHeader>
-            <CardTitle className='mt-2 text-white fw-bold'>
+            <CardTitle className='mt-2 fw-bold'>
               Detalles del pedido
             </CardTitle>
           </CardHeader>
-          <CardBody className='text-white'>
+          <CardBody>
             <div className='my-2 d-flex'>
               <input
                 type='radio'
@@ -33,7 +33,7 @@ const ResumenPedido = () => {
               <input type='radio' id='local' name='grup' className='mx-2' />
               <label htmlFor='local'>{'Retiro en el local'}</label>
             </div>
-            <div className='d-flex justify-content-between mt-3 text-white fw-bold'>
+            <div className='d-flex justify-content-between mt-3 fw-bold'>
               <span>Total</span>
               <span>$4500</span>
             </div>
@@ -42,7 +42,7 @@ const ResumenPedido = () => {
           <CardFooter>
             <div className='d-flex justify-content-center'>
               <Button className='w-100 fw-bold' variant='success'>
-                Confirmar pedido
+                Confirmar Pedido
               </Button>
             </div>
           </CardFooter>

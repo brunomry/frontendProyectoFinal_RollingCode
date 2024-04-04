@@ -42,30 +42,29 @@
 
 .btnBanner:hover {
   transition: .7s;
-  color: #fca9a9;
   transform: scale(1.1);
 }
 
 @media all and (min-width:768px){
   .bannerContent .bannerTitle{
-    font-size: 65px;
+    font-size: 4.0625rem;
   }
 
   .bannerContent .bannerDescription,
   .bannerContent .bannerSubtitle,
   .btnBanner{
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
 @media all and (min-width:1200px){
   .bannerContent .bannerTitle{
-    font-size: 75px;
+    font-size: 4.6875rem;
   }
 
   .bannerContent .bannerDescription,
   .bannerContent .bannerSubtitle,
   .btnBanner{
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }

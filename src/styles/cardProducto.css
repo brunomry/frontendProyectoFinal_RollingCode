@@ -9,10 +9,11 @@
   background-color: #fbf8ea;
   box-shadow: rgba(0, 0,0,0.3) 5px 5px 12px 1px;
 }
+
 .cardInformation {
   padding: 10px;
-  font-family: "Exo", sans-serif;
 }
+
 .cardParagraph{
   padding-top: 8px;
   display: -webkit-box;
@@ -23,31 +24,33 @@
   text-overflow: ellipsis;
   font-size: 1rem;
 }
+
 .cardTitle {
   border-bottom: 1px solid black;
   margin-bottom: 2px;
-  font-family: "Oswald", sans-serif;
-
 }
+
 .cardPrice {
   font-size: 1.125rem;
   font-weight: bold;
   color: green;
 }
+
 .cardBTN {
   font-size: 1rem;
-  background-color: #9a5534;
-  color: #fff;
+  background-color: #e5a95b;
+  color: #000;
   border-radius: 7px;
-  border: 1px solid #9a5534;
+  border: 1px solid #000;
   padding: 8px 12px;
 }
+
 .cardBTN:hover {
   transition: 0.7s;
-  background-color: #f5ebdc;
-  color: black;
-  border: solid 1px black;
+  color: #fff;
+  background-color: #d38e33;
 }
+
 .cardIMG {
   object-fit: cover;
   width: 150px;
@@ -55,27 +58,29 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-.categoryTitle{
-  color: #9a5534 ;
-}
 
 @media all and (min-width: 0px) and (max-width: 767px) {
   .cardParagraph {
     -webkit-line-clamp: 1;
   }
+
   .cardProduct {
     height: 130px;
   }
+
   .cardInformation {
     font-size: 0.875rem;
   }
+
   .cardPrice {
     font-size: 0.875rem;
   }
+
   .cardBTN {
     padding: 4px 6px;
     font-size: 0.75rem;
   }
+
   .cardIMG {
     object-fit: cover;
     width: 100px;
@@ -89,14 +94,17 @@
   .cardProduct {
     height: 160px;
   }
+
   .cardPrice {
     font-size: 1rem;
   }
+
   .cardBTN {
     font-size: 0.875rem;
     padding: 6px 8px;
   }
 }
+
 @media all and (min-width: 992px){
   .cardIMG{
     width: 180px;
