@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6{
 .price{
     font-size: 20px;
 }
-@media all and (min-width:0px) and (max-width:767px){
+@media all and (min-width:0px){
     p{
         font-size: 15px;
     }
@@ -31,11 +31,27 @@ h1,h2,h3,h4,h5,h6{
     }
     .addBTN{
         font-size: 15px;
+        width: 100%;
     }
     .closeBTN{
         font-size: 15px;
+        width: 100%;
+    }
+    .containerBTN{
+        flex-direction: column-reverse;
+        gap: 10px
     }
     .modalHeaderIMGContainer{
         padding-bottom: 5px;
+    }
+}
+@media all and (min-width:375px) and (max-width:767px){
+    .modalIMG{
+        height: 300px;
+    }
+}
+@media all and (min-width:768px){
+    .modalIMG{
+        height: 320px;
     }
 }

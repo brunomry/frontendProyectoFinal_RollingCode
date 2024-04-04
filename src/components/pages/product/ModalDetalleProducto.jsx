@@ -18,9 +18,9 @@ const ModalDetalleProducto = ({
             className="modalIMG"
           />
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="pt-1">
           <h4 className="mb-1">Nombre del producto</h4>
-          <p className="text-success price mb-1">$55555</p>
+          <p className="text-success price mb-1 fw-bold">$55555</p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
             aspernatur adipisci harum aliquid nam distinctio quo modi magni odio
@@ -30,7 +30,7 @@ const ModalDetalleProducto = ({
             <Form.Group className="mb-3">
               <Form.Control type="number" placeholder="cantidad" required />
             </Form.Group>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex containerBTN">
               <Button className="btn btn-secondary closeBTN" onClick={handleClose}>Cerrar</Button>
               <Button className="addBTN btn-success" type="submit">
                 <i className="fa-solid fa-plus fa-lg"></i> Agregar a Mi Pedido
