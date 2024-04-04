@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
+
+.containerRegister{
+    width: 100%;
+    height: 70vh;
+}
+
+.logo{
+    width: 200px;
+}
+
+.sectionRegistro{
+    width: 100%;
+    font-family: "Exo", sans-serif;
+}
+
+@media all and (min-width:576px){
+    .imgLogin{
+        width: 50vw;
+        object-fit: cover;
+        height: 70vh;
+    }
+    .sectionRegistro{
+        width: 50vw;
+    }
+}
+
+@media all and (min-width:768px){
+    .formText{
+        font-size: 18px;
+    }
+}
+@media all and (min-width:992px){
+   
+}
+@media all and (min-width:1200px){
+    .imgLogin{
+        width: 70vw;
+        object-fit: cover;
+        height: 70vh;
+    }
+    .sectionRegistro{
+        width: 30vw;
+    }
+}
