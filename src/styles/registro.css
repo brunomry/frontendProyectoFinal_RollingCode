@@ -11,6 +11,7 @@
 
 .sectionRegistro{
     width: 100%;
+    font-family: "Exo", sans-serif;
 }
 
 @media all and (min-width:576px){

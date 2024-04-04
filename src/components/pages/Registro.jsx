@@ -33,14 +33,14 @@ const Registro = () => {
             <FormCheck className="pe-2"></FormCheck>
             <p>Recibir Descuentos y Promociones por Email</p>
           </div>
-          <a href="#" className="btn btn-outline-primary w-100 mb-3">
+          <a href="#" className="btn btn-outline-danger w-100 mb-3">
           <i className="fa-brands fa-google"></i> Registrarme con Google
           </a>
           <a href="#" className="btn btn-outline-primary w-100 mb-3 mb-md-5">
           <i className="fa-brands fa-facebook"></i> Registrarme con Facebook
           </a>
           <p className="text-center">
-            ¿Ya tienes una cuenta? <Link to={"/login"}>iniciar sesion</Link>
+            ¿Ya tienes una cuenta? <Link to={"/login"}>Iniciar sesión</Link>
           </p>
         </Form>
       </section>
