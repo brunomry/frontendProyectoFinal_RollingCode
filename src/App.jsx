@@ -1,4 +1,3 @@
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -32,13 +31,13 @@ function App() {
           <Route path="/administrador/productos" element={<ListaProductos></ListaProductos>}></Route>
           <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
           <Route path="/administrador/productos/editarProducto/id" element={<FormularioProducto />}></Route>
-          <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route> */}
+          <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route>
           <Route exact path="/login" element={<Login></Login>}></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route exact path="/detalleProducto/:id" element={<ModalDetalleProducto></ModalDetalleProducto>}></Route>
-          <Route path="*" element={<Error404></Error404>}></Route> */}
+          <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
