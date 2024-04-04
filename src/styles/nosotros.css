@@ -1,0 +1,173 @@
+* {
+  transition: all 0.5s ease-in-out;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background-color: #f1e4c3;
+}
+
+.bannerContainer {
+  background-image: url('https://images.pexels.com/photos/1148565/pexels-photo-1148565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: white;
+  max-width: 1920px;
+  max-height: 35rem;
+  height: 60vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.bannerContainer > div {
+  height: 100%;
+}
+
+.bannerContainer h1,
+.bannerContainer p {
+  font-family: 'Oswald';
+  text-align: center;
+  -webkit-text-stroke: 0.5px #fff;
+}
+
+.bannerContainer h1 {
+  font-size: 4.6875rem;
+}
+
+.bannerContainer p {
+  font-size: 1.5rem;
+}
+
+.bannerContainer h1 {
+  color: #9a5534;
+}
+
+.bannerContent {
+  width: 75%;
+  height: 18.75rem;
+  z-index: 99;
+}
+
+.bannerOpacity {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.team h2 {
+  color: #9a5534;
+  font-family: 'Oswald';
+}
+
+.team h3 {
+  font-family: 'Exo', sans-serif;
+}
+
+.cardsContainer {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.imgContainer {
+  position: relative;
+  width: 350px;
+}
+
+.linkContainer i {
+  font-size: 2.5rem;
+}
+
+.fa-linkedin {
+  color: blue;
+}
+
+.fa-linkedin:hover {
+  color: rgb(96, 96, 255);
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-github:hover {
+  color: rgb(97, 97, 97);
+}
+
+.imgProfileP {
+  border-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media all and (max-width: 1150px) {
+  .bannerContainer h1 {
+    font-size: 3rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.3rem;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .bannerContainer h1 {
+    font-size: 4.6875rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.3rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .carouselSM {
+    display: none;
+  }
+
+  .bannerContainer h1 {
+    font-size: 4.0625rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.5rem;
+    width: 90vw;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .bannerContainer h1 {
+    font-size: 2rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.1rem;
+    width: 90vw;
+  }
+}
+
+@media all and (min-width: 3000px) {
+  .bannerContainer p {
+    width: 100rem;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .bannerContainer {
+    height: 200vh;
+  }
+
+  .imgContainer {
+    width: 250px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .bannerContainer h1 {
+    font-size: 4.6875rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.5rem;
+  }
+}
