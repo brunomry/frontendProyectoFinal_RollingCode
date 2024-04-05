@@ -73,9 +73,7 @@ const Menu = () => {
           <h2 className="categoryTitle ">Pizzas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+
         </Row>
       </Container>
       <Container className="pb-5">
@@ -86,9 +84,7 @@ const Menu = () => {
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+
         </Row>
       </Container>
       <Container className="pb-5">
@@ -96,9 +92,7 @@ const Menu = () => {
           <h2 className="categoryTitle">Pastas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+
         </Row>
       </Container>
       <Container className="pb-5">
@@ -106,9 +100,7 @@ const Menu = () => {
           <h2 className="categoryTitle">Empanadas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+
         </Row>
       </Container>
     </>
