@@ -1,8 +1,21 @@
 import "../../styles/menu.css";
 import { Button, Container, Form, Row } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
+import { useState } from "react";
 
 const Menu = () => {
+  const [productos, setProductos] = useState([]);
+  
+  const consultarAPI = async () => {
+    try {
+      const respuesta= await leerProductoAPI();
+      console.log(respuesta);
+      setProductos(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
