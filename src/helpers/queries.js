@@ -18,3 +18,11 @@ export const obtenerProductoAPI = async (id) => {
     console.log(error);
   }
 };
+
+export const crearProductoAPI = async()=>{
+  try {
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
