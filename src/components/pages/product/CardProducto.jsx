@@ -1,8 +1,7 @@
 import "../../../styles/cardProducto.css";
-import { Button, Col, Modal } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
-
 
 const CardProducto = ({producto}) => {
 
@@ -14,7 +13,7 @@ const CardProducto = ({producto}) => {
   return (
     <>
     <Col md={6} lg={6} className="d-flex justify-content-center">
-      <div className="cardProduct d-flex">
+      <div className="cardProduct d-flex justify-content-between">
         <div className="cardInformation">
           <div className="cardTitle">
             <h5>{producto.nombre}</h5>
