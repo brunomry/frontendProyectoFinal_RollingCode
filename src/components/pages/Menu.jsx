@@ -66,11 +66,11 @@ const Menu = () => {
       <Form className="d-flex justify-content-center my-3 px-2">
         <Form.Group className="mb-3 searchForm" controlId="buscarMenu">
           <Form.Control
-            type="email"
+            type="text"
             placeholder="categoría, nombre de producto"
           />
         </Form.Group>
-        <Button className="ms-2 searchBTN" variant="secondary" type="submit">
+        <Button className="ms-2 searchBTN" variant="secondary" type="button">
           Buscar
         </Button>
       </Form>
