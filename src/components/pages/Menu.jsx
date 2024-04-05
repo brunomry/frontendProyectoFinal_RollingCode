@@ -1,11 +1,15 @@
 import "../../styles/menu.css";
 import { Button, Container, Form, Row } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Menu = () => {
   const [productos, setProductos] = useState([]);
   
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
   const consultarAPI = async () => {
     try {
       const respuesta= await leerProductoAPI();
