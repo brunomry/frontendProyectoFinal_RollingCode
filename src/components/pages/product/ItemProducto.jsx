@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import "../../../styles/administrador.css";
 import { Button } from "react-bootstrap";
 
-const ItemProducto = () => {
+const ItemProducto = ({producto}) => {
   return (
     <tr className="align-middle">
-      <td>pizza de metro</td>
-      <td>Pizzas</td>
-      <td>4500</td>
+      <td>{producto.nombre}</td>
+      <td>{producto.categoria}</td>
+      <td>{producto.precio}</td>
       <td>
         <img
-          src="https://images.pexels.com/photos/162744/tomatoes-tomato-quiche-red-yellow-162744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src={producto.imagen}
           alt=""
           className="imgProduct"
         />
       </td>
-      <td>Disponible</td>
+      <td>{producto.estado}</td>
       <td className="d-flex flex-column gap-2 align-items-center flex-lg-row d-lg-table-cell">
         <Link
           title="Ver producto"
