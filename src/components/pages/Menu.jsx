@@ -92,19 +92,31 @@ const Menu = () => {
         >
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
-        <Row className="gy-2 gx-3"></Row>
+        <Row className="gy-2 gx-3">
+          {filtrarProductosPorCategoria("hamburguesas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
+        </Row>
       </Container>
       <Container className="pb-5">
         <div id="pastas">
           <h2 className="categoryTitle">Pastas</h2>
         </div>
-        <Row className="gy-2 gx-3"></Row>
+        <Row className="gy-2 gx-3">
+          {filtrarProductosPorCategoria("pastas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
+        </Row>
       </Container>
       <Container className="pb-5">
         <div id="empanadas">
           <h2 className="categoryTitle">Empanadas</h2>
         </div>
-        <Row className="gy-2 gx-3"></Row>
+        <Row className="gy-2 gx-3">
+          {filtrarProductosPorCategoria("empanadas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
+        </Row>
       </Container>
     </>
   );
