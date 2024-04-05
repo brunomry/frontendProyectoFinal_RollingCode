@@ -3,26 +3,38 @@
         {
             "id": "1",
             "nombre": "Pizza cuatro quesos",
-            "estado": true,
             "precio": "4500",
+            "imagen" : "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! Esta deliciosa creación artesanal combina la suavidad de la mozzarella, la intensidad del queso gorgonzola, la cremosidad del queso brie y el toque ahumado del queso provolone, todo sobre una base de salsa de tomate fresco y una masa crujiente horneada a la perfección. Cada bocado es una explosión de sabor que te transportará a la tradición italiana en cada mordisco. ¡Una experiencia gastronómica que no querrás perderte!",
-            "imagen" : "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "categoria": "Pizzas",
+            "estado": "Disponible"
         },
         {
             "id": "2",
             "nombre": "Hamburguesa triple",
-            "estado": true,
             "precio": "5300",
+            "imagen" : "https://images.pexels.com/photos/16352971/pexels-photo-16352971/free-photo-of-comida-mano-beicon-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "detalle": "¡Prepárate para satisfacer tus antojos con nuestra Hamburguesa Triple! Tres jugosas y sabrosas hamburguesas de carne de res 100% Angus, perfectamente cocidas a la parrilla y apiladas entre capas de queso cheddar fundido, crujientes lonchas de tocino ahumado, frescas rodajas de tomate, lechuga crujiente y cebolla caramelizada, todo ello abrazado por un suave y esponjoso pan de hamburguesa. Cada bocado es una explosión de sabor y textura que te dejará deseando más. ¡Una experiencia gourmet que superará todas tus expectativas!",
-            "imagen" : "https://images.pexels.com/photos/16352971/pexels-photo-16352971/free-photo-of-comida-mano-beicon-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "categoria" : "Hamburguesas",
+            "estado": "Disponible"
         },
         {
             "id": "3",
             "nombre": "Pancho artesanal",
-            "estado": false,
             "precio": "5000",
+            "imagen" : "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal! Preparado con una salchicha premium de carne de res y cerdo, envuelta en una suave y esponjosa masa de pan recién horneado en nuestra cocina. Acompañado de una explosión de sabores con nuestra selección de salsas caseras, como la clásica salsa de chimichurri, mayonesa de ajo o kétchup picante, junto con crujientes trozos de cebolla frita y una pizca de cilantro fresco. Cada bocado es una experiencia única que te transportará a los vibrantes sabores de la calle. ¡Una delicia que te dejará con ganas de más!",
-            "imagen" : "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            "categoria" : "Hamburguesas",
+            "estado": "No disponible"
+        },
+        {
+            "id": "4",
+            "nombre": "Empanadas",
+            "precio": "9500",
+            "imagen" : "https://media.istockphoto.com/id/1158987157/es/foto/un-primer-plano-de-empanadas-argentinas-con-salsas-y-vino-sobre-un-fondo-r%C3%BAstico-oscuro-de.jpg?s=2048x2048&w=is&k=20&c=hlvgBhaW1Fv6kWWIoZOQHc8L0hBdbGWggFV0mfsusCg=",
+            "detalle": "Empanadas artesanales rellenas de sabores auténticos de América Latina. ¡Deliciosas y crujientes, perfectas para cualquier ocasión en nuestro restaurante!",
+            "categoria" : "Hamburguesas",
+            "estado": "Disponible"
         }
     ]
 }
