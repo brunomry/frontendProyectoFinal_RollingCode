@@ -1,35 +1,31 @@
 import "../../../styles/cardProducto.css";
-import { Button, Col, Modal } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
 
-
-const CardProducto = () => {
+const CardProducto = ({producto}) => {
 
  const [show, setShow] = useState(false);
 
  const handleClose = () => setShow(false);
  const handleShow = () => setShow(true);
 
-
-
   return (
     <>
     <Col md={6} lg={6} className="d-flex justify-content-center">
-      <div className="cardProduct d-flex">
+      <div className="cardProduct d-flex justify-content-between">
         <div className="cardInformation">
           <div className="cardTitle">
-            <h5>Título producto</h5>
+            <h5>{producto.nombre}</h5>
           </div>
           <div className="cardDescription">
             <p className="cardParagraph mb-2">
-              Aquí va una descripción breve del producto que contenga
-              informacion básica sobre el mismo
+             {producto.detalle}
             </p>
           </div>
           <div className="d-flex justify-content-between">
             <div className="cardPrice text-center">
-              <p>$55555</p>
+              <p>${producto.precio}</p>
             </div>
             <div className="text-center">
               {" "}
@@ -39,8 +35,9 @@ const CardProducto = () => {
         </div>
         <div className="cardIMGContainer">
           <img
-            src="https://images.pexels.com/photos/13998632/pexels-photo-13998632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Imagen de prueba"
+            src={producto.imagen}
+            alt={producto.nombre}
+            title={producto.nombre}
             className="cardIMG"
           />
         </div>

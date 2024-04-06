@@ -1,8 +1,28 @@
 import "../../styles/menu.css";
 import { Button, Container, Form, Row } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
+import { useState, useEffect } from "react";
+import { leerProductosAPI } from "../../helpers/queries";
 
 const Menu = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await leerProductosAPI();
+      setProductos(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const filtrarProductosPorCategoria = (categoria) =>
+    productos.filter((producto) => producto.categoria === categoria);
+
   return (
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
@@ -10,7 +30,10 @@ const Menu = () => {
         <p className="fw-bold bannerText pb-3">
           ¡Descubre nuestro festín de sabores!
         </p>
-        <a className="bannerBTN text-center py-3 text-decoration-none fw-bold" href="">
+        <a
+          className="bannerBTN text-center py-3 text-decoration-none fw-bold"
+          href=""
+        >
           DESCARGAR MENÚ
         </a>
       </section>
@@ -43,11 +66,11 @@ const Menu = () => {
       <Form className="d-flex justify-content-center my-3 px-2">
         <Form.Group className="mb-3 searchForm" controlId="buscarMenu">
           <Form.Control
-            type="email"
+            type="text"
             placeholder="categoría, nombre de producto"
           />
         </Form.Group>
-        <Button className="ms-2 searchBTN" variant="secondary" type="submit">
+        <Button className="ms-2 searchBTN" variant="secondary" type="button">
           Buscar
         </Button>
       </Form>
@@ -56,9 +79,9 @@ const Menu = () => {
           <h2 className="categoryTitle ">Pizzas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {filtrarProductosPorCategoria("pizzas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
         </Row>
       </Container>
       <Container className="pb-5">
@@ -69,9 +92,9 @@ const Menu = () => {
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {filtrarProductosPorCategoria("hamburguesas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
         </Row>
       </Container>
       <Container className="pb-5">
@@ -79,9 +102,9 @@ const Menu = () => {
           <h2 className="categoryTitle">Pastas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {filtrarProductosPorCategoria("pastas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
         </Row>
       </Container>
       <Container className="pb-5">
@@ -89,9 +112,9 @@ const Menu = () => {
           <h2 className="categoryTitle">Empanadas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {filtrarProductosPorCategoria("empanadas").map((producto) => (
+            <CardProducto key={producto.id} producto={producto}></CardProducto>
+          ))}
         </Row>
       </Container>
     </>
