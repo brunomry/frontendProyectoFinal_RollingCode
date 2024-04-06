@@ -38,6 +38,9 @@ const FormularioProducto = () => {
             }
           })}
           />
+          <Form.Text className="text-danger">
+            {errors.nombre?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3 " controlId="formDescription">
           <Form.Label className="fw-bold">
@@ -56,6 +59,9 @@ const FormularioProducto = () => {
             }
           })}
           />
+          <Form.Text className="text-danger">
+            {errors.detalle?.message}
+          </Form.Text>
         </Form.Group>
         <div className="row">
           <Form.Group className="mb-3 col-sm-4" controlId="formCategory">
@@ -73,6 +79,9 @@ const FormularioProducto = () => {
               <option value="Hamburguesas">Hamburguesas</option>
               <option value="Pastas">Pastas</option>
             </Form.Select>
+            <Form.Text className="text-danger">
+            {errors.categoria?.message}
+          </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3 col-sm-4" controlId="formState">
             <Form.Label className="fw-bold">
@@ -84,9 +93,12 @@ const FormularioProducto = () => {
             })}
             >
               <option value="">seleccione</option>
-              <option value="">Disponible</option>
-              <option value="">No disponible</option>
+              <option value="Disponible">Disponible</option>
+              <option value="No disponible">No disponible</option>
             </Form.Select>
+            <Form.Text className="text-danger">
+            {errors.estado?.message}
+          </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3 col-sm-4" controlId="formPrice">
             <Form.Label className="fw-bold">
@@ -105,6 +117,9 @@ const FormularioProducto = () => {
               }
             })}
             />
+            <Form.Text className="text-danger">
+            {errors.precio?.message}
+          </Form.Text>
           </Form.Group>
         </div>
         <Form.Group className="mb-3" controlId="formImage">
@@ -120,6 +135,9 @@ const FormularioProducto = () => {
             },
           })}
           />
+          <Form.Text className="text-danger">
+            {errors.imagen?.message}
+          </Form.Text>
         </Form.Group>
         <div className="text-end">
           <Form.Group className="mb-3 ">
