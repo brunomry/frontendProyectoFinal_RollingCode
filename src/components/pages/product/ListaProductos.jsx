@@ -2,8 +2,27 @@ import { Table } from "react-bootstrap";
 import "../../../styles/administrador.css";
 import ItemProducto from "./ItemProducto.jsx";
 import { Link } from "react-router-dom";
+import { leerProductosAPI } from "../../../helpers/queries.js";
+import { useEffect, useState } from "react";
+
 
 const ListaProductos = () => {
+
+  const [productos, setProductos] = useState ([])
+
+  useEffect(() =>{
+    consultarAPI()
+  }, [])
+  
+  const consultarAPI = async () =>{
+    try{
+      const respuesta = await leerProductosAPI();
+      setProductos(respuesta)
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <section className="mainSection pt-3 pb-5">
       <div className="ps-2 ps-md-5 mb-5">
@@ -40,15 +59,9 @@ const ListaProductos = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
+          {
+            productos.map((producto) => <ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+          }
         </tbody>
       </Table>
     </section>
