@@ -24,9 +24,9 @@ export const crearProductoAPI = async (productoNuevo) => {
     const respuesta = await fetch(URL_Productos, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type":"application/json"
       },
-      body: JSON.stringify(productoNuevo),
+      body: JSON.stringify(productoNuevo)
     });
     return respuesta;
   } catch (error) {
