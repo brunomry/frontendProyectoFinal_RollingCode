@@ -7,14 +7,34 @@ import { borrarProductoAPI, leerProductosAPI } from "../../../helpers/queries";
 const ItemProducto = ({ producto, setProductos }) => {
   const borrarProducto = async () => {
     Swal.fire({
-      title: "¿Estás seguro de eliminar el producto?",
+      title: "¿Estás seguro que deseas eliminar el producto?",
       text: "No se puede revertir este proceso!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#60b0fc",
       cancelButtonColor: "#f77266e2",
       confirmButtonText: "Yes, delete it!",
-    })
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const respuesta = await borrarProductoAPI(producto.id);
+
+        if(respuesta.status === 200){
+          Swal.fire({
+            title:"Producto eliminado",
+            text:`El producto "${producto.nombre}" fue eliminado con éxito`,
+            icon: "success",
+          });
+
+          const listaProductos = await leerProductosAPI();
+          setProductos(listaProductos);
+        }else{
+          Swal.fire({
+            title:"Ocurrió un error",
+            text: `El producto "${producto.nombre}" no fue eliminado. Vuelve a intentar en unos minutos.`
+          })
+        }
+      }
+    });
   };
 
   return (
