@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import "../../../styles/administrador.css";
 import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+import { borrarProductoAPI, leerProductosAPI } from "../../../helpers/queries";
 
 const ItemProducto = ({producto}) => {
+
+
+
   return (
     <tr className="align-middle">
       <td>{producto.nombre}</td>
@@ -11,7 +16,8 @@ const ItemProducto = ({producto}) => {
       <td>
         <img
           src={producto.imagen}
-          alt=""
+          alt={producto.nombre}
+          title={producto.nombre}
           className="imgProduct"
         />
       </td>
