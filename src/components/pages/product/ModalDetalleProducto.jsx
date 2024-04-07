@@ -1,55 +1,50 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "../../../styles/modalDetalleProducto.css";
 import { obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const ModalDetalleProducto = ({
-  show,
-  handleShowModal,
-  producto
-}) => {
-
+const ModalDetalleProducto = ({ show, handleShowModal, producto }) => {
   const [productoDetalle, setDetalleProducto] = useState({});
 
-  useEffect((show)=>{
+  useEffect((show) => {
       cargarDetalle();
-  },[show])
+    },[show]);
 
   const cargarDetalle = async () => {
     try {
-    const respuesta = await obtenerProductoAPI(producto.id);
+      const respuesta = await obtenerProductoAPI(producto.id);
 
-    if(respuesta.status === 200){
-      const datosProducto = await respuesta.json();
-      setDetalleProducto(datosProducto);
+      if (respuesta.status === 200) {
+        const datosProducto = await respuesta.json();
+        setDetalleProducto(datosProducto);
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos",
+        icon: "error",
+      });
+      handleShowModal();
     }
-  }catch(error){
-    Swal.fire({
-      title:"Ocurrió un error",
-      text: "Intente realizar esta operación en unos minutos",
-      icon: "error"
-    });
-    handleShowModal();
-}
-}
+  };
 
   return (
     <Modal show={show} centered className="modal">
       <Modal.Header className="modalHeaderIMGContainer">
         <img
-          src=""
-          alt=""
-          title=""
+          src={productoDetalle.imagen}
+          alt={productoDetalle.nombre}
+          title={productoDetalle.nombre}
           className="modalIMG"
         />
       </Modal.Header>
       <Modal.Body className="pt-1">
-        <h4 className="mb-1"></h4>
-        <p className="text-success price mb-1 fw-bold"></p>
-        <p>
-         
+        <h4 className="mb-1">{productoDetalle.nombre}</h4>
+        <p className="text-success price mb-1 fw-bold">
+          ${productoDetalle.precio}
         </p>
+        <p>{productoDetalle.detalle}</p>
         <Form>
           <Form.Group className="mb-3">
             <div className="d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2">
