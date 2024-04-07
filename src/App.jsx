@@ -8,7 +8,6 @@ import Menu from "./components/pages/Menu";
 import ListaUsuarios from "./components/pages/user/ListaUsuarios";
 import ListaPedidos from "./components/pages/order/ListaPedidos";
 import ListaProductos from "./components/pages/product/ListaProductos";
-import ModalDetalleProducto from "./components/pages/product/ModalDetalleProducto";
 import FormularioProducto from "./components/pages/product/FormularioProducto";
 import Nosotros from './components/pages/Nosotros';
 import MenuNavegacion from "./components/common/MenuNavegacion";
@@ -36,7 +35,7 @@ function App() {
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
-          <Route exact path="/detalleProducto/:id" element={<ModalDetalleProducto></ModalDetalleProducto>}></Route>
+          <Route exact path="/detalleProducto/:id" element={<Menu></Menu>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
