@@ -59,7 +59,7 @@ const FormularioProducto = () => {
                   "El nombre del producto debe tener como minimo 5 caracteres",
               },
               maxLength: {
-                value: 25,
+                value: 50,
                 message:
                   "El nombre del producto debe tener como maximo 25 caracteres",
               },
@@ -85,7 +85,7 @@ const FormularioProducto = () => {
                   "La descripción del producto debe tener como minimo 10 caracteres",
               },
               maxLength: {
-                value: 50,
+                value: 150,
                 message:
                   "La descripción del producto debe tener como maximo 50 caracteres",
               },
