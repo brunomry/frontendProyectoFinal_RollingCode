@@ -26,6 +26,15 @@ export const leerUsuariosAPI = async () => {
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
+
+export const obtenerUsuarioAPI = async (id) => {
+  try {
+    const respuesta = await fetch(`${URL_Usuarios}/${id}`);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+  }
+}
