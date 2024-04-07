@@ -38,3 +38,12 @@ export const obtenerUsuarioAPI = async (id) => {
     console.error(error);
   }
 }
+
+export const login = async (usuario) =>{
+  if (usuario.correo === "brunomadozzo@gmail.com" && usuario.clave === "1234AB#f"){
+    sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuario.nombreCompleto));
+    return true;
+  }else{
+    return false;
+  }
+};
