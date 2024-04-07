@@ -1,31 +1,50 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "../../../styles/modalDetalleProducto.css";
+import { obtenerProductoAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
-const ModalDetalleProducto = ({
-  show,
-  setShow,
-  useState,
-  handleClose,
-  handleShow,
-}) => {
+const ModalDetalleProducto = ({ show, handleShowModal, producto }) => {
+  const [productoDetalle, setDetalleProducto] = useState({});
+
+  useEffect((show) => {
+      cargarDetalle();
+    },[show]);
+
+  const cargarDetalle = async () => {
+    try {
+      const respuesta = await obtenerProductoAPI(producto.id);
+
+      if (respuesta.status === 200) {
+        const datosProducto = await respuesta.json();
+        setDetalleProducto(datosProducto);
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: "Intente realizar esta operación en unos minutos",
+        icon: "error",
+      });
+      handleShowModal();
+    }
+  };
+
   return (
-    <Modal show={show} onHide={handleClose} centered className="modal">
+    <Modal show={show} onHide={handleShowModal} centered className="modal">
       <Modal.Header className="modalHeaderIMGContainer">
         <img
-          src="https://images.pexels.com/photos/1166120/pexels-photo-1166120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="imagen del producto"
+          src={productoDetalle.imagen}
+          alt={productoDetalle.nombre}
+          title={productoDetalle.nombre}
           className="modalIMG"
         />
       </Modal.Header>
       <Modal.Body className="pt-1">
-        <h4 className="mb-1">Nombre del producto</h4>
-        <p className="text-success price mb-1 fw-bold">$55555</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-          aspernatur adipisci harum aliquid nam distinctio quo modi magni odio
-          dignissimos?
+        <h4 className="mb-1">{productoDetalle.nombre}</h4>
+        <p className="text-success price mb-1 fw-bold">
+          ${productoDetalle.precio}
         </p>
+        <p>{productoDetalle.detalle}</p>
         <Form>
           <Form.Group className="mb-3">
             <div className="d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2">
@@ -41,7 +60,7 @@ const ModalDetalleProducto = ({
           <div className="d-flex containerBTN">
             <Button
               className="btn btn-secondary closeBTN"
-              onClick={handleClose}
+              onClick={handleShowModal}
             >
               Cerrar
             </Button>

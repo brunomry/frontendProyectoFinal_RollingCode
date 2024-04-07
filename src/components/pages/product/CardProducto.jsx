@@ -1,60 +1,67 @@
 import "../../../styles/cardProducto.css";
-import { Button, Col, Modal } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
+import { Link, useNavigate } from "react-router-dom";
 
+const CardProducto = ({ producto }) => {
+  const [abrirModal, setAbrirModal] = useState(false);
 
-const CardProducto = () => {
+  const navegacion = useNavigate();
 
- const [show, setShow] = useState(false);
-
- const handleClose = () => setShow(false);
- const handleShow = () => setShow(true);
-
-
+  const handleShowModal = () => {
+    if (!abrirModal) {
+      setAbrirModal(true);
+      return;
+    }
+    setAbrirModal(false);
+    navegacion("/menu");
+  };
 
   return (
     <>
-    <Col md={6} lg={6} className="d-flex justify-content-center">
-      <div className="cardProduct d-flex">
-        <div className="cardInformation">
-          <div className="cardTitle">
-            <h5>Título producto</h5>
-          </div>
-          <div className="cardDescription">
-            <p className="cardParagraph mb-2">
-              Aquí va una descripción breve del producto que contenga
-              informacion básica sobre el mismo
-            </p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <div className="cardPrice text-center">
-              <p>$55555</p>
+      <Col md={6} lg={6} className="d-flex justify-content-center">
+        <div className="cardProduct d-flex justify-content-between">
+          <div className="cardInformation">
+            <div className="cardTitle">
+              <h5>{producto.nombre}</h5>
             </div>
-            <div className="text-center">
-              {" "}
-              <Button className="cardBTN shadow px-md-3 border border-dark border-1" onClick={handleShow}>ver más</Button>
+            <div className="cardDescription">
+              <p className="cardParagraph mb-2">{producto.detalle}</p>
             </div>
+            <div className="d-flex justify-content-between">
+              <div className="cardPrice text-center">
+                <p>${producto.precio}</p>
+              </div>
+              <div className="text-center">
+                {" "}
+                <Button
+                  className="cardBTN shadow px-md-3 border border-dark border-1"
+                  onClick={handleShowModal}
+                  as={Link}
+                  to={`/detalleProducto/${producto.id}`}
+                >
+                  ver más
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="cardIMGContainer">
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              title={producto.nombre}
+              className="cardIMG"
+            />
           </div>
         </div>
-        <div className="cardIMGContainer">
-          <img
-            src="https://images.pexels.com/photos/13998632/pexels-photo-13998632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Imagen de prueba"
-            className="cardIMG"
-          />
-        </div>
-      </div>
-    </Col>
-    <ModalDetalleProducto
-        show={show}
-        setShow={setShow}
-        useState={useState}
-        handleClose={handleClose}
-        handleShow={handleShow}
-      ></ModalDetalleProducto>
+      </Col>
+      <ModalDetalleProducto
+        show={abrirModal}
+        handleShowModal={handleShowModal}
+        producto={producto}
+      />
     </>
-    
   );
 };
 
