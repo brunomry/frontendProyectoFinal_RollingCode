@@ -37,13 +37,19 @@ export const obtenerUsuarioAPI = async (id) => {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-export const login = async (usuario) =>{
-  if (usuario.correo === "brunomadozzo@gmail.com" && usuario.clave === "1234AB#f"){
-    sessionStorage.setItem('usuarioLogeado', JSON.stringify(usuario.nombreCompleto));
-    return true;
-  }else{
-    return false;
+export const login = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL_Usuarios, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
   }
 };

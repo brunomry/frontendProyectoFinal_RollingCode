@@ -2,8 +2,24 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import imgLogin from "../../assets/imgLogin.jpeg"
 import "../../styles/login.css"
+import { useForm } from "react-hook-form";
+import { login, obtenerUsuarioAPI } from "../../helpers/queries";
+
 
 const Login = () => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (usuario) =>{
+    console.log(usuario);
+  }
+
+
+
   return (
     <div className="d-flex">
       <section className="d-none d-sm-block">
@@ -13,14 +29,46 @@ const Login = () => {
         <div className="text-center">
           <h1 className="my-4">Inicia sesión</h1>
         </div>
-        <Form className="px-2 px-md-5 pb-2 formText">
+        <Form className="px-2 px-md-5 pb-2 formText" onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
-            <Form.Control type="email" placeholder="email" />
+            <Form.Control type="email" placeholder="email" 
+            {...register("correo",{
+              required: "El correo es obligatorio",
+              minLenght: {
+                value: 3,
+                message: "El correo debe contener al menos 3 carácteres"
+              },
+              maxLength : {
+                value: 265,
+                message: "El correo debe contener como máximo 265 carácteres"
+              },
+              pattern: {
+                value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                message: "Ingrese una direccion de correo válida"
+              },
+            })}/>
+            <Form.Text className="text-danger">
+              {errors.correo?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Contraseña:</Form.Label>
-            <Form.Control type="password" placeholder="contraseña" />
+            <Form.Control type="password" placeholder="contraseña" 
+            {...register("clave",{
+              required: "La clave es obligatoria",
+              minLength: {
+                value: 8,
+                message: "La clave debe tener al menos 8 carácteres"
+              },
+              maxLength: {
+                value: 16,
+                message: "La clave debe tener como máximo 16 carácteres"
+              },
+            })}/>
+            <Form.Text className="text-danger">
+              {errors.clave?.message}
+            </Form.Text>
           </Form.Group>
           <Button className="w-100 mb-3" variant="success" type="submit">
             Ingresar
