@@ -2,8 +2,26 @@ import { Button, Table } from "react-bootstrap";
 import "../../../styles/administrador.css";
 import ItemUsuario from "./ItemUsuario";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { leerUsuariosAPI } from "../../../helpers/queries";
 
 const ListaUsuarios = () => {
+
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(()=>{
+    consultarAPI();
+  },[]);
+
+  const consultarAPI = async () =>{
+    try {
+      const respuesta = await leerUsuariosAPI();
+      setUsuarios(respuesta);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <section className="mainSection pt-3 pb-5">
       <div className="ps-2 ps-md-5 mb-5">
@@ -39,13 +57,9 @@ const ListaUsuarios = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
-          <ItemUsuario></ItemUsuario>
+          {
+            usuarios.map((usuario)=><ItemUsuario usuario={usuario} key={usuario.id}></ItemUsuario>)
+          }
         </tbody>
       </Table>
     </section>

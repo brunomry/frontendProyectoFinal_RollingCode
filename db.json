@@ -54,5 +54,14 @@
             "detalle": "¡Disfruta de nuestra deliciosa receta de Spaghetti a la Carbonara! Una combinación perfecta de pasta al dente, bañada en una cremosa salsa carbonara elaborada con huevo, queso parmesano rallado, panceta dorada y pimienta negra molida. Cada bocado es una explosión de sabor y textura que te llevará directamente a Italia en cada cucharada. ¡Una experiencia gastronómica que no querrás perderte!",
             "imagen": "https://images.pexels.com/photos/2382412/pexels-photo-2382412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
+    ],
+    "usuarios":[
+        {
+            "nombreCompleto":"Bruno Madozzo",
+            "correo":"brunomadozzo@gmail.com",
+            "rol":"admin",
+            "estado":"activo",
+            "clave":"1234AB#f"
+        }
     ]
 }

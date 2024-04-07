@@ -1,12 +1,12 @@
 import "../../../styles/administrador.css";
 
-const ItemUsuario = () => {
+const ItemUsuario = ({usuario}) => {
   return (
     <tr>
-      <td>admin</td>
-      <td>bruno</td>
-      <td>bruno@gmail.com</td>
-      <td>activo</td>
+      <td>{usuario.rol}</td>
+      <td>{usuario.nombreCompleto}</td>
+      <td>{usuario.correo}</td>
+      <td>{usuario.estado}</td>
     </tr>
   );
 };
