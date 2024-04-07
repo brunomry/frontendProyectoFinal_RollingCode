@@ -1,22 +1,22 @@
 {
   "productos": [
     {
-      "id": "1",
       "nombre": "Pizza cuatro quesos",
+      "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! Prueba",
       "categoria": "Pizzas",
-      "estado": true,
+      "estado": "No disponible",
       "precio": "4500",
-      "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! ",
-      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": "1"
     },
     {
-      "id": "4",
       "nombre": "Pizza mozzarella",
-      "categoria": "Pizzas",
-      "estado": true,
-      "precio": "5500",
       "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos!",
-      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "categoria": "Pizzas",
+      "estado": "Disponible",
+      "precio": "5500",
+      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": "4"
     },
     {
       "id": "2",

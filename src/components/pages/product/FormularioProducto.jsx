@@ -21,7 +21,6 @@ const FormularioProducto = ({ editar }) => {
 
   const { id } = useParams();
 
-
   useEffect(() => {
     if (editar) {
       cargarDatosProducto();
@@ -53,7 +52,6 @@ const FormularioProducto = ({ editar }) => {
           text: `El producto ${producto.nombre} fue modificado correctamente`,
           icon: 'success',
         });
-        navegation(`/administrador`);
       } else {
         console.log(respuesta.status);
         Swal.fire({

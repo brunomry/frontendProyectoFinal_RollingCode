@@ -45,7 +45,6 @@ export const editarProductoAPI = async (productoModificado, id) => {
       },
       body: JSON.stringify(productoModificado),
     });
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
