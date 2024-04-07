@@ -2,14 +2,22 @@ import "../../../styles/cardProducto.css";
 import { Button, Col } from "react-bootstrap";
 import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 const CardProducto = ({producto}) => {
 
   const [abrirModal, setAbrirModal] = useState(false);
 
-  const handleCloseModal = () => setAbrirModal(false);
-  const handleShowModal = () => setAbrirModal(true);
+  const navegacion = useNavigate();
+
+  const handleShowModal = () => {
+    if(!abrirModal){
+      setAbrirModal(true);
+      return;
+    }   
+    setAbrirModal(false);
+    navegacion('/menu');
+  }
 
   return (
     <>
@@ -46,7 +54,6 @@ const CardProducto = ({producto}) => {
     </Col>
     <ModalDetalleProducto
         show={abrirModal}
-        handleCloseModal={handleCloseModal}
         handleShowModal={handleShowModal}
       />
     </>

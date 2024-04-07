@@ -7,8 +7,7 @@ import Swal from "sweetalert2";
 
 const ModalDetalleProducto = ({
   show,
-  handleShowModal,
-  handleCloseModal
+  handleShowModal
 }) => {
 
 
