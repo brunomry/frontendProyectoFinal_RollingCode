@@ -13,7 +13,9 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Productos + "/" + id);
+    const respuesta = await fetch(URL_Productos + '/' + id);
+    const productoObtenido = await respuesta.json();
+    console.log(productoObtenido);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -23,12 +25,28 @@ export const obtenerProductoAPI = async (id) => {
 export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URL_Productos, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type":"application/json"
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(productoNuevo)
+      body: JSON.stringify(productoNuevo),
     });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editarProductoAPI = async (productoModificado, id) => {
+  try {
+    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'aplication/json',
+      },
+      body: JSON.stringify(productoModificado),
+    });
+    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -52,4 +70,4 @@ export const obtenerUsuarioAPI = async (id) => {
   } catch (error) {
     console.error(error);
   }
-}
+};
