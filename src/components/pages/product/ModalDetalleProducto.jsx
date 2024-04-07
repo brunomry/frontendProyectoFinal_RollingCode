@@ -30,7 +30,7 @@ const ModalDetalleProducto = ({ show, handleShowModal, producto }) => {
   };
 
   return (
-    <Modal show={show} centered className="modal">
+    <Modal show={show} onHide={handleShowModal} centered className="modal">
       <Modal.Header className="modalHeaderIMGContainer">
         <img
           src={productoDetalle.imagen}
