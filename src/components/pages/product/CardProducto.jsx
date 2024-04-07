@@ -55,6 +55,7 @@ const CardProducto = ({producto}) => {
     <ModalDetalleProducto
         show={abrirModal}
         handleShowModal={handleShowModal}
+        producto={producto}
       />
     </>
   );

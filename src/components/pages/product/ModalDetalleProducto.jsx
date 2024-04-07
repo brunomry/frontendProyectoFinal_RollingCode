@@ -1,18 +1,41 @@
 import { useEffect, useState} from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "../../../styles/modalDetalleProducto.css";
-import { useParams } from "react-router-dom";
 import { obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
 const ModalDetalleProducto = ({
   show,
-  handleShowModal
+  handleShowModal,
+  producto
 }) => {
 
+  const [productoDetalle, setDetalleProducto] = useState({});
+
+  useEffect((show)=>{
+      cargarDetalle();
+  },[show])
+
+  const cargarDetalle = async () => {
+    try {
+    const respuesta = await obtenerProductoAPI(producto.id);
+
+    if(respuesta.status === 200){
+      const datosProducto = await respuesta.json();
+      setDetalleProducto(datosProducto);
+    }
+  }catch(error){
+    Swal.fire({
+      title:"Ocurrió un error",
+      text: "Intente realizar esta operación en unos minutos",
+      icon: "error"
+    });
+    handleShowModal();
+}
+}
 
   return (
-    <Modal centered className="modal">
+    <Modal show={show} centered className="modal">
       <Modal.Header className="modalHeaderIMGContainer">
         <img
           src=""
@@ -42,7 +65,7 @@ const ModalDetalleProducto = ({
           <div className="d-flex containerBTN">
             <Button
               className="btn btn-secondary closeBTN"
-              onClick=""
+              onClick={handleShowModal}
             >
               Cerrar
             </Button>
