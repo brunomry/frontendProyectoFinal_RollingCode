@@ -1,30 +1,32 @@
-import React from "react";
+import { useEffect, useState} from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "../../../styles/modalDetalleProducto.css";
+import { useParams } from "react-router-dom";
+import { obtenerProductoAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
 const ModalDetalleProducto = ({
   show,
-  setShow,
-  useState,
-  handleClose,
-  handleShow,
+  handleShowModal,
+  handleCloseModal
 }) => {
+
+
   return (
-    <Modal show={show} onHide={handleClose} centered className="modal">
+    <Modal centered className="modal">
       <Modal.Header className="modalHeaderIMGContainer">
         <img
-          src="https://images.pexels.com/photos/1166120/pexels-photo-1166120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="imagen del producto"
+          src=""
+          alt=""
+          title=""
           className="modalIMG"
         />
       </Modal.Header>
       <Modal.Body className="pt-1">
-        <h4 className="mb-1">Nombre del producto</h4>
-        <p className="text-success price mb-1 fw-bold">$55555</p>
+        <h4 className="mb-1"></h4>
+        <p className="text-success price mb-1 fw-bold"></p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-          aspernatur adipisci harum aliquid nam distinctio quo modi magni odio
-          dignissimos?
+         
         </p>
         <Form>
           <Form.Group className="mb-3">
@@ -41,7 +43,7 @@ const ModalDetalleProducto = ({
           <div className="d-flex containerBTN">
             <Button
               className="btn btn-secondary closeBTN"
-              onClick={handleClose}
+              onClick=""
             >
               Cerrar
             </Button>

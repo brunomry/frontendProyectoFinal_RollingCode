@@ -2,13 +2,14 @@ import "../../../styles/cardProducto.css";
 import { Button, Col } from "react-bootstrap";
 import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
+import { Link} from "react-router-dom";
 
 const CardProducto = ({producto}) => {
 
- const [show, setShow] = useState(false);
+  const [abrirModal, setAbrirModal] = useState(false);
 
- const handleClose = () => setShow(false);
- const handleShow = () => setShow(true);
+  const handleCloseModal = () => setAbrirModal(false);
+  const handleShowModal = () => setAbrirModal(true);
 
   return (
     <>
@@ -29,7 +30,7 @@ const CardProducto = ({producto}) => {
             </div>
             <div className="text-center">
               {" "}
-              <Button className="cardBTN shadow px-md-3 border border-dark border-1" onClick={handleShow}>ver más</Button>
+              <Button className="cardBTN shadow px-md-3 border border-dark border-1" onClick={handleShowModal} as={Link} to={`/detalleProducto/${producto.id}`}>ver más</Button>
             </div>
           </div>
         </div>
@@ -44,14 +45,11 @@ const CardProducto = ({producto}) => {
       </div>
     </Col>
     <ModalDetalleProducto
-        show={show}
-        setShow={setShow}
-        useState={useState}
-        handleClose={handleClose}
-        handleShow={handleShow}
-      ></ModalDetalleProducto>
+        show={abrirModal}
+        handleCloseModal={handleCloseModal}
+        handleShowModal={handleShowModal}
+      />
     </>
-    
   );
 };
 
