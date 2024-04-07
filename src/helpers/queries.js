@@ -20,6 +20,21 @@ export const obtenerProductoAPI = async (id) => {
   }
 };
 
+export const crearProductoAPI = async (productoNuevo) => {
+  try {
+    const respuesta = await fetch(URL_Productos, {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(productoNuevo)
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const leerUsuariosAPI = async () => {
   try {
     const respuesta = await fetch(URL_Usuarios);
