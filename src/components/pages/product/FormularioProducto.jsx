@@ -2,7 +2,11 @@ import { Link, useParams } from 'react-router-dom';
 import '../../../styles/administrador.css';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { crearProductoAPI, obtenerProductoAPI } from '../../../helpers/queries';
+import {
+  crearProductoAPI,
+  editarProductoAPI,
+  obtenerProductoAPI,
+} from '../../../helpers/queries';
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
 
@@ -17,6 +21,7 @@ const FormularioProducto = ({ editar }) => {
 
   const { id } = useParams();
 
+
   useEffect(() => {
     if (editar) {
       cargarDatosProducto();
@@ -26,27 +31,53 @@ const FormularioProducto = ({ editar }) => {
   const cargarDatosProducto = async () => {
     try {
       const respuesta = await obtenerProductoAPI(id);
-      // console.log(respuesta.nombre);
+      if (respuesta) {
+        setValue('nombre', respuesta.nombre);
+        setValue('categoria', respuesta.categoria);
+        setValue('estado', respuesta.estado ? 'Disponible' : 'No disponible');
+        setValue('precio', respuesta.precio);
+        setValue('detalle', respuesta.detalle);
+        setValue('imagen', respuesta.imagen);
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
   const productoValidado = async (producto) => {
-    const respuesta = await crearProductoAPI(producto);
-    if (respuesta.status === 201) {
-      Swal.fire({
-        title: 'Producto creado',
-        text: `El producto "${producto.nombre}" fue creado correctamente`,
-        icon: 'success',
-      });
-      reset();
+    if (editar) {
+      const respuesta = await editarProductoAPI(producto, id);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: 'Producto modificado',
+          text: `El producto ${producto.nombre} fue modificado correctamente`,
+          icon: 'success',
+        });
+        navegation(`/administrador`);
+      } else {
+        console.log(respuesta.status);
+        Swal.fire({
+          title: 'Ocurrio un error',
+          text: `El producto ${producto.nombre} no pudo ser modificado, intente nuevamente`,
+          icon: 'error',
+        });
+      }
     } else {
-      Swal.fire({
-        title: 'Ocurrio un error',
-        text: `El producto "${producto.nombre}" no pudo ser creado. Intente esta operación en unos minutos`,
-        icon: 'error',
-      });
+      const respuesta = await crearProductoAPI(producto);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: 'Producto creado',
+          text: `El producto "${producto.nombre}" fue creado correctamente`,
+          icon: 'success',
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: 'Ocurrio un error',
+          text: `El producto "${producto.nombre}" no pudo ser creado. Intente esta operación en unos minutos`,
+          icon: 'error',
+        });
+      }
     }
   };
 

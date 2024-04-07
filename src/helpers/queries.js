@@ -15,8 +15,7 @@ export const obtenerProductoAPI = async (id) => {
   try {
     const respuesta = await fetch(URL_Productos + '/' + id);
     const productoObtenido = await respuesta.json();
-    console.log(productoObtenido);
-    return respuesta;
+    return productoObtenido;
   } catch (error) {
     console.log(error);
   }
