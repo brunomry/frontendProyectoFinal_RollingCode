@@ -4,9 +4,18 @@ import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { borrarProductoAPI, leerProductosAPI } from "../../../helpers/queries";
 
-const ItemProducto = ({producto}) => {
-
-
+const ItemProducto = ({ producto, setProductos }) => {
+  const borrarProducto = async () => {
+    Swal.fire({
+      title: "¿Estás seguro de eliminar el producto?",
+      text: "No se puede revertir este proceso!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#60b0fc",
+      cancelButtonColor: "#f77266e2",
+      confirmButtonText: "Yes, delete it!",
+    })
+  };
 
   return (
     <tr className="align-middle">
@@ -37,7 +46,12 @@ const ItemProducto = ({producto}) => {
         >
           <i className="fa-solid fa-pen-to-square"></i>
         </Link>
-        <Button variant="danger" title="Eliminar producto" className="me-lg-2">
+        <Button
+          variant="danger"
+          title="Eliminar producto"
+          className="me-lg-2"
+          onClick={borrarProducto}
+        >
           <i className="fa-solid fa-trash text-dark"></i>
         </Button>
       </td>
