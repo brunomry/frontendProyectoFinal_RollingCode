@@ -4,7 +4,7 @@
       "id": "1",
       "nombre": "Pizza cuatro quesos",
       "categoria": "pizzas",
-      "estado": true,
+      "estado": "Disponible",
       "precio": "4500",
       "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! ",
       "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -13,7 +13,7 @@
       "id": "4",
       "nombre": "Pizza mozzarella",
       "categoria": "pizzas",
-      "estado": true,
+      "estado": "Disponible",
       "precio": "5500",
       "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos!",
       "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -22,25 +22,16 @@
       "id": "2",
       "nombre": "Hamburguesa triple",
       "categoria": "hamburguesas",
-      "estado": true,
+      "estado": "Disponible",
       "precio": "5500",
       "detalle": "¡Prepárate para satisfacer tus antojos con nuestra Hamburguesa Triple!",
       "imagen": "https://images.pexels.com/photos/16352971/pexels-photo-16352971/free-photo-of-comida-mano-beicon-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
-      "id": "3",
-      "nombre": "Empanadas fritas de carne",
-      "categoria": "empanadas",
-      "estado": false,
-      "precio": "8000",
-      "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal!  prena suave y esponjosa masa de pan recién horneado en nuestra cocina.",
-      "imagen": "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
       "id": "5",
       "nombre": "Empanadas de jamon y queso",
       "categoria": "empanadas",
-      "estado": false,
+      "estado": "Disponible",
       "precio": "7500",
       "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal! Preparado con una salchicha premium de carne de res y cerdo, envuelta en una suave y esponjosa masa de pan recién horneado en nuestra cocina. Acompañado de una explosión de sabores con nuestra selección de salsas caseras, como la clásica salsa de chimichurri, mayonesa de ajo o kétchup picante, junto con crujientes trozos de cebolla frita y una pizca de cilantro fresco. Cada bocado es una experiencia única que te transportará a los vibrantes sabores de la calle. ¡Una delicia que te dejará con ganas de más!",
       "imagen": "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -52,7 +43,8 @@
       "correo": "brunomadozzo@gmail.com",
       "rol": "Admin",
       "estado": "activo",
-      "clave": "1234AB#f"
+      "clave": "1234AB#f",
+      "id": "86f9"
     }
   ]
 }
