@@ -2,8 +2,15 @@ import { Button, Form, FormCheck } from "react-bootstrap";
 import imgRegistro from "../../assets/imgRegistro.jpg";
 import { Link } from "react-router-dom";
 import "../../styles/registro.css";
+import { useForm } from "react-hook-form";
 
 const Registro = () => {
+  const {register, handleSubmit, formState:{errors}} = useForm()
+
+  const usuarioValidado = (usuario)=>{
+
+  }
+
   return (
     <div className="d-flex">
       <section className="sectionRegistroImage d-none d-sm-block">
@@ -13,10 +20,22 @@ const Registro = () => {
         <div className="text-center">
           <h1 className="mt-3">Regístrate</h1>
         </div>
-        <Form className="px-2 px-md-5 pb-2 formText">
+        <Form className="px-2 px-md-5 pb-2 formText" onSubmit={handleSubmit(usuarioValidado)}>
           <Form.Group className="mb-3" controlId="formBasicName">
-            <Form.Label>Nombre:</Form.Label>
-            <Form.Control type="text" placeholder="nombre" />
+            <Form.Label>Nombre y Apellido:</Form.Label>
+            <Form.Control type="text" placeholder="nombre" 
+            {...register("nombreCompleto",{
+              required:"El nombre de usuario es obligatorio",
+              minLength:{
+                value:7,
+                message:"El nombre de usuario debe tener como minimo 7 caracteres"
+              },
+              maxLength:{
+                value:30,
+                message:"El nombre de usuario debe tener como maximo 30 caracteres"
+              }
+            })}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
