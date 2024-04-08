@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../../../styles/administrador.css';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -20,6 +20,7 @@ const FormularioProducto = ({ editar }) => {
   } = useForm();
 
   const { id } = useParams();
+  const navegacion = useNavigate();
 
   useEffect(() => {
     if (editar) {
@@ -52,6 +53,7 @@ const FormularioProducto = ({ editar }) => {
           text: `El producto ${producto.nombre} fue modificado correctamente`,
           icon: 'success',
         });
+        navegacion('/administrador/productos');
       } else {
         console.log(respuesta.status);
         Swal.fire({
@@ -69,6 +71,7 @@ const FormularioProducto = ({ editar }) => {
           icon: 'success',
         });
         reset();
+        navegacion('/administrador/productos');
       } else {
         Swal.fire({
           title: 'Ocurrio un error',
