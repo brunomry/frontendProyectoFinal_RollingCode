@@ -25,9 +25,9 @@ export const crearProductoAPI = async (productoNuevo) => {
     const respuesta = await fetch(URL_Productos, {
       method: "POST",
       headers: {
-        "Content-Type":"application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(productoNuevo)
+      body: JSON.stringify(productoNuevo),
     });
     return respuesta;
   } catch (error) {
@@ -52,4 +52,19 @@ export const obtenerUsuarioAPI = async (id) => {
   } catch (error) {
     console.error(error);
   }
-}
+};
+
+export const crearUsuarioAPI = async (usuarioNuevo) => {
+  try {
+    const respuesta = fetch(URL_Usuarios, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuarioNuevo),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+  }
+};
