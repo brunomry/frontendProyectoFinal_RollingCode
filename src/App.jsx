@@ -17,10 +17,13 @@ import Registro from "./components/pages/Registro";
 import Footer from "./components/common/Footer";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
+
   return (
     <>
        <BrowserRouter>
-        <MenuNavegacion></MenuNavegacion>
+        <MenuNavegacion usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
           <Route exact path="/menu" element={<Menu></Menu>}></Route>
@@ -31,7 +34,7 @@ function App() {
           <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
           <Route path="/administrador/productos/editarProducto/id" element={<FormularioProducto />}></Route>
           <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route>
-          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route exact path="/login" element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
