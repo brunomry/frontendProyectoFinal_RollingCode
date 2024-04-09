@@ -4,7 +4,7 @@ import {Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import logo from "../../assets/logo.png"
 import { Link, NavLink } from "react-router-dom";
 
-const MenuNavegacion = () => {
+const MenuNavegacion = ({usuarioLogeado, setUsuarioLogeado}) => {
   return (
     <>
       <header className="p-2 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between align-items-center">
