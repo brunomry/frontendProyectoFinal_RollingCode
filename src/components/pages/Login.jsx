@@ -15,34 +15,86 @@ const Login = () => {
   } = useForm();
 
   const navegacion = useNavigate();
-
+  
   const onSubmit = async (usuario) => {
+    let timerInterval;
+    Swal.fire({
+      title: "Iniciando sesión",
+      html: `Validando datos`,
+      timer: 1300,
+      timerProgressBar: true,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+    });
     const respuesta = await login(usuario);
     console.log(usuario);
-    if (respuesta.status === 201) {
-            // Agregar verificacion del rol de usuario con leerUsuariosAPI   
-            //  Comparacion de correo y contraseña de nuevo (desde el front) con un IF
-      const datos = await respuesta.json()
-      console.log(datos)
-      if (datos.rol === "admin") {
+    console.log(respuesta);
+    if (respuesta.status === 200) {
+      console.log("dentro del primer if");
+      const listaUsuarios = await leerUsuariosAPI();
+      const usuarioBuscado = listaUsuarios.find(
+        (u) => u.correo === usuario.correo
+      );
+      console.log(listaUsuarios);
+      console.log(usuarioBuscado);
+      if (usuarioBuscado.rol === "Administrador") {
         console.log("soyadmin1234");
         sessionStorage.setItem(
           "usuarioLogeado",
-          JSON.stringify(datos.correo)
-          // Guardar en el session la variable de datos.correo
+          JSON.stringify({
+            correo: usuarioBuscado.correo,
+            rol: usuarioBuscado.rol,
+          })
         );
-      } else if (datos.rol === "usuario") {
+        setUsuarioLogeado({
+          correo: usuarioBuscado.correo,
+          rol: usuarioBuscado.rol,
+        });
+        navegacion("/administrador");
+        Swal.fire({
+          icon: "success",
+          title: "Sesion iniciada como administrador",
+          text: `Bienvenido ${usuarioBuscado.nombreCompleto}`
+        });
+      }
+      if (usuarioBuscado.rol === "Usuario") {
         console.log("iniciaste como usuario");
         sessionStorage.setItem(
           "usuarioLogeado",
-          JSON.stringify(datos.correo)
-           // Guardar en el session la variable de datos.correo
+          JSON.stringify({
+            correo: usuarioBuscado.correo,
+            rol: usuarioBuscado.rol,
+          })
         );
-      } else {
-        console.log("El usuario no existe");
+        setUsuarioLogeado({
+          correo: usuarioBuscado.correo,
+          rol: usuarioBuscado.rol,
+        });
+        navegacion("/");
+        Swal.fire({
+          icon: "success",
+          title: "Sesion iniciada",
+          text: `Bienvenido ${usuarioBuscado.nombreCompleto}`
+        });
       }
+    } else {
+      console.log("El usuario no existe");
+      Swal.fire({
+        icon: "error",
+        title: "No se pudo iniciar sesion",
+        text: "Los datos ingresados no son correctos"
+      });
     }
- 
   };
 
   return (
