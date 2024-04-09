@@ -7,8 +7,11 @@ import { useForm } from "react-hook-form";
 const Registro = () => {
   const {register, handleSubmit, formState:{errors}} = useForm()
 
-  const usuarioValidado = (usuario)=>{
-
+  const usuarioValidado = async (usuario)=>{
+    const listaUsuarios = await leerUsuariosAPI();
+    const usuarioBuscado = listaUsuarios.find(
+      (u) => u.correo === usuario.correo
+    );
   }
 
   return (
@@ -36,6 +39,9 @@ const Registro = () => {
               }
             })}
             />
+            <Form.Text className="text-danger">
+            {errors.nombreCompleto?.message}
+          </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email:</Form.Label>
@@ -56,6 +62,9 @@ const Registro = () => {
               }
             })}
             />
+            <Form.Text className="text-danger">
+            {errors.correo?.message}
+          </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Contraseña:</Form.Label>
@@ -76,6 +85,9 @@ const Registro = () => {
               },
             })}
             />
+            <Form.Text className="text-danger">
+            {errors.clave?.message}
+          </Form.Text>
           </Form.Group>
           <Button className="w-100 mb-3" variant="success" type="submit">
             Registrarme

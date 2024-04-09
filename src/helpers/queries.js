@@ -1,5 +1,6 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTOS;
 const URL_Usuarios = import.meta.env.VITE_API_USUARIOS;
+const URL_Registro = import.meta.env.VITE_API_REGISTRO;
 
 export const leerProductosAPI = async () => {
   try {
@@ -56,7 +57,7 @@ export const obtenerUsuarioAPI = async (id) => {
 
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
-    const respuesta = fetch(URL_Usuarios, {
+    const respuesta = fetch(URL_Registro, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
