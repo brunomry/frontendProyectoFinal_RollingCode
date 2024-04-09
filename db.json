@@ -1,58 +1,40 @@
 {
   "productos": [
     {
+      "id": "1",
       "nombre": "Pizza cuatro quesos",
-      "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! Prueba",
-      "categoria": "Pizzas",
+      "categoria": "pizzas",
       "estado": "Disponible",
       "precio": "4500",
-      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "1"
+      "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos! ",
+      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
+      "id": "4",
       "nombre": "Pizza mozzarella",
+      "categoria": "pizzas",
+      "estado": "Disponible",
+      "precio": "5500",
       "detalle": "¡Déjate seducir por nuestra exquisita Pizza Cuatro Quesos!",
-      "categoria": "Pizzas",
-      "estado": "Disponible",
-      "precio": "5500",
-      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "4"
+      "imagen": "https://images.pexels.com/photos/17648338/pexels-photo-17648338/free-photo-of-pizza-cena-beber-bebida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
+      "id": "2",
       "nombre": "Hamburguesa triple",
-      "detalle": "¡Prepárate para satisfacer tus antojos con nuestra Hamburguesa Triple!",
-      "categoria": "Hamburguesas",
+      "categoria": "hamburguesas",
       "estado": "Disponible",
       "precio": "5500",
-      "imagen": "https://images.pexels.com/photos/16352971/pexels-photo-16352971/free-photo-of-comida-mano-beicon-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "2"
+      "detalle": "¡Prepárate para satisfacer tus antojos con nuestra Hamburguesa Triple!",
+      "imagen": "https://images.pexels.com/photos/16352971/pexels-photo-16352971/free-photo-of-comida-mano-beicon-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
-      "nombre": "Empanadas fritas de carne",
-      "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal!  prena suave y esponjosa masa de pan recién horneado en nuestra cocina.",
-      "categoria": "Empanadas",
-      "estado": "No disponible",
-      "precio": "8000",
-      "imagen": "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "3"
-    },
-    {
+      "id": "5",
       "nombre": "Empanadas de jamon y queso",
-      "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal!",
-      "categoria": "Empanadas",
-      "estado": "No disponible",
-      "precio": "7500",
-      "imagen": "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "5"
-    },
-    {
-      "nombre": "Spaghetti a la carbonara",
-      "detalle": "Sabrosa pasta al dente con salsa de tomate fresco, albahaca y queso parmesano, una deliciosa experiencia italiana en cada bocado.",
-      "categoria": "Pastas",
+      "categoria": "empanadas",
       "estado": "Disponible",
-      "precio": "3500",
-      "imagen": "https://images.pexels.com/photos/2382412/pexels-photo-2382412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": "6"
+      "precio": "7500",
+      "detalle": "¡Descubre el auténtico sabor callejero con nuestro Pancho Artesanal! Preparado con una salchicha premium de carne de res y cerdo, envuelta en una suave y esponjosa masa de pan recién horneado en nuestra cocina. Acompañado de una explosión de sabores con nuestra selección de salsas caseras, como la clásica salsa de chimichurri, mayonesa de ajo o kétchup picante, junto con crujientes trozos de cebolla frita y una pizca de cilantro fresco. Cada bocado es una experiencia única que te transportará a los vibrantes sabores de la calle. ¡Una delicia que te dejará con ganas de más!",
+      "imagen": "https://images.pexels.com/photos/4518645/pexels-photo-4518645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ],
   "usuarios": [
