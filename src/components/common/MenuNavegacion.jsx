@@ -7,6 +7,32 @@ import {useNavigate} from "react-router";
 import Swal from "sweetalert2";
 
 const MenuNavegacion = ({usuarioLogeado, setUsuarioLogeado}) => {
+  const navegacion = useNavigate();
+  const cerrarSesion = () => {
+    Swal.fire({
+      title: "Cerrar sesión",
+      text: "Si tienes elementos agregados en tu pedido se eliminarán",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Cerrar sesión",
+      cancelButtonText: "cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setUsuarioLogeado({});
+        sessionStorage.removeItem("usuarioLogeado");
+        navegacion("/");
+        Swal.fire({
+          title: "Sesión cerrada",
+          icon: "success",
+          timer: 1300,
+        });
+      }
+    });
+  };
+
+
   return (
     <>
       <header className="p-2 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between align-items-center">
