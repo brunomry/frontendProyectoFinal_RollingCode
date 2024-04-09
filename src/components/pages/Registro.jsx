@@ -40,7 +40,16 @@ const Registro = () => {
         })
         reset();
       }
+    } else {
+      Swal.fire({
+        title: "El correo ingresado ya existe",
+        text: "Por favor ingrese un correo nuevo",
+        icon: "error",
+        timer: 3000,
+      });
+      return;
     }
+    navegacion("/login")
   }
 
   return (
