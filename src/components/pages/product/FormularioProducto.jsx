@@ -10,7 +10,7 @@ import {
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
 
-const FormularioProducto = ({ editar }) => {
+const FormularioProducto = ({ editar, editarProductoTitulo }) => {
   const {
     register,
     handleSubmit,
@@ -85,7 +85,9 @@ const FormularioProducto = ({ editar }) => {
   return (
     <section className='mainSection px-2 pt-2 pb-5'>
       <div className='container-md'>
-        <h1 className='mt-5 titleColor'>Nuevo producto</h1>
+        <h1 className='mt-5 titleColor'>
+          {editar ? 'Editar producto' : 'Crear producto'}
+        </h1>
         <hr className='container-md text-start my-0 mb-4' />
       </div>
       <Form
