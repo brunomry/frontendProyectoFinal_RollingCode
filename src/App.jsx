@@ -9,12 +9,15 @@ import ListaUsuarios from "./components/pages/user/ListaUsuarios";
 import ListaPedidos from "./components/pages/order/ListaPedidos";
 import ListaProductos from "./components/pages/product/ListaProductos";
 import FormularioProducto from "./components/pages/product/FormularioProducto";
-import Nosotros from './components/pages/Nosotros';
+import Nosotros from "./components/pages/Nosotros";
 import MenuNavegacion from "./components/common/MenuNavegacion";
-import Pedido from './components/pages/Pedido';
+import Pedido from "./components/pages/Pedido";
 import Error404 from "./components/pages/Error404";
 import Registro from "./components/pages/Registro";
 import Footer from "./components/common/Footer";
+import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
@@ -23,22 +26,34 @@ function App() {
   return (
     <>
        <BrowserRouter>
-        <MenuNavegacion usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado}></MenuNavegacion>
+        <MenuNavegacion
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        ></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
           <Route exact path="/menu" element={<Menu></Menu>}></Route>
-          <Route path="/administrador" element={<Administracion></Administracion>}></Route>
-          <Route path="/administrador/usuarios" element={<ListaUsuarios></ListaUsuarios>}></Route>
-          <Route path="/administrador/pedidos" element={<ListaPedidos></ListaPedidos>}></Route>
-          <Route path="/administrador/productos" element={<ListaProductos></ListaProductos>}></Route>
-          <Route path="/administrador/productos/crearProducto" element={<FormularioProducto />}></Route>
-          <Route path="/administrador/productos/editarProducto/id" element={<FormularioProducto />}></Route>
-          <Route path="/administrador/productos/verProducto/id" element={<FormularioProducto />}></Route>
-          <Route exact path="/login" element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}></Route>
+          <Route
+            path="/administrador/*"
+            element={
+              <RutasProtegidas>
+                <RutasAdmin></RutasAdmin>
+              </RutasProtegidas>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/login"
+            element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
+          ></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
-          <Route exact path="/detalleProducto/:id" element={<Menu></Menu>}></Route>
+          <Route
+            exact
+            path="/detalleProducto/:id"
+            element={<Menu></Menu>}
+          ></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
