@@ -12,6 +12,35 @@ const Registro = () => {
     const usuarioBuscado = listaUsuarios.find(
       (u) => u.correo === usuario.correo
     );
+    if (!usuarioBuscado) {
+      let timerInterval;
+    Swal.fire({
+      title: "Espere un momento",
+      timer: 1300,
+      timerProgressBar: true,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+      }
+    });
+      const respuesta = await crearUsuarioAPI(usuario);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Te registraste exitosamente",
+          text: "POR FAVOR INICIA SESIÓN",
+          icon: "success",
+        })
+        reset();
+      }
+    }
   }
 
   return (
