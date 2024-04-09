@@ -14,8 +14,9 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Productos + "/" + id);
-    return respuesta;
+    const respuesta = await fetch(URL_Productos + '/' + id);
+    const productoObtenido = await respuesta.json();
+    return productoObtenido;
   } catch (error) {
     console.log(error);
   }
@@ -24,9 +25,9 @@ export const obtenerProductoAPI = async (id) => {
 export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URL_Productos, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(productoNuevo),
     });
@@ -36,20 +37,40 @@ export const crearProductoAPI = async (productoNuevo) => {
   }
 };
 
-export const leerUsuariosAPI = async () => {
+export const editarProductoAPI = async (productoModificado, id) => {
   try {
-    const respuesta = await fetch(URL_Usuarios);
-    const listaUsuarios = await respuesta.json();
-    return listaUsuarios;
+    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productoNuevo),
+        'Content-Type': 'aplication/json',
+      },
+      body: JSON.stringify(productoModificado),
+    });
+    return respuesta;
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 
-export const obtenerUsuarioAPI = async (id) => {
+export const borrarProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Usuarios}/${id}`);
+    const respuesta = await fetch(`${URL_Productos}/${id}`,{
+      method: "DELETE",
+  })
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const leerUsuariosAPI = async () => {
+  try {
+    const respuesta = await fetch(URL_Registro);
+    const listaUsuarios = await respuesta.json();
+    return listaUsuarios;
   } catch (error) {
     console.error(error);
   }
