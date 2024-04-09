@@ -15,15 +15,31 @@ import Pedido from './components/pages/Pedido';
 import Error404 from './components/pages/Error404';
 import Registro from './components/pages/Registro';
 import Footer from './components/common/Footer';
+import { useState } from 'react';
 
 function App() {
+  const [carrito, setCarrito] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
+
+  const agregarCantidadProducto = () => {};
+  const quitarCantidadProducto = () => {};
+  const quitarProductoCarrito = () => {};
+  const agregarProductoCarrito = (producto, cantidad) => {
+    console.log('producto:', producto, 'cantidad:', cantidad);
+  };
+
   return (
     <>
       <BrowserRouter>
         <MenuNavegacion></MenuNavegacion>
         <Routes>
           <Route exact path='/' element={<Inicio></Inicio>}></Route>
-          <Route exact path='/menu' element={<Menu></Menu>}></Route>
+          <Route
+            path='/menu'
+            element={
+              <Menu agregarProductoCarrito={agregarProductoCarrito}></Menu>
+            }
+          ></Route>
           <Route
             path='/administrador'
             element={<Administracion></Administracion>}
@@ -46,7 +62,7 @@ function App() {
           ></Route>
           <Route
             path='/administrador/productos/editarProducto/:id'
-            element={<FormularioProducto editar={true}/>}
+            element={<FormularioProducto editar={true} />}
           ></Route>
           <Route
             path='/administrador/productos/verProducto/:id'
