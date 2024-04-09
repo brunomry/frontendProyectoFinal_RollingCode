@@ -42,7 +42,7 @@ function App() {
           ></Route>
           <Route
             path='/administrador/productos/crearProducto'
-            element={<FormularioProducto />}
+            element={<FormularioProducto editar={false} />}
           ></Route>
           <Route
             path='/administrador/productos/editarProducto/:id'
