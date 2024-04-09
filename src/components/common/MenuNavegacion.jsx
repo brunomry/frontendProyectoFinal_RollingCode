@@ -32,6 +32,21 @@ const MenuNavegacion = ({usuarioLogeado, setUsuarioLogeado}) => {
     });
   };
 
+  const myOrderAlert = () =>{
+    Swal.fire({
+      title: "Información",
+      icon: "info",
+      html: `
+        Para preparar tu pedido debes
+        <a href="/login">Iniciar sesión</a> o 
+        <a href="/registro">Registrarte</a>
+      `,
+      showCloseButton: true,
+      showCancelButton: false,
+      focusConfirm: false,
+      confirmButtonText: "Entendido",
+    });
+  }
 
   return (
     <>
