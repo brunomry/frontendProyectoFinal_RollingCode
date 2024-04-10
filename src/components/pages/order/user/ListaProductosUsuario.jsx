@@ -2,7 +2,12 @@ import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import ItemProductoUsuario from './ItemProductoUsuario';
 
-const ListaProductosUsuario = () => {
+const ListaProductosUsuario = ({
+  carrito,
+  agregarCantidadProducto,
+  quitarCantidadProducto,
+  quitarProductoCarrito,
+}) => {
   return (
     <div className='orderTable'>
       <Table responsive hover>
@@ -16,9 +21,15 @@ const ListaProductosUsuario = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProductoUsuario />
-          <ItemProductoUsuario />
-          <ItemProductoUsuario />
+          {carrito.map((productoCarrito) => (
+            <ItemProductoUsuario
+              key={productoCarrito.id}
+              productoCarrito={productoCarrito}
+              agregarCantidadProducto={agregarCantidadProducto}
+              quitarCantidadProducto={quitarCantidadProducto}
+              quitarProductoCarrito={quitarProductoCarrito}
+            />
+          ))}
         </tbody>
       </Table>
     </div>

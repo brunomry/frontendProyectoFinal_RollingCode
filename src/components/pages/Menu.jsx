@@ -14,7 +14,6 @@ const Menu = ({ agregarProductoCarrito }) => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerProductosAPI();
-      console.log(respuesta);
       setProductos(respuesta);
     } catch (error) {
       console.log(error);

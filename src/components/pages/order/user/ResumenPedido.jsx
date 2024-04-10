@@ -8,15 +8,13 @@ import {
   CardTitle,
 } from 'react-bootstrap';
 
-const ResumenPedido = () => {
+const ResumenPedido = ({ montoCarrito }) => {
   return (
     <div className='resumeCardContainer'>
       <div className='resumeCard my-5'>
         <Card className='text-dark'>
           <CardHeader>
-            <CardTitle className='mt-2 fw-bold'>
-              Detalles del pedido
-            </CardTitle>
+            <CardTitle className='mt-2 fw-bold'>Detalles del pedido</CardTitle>
           </CardHeader>
           <CardBody>
             <div className='my-2 d-flex'>
@@ -35,7 +33,7 @@ const ResumenPedido = () => {
             </div>
             <div className='d-flex justify-content-between mt-3 fw-bold'>
               <span>Total</span>
-              <span>$4500</span>
+              <span>${montoCarrito}</span>
             </div>
             <hr className='mt-0' />
           </CardBody>
