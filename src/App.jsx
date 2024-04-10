@@ -1,67 +1,55 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './components/pages/Login';
-import Inicio from './components/pages/Inicio';
-import Administracion from './components/pages/Administracion';
-import Menu from './components/pages/Menu';
-import ListaUsuarios from './components/pages/user/ListaUsuarios';
-import ListaPedidos from './components/pages/order/ListaPedidos';
-import ListaProductos from './components/pages/product/ListaProductos';
-import FormularioProducto from './components/pages/product/FormularioProducto';
-import Nosotros from './components/pages/Nosotros';
-import MenuNavegacion from './components/common/MenuNavegacion';
-import Pedido from './components/pages/Pedido';
-import Error404 from './components/pages/Error404';
-import Registro from './components/pages/Registro';
-import Footer from './components/common/Footer';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/pages/Login";
+import Inicio from "./components/pages/Inicio";
+import Menu from "./components/pages/Menu";
+import Nosotros from "./components/pages/Nosotros";
+import MenuNavegacion from "./components/common/MenuNavegacion";
+import Pedido from "./components/pages/Pedido";
+import Error404 from "./components/pages/Error404";
+import Registro from "./components/pages/Registro";
+import Footer from "./components/common/Footer";
+import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
+
   return (
     <>
-      <BrowserRouter>
-        <MenuNavegacion></MenuNavegacion>
+       <BrowserRouter>
+        <MenuNavegacion
+          usuarioLogeado={usuarioLogeado}
+          setUsuarioLogeado={setUsuarioLogeado}
+        ></MenuNavegacion>
         <Routes>
-          <Route exact path='/' element={<Inicio></Inicio>}></Route>
-          <Route exact path='/menu' element={<Menu></Menu>}></Route>
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route exact path="/menu" element={<Menu></Menu>}></Route>
           <Route
-            path='/administrador'
-            element={<Administracion></Administracion>}
+            path="/administrador/*"
+            element={
+              <RutasProtegidas>
+                <RutasAdmin></RutasAdmin>
+              </RutasProtegidas>
+            }
           ></Route>
-          <Route
-            path='/administrador/usuarios'
-            element={<ListaUsuarios></ListaUsuarios>}
-          ></Route>
-          <Route
-            path='/administrador/pedidos'
-            element={<ListaPedidos></ListaPedidos>}
-          ></Route>
-          <Route
-            path='/administrador/productos'
-            element={<ListaProductos></ListaProductos>}
-          ></Route>
-          <Route
-            path='/administrador/productos/crearProducto'
-            element={<FormularioProducto editar={false} />}
-          ></Route>
-          <Route
-            path='/administrador/productos/editarProducto/:id'
-            element={<FormularioProducto editar={true}/>}
-          ></Route>
-          <Route
-            path='/administrador/productos/verProducto/:id'
-            element={<FormularioProducto />}
-          ></Route>
-          <Route exact path='/login' element={<Login></Login>}></Route>
-          <Route exact path='/registro' element={<Registro></Registro>}></Route>
-          <Route exact path='/miPedido' element={<Pedido></Pedido>}></Route>
-          <Route exact path='/nosotros' element={<Nosotros></Nosotros>}></Route>
           <Route
             exact
-            path='/detalleProducto/:id'
+            path="/login"
+            element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
+          ></Route>
+          <Route exact path="/registro" element={<Registro></Registro>}></Route>
+          <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
+          <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
+          <Route
+            exact
+            path="/detalleProducto/:id"
             element={<Menu></Menu>}
           ></Route>
-          <Route path='*' element={<Error404></Error404>}></Route>
+          <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

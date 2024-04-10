@@ -9,6 +9,15 @@ header {
   background-color: #f5ebdc;
 }
 
+.myOrderBTN{
+  border-bottom: 3px solid #f5ebdc;
+  transition: transform 0.3s ease;
+}
+.myOrderBTN:hover{
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
 .navbar{
   z-index: 999;
 }

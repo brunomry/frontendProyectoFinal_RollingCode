@@ -1,5 +1,6 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTOS;
-const URL_Usuarios = import.meta.env.VITE_API_USUARIOS;
+const URL_Producto = import.meta.env.VITE_API_PRODUCTO;
+const URL_Login = import.meta.env.VITE_API_LOGIN;
 const URL_Registro = import.meta.env.VITE_API_REGISTRO;
 
 export const leerProductosAPI = async () => {
@@ -14,7 +15,7 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Productos + '/' + id);
+    const respuesta = await fetch(URL_Producto + "/" + id);
     const productoObtenido = await respuesta.json();
     return productoObtenido;
   } catch (error) {
@@ -39,7 +40,7 @@ export const crearProductoAPI = async (productoNuevo) => {
 
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
-    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+    const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +58,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 
 export const borrarProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Productos}/${id}`,{
+    const respuesta = await fetch(`${URL_Producto}/${id}`,{
       method: "DELETE",
   })
     return respuesta;
@@ -68,7 +69,7 @@ export const borrarProductoAPI = async (id) => {
 
 export const leerUsuariosAPI = async () => {
   try {
-    const respuesta = await fetch(URL_Registro);
+    const respuesta = await fetch(URL_Login);
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {
@@ -88,5 +89,20 @@ export const crearUsuarioAPI = async (usuarioNuevo) => {
     return respuesta;
   } catch (error) {
     console.error(error);
+  }
+};
+
+export const login = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL_Login, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
   }
 };
