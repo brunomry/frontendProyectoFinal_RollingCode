@@ -33,22 +33,15 @@ const Login = ({setUsuarioLogeado}) => {
       },
     }).then((result) => {
       if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("I was closed by the timer");
       }
     });
     const respuesta = await login(usuario);
-    console.log(usuario);
-    console.log(respuesta);
     if (respuesta.status === 200) {
-      console.log("dentro del primer if");
       const listaUsuarios = await leerUsuariosAPI();
       const usuarioBuscado = listaUsuarios.find(
         (u) => u.correo === usuario.correo
       );
-      console.log(listaUsuarios);
-      console.log(usuarioBuscado);
       if (usuarioBuscado.rol === "Administrador") {
-        console.log("soyadmin1234");
         sessionStorage.setItem(
           "usuarioLogeado",
           JSON.stringify({
@@ -68,7 +61,6 @@ const Login = ({setUsuarioLogeado}) => {
         });
       }
       if (usuarioBuscado.rol === "Usuario") {
-        console.log("iniciaste como usuario");
         sessionStorage.setItem(
           "usuarioLogeado",
           JSON.stringify({
@@ -88,7 +80,6 @@ const Login = ({setUsuarioLogeado}) => {
         });
       }
     } else {
-      console.log("El usuario no existe");
       Swal.fire({
         icon: "error",
         title: "No se pudo iniciar sesion",
