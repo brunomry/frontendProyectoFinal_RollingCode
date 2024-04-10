@@ -146,6 +146,10 @@ const Login = ({setUsuarioLogeado}) => {
                   value: 16,
                   message: "La clave debe tener como máximo 16 carácteres",
                 },
+                pattern: {
+                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                  message: "La clave debe tener al menos una letra minúscula y una letra mayúscula",
+                },
               })}
             />
             <Form.Text className="text-danger">
