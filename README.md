@@ -130,13 +130,14 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 ## Tecnologías utilizadas
 
 <div style="display: flex;">
-  <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5" title="HTML5" width="48" height="48" style="margin-right: 10px"/>
-  <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" title="CSS3" width="48" height="48" style="margin-right: 10px"/>
-  <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap5" title="Bootstrap5" width="48" height="48" style="margin-right: 10px"/>
-  <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript (ES6+)" title="JavaScript (ES6+)" width="48" height="48" style="margin-right: 10px"/>
-  <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" title="React.js" width="48" height="48" style="margin-right: 10px"/>
-  <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" title="Git" width="48" height="48" style="margin-right: 10px"/>
-   <img src="https://react-bootstrap.netlify.app/img/logo.svg" alt="React-Bootstrap" title="React-Bootstrap" title="Git" width="48" height="48" style="margin-right: 10px"/>
+  <a href="https://developer.mozilla.org/es/docs/Glossary/HTML5"><img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5" title="HTML5" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" title="CSS3" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://getbootstrap.com/"><img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap5" title="Bootstrap5" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript (ES6+)" title="JavaScript (ES6+)" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://react.dev/"><img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" title="React.js" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://git-scm.com/"><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" title="Git" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://react-bootstrap.github.io/"> <img src="https://react-bootstrap.netlify.app/img/logo.svg" alt="React-Bootstrap" title="React-Bootstrap" title="Git" width="48" height="48" style="margin-right: 10px"/></a>
+  <a href="https://vitejs.dev/"><img src="https://vitejs.dev/logo.svg" alt="Vite" title="Vite" width="50" style="margin-right: 10px"></a>
 </div>
 
   * ### Otras:
