@@ -32,50 +32,119 @@ Desarrollar una aplicación web sobre un restaurante que incluya las siguientes 
 ## Requerimientos optativos
 
 En página de administración:
-* El admninistrador debe poder crear y suspender usuarios.
+* El administrador debe poder crear y suspender usuarios.
 * Enviar un mail al usuario informando su registro exitoso.
 
 En página principal y administración:
 * Poder filtrar productos por categoría o nombre
 * Agregar paginación
 
-## Integración con proyecto de Backend
-
-Este proyecto de Frontend se integró a su proyecto Backend correspondiente donde se utilizó la base de datos no relacional de MongoDB para almacenar los datos de los productos del restaurante.
-
-* #### Repositorio Backend: [backendProyectoFinal_RollingCode](https://github.com/brunomry/backendProyectoFinal_RollingCode.git)
-
 ## Enlace de Mockups de interfaces
 
-Los mockups de interfaces fueron desarrollados usando la herramienta de software [draw]()
+Los mockups de interfaces fueron desarrollados usando la herramienta de software Draw.
 
-🔗 [Google Drive]()
+🔗 [Mockups - Google Drive](https://drive.google.com/drive/folders/1quZYkRI5o2lAExI1dT_w_qAYkeIU_NBf?usp=sharing)
 
-## Deploy del Proyecto
+## Enlace de Trello
+
+🔗 [Grupo 2 - Proyecto Final](https://trello.com/b/Bu5iY5B1/grupo-2-proyecto-final-rollingcode)
+
+## Deploy de la aplicación
 
 La aplicación está desplegada en Netlify. Puedes acceder haciendo clic en el siguiente enlace:
 
-🔗 [Ambiente Bohemio - Restaurante]()
+🔗 [Ambiente Bohemio - Restaurante](http://ambiente-bohemio.netlify.app)
+
+## Integración con proyecto de Backend
+
+Este proyecto de Frontend se integró a su proyecto Backend correspondiente donde se utilizó la base de datos no relacional de MongoDB para almacenar los datos de los productos del restaurante, usuarios y pedidos realizados.
+
+* #### Repositorio Backend: [backendProyectoFinal_RollingCode](https://github.com/brunomry/backendProyectoFinal_RollingCode.git)
 
 ## Funcionalidades Principales 
 
-1. Consulta de Productos: Los usuarios pueden ver la lista de productos disponibles en la página de Menú (página añadida).
+1. **Consulta de Productos:** 
 
-2. Visualización Detallada de un producto: Los usuarios pueden hacer clic en un producto para ver más detalles del mismo, como su nombre, imagen, descripción breve y precio.
+    * **Descripción:** Los usuarios pueden ver la lista de productos disponibles en la página de Menú.
+    * **Página de Referencia:** Página de Menú.
+    * **Componentes Clave:** Lista de Productos por categoría.
+    * **Acción Principal:** Visualizar Detalle del Producto.
+    * **Resultado:** Los usuarios pueden hacer clic en un producto para ver más detalles y agregarlo a "Mi Pedido" si están logueados.
 
-3. Administración de Productos:
+2. **Visualización Detallada de un producto:** 
 
-    * Leer Productos (Read): Los administradores pueden ver una lista completa de todos los productos disponibles en el restaurante.
-    * Crear Producto (Create): Los administradores pueden agregar nuevos productos al restaurante mediante un formulario de creación.
-    * Editar Producto (Update): Los administradores pueden modificar los detalles de los productos existentes, como el título, la descripción, precio, estado e imagen.
-    * Eliminar Producto (Delete): Los administradores pueden eliminar productos que ya no deseen mantener en el restaurante.
+    * **Descripción:** Los usuarios pueden hacer clic en un producto para ver más detalles del mismo, como su nombre, imagen, descripción y precio, teniendo la posibilidad de seleccionar la cantidad y agregar el producto a su pedido en caso de haber iniciado sesión.
+    * **Página de Referencia:** Modal de Detalle del Producto.
+    * **Componentes Clave:** Detalles del Producto, Botón de Agregar a Mi Pedido.
+    * **Acción Principal:** Agregar a Mi Pedido.
+    * **Resultado:** Los usuarios pueden agregar productos a su pedido desde la vista detallada del producto.
 
-4. Autenticación de Usuarios:
+3. **Administración de Productos:**
+
+    * **Descripción:** Los administradores pueden gestionar los productos del restaurante, incluyendo la creación (create), edición (update), eliminación (delete) y visualización (read) de todos los productos disponibles.
+    * **Página de Referencia:** Página de Gestión de productos.
+    * **Componentes Clave:** Formulario de Creación/Edición, Lista de Productos.
+    * **Acción Principal:** Crear, Editar, Eliminar Producto.
+    * **Resultado:** Los administradores pueden mantener actualizada la lista de productos del restaurante.
+
+4. **Administración de Usuarios:**
+
+    * **Descripción:** Los administradores pueden ver una lista completa de todos los usuarios registrados en la aplicación.
+    * **Página de Referencia:** Página de Gestión de usuarios.
+    * **Componentes Clave:** Lista de Usuarios.
+    * **Acción Principal:** Visualizar Detalles del Usuario.
+    * **Resultado:** Los administradores pueden supervisar la base de usuarios registrados.
+
+5. **Administración de Pedidos:**
+
+    * **Descripción:** Los administradores pueden ver una lista completa de todos los pedidos realizados por los usuarios, así como modificar el estado de los pedidos de "Pendiente" a "Realizado".
+    * **Página de Referencia:** Página de Gestión de pedidos.
+    * **Componentes Clave:** Lista de Pedidos.
+    * **Acción Principal:** Modificar Estado de Pedido.
+    * **Resultado:** Los administradores pueden gestionar de manera eficiente los pedidos realizados en la aplicación.
+
+6. **Autenticación de Usuarios:**
     
-    * Iniciar Sesión (Login): Los usuarios pueden iniciar sesión en la aplicación utilizando sus credenciales.
-    * Registrarse: Los usuarios pueden crear una cuenta nueva en la aplicación.
-    
-    Nota: Las opciones de administrador estarán ocultas para los usuarios que no tengan privilegios de administrador.
+    * **Descripción:** Permite a los usuarios gestionar su acceso a la aplicación.
+    * **Página de Referencia:** Página de Inicio de Sesión, Página de Registro.
+    * **Componentes Clave:** Formulario de Inicio de Sesión, Formulario de Registro.
+    * **Acción Principal:**
+      * **Iniciar Sesión (Login):** Los usuarios pueden iniciar sesión ingresando su correo y contraseña.
+      * **Registro:** Los usuarios pueden crear una nueva cuenta ingresando su nombre y apellido, correo y contraseña.
+    * **Resultado:**
+Los usuarios pueden acceder a funcionalidades exclusivas de usuarios registrados.
+Las opciones de administrador estarán ocultas para los usuarios que no tengan privilegios de administrador.
+
+7. **Solicitud de pedidos:**
+
+    * **Descripción:** Los usuarios logueados pueden ver el detalle de un producto en un modal, donde pueden seleccionar la cantidad y agregarlo a "Mi Pedido".
+    * **Página de Referencia:** Página de "Mi Pedido".
+    * **Componentes Clave:** Modal de Detalle del Producto, Tarjetas de Producto en "Mi Pedido", Tarjeta de Resumen del Pedido.
+    * **Acción Principal:** Confirmar Pedido.
+    * **Resultado:** Al hacer clic en "Confirmar Pedido", se guarda el pedido en la base de datos con estado "pendiente" y se muestra un mensaje de confirmación al usuario. 
+
+## Tecnologías utilizadas
+
+- [React](https://react.dev/): Biblioteca de JavaScript para construir interfaces de usuario interactivas y dinámicas.
+
+- [Vite](https://vitejs.dev/): Herramienta de construcción rápida para aplicaciones web modernas, con enfoque en el desarrollo rápido y la eficiencia.
+
+- [HTML5](https://developer.mozilla.org/es/docs/Glossary/HTML5): Última versión del lenguaje de marcado estándar utilizado para estructurar y presentar contenido en la web.
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript): Lenguaje de programación fundamental para el desarrollo web, utilizado para crear interactividad y funcionalidades en las aplicaciones.
+
+- [React-Bootstrap](https://react-bootstrap.github.io/): Framework de UI que facilita la implementación de componentes de Bootstrap en aplicaciones React.
+
+- [React-Router-Dom](https://reactrouter.com/en/main/start/tutorial): Librería que proporciona navegación y enrutamiento en aplicaciones React de una sola página.
+
+- [React-Hook-Form](https://react-hook-form.com/get-started): Librería que simplifica la gestión de formularios en aplicaciones React mediante el uso de hooks.
+
+- [Bootstrap5](https://getbootstrap.com/): Framework de diseño web que proporciona herramientas y estilos para el desarrollo rápido y responsivo.
+
+- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS): Última versión del lenguaje de estilos utilizado para dar diseño y presentación a las páginas web.
+
+- [SweetAlert2](https://sweetalert2.github.io/#download): Biblioteca para mostrar alertas y modales personalizados en aplicaciones web.
+
+- [Json-server](https://github.com/typicode/json-server): Herramienta para crear un servidor RESTful de prueba utilizando archivos JSON como base de datos simulada, útil para el desarrollo y pruebas en entornos locales.
 
 ## Requisitos previos
 
@@ -94,21 +163,6 @@ La aplicación está desplegada en Netlify. Puedes acceder haciendo clic en el s
 3. Instala las dependencias del proyecto:
 
   npm install
-
-## Tecnologías utilizadas
-
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [HTML5](https://developer.mozilla.org/es/docs/Glossary/HTML5)
-- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-- [React-Bootstrap](https://react-bootstrap.github.io/)
-- [React-Router-Dom](https://reactrouter.com/en/main/start/tutorial)
-- [React-Form-Hook](https://react-hook-form.com/get-started)
-- [Bootstrap5](https://getbootstrap.com/)
-- [Webpack](https://webpack.js.org/)
-- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS)
-- [SweetAlert2](https://sweetalert2.github.io/#download)
-- [Json-server](): para pruebas en desarrollo
 
 ## Crear un proyecto con React usando Vite
 
