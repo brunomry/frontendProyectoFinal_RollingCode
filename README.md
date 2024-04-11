@@ -43,9 +43,13 @@ En página principal y administración:
 
 Los mockups de interfaces fueron desarrollados usando la herramienta de software Draw.
 
+<img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png" alt="Trello" title="Trello (para la gestión de proyectos)" width="48" height="48" style="margin-right: 10px"/>
+
 🔗 [Mockups - Google Drive](https://drive.google.com/drive/folders/1quZYkRI5o2lAExI1dT_w_qAYkeIU_NBf?usp=sharing)
 
-## Enlace de Trello
+## Enlace de Trello 
+
+<img src="https://img.icons8.com/color/48/000000/trello.png" alt="Trello" title="Trello (para la gestión de proyectos)" width="48" height="48" style="margin-right: 10px"/>
 
 🔗 [Grupo 2 - Proyecto Final](https://trello.com/b/Bu5iY5B1/grupo-2-proyecto-final-rollingcode)
 
@@ -53,7 +57,7 @@ Los mockups de interfaces fueron desarrollados usando la herramienta de software
 
 La aplicación está desplegada en Netlify. Puedes acceder haciendo clic en el siguiente enlace:
 
-🔗 [Ambiente Bohemio - Restaurante](http://ambiente-bohemio.netlify.app)
+🔗 [Ambiente Bohemio - Restaurante](http://ambiente-bohemio-restaurante.netlify.app)
 
 ## Integración con proyecto de Backend
 
@@ -117,7 +121,7 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 
 7. **Solicitud de pedidos:**
 
-    * **Descripción:** Los usuarios logueados pueden ver el detalle de un producto en un modal, donde pueden seleccionar la cantidad y agregarlo a "Mi Pedido".
+    * **Descripción:** Los usuarios logueados además de poder ver el detalle de un producto en un modal, podrán seleccionar la cantidad y agregarlo a "Mi Pedido".
     * **Página de Referencia:** Página de "Mi Pedido".
     * **Componentes Clave:** Modal de Detalle del Producto, Tarjetas de Producto en "Mi Pedido", Tarjeta de Resumen del Pedido.
     * **Acción Principal:** Confirmar Pedido.
@@ -125,26 +129,23 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 
 ## Tecnologías utilizadas
 
-- [React](https://react.dev/): Biblioteca de JavaScript para construir interfaces de usuario interactivas y dinámicas.
+<div style="display: flex;">
+  <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5" title="HTML5" width="48" height="48" style="margin-right: 10px"/>
+  <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" title="CSS3" width="48" height="48" style="margin-right: 10px"/>
+  <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap5" title="Bootstrap5" width="48" height="48" style="margin-right: 10px"/>
+  <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript (ES6+)" title="JavaScript (ES6+)" width="48" height="48" style="margin-right: 10px"/>
+  <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" title="React.js" width="48" height="48" style="margin-right: 10px"/>
+  <img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" title="Git" width="48" height="48" style="margin-right: 10px"/>
+   <img src="https://react-bootstrap.netlify.app/img/logo.svg" alt="React-Bootstrap" title="React-Bootstrap" title="Git" width="48" height="48" style="margin-right: 10px"/>
+</div>
 
-- [Vite](https://vitejs.dev/): Herramienta de construcción rápida para aplicaciones web modernas, con enfoque en el desarrollo rápido y la eficiencia.
+  * ### Otras:
 
-- [HTML5](https://developer.mozilla.org/es/docs/Glossary/HTML5): Última versión del lenguaje de marcado estándar utilizado para estructurar y presentar contenido en la web.
-- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript): Lenguaje de programación fundamental para el desarrollo web, utilizado para crear interactividad y funcionalidades en las aplicaciones.
+    - [React-Router-Dom](https://reactrouter.com/en/main/start/tutorial) 
+    - [React-Hook-Form](https://react-hook-form.com/get-started)
+    - [SweetAlert2](https://sweetalert2.github.io/#download)
+    - [Json-server](https://github.com/typicode/json-server)
 
-- [React-Bootstrap](https://react-bootstrap.github.io/): Framework de UI que facilita la implementación de componentes de Bootstrap en aplicaciones React.
-
-- [React-Router-Dom](https://reactrouter.com/en/main/start/tutorial): Librería que proporciona navegación y enrutamiento en aplicaciones React de una sola página.
-
-- [React-Hook-Form](https://react-hook-form.com/get-started): Librería que simplifica la gestión de formularios en aplicaciones React mediante el uso de hooks.
-
-- [Bootstrap5](https://getbootstrap.com/): Framework de diseño web que proporciona herramientas y estilos para el desarrollo rápido y responsivo.
-
-- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS): Última versión del lenguaje de estilos utilizado para dar diseño y presentación a las páginas web.
-
-- [SweetAlert2](https://sweetalert2.github.io/#download): Biblioteca para mostrar alertas y modales personalizados en aplicaciones web.
-
-- [Json-server](https://github.com/typicode/json-server): Herramienta para crear un servidor RESTful de prueba utilizando archivos JSON como base de datos simulada, útil para el desarrollo y pruebas en entornos locales.
 
 ## Requisitos previos
 
