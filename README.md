@@ -150,7 +150,7 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 
 - Node.js instalado en tu sistema. Puedes descargarlo [aquí](https://nodejs.org/).
 
-## Pasos para clonar el repositorio
+## Configuración
 
 1. Clona este repositorio en tu máquina local a través de una terminal:
 
@@ -163,6 +163,10 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 3. Instala las dependencias del proyecto:
 
   npm install
+
+4. Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Aquí hay un ejemplo:
+
+* API_PRODUCTOS=url
 
 ## Crear un proyecto con React usando Vite
 
