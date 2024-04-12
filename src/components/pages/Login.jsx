@@ -66,6 +66,7 @@ const Login = ({ setUsuarioLogeado }) => {
         sessionStorage.setItem(
           'usuarioLogeado',
           JSON.stringify({
+            id: usuarioBuscado._id,
             correo: usuarioBuscado.correo,
             rol: usuarioBuscado.rol,
           })

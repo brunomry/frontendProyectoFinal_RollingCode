@@ -8,6 +8,8 @@ import {
   CardTitle,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { crearPedidoApi } from '../../../../helpers/queries';
+import Swal from 'sweetalert2';
 
 const METODO_ENVIO = [
   {
@@ -32,7 +34,7 @@ const ResumenPedido = ({
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
-    let usuarioId = usuarioLogeado; //reemplazar por el id de usuario logueado
+    let usuario = usuarioLogeado.id; //reemplazar por el id de usuario logueado
 
     for (let i = 0; i < carritoAux.length; i++) {
       let producto = productosCarrito.find(
@@ -46,12 +48,18 @@ const ResumenPedido = ({
       productosPedido.push(productoCarrito);
     }
 
-    pedido.usuarioId = usuarioId;
+    pedido.usuario = usuario;
     pedido.monto = montoCarrito;
     pedido.productos = productosPedido;
     pedido.metodoEnvio = metodoEnvio;
     pedido.estadoEnvio = false;
 
+    Swal.fire({
+      icon: 'success',
+      title: 'Su pedido fue generado con exito.',
+    });
+
+    crearPedidoApi(pedido);
     console.log('pedido: ', pedido);
   };
 

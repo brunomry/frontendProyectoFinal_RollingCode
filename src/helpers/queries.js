@@ -2,6 +2,8 @@ const URL_Productos = import.meta.env.VITE_API_PRODUCTOS;
 const URL_Producto = import.meta.env.VITE_API_PRODUCTO;
 const URL_Login = import.meta.env.VITE_API_LOGIN;
 const URL_Registro = import.meta.env.VITE_API_REGISTRO;
+const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
+const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 
 export const leerProductosAPI = async () => {
   try {
@@ -15,7 +17,7 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Producto + "/" + id);
+    const respuesta = await fetch(URL_Producto + '/' + id);
     const productoObtenido = await respuesta.json();
     return productoObtenido;
   } catch (error) {
@@ -55,9 +57,9 @@ export const editarProductoAPI = async (productoModificado, id) => {
 
 export const borrarProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(`${URL_Producto}/${id}`,{
-      method: "DELETE",
-  })
+    const respuesta = await fetch(`${URL_Producto}/${id}`, {
+      method: 'DELETE',
+    });
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -77,9 +79,9 @@ export const leerUsuariosAPI = async () => {
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
     const respuesta = fetch(URL_Registro, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(usuarioNuevo),
     });
@@ -92,11 +94,26 @@ export const crearUsuarioAPI = async (usuarioNuevo) => {
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URL_Login, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearPedidoApi = async (pedido) => {
+  try {
+    const respuesta = fetch(URL_pedido, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(pedido),
     });
     return respuesta;
   } catch (error) {
