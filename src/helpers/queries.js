@@ -43,9 +43,6 @@ export const editarProductoAPI = async (productoModificado, id) => {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productoNuevo),
         'Content-Type': 'aplication/json',
       },
       body: JSON.stringify(productoModificado),
