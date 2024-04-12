@@ -4,7 +4,7 @@ import CardProducto from "./product/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
 
-const Menu = () => {
+const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -20,8 +20,12 @@ const Menu = () => {
     }
   };
 
+  //Se agrego toLowerCase para que no haya conflicto con las mayusculas y minusculas en cateogira
+
   const filtrarProductosPorCategoria = (categoria) =>
-    productos.filter((producto) => producto.categoria === categoria);
+    productos.filter(
+      (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
+    );
 
   return (
     <>
@@ -80,7 +84,12 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("pizzas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto
+              key={producto._id}
+              productosCarrito={productosCarrito}
+              producto={producto}
+              agregarProductoCarrito={agregarProductoCarrito}
+            ></CardProducto>
           ))}
         </Row>
       </Container>
@@ -93,7 +102,12 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("hamburguesas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto
+              key={producto._id}
+              producto={producto}
+              productosCarrito={productosCarrito}
+              agregarProductoCarrito={agregarProductoCarrito}
+            ></CardProducto>
           ))}
         </Row>
       </Container>
@@ -103,7 +117,12 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("pastas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto
+              key={producto._id}
+              producto={producto}
+              productosCarrito={productosCarrito}
+              agregarProductoCarrito={agregarProductoCarrito}
+            ></CardProducto>
           ))}
         </Row>
       </Container>
@@ -113,7 +132,12 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("empanadas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto
+              key={producto._id}
+              producto={producto}
+              productosCarrito={productosCarrito}
+              agregarProductoCarrito={agregarProductoCarrito}
+            ></CardProducto>
           ))}
         </Row>
       </Container>
