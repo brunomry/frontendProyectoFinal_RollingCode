@@ -26,11 +26,11 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           path="/productos/editarProducto/:id"
-          element={<FormularioProducto editar={editar}/>}
+          element={<FormularioProducto editar={true}/>}
         ></Route>
         <Route
           path="/productos/verProducto/:id"
-          element={<FormularioProducto editar={editar}/>}
+          element={<FormularioProducto editar={false}/>}
         ></Route>
       </Routes>
     </>
