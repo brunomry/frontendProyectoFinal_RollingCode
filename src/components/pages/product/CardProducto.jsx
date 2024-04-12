@@ -39,7 +39,7 @@ const CardProducto = ({ producto }) => {
                   className="cardBTN shadow px-md-3 border border-dark border-1"
                   onClick={handleShowModal}
                   as={Link}
-                  to={`/detalleProducto/${producto.id}`}
+                  to={`/detalleProducto/${producto._id}`}
                 >
                   ver más
                 </Button>
