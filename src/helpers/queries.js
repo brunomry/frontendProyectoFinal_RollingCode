@@ -40,12 +40,9 @@ export const crearProductoAPI = async (productoNuevo) => {
 
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
-    const respuesta = await fetch(`${URL_Producto}/${id}`, {
+    const respuesta = await fetch(`${URL_Producto}productos/${id}`, {
       method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(productoNuevo),
         'Content-Type': 'aplication/json',
       },
       body: JSON.stringify(productoModificado),
