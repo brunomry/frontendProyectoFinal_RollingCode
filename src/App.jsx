@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 import { leerProductosAPI } from "./helpers/queries";
 
 function App() {
-
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
 
@@ -129,14 +128,23 @@ function App() {
 
   return (
     <>
-       <BrowserRouter>
+      <BrowserRouter>
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
         ></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
-          <Route exact path="/menu" element={<Menu></Menu>}></Route>
+          <Route
+            exact
+            path="/menu"
+            element={
+              <Menu
+                productosCarrito={productosCarrito}
+                agregarProductoCarrito={agregarProductoCarrito}
+              ></Menu>
+            }
+          ></Route>
           <Route
             path="/administrador/*"
             element={
@@ -151,7 +159,20 @@ function App() {
             element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
           ></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
-          <Route exact path="/miPedido" element={<Pedido></Pedido>}></Route>
+          <Route
+            exact
+            path="/miPedido"
+            element={
+              <Pedido
+                productosCarrito={productosCarrito}
+                carrito={carrito}
+                agregarCantidadProducto={agregarCantidadProducto}
+                quitarCantidadProducto={quitarCantidadProducto}
+                montoCarrito={montoCarrito}
+                quitarProductoCarrito={quitarProductoCarrito}
+              ></Pedido>
+            }
+          ></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route
             exact

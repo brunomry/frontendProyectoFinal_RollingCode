@@ -5,7 +5,7 @@ const URL_Registro = import.meta.env.VITE_API_REGISTRO;
 
 export const leerProductosAPI = async () => {
   try {
-    const respuesta = await fetch(URL_BACKEND + 'productos');
+    const respuesta = await fetch(URL_Productos);
     const listaProductos = await respuesta.json();
     return listaProductos;
   } catch (error) {
@@ -25,7 +25,7 @@ export const obtenerProductoAPI = async (id) => {
 
 export const crearProductoAPI = async (productoNuevo) => {
   try {
-    const respuesta = await fetch(URL_BACKEND + 'productos', {
+    const respuesta = await fetch(URL_Productos, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export const crearProductoAPI = async (productoNuevo) => {
 
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
-    const respuesta = await fetch(`${URL_Producto}productos/${id}`, {
+    const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'aplication/json',
