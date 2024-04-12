@@ -80,7 +80,7 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("pizzas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto key={producto._id} producto={producto}></CardProducto>
           ))}
         </Row>
       </Container>
@@ -93,7 +93,7 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("hamburguesas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto key={producto._id} producto={producto}></CardProducto>
           ))}
         </Row>
       </Container>
@@ -103,7 +103,7 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("pastas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto key={producto._id} producto={producto}></CardProducto>
           ))}
         </Row>
       </Container>
@@ -113,7 +113,7 @@ const Menu = () => {
         </div>
         <Row className="gy-2 gx-3">
           {filtrarProductosPorCategoria("empanadas").map((producto) => (
-            <CardProducto key={producto.id} producto={producto}></CardProducto>
+            <CardProducto key={producto._id} producto={producto}></CardProducto>
           ))}
         </Row>
       </Container>
