@@ -107,19 +107,36 @@ function App() {
   };
 
   const agregarProductoCarrito = (producto, cantidad) => {
-    let carritoAux = [...carrito];
+    if (Object.keys(usuario).length === 0) {
+      Swal.fire({
+        title: 'Información',
+        icon: 'info',
+        html: `
+          Para agregar productos debes
+          <a href="/login">Iniciar sesión</a> o 
+          <a href="/registro">Registrarte</a>
+        `,
+        showCloseButton: true,
+        showCancelButton: false,
+        focusConfirm: false,
+        confirmButtonText: 'Entendido',
+      });
+    } else {
+      console.log(Object.keys(usuario));
+      let carritoAux = [...carrito];
 
-    let productoRepetido = carritoAux.find(
-      (productos) => productos.producto == producto._id
-    );
-    if (!productoRepetido) {
-      const productoCarrito = {
-        id: crypto.randomUUID(),
-        producto: producto._id,
-        cantidad: cantidad,
-      };
-      carritoAux.push(productoCarrito);
-      setCarrito(carritoAux);
+      let productoRepetido = carritoAux.find(
+        (productos) => productos.producto == producto._id
+      );
+      if (!productoRepetido) {
+        const productoCarrito = {
+          id: crypto.randomUUID(),
+          producto: producto._id,
+          cantidad: cantidad,
+        };
+        carritoAux.push(productoCarrito);
+        setCarrito(carritoAux);
+      }
     }
   };
 

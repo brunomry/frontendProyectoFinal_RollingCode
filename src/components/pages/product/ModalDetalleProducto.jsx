@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
-import "../../../styles/modalDetalleProducto.css";
-import { obtenerProductoAPI } from "../../../helpers/queries";
-import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Button, Form, Modal } from 'react-bootstrap';
+import '../../../styles/modalDetalleProducto.css';
+import { obtenerProductoAPI } from '../../../helpers/queries';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const ModalDetalleProducto = ({
   show,
@@ -14,6 +14,9 @@ const ModalDetalleProducto = ({
 }) => {
   const [cantidad, setCantidad] = useState(1);
   const [productoEncontrado, setProductoEncontrado] = useState();
+  // const [sesionIniciada, setSecionIniciada] = useState(
+  //   sessionStorage.getItem('correo') || ''
+  // );
 
   const agregar = () => {
     if (cantidad < 10) {
@@ -66,34 +69,34 @@ const ModalDetalleProducto = ({
   // };
 
   return (
-    <Modal show={show} onHide={handleShowModal} centered className="modal">
-      <Modal.Header className="modalHeaderIMGContainer">
+    <Modal show={show} onHide={handleShowModal} centered className='modal'>
+      <Modal.Header className='modalHeaderIMGContainer'>
         <img
           src={producto.imagen}
           alt={producto.nombre}
           title={producto.nombre}
-          className="modalIMG"
+          className='modalIMG'
         />
       </Modal.Header>
-      <Modal.Body className="pt-1">
-        <h4 className="mb-1">{producto.nombre}</h4>
-        <p className="text-success price mb-1 fw-bold">${producto.precio}</p>
+      <Modal.Body className='pt-1'>
+        <h4 className='mb-1'>{producto.nombre}</h4>
+        <p className='text-success price mb-1 fw-bold'>${producto.precio}</p>
         <p>{producto.detalle}</p>
         <div>
           {!productoEncontrado && (
-            <Form.Group className="mb-3">
-              <div className="d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2">
+            <Form.Group className='mb-3'>
+              <div className='d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2'>
                 <Button
-                  className="mx-sm-3"
-                  variant="secondary"
+                  className='mx-sm-3'
+                  variant='secondary'
                   onClick={quitar}
                 >
                   -
                 </Button>
                 {cantidad}
                 <Button
-                  className="mx-sm-3"
-                  variant="secondary"
+                  className='mx-sm-3'
+                  variant='secondary'
                   onClick={agregar}
                 >
                   +
@@ -101,26 +104,26 @@ const ModalDetalleProducto = ({
               </div>
             </Form.Group>
           )}
-          <div className="d-flex containerBTN">
+          <div className='d-flex containerBTN'>
             <Button
-              className="btn btn-secondary closeBTN"
+              className='btn btn-secondary closeBTN'
               onClick={handleShowModal}
             >
               Cerrar
             </Button>
             {productoEncontrado ? (
-              <Link to="/miPedido" className="btn btn-danger mt-3">
+              <Link to='/miPedido' className='btn btn-danger mt-3'>
                 Ir al carrito
               </Link>
             ) : (
               <Button
-                className="addBTN btn-success"
-                type="submit"
+                className='addBTN btn-success'
+                type='submit'
                 onClick={() => {
                   agregarProductoCarrito(producto, cantidad);
                 }}
               >
-                <i className="fa-solid fa-plus fa-lg"></i> Agregar a Mi Pedido
+                <i className='fa-solid fa-plus fa-lg'></i> Agregar a Mi Pedido
               </Button>
             )}
           </div>
