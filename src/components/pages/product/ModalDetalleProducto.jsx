@@ -13,7 +13,7 @@ const ModalDetalleProducto = ({ show, handleShowModal, producto }) => {
 
   const cargarDetalle = async () => {
     try {
-      const respuesta = await obtenerProductoAPI(producto.id);
+      const respuesta = await obtenerProductoAPI(producto._id);
 
       if (respuesta.status === 200) {
         const datosProducto = await respuesta.json();
