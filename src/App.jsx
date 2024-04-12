@@ -122,6 +122,11 @@ function App() {
         confirmButtonText: 'Entendido',
       });
     } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado',
+        text: 'El producto se agrego correctamente.',
+      });
       console.log(Object.keys(usuario));
       let carritoAux = [...carrito];
 
@@ -199,6 +204,7 @@ function App() {
             path='/miPedido'
             element={
               <Pedido
+                usuarioLogeado={usuarioLogeado}
                 productosCarrito={productosCarrito}
                 carrito={carrito}
                 agregarCantidadProducto={agregarCantidadProducto}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Button,
   Card,
@@ -6,28 +6,33 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const METODO_ENVIO = [
   {
     id: 1,
-    tipo: "Delivery (Gratis)",
+    tipo: 'Delivery (Gratis)',
   },
   {
     id: 2,
-    tipo: "Retiro en el local",
+    tipo: 'Retiro en el local',
   },
 ];
 
-const ResumenPedido = ({ carrito, montoCarrito, productosCarrito }) => {
+const ResumenPedido = ({
+  carrito,
+  montoCarrito,
+  productosCarrito,
+  usuarioLogeado,
+}) => {
   const [metodoEnvio, setMetodoEnvio] = useState(1);
 
   const confirmarPedido = () => {
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
-    let usuarioId = crypto.randomUUID(); //reemplazar por el id de usuario logueado
+    let usuarioId = usuarioLogeado; //reemplazar por el id de usuario logueado
 
     for (let i = 0; i < carritoAux.length; i++) {
       let producto = productosCarrito.find(
@@ -47,51 +52,51 @@ const ResumenPedido = ({ carrito, montoCarrito, productosCarrito }) => {
     pedido.metodoEnvio = metodoEnvio;
     pedido.estadoEnvio = false;
 
-    console.log("pedido: ", pedido);
+    console.log('pedido: ', pedido);
   };
 
   return (
-    <div className="resumeCardContainer">
-      <div className="resumeCard my-5">
-        <Card className="text-dark">
+    <div className='resumeCardContainer'>
+      <div className='resumeCard my-5'>
+        <Card className='text-dark'>
           <CardHeader>
-            <CardTitle className="mt-2 fw-bold">Detalles del pedido</CardTitle>
+            <CardTitle className='mt-2 fw-bold'>Detalles del pedido</CardTitle>
           </CardHeader>
           <CardBody>
             {METODO_ENVIO.map((check) => (
-              <div className="my-2 d-flex" key={check.id}>
+              <div className='my-2 d-flex' key={check.id}>
                 <input
-                  type="radio"
-                  name="grup"
+                  type='radio'
+                  name='grup'
                   checked={check.id == metodoEnvio}
-                  className="mx-2"
+                  className='mx-2'
                   value={check.id}
                   onChange={(event) =>
                     setMetodoEnvio(Number(event.target.value))
                   }
                 />
-                <label htmlFor="delivery">{check.tipo}</label>
+                <label htmlFor='delivery'>{check.tipo}</label>
               </div>
             ))}
 
-            <div className="d-flex justify-content-between mt-3 fw-bold">
+            <div className='d-flex justify-content-between mt-3 fw-bold'>
               <span>Total</span>
               <span>${montoCarrito}</span>
             </div>
-            <hr className="mt-0" />
+            <hr className='mt-0' />
           </CardBody>
           <CardFooter>
-            <div className="d-flex justify-content-center">
+            <div className='d-flex justify-content-center'>
               {productosCarrito.length > 0 ? (
                 <Button
                   onClick={confirmarPedido}
-                  className="w-100 fw-bold"
-                  variant="success"
+                  className='w-100 fw-bold'
+                  variant='success'
                 >
                   Confirmar Pedido
                 </Button>
               ) : (
-                <Link to="/menu" className="w-100 fw-bold btn btn-danger">
+                <Link to='/menu' className='w-100 fw-bold btn btn-danger'>
                   Ir al Menú
                 </Link>
               )}
