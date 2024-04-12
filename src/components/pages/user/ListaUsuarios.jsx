@@ -58,7 +58,7 @@ const ListaUsuarios = () => {
         </thead>
         <tbody>
           {
-            usuarios.map((usuario)=><ItemUsuario usuario={usuario} key={usuario.id}></ItemUsuario>)
+            usuarios.map((usuario)=><ItemUsuario usuario={usuario} key={usuario._id}></ItemUsuario>)
           }
         </tbody>
       </Table>
