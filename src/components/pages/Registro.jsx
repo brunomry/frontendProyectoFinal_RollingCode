@@ -46,7 +46,6 @@ const Registro = () => {
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Te registraste exitosamente',
-          text: '',
           html: 'Se envió un correo de verificacion a tu bandeja de entrada (principal o spam) </br> <b>Por favor, inicia sesion para continuar</b>',
           icon: 'success',
         });
