@@ -15,6 +15,7 @@ const Pedido = ({
   quitarCantidadProducto,
   quitarProductoCarrito,
   montoCarrito,
+  setCarrito,
 }) => {
   if (!productosCarrito) {
     return <Load />;
@@ -45,6 +46,7 @@ const Pedido = ({
           carrito={carrito}
           productosCarrito={productosCarrito}
           montoCarrito={montoCarrito}
+          setCarrito={setCarrito}
         />
       </div>
     </section>
