@@ -9,8 +9,8 @@ const Inicio = () => {
     <>
       <section className="banner d-flex justify-content-center align-items-center">
         <div className="bannerOpacity"></div>
-        <article className="bannerContent d-flex flex-column justify-content-center align-items-center gap-3 gap-md-4 gap-lg-3 gap-xl-5 pb-md-5 text-white">
-          <small className="fw-bold text-center bannerAddress mt-2 mt-lg-2 mt-xl-0">
+        <article className="bannerContent d-flex flex-column justify-content-center align-items-center gap-3 gap-md-4 gap-lg-3 gap-xl-4 pb-md-5 text-white">
+          <small className="fw-bold text-center bannerAddress mt-2 mt-lg-2">
             <i className="fa-solid fa-location-dot fs-5"></i> General Paz 576,
             San Miguel de Tucumán, Tucumán
           </small>

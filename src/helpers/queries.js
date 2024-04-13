@@ -78,7 +78,7 @@ export const leerUsuariosAPI = async () => {
 
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
-    const respuesta = fetch(URL_Registro, {
+    const respuesta = await fetch(URL_Registro, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
