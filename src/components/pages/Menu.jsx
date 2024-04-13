@@ -4,7 +4,7 @@ import CardProducto from "./product/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
 
-const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
+const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -87,6 +87,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               productosCarrito={productosCarrito}
               producto={producto}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -105,6 +106,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -120,6 +122,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -135,6 +138,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>

@@ -184,6 +184,7 @@ function App() {
               <Menu
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
+                usuarioLogeado={usuarioLogeado}
               ></Menu>
             }
           ></Route>
