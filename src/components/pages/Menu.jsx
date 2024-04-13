@@ -34,7 +34,8 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
         </p>
         <a
           className="bannerBTN text-center py-3 text-decoration-none fw-bold"
-          href=""
+          href="../../assets/menu/Menú_Ambiente_Bohemio.pdf"
+          download={"Menú_Ambiente_Bohemio.pdf"}
         >
           DESCARGAR MENÚ
         </a>
