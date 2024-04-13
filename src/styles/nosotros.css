@@ -50,6 +50,7 @@
 .imgContainer {
   position: relative;
   width: 350px;
+  height: 350px;
 }
 
 .linkContainer i {
