@@ -3,6 +3,7 @@ import { Button, Container, Form, Row } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
+import pdf from '../../assets/Menú_Ambiente_Bohemio.pdf';
 
 const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
   const [productos, setProductos] = useState([]);
@@ -25,6 +26,12 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
       (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
     );
 
+    const handleDownloadPDF = () => {
+      const urlPDF = pdf;
+      window.open(urlPDF, '_blank');
+    }
+  
+
   return (
     <>
       <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
@@ -32,13 +39,12 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
         <p className="fw-bold bannerText pb-3">
           ¡Descubre nuestro festín de sabores!
         </p>
-        <a
+        <button
           className="bannerBTN text-center py-3 text-decoration-none fw-bold"
-          href="../../assets/menu/Menú_Ambiente_Bohemio.pdf"
-          download={"Menú_Ambiente_Bohemio.pdf"}
+          onClick={handleDownloadPDF}
         >
           DESCARGAR MENÚ
-        </a>
+        </button>
       </section>
       <div className="border-bottom border-secondary d-flex justify-content-center py-3 pe-2 menuCategoryContainer position-sticky top-0">
         <a
