@@ -26,6 +26,8 @@ const RutasAdmin = () => {
             <FormularioProducto
               editar={false}
               titulo="Nuevo producto"
+              ocultar={false}
+              deshabilitado={false}
               boton="Cancelar"
             />
           }
@@ -35,6 +37,7 @@ const RutasAdmin = () => {
           element={
             <FormularioProducto
               editar={true}
+              deshabilitado={false}
               boton="Cancelar"
               ocultar={false}
               titulo="Editar producto"

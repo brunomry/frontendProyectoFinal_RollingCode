@@ -4,18 +4,17 @@ import { useState } from "react";
 import ModalDetalleProducto from "../product/ModalDetalleProducto";
 import { Link, useNavigate } from "react-router-dom";
 
-const CardProducto = ({ producto }) => {
+const CardProducto = ({
+  producto,
+  agregarProductoCarrito,
+  productosCarrito,
+}) => {
   const [abrirModal, setAbrirModal] = useState(false);
 
   const navegacion = useNavigate();
 
   const handleShowModal = () => {
-    if (!abrirModal) {
-      setAbrirModal(true);
-      return;
-    }
-    setAbrirModal(false);
-    navegacion("/menu");
+    setAbrirModal(!abrirModal);
   };
 
   return (
@@ -59,7 +58,9 @@ const CardProducto = ({ producto }) => {
       <ModalDetalleProducto
         show={abrirModal}
         handleShowModal={handleShowModal}
+        productosCarrito={productosCarrito}
         producto={producto}
+        agregarProductoCarrito={agregarProductoCarrito}
       />
     </>
   );

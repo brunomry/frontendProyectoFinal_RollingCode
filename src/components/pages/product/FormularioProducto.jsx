@@ -12,7 +12,6 @@ import { useEffect } from "react";
 
 const FormularioProducto = ({
   editar,
-  editarProductoTitulo,
   titulo,
   verDetalle,
   boton,
@@ -63,7 +62,6 @@ const FormularioProducto = ({
         });
         navegacion("/administrador/productos");
       } else {
-        console.log(respuesta.status);
         Swal.fire({
           title: "Ocurrio un error",
           text: `El producto ${producto.nombre} no pudo ser modificado, intente nuevamente`,
@@ -91,10 +89,12 @@ const FormularioProducto = ({
   };
 
   return (
-    <section className="mainSection px-2 pt-2 pb-5">
-      <div className="container-md">
-        <h1 className="mt-5 titleColor">{titulo}</h1>
-        <hr className="container-md text-start my-0 mb-4" />
+    <section className='mainSection px-2 pt-2 pb-5'>
+      <div className='container-md'>
+        <h1 className='mt-5 titleColor'>
+          {titulo}
+        </h1>
+        <hr className='container-md text-start my-0 mb-4' />
       </div>
       <Form
         onSubmit={handleSubmit(productoValidado)}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Container fluid className="footerContainer pt-5 pb-1">
+    <Container fluid className="footerContainer pt-5 pb-1 mt-auto">
       <Row>
         <Col md={12} lg={3} className="d-flex justify-content-center mb-3">
           <img
@@ -17,18 +17,33 @@ const Footer = () => {
         </Col>
         <Col className="d-none d-md-block">
           <h4 className="footerTitleSection">Opciones</h4>
-          <Link className="text-decoration-none link-dark" to="/"><p>Inicio</p></Link>
-          <Link className="text-decoration-none link-dark" to="/menu"><p>Menú</p></Link>
-          <Link className="text-decoration-none link-dark" to="/nosotros"><p>Nosotros</p></Link>
-          <Link className="text-decoration-none link-dark" to="*"><p>Contacto</p></Link>
-
+          <Link className="text-decoration-none link-dark" to="/">
+            <p>Inicio</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="/menu">
+            <p>Menú</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="/nosotros">
+            <p>Nosotros</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="*">
+            <p>Contacto</p>
+          </Link>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerInformation">
           <h4 className="footerTitleSection">Información</h4>
-          <Link className="text-decoration-none link-dark" to="*"><p>Políticas de privacidad</p></Link>
-          <Link className="text-decoration-none link-dark" to="*"><p>Legal</p></Link>
-          <Link className="text-decoration-none link-dark" to="*"><p>Promociones</p></Link>
-          <Link className="text-decoration-none link-dark" to="*"><p>Horarios de atención</p></Link>
+          <Link className="text-decoration-none link-dark" to="*">
+            <p>Políticas de privacidad</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="*">
+            <p>Legal</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="*">
+            <p>Promociones</p>
+          </Link>
+          <Link className="text-decoration-none link-dark" to="*">
+            <p>Horarios de atención</p>
+          </Link>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerContact">
           <h4 className="footerTitleSection">Contacto</h4>
