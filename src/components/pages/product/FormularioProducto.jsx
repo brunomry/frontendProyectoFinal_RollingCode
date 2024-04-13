@@ -10,7 +10,7 @@ import {
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
 
-const FormularioProducto = ({ editar, editarProductoTitulo }) => {
+const FormularioProducto = ({ editar, editarProductoTitulo, titulo}) => {
   const {
     register,
     handleSubmit,
@@ -55,7 +55,6 @@ const FormularioProducto = ({ editar, editarProductoTitulo }) => {
         });
         navegacion('/administrador/productos');
       } else {
-        console.log(respuesta.status);
         Swal.fire({
           title: 'Ocurrio un error',
           text: `El producto ${producto.nombre} no pudo ser modificado, intente nuevamente`,
@@ -86,7 +85,7 @@ const FormularioProducto = ({ editar, editarProductoTitulo }) => {
     <section className='mainSection px-2 pt-2 pb-5'>
       <div className='container-md'>
         <h1 className='mt-5 titleColor'>
-          {editar ? 'Editar producto' : 'Crear producto'}
+          {titulo}
         </h1>
         <hr className='container-md text-start my-0 mb-4' />
       </div>
