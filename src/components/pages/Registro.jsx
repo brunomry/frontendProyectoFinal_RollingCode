@@ -3,8 +3,9 @@ import imgRegistro from '../../assets/imgRegistro.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/registro.css';
 import { useForm } from 'react-hook-form';
-import { crearUsuarioAPI, leerUsuariosAPI } from '../../helpers/queries';
+import { crearUsuarioAPI, enviarDatosCorreo, leerUsuariosAPI } from '../../helpers/queries';
 import Swal from 'sweetalert2';
+
 
 const Registro = () => {
   const {
@@ -41,12 +42,17 @@ const Registro = () => {
       });
       const respuesta = await crearUsuarioAPI(usuario);
       console.log(respuesta)
+      console.log(usuario.correo)
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Te registraste exitosamente',
           text: 'POR FAVOR INICIA SESIÓN',
           icon: 'success',
         });
+        const direccionCorreo = {correo: usuario.correo}
+        console.log(direccionCorreo)
+        const respuestaCorreo = await enviarDatosCorreo(direccionCorreo)
+        console.log(respuestaCorreo)
         reset();
         navegacion('/login');
       }
