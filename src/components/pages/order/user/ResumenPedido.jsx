@@ -27,10 +27,11 @@ const ResumenPedido = ({
   montoCarrito,
   productosCarrito,
   usuarioLogeado,
+  setCarrito,
 }) => {
   const [metodoEnvio, setMetodoEnvio] = useState(1);
 
-  const confirmarPedido = () => {
+  const confirmarPedido = async () => {
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
@@ -54,12 +55,21 @@ const ResumenPedido = ({
     pedido.metodoEnvio = metodoEnvio;
     pedido.estadoEnvio = false;
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Su pedido fue generado con exito.',
-    });
-
-    crearPedidoApi(pedido);
+    const crearPedidoVar = await crearPedidoApi(pedido);
+    console.log(crearPedidoVar);
+    if (crearPedidoVar.ok) {
+      sessionStorage.removeItem('carrito');
+      setCarrito([]);
+      Swal.fire({
+        icon: 'success',
+        title: 'Su pedido fue generado con exito.',
+      });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Su pedido no fue generado, vuelva a intentarlo.',
+      });
+    }
     console.log('pedido: ', pedido);
   };
 

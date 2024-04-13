@@ -211,15 +211,11 @@ function App() {
                 quitarCantidadProducto={quitarCantidadProducto}
                 montoCarrito={montoCarrito}
                 quitarProductoCarrito={quitarProductoCarrito}
+                setCarrito={setCarrito}
               ></Pedido>
             }
           ></Route>
           <Route exact path='/nosotros' element={<Nosotros></Nosotros>}></Route>
-          <Route
-            exact
-            path='/detalleProducto/:id'
-            element={<Menu></Menu>}
-          ></Route>
           <Route path='*' element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>

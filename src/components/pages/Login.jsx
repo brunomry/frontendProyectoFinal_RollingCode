@@ -72,6 +72,7 @@ const Login = ({ setUsuarioLogeado }) => {
           })
         );
         setUsuarioLogeado({
+          id: usuarioBuscado._id,
           correo: usuarioBuscado.correo,
           rol: usuarioBuscado.rol,
         });
