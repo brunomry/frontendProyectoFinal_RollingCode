@@ -11,6 +11,7 @@ const Registro = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const navegacion = useNavigate();
@@ -36,10 +37,10 @@ const Registro = () => {
         },
       }).then((result) => {
         if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer');
         }
       });
       const respuesta = await crearUsuarioAPI(usuario);
+      console.log(respuesta)
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Te registraste exitosamente',
@@ -47,6 +48,7 @@ const Registro = () => {
           icon: 'success',
         });
         reset();
+        navegacion('/login');
       }
     } else {
       Swal.fire({
@@ -57,7 +59,6 @@ const Registro = () => {
       });
       return;
     }
-    navegacion('/login');
   };
 
   return (

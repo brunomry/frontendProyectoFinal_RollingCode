@@ -2,7 +2,6 @@ import '../../../styles/cardProducto.css';
 import { Button, Col } from 'react-bootstrap';
 import { useState } from 'react';
 import ModalDetalleProducto from '../product/ModalDetalleProducto';
-import { Link, useNavigate } from 'react-router-dom';
 
 const CardProducto = ({
   producto,
@@ -10,8 +9,6 @@ const CardProducto = ({
   productosCarrito,
 }) => {
   const [abrirModal, setAbrirModal] = useState(false);
-
-  const navegacion = useNavigate();
 
   const handleShowModal = () => {
     setAbrirModal(!abrirModal);
@@ -37,8 +34,6 @@ const CardProducto = ({
                 <Button
                   className='cardBTN shadow px-md-3 border border-dark border-1'
                   onClick={handleShowModal}
-                  as={Link}
-                  to={`/detalleProducto/${producto._id}`}
                 >
                   ver más
                 </Button>
