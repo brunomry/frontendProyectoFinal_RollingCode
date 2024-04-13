@@ -23,19 +23,24 @@ const Pedido = ({
 
   if (carrito.length == 0) {
     return (
-      <div className='mb-md-5 mb-sm-5'>
-        <h2 className='text-center mt-5'>El carrito se encuentra vacío.</h2>;
-        <div className='text-center '>
-          <Link to='/menu' className='fw-bold btn btn-danger'>
-            Ir al Menú
-          </Link>
+      <div className='bannerPedido d-flex flex-column justify-content-center'>
+        <div className='bannerPedidoContent'>
+          <h2 className='bannerTitlePedido titleColor text-center mt-5'>
+            Tu pedido está vacío.
+          </h2>
+          ;
+          <div className='text-center '>
+            <Link to='/menu' className='fw-bold btn btn-danger'>
+              Ir al Menú
+            </Link>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <section className='border-1 border-secondary border-top'>
+    <section className='bannerPedido border-1 border-secondary border-top'>
       <div className='container'>
         <div className='py-2 pb-md-4'>
           <h1 className='orderTitle fw-bold'>- Mi pedido -</h1>

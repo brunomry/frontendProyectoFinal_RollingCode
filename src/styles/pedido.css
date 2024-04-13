@@ -7,8 +7,40 @@
   background-color: #f5ebdc;
 }
 
-.breadcrumb a {
-  text-decoration: none;
+.bannerPedido {
+  width: 100%;
+  position: relative;
+  background-image: url('../assets/imgPedido.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  font-family: 'Exo';
+}
+
+.bannerPedido::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.253
+  ); /* Cambia el último valor para ajustar la opacidad */
+}
+
+.bannerTitlePedido {
+  font-size: 2.8rem;
+  color: #9a5534;
+  -webkit-text-stroke: 0.5px #fffefe;
+}
+
+.bannerPedidoContent {
+  z-index: 1;
 }
 
 .orderTitle {
