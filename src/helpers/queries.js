@@ -108,14 +108,13 @@ export const login = async (usuario) => {
 
 export const crearPedidoApi = async (pedido) => {
   try {
-    const respuesta = fetch(URL_pedido, {
+    const respuesta = await fetch(URL_pedidos, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(pedido),
     });
-
     return respuesta;
   } catch (error) {
     return error;

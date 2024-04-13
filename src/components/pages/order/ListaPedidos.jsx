@@ -12,11 +12,13 @@ const ListaPedidos = () => {
 
   const listarPedidos = async () => {
     const respuesta = await leerPedidosAPI();
+    console.log(respuesta);
     setListaPedidos(respuesta);
   };
 
   const traerUsuarios = async () => {
     const respuestaUsuarios = await leerUsuariosAPI();
+    console.log(respuestaUsuarios);
     setListaUsuarios(respuestaUsuarios);
   };
 
@@ -51,12 +53,13 @@ const ListaPedidos = () => {
         <thead>
           <tr className='text-center'>
             <th>Usuario</th>
+            <th>Fecha</th>
             <th>Monto</th>
             <th>Productos</th>
             <th>Estado</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='text-center'>
           {listaPedidos.map((pedido) => (
             <ItemPedido
               key={pedido._id}

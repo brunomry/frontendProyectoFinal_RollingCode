@@ -37,6 +37,9 @@ const ResumenPedido = ({
     let pedido = new Object();
     let usuario = usuarioLogeado.id; //reemplazar por el id de usuario logueado
 
+    let fecha = new Date().toLocaleString();
+    console.log(fecha);
+
     for (let i = 0; i < carritoAux.length; i++) {
       let producto = productosCarrito.find(
         (productoCarrito) => productoCarrito._id == carritoAux[i].producto
@@ -54,6 +57,7 @@ const ResumenPedido = ({
     pedido.productos = productosPedido;
     pedido.metodoEnvio = metodoEnvio;
     pedido.estadoEnvio = false;
+    pedido.fecha = fecha;
 
     const crearPedidoVar = await crearPedidoApi(pedido);
     console.log(crearPedidoVar);
