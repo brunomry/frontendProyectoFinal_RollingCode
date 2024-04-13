@@ -22,15 +22,40 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           path="/productos/crearProducto"
-          element={<FormularioProducto titulo="Nuevo Producto" editar={false}/>}
+          element={
+            <FormularioProducto
+              editar={false}
+              titulo="Nuevo producto"
+              ocultar={false}
+              deshabilitado={false}
+              boton="Cancelar"
+            />
+          }
         ></Route>
         <Route
           path="/productos/editarProducto/:id"
-          element={<FormularioProducto titulo="Editar Producto" editar={true}/>}
+          element={
+            <FormularioProducto
+              editar={true}
+              deshabilitado={false}
+              boton="Cancelar"
+              ocultar={false}
+              titulo="Editar producto"
+            />
+          }
         ></Route>
         <Route
           path="/productos/verProducto/:id"
-          element={<FormularioProducto titulo="Detalle del Producto"/>}
+          element={
+            <FormularioProducto
+              editar={true}
+              deshabilitado={true}
+              ocultar={true}
+              verDetalle={true}
+              boton="Volver"
+              titulo="Detalle del producto"
+            />
+          }
         ></Route>
       </Routes>
     </>

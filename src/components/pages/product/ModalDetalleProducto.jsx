@@ -14,9 +14,6 @@ const ModalDetalleProducto = ({
 }) => {
   const [cantidad, setCantidad] = useState(1);
   const [productoEncontrado, setProductoEncontrado] = useState();
-  // const [sesionIniciada, setSecionIniciada] = useState(
-  //   sessionStorage.getItem('correo') || ''
-  // );
 
   const agregar = () => {
     if (cantidad < 10) {
@@ -39,34 +36,6 @@ const ModalDetalleProducto = ({
       setProductoEncontrado(productoEncontradoAux);
     }
   }, [productosCarrito]);
-
-  //Todos los datos del producto vienen desde props, no hace falta llamar a obtenerProductoAPI, se cambio porque no llegan los datos desde el fetch
-
-  // const [productoDetalle, setDetalleProducto] = useState({});
-  // useEffect(
-  //   (show) => {
-  //     cargarDetalle();
-  //   },
-  //   [show]
-  // );
-
-  // const cargarDetalle = async () => {
-  //   try {
-  //     const respuesta = await obtenerProductoAPI(producto._id);
-
-  //     if (respuesta.status === 200) {
-  //       const datosProducto = await respuesta.json();
-  //       setDetalleProducto(datosProducto);
-  //     }
-  //   } catch (error) {
-  //     Swal.fire({
-  //       title: 'Ocurrió un error',
-  //       text: 'Intente realizar esta operación en unos minutos',
-  //       icon: 'error',
-  //     });
-  //     handleShowModal();
-  //   }
-  // };
 
   return (
     <Modal show={show} onHide={handleShowModal} centered className='modal'>

@@ -20,8 +20,6 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
     }
   };
 
-  //Se agrego toLowerCase para que no haya conflicto con las mayusculas y minusculas en cateogira
-
   const filtrarProductosPorCategoria = (categoria) =>
     productos.filter(
       (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
@@ -83,7 +81,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
           <h2 className="categoryTitle ">Pizzas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          {filtrarProductosPorCategoria("pizzas").map((producto) => (
+          {filtrarProductosPorCategoria("Pizzas").map((producto) => (
             <CardProducto
               key={producto._id}
               productosCarrito={productosCarrito}
@@ -101,7 +99,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
           <h2 className="categoryTitle">Hamburguesas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          {filtrarProductosPorCategoria("hamburguesas").map((producto) => (
+          {filtrarProductosPorCategoria("Hamburguesas").map((producto) => (
             <CardProducto
               key={producto._id}
               producto={producto}
@@ -116,7 +114,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
           <h2 className="categoryTitle">Pastas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          {filtrarProductosPorCategoria("pastas").map((producto) => (
+          {filtrarProductosPorCategoria("Pastas").map((producto) => (
             <CardProducto
               key={producto._id}
               producto={producto}
@@ -131,7 +129,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
           <h2 className="categoryTitle">Empanadas</h2>
         </div>
         <Row className="gy-2 gx-3">
-          {filtrarProductosPorCategoria("empanadas").map((producto) => (
+          {filtrarProductosPorCategoria("Empanadas").map((producto) => (
             <CardProducto
               key={producto._id}
               producto={producto}

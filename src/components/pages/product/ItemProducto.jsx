@@ -16,7 +16,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const respuesta = await borrarProductoAPI(producto.id);
+        const respuesta = await borrarProductoAPI(producto._id);
 
         if (respuesta.status === 200) {
           Swal.fire({
@@ -54,7 +54,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       <td className='d-flex flex-column gap-2 align-items-center flex-lg-row d-lg-table-cell'>
         <Link
           title='Ver producto'
-          to={`/administrador/productos/verProducto/id`}
+          to={`/administrador/productos/verProducto/${producto._id}`}
           className='me-lg-2 btn btn-secondary text-dark'
         >
           <i className='fa-solid fa-eye'></i>

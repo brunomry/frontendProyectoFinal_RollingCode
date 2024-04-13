@@ -17,8 +17,6 @@ const CardProducto = ({
     setAbrirModal(!abrirModal);
   };
 
-  // console.log("card producto: ", producto);
-
   return (
     <>
       <Col md={6} lg={6} className="d-flex justify-content-center">
@@ -39,6 +37,8 @@ const CardProducto = ({
                 <Button
                   className="cardBTN shadow px-md-3 border border-dark border-1"
                   onClick={handleShowModal}
+                  as={Link}
+                  to={`/detalleProducto/${producto._id}`}
                 >
                   ver más
                 </Button>
