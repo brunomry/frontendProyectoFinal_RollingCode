@@ -1,9 +1,10 @@
-import { Button, Table } from 'react-bootstrap';
-import '../../../styles/administrador.css';
-import ItemUsuario from './ItemUsuario';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { leerUsuariosAPI } from '../../../helpers/queries';
+import { Button, Table } from "react-bootstrap";
+import "../../../styles/administrador.css";
+import ItemUsuario from "./ItemUsuario";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { leerUsuariosAPI } from "../../../helpers/queries";
+import Load from "../../common/Load";
 
 const ListaUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -11,8 +12,6 @@ const ListaUsuarios = () => {
   useEffect(() => {
     consultarAPI();
   }, []);
-
-  console.log(usuarios);
 
   const consultarAPI = async () => {
     try {
@@ -22,6 +21,10 @@ const ListaUsuarios = () => {
       console.error(error);
     }
   };
+
+  if (usuarios.length === 0) {
+    return <Load />;
+  }
 
   return (
     <section className='mainSection pt-3 pb-5'>
