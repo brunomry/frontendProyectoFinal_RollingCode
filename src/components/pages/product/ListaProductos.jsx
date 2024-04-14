@@ -83,13 +83,6 @@ const ListaProductos = () => {
           />
         </Form.Group>
       </Form>
-      {/* <div
-        className={`d-flex align-items-start justify-content-center custom-spinner ${
-          !spinner ? "d-none" : "mb-5"
-        } `}
-      >
-        {spinner && <Load></Load>}
-      </div> */}
       <Table
         responsive
         hover
