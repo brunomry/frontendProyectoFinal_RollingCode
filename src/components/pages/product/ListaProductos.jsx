@@ -120,6 +120,11 @@ const ListaProductos = () => {
               ></ItemProducto>
             ))
         )}
+        {productosFiltrados.length === 0 && busqueda !== "" && (
+          <tr>
+            <td colSpan={"6"}>No se encontraron productos.</td>
+          </tr>
+        )}
         </tbody>
       </Table>
     </section>
