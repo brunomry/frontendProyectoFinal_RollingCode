@@ -10,17 +10,9 @@ import {
 import { Link } from 'react-router-dom';
 import { crearPedidoApi } from '../../../../helpers/queries';
 import Swal from 'sweetalert2';
+import { METODO_ENVIO } from '../../../../helpers/constants';
 
-const METODO_ENVIO = [
-  {
-    id: 1,
-    tipo: 'Delivery (Gratis)',
-  },
-  {
-    id: 2,
-    tipo: 'Retiro en el local',
-  },
-];
+
 
 const ResumenPedido = ({
   carrito,

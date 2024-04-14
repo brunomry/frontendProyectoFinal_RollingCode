@@ -12,7 +12,6 @@ const ListaPedidos = () => {
 
   const listarPedidos = async () => {
     const respuesta = await leerPedidosAPI();
-    console.log(respuesta);
     setListaPedidos(respuesta);
   };
 
