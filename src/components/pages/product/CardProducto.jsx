@@ -19,18 +19,18 @@ const CardProducto = ({
     <>
       <Col md={6} lg={6} className='d-flex justify-content-center'>
         <div className='cardProduct d-flex justify-content-between'>
-          <div className='cardInformation w-100 d-flex flex-column justify-content-between gap-2'>
+          <div className='cardInformation d-flex flex-column gap-2 justify-content-between'>
             <div className='cardTitle'>
               <h5 className='pt-0'>{producto.nombre}</h5>
             </div>
             <div className='cardDescription'>
               <p className='cardParagraph'>{producto.detalle}</p>
             </div>
-            <div className='flexPriceAndBtn'>
-              <div className='cardPrice text-center d-flex align-items-center h-100'>
+            <div className='flexPriceAndBtn w-100'>
+              <div className='cardPrice text-center'>
                 <p>${producto.precio}</p>
               </div>
-              <div className='text-center'>
+              <div className='text-center containerBtnCard'>
                 {' '}
                 <Button
                   className='cardBTN shadow px-md-3 border border-dark border-1'
