@@ -27,7 +27,7 @@ function App() {
   );
   const [montoCarrito, setMontoCarrito] = useState(0);
   const [pedidos, setPedidos] = useState([]);
-  const [productosCarrito, setProductosCarrito] = useState(null);
+  const [productosCarrito, setProductosCarrito] = useState([]);
 
   const calcularMonto = () => {
     let productoCarritoAux = [...productosCarrito];
@@ -174,6 +174,7 @@ function App() {
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
+          productosCarrito={productosCarrito}
         ></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
