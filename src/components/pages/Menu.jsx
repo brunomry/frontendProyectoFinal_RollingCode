@@ -1,11 +1,15 @@
 import "../../styles/menu.css";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Container, Form, Row, Spinner } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
+import pdf from "../../assets/Menú_Ambiente_Bohemio.pdf";
 
-const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
+const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
+  const [busqueda, setBusqueda] = useState("");
+  const [productosFiltrados, setProductosFiltrados] = useState([]);
+  const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
     consultarAPI();
@@ -15,15 +19,40 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
     try {
       const respuesta = await leerProductosAPI();
       setProductos(respuesta);
+      setSpinner(false);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleDownloadPDF = () => {
+    const urlPDF = pdf;
+    window.open(urlPDF, "_blank");
   };
 
   const filtrarProductosPorCategoria = (categoria) =>
     productos.filter(
       (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
     );
+
+  const filtrarProductosPorNombre = () => {
+    const inputBusqueda = busqueda.toLowerCase().trim();
+
+    if (inputBusqueda === "") {
+      setProductosFiltrados([]);
+    } else {
+      const productosEncontrados = productos.filter((producto) =>
+        producto.nombre.toLowerCase().startsWith(inputBusqueda)
+      );
+      setProductosFiltrados(productosEncontrados);
+    }
+  };
+
+  useEffect(() => {
+    filtrarProductosPorNombre();
+  }, [busqueda]);
+
+  const handleEnter = (e) => (e.key === "Enter" ? e.preventDefault() : null);
 
   return (
     <>
@@ -32,12 +61,12 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
         <p className="fw-bold bannerText pb-3">
           ¡Descubre nuestro festín de sabores!
         </p>
-        <a
+        <button
           className="bannerBTN text-center py-3 text-decoration-none fw-bold"
-          href=""
+          onClick={handleDownloadPDF}
         >
           DESCARGAR MENÚ
-        </a>
+        </button>
       </section>
       <div className="border-bottom border-secondary d-flex justify-content-center py-3 pe-2 menuCategoryContainer position-sticky top-0">
         <a
@@ -66,15 +95,18 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
         </a>
       </div>
       <Form className="d-flex justify-content-center my-3 px-2">
-        <Form.Group className="mb-3 searchForm" controlId="buscarMenu">
+        <Form.Group className="mb-3 search" controlId="buscarMenu">
+          <Form.Label>
+            Busca tu producto <i className="fa-solid fa-arrow-down ms-1"></i>
+          </Form.Label>
           <Form.Control
             type="text"
-            placeholder="categoría, nombre de producto"
+            placeholder="Por ej: cheeseburger"
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            onKeyDown={(e) => handleEnter(e)}
           />
         </Form.Group>
-        <Button className="ms-2 searchBTN" variant="secondary" type="button">
-          Buscar
-        </Button>
       </Form>
       <Container className="pb-5">
         <div className="categoryPizza d-flex align-items-center" id="pizzas">
@@ -87,6 +119,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               productosCarrito={productosCarrito}
               producto={producto}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -105,6 +138,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -120,6 +154,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
@@ -135,9 +170,29 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               producto={producto}
               productosCarrito={productosCarrito}
               agregarProductoCarrito={agregarProductoCarrito}
+              usuarioLogeado={usuarioLogeado}
             ></CardProducto>
           ))}
         </Row>
+      </Container>
+      <Container className={busqueda == "" ? "d-none" : "pb-5"}>
+        {productosFiltrados.length > 0 && (
+          <Row className="gy-3 gx-4">
+            {productosFiltrados.map((producto) => (
+              <CardProducto
+                key={producto._id}
+                producto={producto}
+                productosCarrito={productosCarrito}
+                agregarProductoCarrito={agregarProductoCarrito}
+              ></CardProducto>
+            ))}
+          </Row>
+        )}
+        {productosFiltrados.length === 0 && busqueda !== "" && (
+          <div className="py-5 text-center">
+            <p>No se encontraron productos.</p>
+          </div>
+        )}
       </Container>
     </>
   );

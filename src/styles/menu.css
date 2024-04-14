@@ -40,8 +40,8 @@
   transform: scale(1.1);
 }
 
-.searchForm{
-    width: 300px;
+.search{
+    width: 100%;
 }
 
 .searchBTN{
@@ -64,6 +64,10 @@
   .menuCategoryContainer{
     overflow-x: hidden;
     padding-left: 0px;
+  }
+
+  .search{
+    width: 350px;
   }
 }
 

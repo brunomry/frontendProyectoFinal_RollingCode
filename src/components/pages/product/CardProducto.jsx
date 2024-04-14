@@ -7,6 +7,7 @@ const CardProducto = ({
   producto,
   agregarProductoCarrito,
   productosCarrito,
+  usuarioLogeado
 }) => {
   const [abrirModal, setAbrirModal] = useState(false);
 
@@ -56,6 +57,7 @@ const CardProducto = ({
         productosCarrito={productosCarrito}
         producto={producto}
         agregarProductoCarrito={agregarProductoCarrito}
+        usuarioLogeado={usuarioLogeado}
       />
     </>
   );

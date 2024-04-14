@@ -5,6 +5,7 @@ const URL_Registro = import.meta.env.VITE_API_REGISTRO;
 const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
+const URL_Mailer = import.meta.env.VITE_API_MAILER;
 
 export const leerProductosAPI = async () => {
   try {
@@ -18,7 +19,7 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Producto + '/' + id);
+    const respuesta = await fetch(URL_Producto + "/" + id);
     const productoObtenido = await respuesta.json();
     return productoObtenido;
   } catch (error) {
@@ -29,9 +30,9 @@ export const obtenerProductoAPI = async (id) => {
 export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URL_Productos, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(productoNuevo),
     });
@@ -44,9 +45,9 @@ export const crearProductoAPI = async (productoNuevo) => {
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'aplication/json',
+        "Content-Type": "aplication/json",
       },
       body: JSON.stringify(productoModificado),
     });
@@ -59,7 +60,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 export const borrarProductoAPI = async (id) => {
   try {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
-      method: 'DELETE',
+      method: "DELETE",
     });
     return respuesta;
   } catch (error) {
@@ -80,9 +81,9 @@ export const leerUsuariosAPI = async () => {
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
     const respuesta = await fetch(URL_Registro, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(usuarioNuevo),
     });
@@ -95,9 +96,9 @@ export const crearUsuarioAPI = async (usuarioNuevo) => {
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URL_Login, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
     });
@@ -110,9 +111,9 @@ export const login = async (usuario) => {
 export const crearPedidoApi = async (pedido) => {
   try {
     const respuesta = await fetch(URL_pedidos, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(pedido),
     });
@@ -135,9 +136,9 @@ export const leerPedidosAPI = async () => {
 export const editarPedidoAPI = async (pedido, id) => {
   try {
     const respuesta = await fetch(URL_pedido + id, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(pedido),
     });
@@ -155,6 +156,20 @@ export const editarEstadoUsuario = async (usuario) => {
       },
       body: JSON.stringify(usuario),
     });
+     } catch (error) {
+    console.log(error);
+     };
+  
+export const enviarDatosCorreo = async (correo) => {
+  try {
+    const respuesta = await fetch(URL_Mailer, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(correo),
+    });
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
