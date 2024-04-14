@@ -1,4 +1,4 @@
-import { Table } from "react-bootstrap";
+import { Form, Table } from "react-bootstrap";
 import "../../../styles/administrador.css";
 import ItemProducto from "./ItemProducto.jsx";
 import { Link } from "react-router-dom";
@@ -43,6 +43,20 @@ const ListaProductos = () => {
         </Link>
       </div>
       <hr className="container" />
+      <Form className="d-flex justify-content-center my-3 px-2">
+        <Form.Group className="mb-3 search" controlId="buscarMenu">
+          <Form.Label>
+            Busca tu producto <i className="fa-solid fa-arrow-down ms-1"></i>
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Por ej: cheeseburger"
+            // value={busqueda}
+            // onChange={(e) => setBusqueda(e.target.value)}
+            // onKeyDown={(e) => handleEnter(e)}
+          />
+        </Form.Group>
+      </Form>
       <Table
         responsive
         hover
