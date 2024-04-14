@@ -41,7 +41,7 @@ const FormularioProducto = ({
       if (respuesta) {
         setValue("nombre", respuesta.nombre);
         setValue("categoria", respuesta.categoria);
-        setValue("estado", respuesta.estado ? "Disponible" : "No disponible");
+        setValue("estado", respuesta.estado);
         setValue("precio", respuesta.precio);
         setValue("detalle", respuesta.detalle);
         setValue("imagen", respuesta.imagen);
