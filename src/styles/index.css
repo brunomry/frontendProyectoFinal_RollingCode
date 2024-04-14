@@ -7,10 +7,18 @@
   position: relative;
   background-image: url("../assets/Inicio/banner1.webp");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: 250%;
   height: 60vh;
   font-family: "Exo";
+  animation: movimiento 7s infinite linear alternate;
+}
+
+@keyframes movimiento {
+  from {
+    background-position: bottom left;
+  }to{
+    background-position: top right;
+  }
 }
 
 .bannerOpacity{
@@ -55,6 +63,16 @@
   .btnBanner{
     font-size: 1.125rem;
   }
+
+  .banner{
+    background-size: 150%;
+  }
+}
+
+@media all and (min-width:1200px){
+  .banner{
+    background-size: 120%;
+  }
 }
 
 @media all and (min-width:1200px){
@@ -66,5 +84,10 @@
   .bannerContent .bannerSubtitle,
   .btnBanner{
     font-size: 1.25rem;
+  }
+
+  .banner{
+    background-size: 120%;
+    animation: movimiento 6s infinite linear alternate;
   }
 }

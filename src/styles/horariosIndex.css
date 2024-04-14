@@ -15,7 +15,7 @@
 .imgInterior{
   width: 100%;
   height: 300px;
-  transition: 1s;
+  transition: 1.3s;
   filter: saturate(200%);
 }
 
