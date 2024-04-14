@@ -6,7 +6,7 @@
 
 .mainSection {
   flex-grow: 1;
-  background-image: url("../assets/fondoAdministracion.jpg");
+  background-image: url("../assets/fondoAdministracion.webp");
   background-size: cover;
   background-position: center;
   color: #fff;

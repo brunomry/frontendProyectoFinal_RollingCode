@@ -1,10 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 import { CarouselItem } from 'react-bootstrap';
-import leonel from "../../../assets/nosotros/leonelRodrigoCordero.jpg";
-import bruno from "../../../assets/nosotros/brunoMadozzoRomay.jpg";
-import fernando from "../../../assets/nosotros/fernandoHerrera.jpg";
-import elias from "../../../assets/nosotros/eliasJavierJuarez.jpg";
+import leonel from "../../../assets/nosotros/leonelRodrigoCordero.webp";
+import bruno from "../../../assets/nosotros/brunoMadozzoRomay.webp";
+import fernando from "../../../assets/nosotros/fernandoHerrera.webp";
+import elias from "../../../assets/nosotros/eliasJavierJuarez.webp";
 
 
 const CarruselNosotros = () => {

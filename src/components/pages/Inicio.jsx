@@ -44,13 +44,12 @@ const Inicio = () => {
         <div className="container containerOpinions py-4 py-sm-5 d-flex flex-column align-items-center gap-3">
           <h2 className="mb-4">- Opiniones -</h2>
           <div className="text-center border border-1 border-primary p-2 rounded-2 btnOpinion shadow">
-            <a
-              href="https://www.google.com.ar/"
-              target="_blank"
+            <Link
+              to="*"
               className="text-decoration-none fw-bold "
             >
               ¡Déjanos tu opinión en Google!
-            </a>
+            </Link>
           </div>
           <Opiniones></Opiniones>
         </div>

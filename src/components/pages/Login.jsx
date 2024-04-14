@@ -1,6 +1,6 @@
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import imgLogin from '../../assets/imgLogin.jpeg';
+import imgLogin from "../../assets/imgLogin.webp";
 import '../../styles/login.css';
 import { useForm } from 'react-hook-form';
 import { leerUsuariosAPI, login } from '../../helpers/queries';

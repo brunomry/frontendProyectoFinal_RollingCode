@@ -54,15 +54,15 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
     <>
       <header className='p-2 d-none d-md-block d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-between align-items-center'>
         <div>
-          <Link to='*' target='_blank'>
+          <Link to='*' target='_blank' title='facebook'>
             <i className='fa-brands fa-facebook-f fa-2xl mx-3 link-primary'>
               {' '}
             </i>
           </Link>
-          <Link to='*' target='_blank'>
+          <Link to='*' target='_blank' title='instagram'>
             <i className='fa-brands fa-instagram fa-2xl me-3 link-danger'></i>
           </Link>
-          <Link to='*' target='_blank'>
+          <Link to='*' target='_blank' title='twitter'>
             <i className='fa-brands fa-x-twitter fa-2xl link-dark'></i>
           </Link>
         </div>
@@ -71,13 +71,14 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
             <img
               src={logo}
               alt='Logo ambiente bohemio'
+              title='Logo Ambiente Bohemio'
               className='img-fluid logo'
             />
           </Link>
         </div>
         <div>
-          <p className='me-3'>
-            <i className='fa-brands fa-whatsapp fa-2xl link-success'></i>{' '}
+          <p className='me-3' title='WhatsApp'>
+            <i className='fa-brands fa-whatsapp fa-2xl link-success' ></i>{' '}
             123-1234567
           </p>
         </div>
@@ -88,6 +89,7 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
             <img
               src={logo}
               alt='Logo ambiente bohemio'
+              title='Logo Ambiente Bohemio'
               className='img-fluid logoMobile'
             />
           </Navbar.Brand>

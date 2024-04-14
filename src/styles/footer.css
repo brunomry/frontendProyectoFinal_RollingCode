@@ -20,6 +20,7 @@ p {
     padding-bottom: 8px;
     border-bottom: solid 2px black;
 }
+
 .contactForm{
     width: 100%;
 }
@@ -70,6 +71,7 @@ p {
 
   .formTitle{
     text-align: center;
+    color: #9a5534;
   }
 
   .footerIMG{

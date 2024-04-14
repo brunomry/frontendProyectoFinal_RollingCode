@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../styles/horariosIndex.css";
-import interior from "../../../assets/Inicio/interior.jpg";
+import interior from "../../../assets/Inicio/interior.webp";
 
 const HorariosYServicios = () => {
   return (

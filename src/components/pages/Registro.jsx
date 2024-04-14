@@ -1,5 +1,5 @@
 import { Button, Form, FormCheck } from 'react-bootstrap';
-import imgRegistro from '../../assets/imgRegistro.jpg';
+import imgRegistro from '../../assets/imgRegistro.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/registro.css';
 import { useForm } from 'react-hook-form';

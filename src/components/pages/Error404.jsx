@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/error404.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import error404 from '../../assets/Error404.webp'
 
 const Error404 = () => {
   return (
@@ -9,9 +10,9 @@ const Error404 = () => {
       <div className='d-flex flex-column gap-2'>
         <article className=''>
           <img
-            className=''
-            src='https://i.pinimg.com/564x/6b/87/03/6b870316038b5e2d3cca919b4ccf8289.jpg'
-            alt=''
+            src={error404}
+            alt='error 404'
+            title='error 404'
           />
         </article>
         <article className='pb-2'>

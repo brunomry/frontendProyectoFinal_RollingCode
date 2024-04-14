@@ -8,7 +8,7 @@
 }
 
 .bannerContainer {
-  background-image: url('https://images.pexels.com/photos/1148565/pexels-photo-1148565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url("../assets/bannerNosotros.webp");
   color: white;
   max-width: 1920px;
   max-height: 35rem;
