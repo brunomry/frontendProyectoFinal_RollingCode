@@ -32,7 +32,9 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
 
   const filtrarProductosPorCategoria = (categoria) =>
     productos.filter(
-      (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
+      (producto) =>
+        producto.estado === 'Disponible' &&
+        producto.categoria.toLowerCase() === categoria.toLowerCase()
     );
 
   const filtrarProductosPorNombre = () => {
@@ -41,8 +43,10 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
     if (inputBusqueda === '') {
       setProductosFiltrados([]);
     } else {
-      const productosEncontrados = productos.filter((producto) =>
-        producto.nombre.toLowerCase().startsWith(inputBusqueda)
+      const productosEncontrados = productos.filter(
+        (producto) =>
+          producto.estado === 'Disponible' &&
+          producto.nombre.toLowerCase().startsWith(inputBusqueda)
       );
       setProductosFiltrados(productosEncontrados);
     }
