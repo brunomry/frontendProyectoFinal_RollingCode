@@ -4,6 +4,7 @@ const URL_Login = import.meta.env.VITE_API_LOGIN;
 const URL_Registro = import.meta.env.VITE_API_REGISTRO;
 const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
+const URL_usuario = import.meta.env.VITE_API_USUARIO;
 
 export const leerProductosAPI = async () => {
   try {
@@ -139,6 +140,20 @@ export const editarPedidoAPI = async (pedido, id) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(pedido),
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editarEstadoUsuario = async (usuario) => {
+  try {
+    const respuesta = await fetch(URL_usuario + usuario._id, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(usuario),
     });
   } catch (error) {
     console.log(error);
