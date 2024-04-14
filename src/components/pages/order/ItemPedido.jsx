@@ -3,6 +3,7 @@ import '../../../styles/administrador.css';
 import { useState } from 'react';
 import { editarPedidoAPI } from '../../../helpers/queries';
 import Swal from 'sweetalert2';
+import { METODO_ENVIO } from '../../../helpers/constants';
 
 const ItemPedido = ({ listaUsuarios, pedido }) => {
   const [show, setShow] = useState(false);
@@ -33,10 +34,14 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
     setEstadoPedido(pedido.estadoEnvio);
   };
 
+  const metodoDelEnvio = METODO_ENVIO.find(
+    (metodo) => metodo.id == pedido.metodoEnvio
+  );
+
   console.log('Usuario:', usuarioEncontrado);
   return (
     <tr>
-      <td>{usuarioEncontrado._id}</td>
+      <td>{usuarioEncontrado.nombreCompleto}</td>
       <td>{pedido.fecha}</td>
       <td>${pedido.monto}</td>
       <td>
@@ -50,6 +55,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
               <Modal.Title>Pedido</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              <h5>Productos:</h5>
               <ul>
                 {pedido.productos.map((producto) => (
                   <li key={producto.id}>
@@ -57,6 +63,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
                   </li>
                 ))}
               </ul>
+              <h5>Metodo del envio: {metodoDelEnvio.tipo}</h5>
             </Modal.Body>
             <Modal.Footer>
               <Button variant='secondary' onClick={handleClose}>
