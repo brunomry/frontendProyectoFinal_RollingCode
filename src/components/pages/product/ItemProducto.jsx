@@ -13,7 +13,8 @@ const ItemProducto = ({ producto, setProductos }) => {
       showCancelButton: true,
       confirmButtonColor: '#60b0fc',
       cancelButtonColor: '#f77266e2',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar',
     }).then(async (result) => {
       if (result.isConfirmed) {
         const respuesta = await borrarProductoAPI(producto._id);
