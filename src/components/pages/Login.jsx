@@ -41,7 +41,7 @@ const Login = ({ setUsuarioLogeado }) => {
       const usuarioBuscado = listaUsuarios.find(
         (u) => u.correo === usuario.correo
       );
-      if (usuarioBuscado.rol === 'Administrador') {
+      if (usuarioBuscado.rol === 'Administrador' && usuarioBuscado.estado) {
         sessionStorage.setItem(
           'usuarioLogeado',
           JSON.stringify({
@@ -62,7 +62,7 @@ const Login = ({ setUsuarioLogeado }) => {
           text: `Bienvenido ${usuarioBuscado.nombreCompleto}`,
         });
       }
-      if (usuarioBuscado.rol === 'Usuario') {
+      if (usuarioBuscado.rol === 'Usuario' && usuarioBuscado.estado) {
         sessionStorage.setItem(
           'usuarioLogeado',
           JSON.stringify({
@@ -83,11 +83,19 @@ const Login = ({ setUsuarioLogeado }) => {
           text: `Bienvenido ${usuarioBuscado.nombreCompleto}`,
         });
       }
+
+      if (!usuarioBuscado.estado) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Usuario suspendido.',
+          text: 'En este momento no puedes iniciar sesion.',
+        });
+      }
     } else {
       Swal.fire({
         icon: 'error',
         title: 'No se pudo iniciar sesion',
-        text: 'Los datos ingresados no son correctos',
+        text: 'Los datos ingresados no son correctos o esta deshabilitado.',
       });
     }
   };

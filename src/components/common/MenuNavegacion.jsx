@@ -81,7 +81,7 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
           </p>
         </div>
       </header>
-      <Navbar expand='md' className='navLinks navbarBackground'>
+      <Navbar expand='md' className='navBarSticky navLinks navbarBackground'>
         <Container fluid>
           <Navbar.Brand className='d-block d-md-none' as={Link} to='/'>
             <img

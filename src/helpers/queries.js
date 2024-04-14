@@ -19,7 +19,7 @@ export const leerProductosAPI = async () => {
 
 export const obtenerProductoAPI = async (id) => {
   try {
-    const respuesta = await fetch(URL_Producto + "/" + id);
+    const respuesta = await fetch(URL_Producto + '/' + id);
     const productoObtenido = await respuesta.json();
     return productoObtenido;
   } catch (error) {
@@ -30,9 +30,9 @@ export const obtenerProductoAPI = async (id) => {
 export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URL_Productos, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(productoNuevo),
     });
@@ -45,9 +45,9 @@ export const crearProductoAPI = async (productoNuevo) => {
 export const editarProductoAPI = async (productoModificado, id) => {
   try {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "aplication/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(productoModificado),
     });
@@ -60,7 +60,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 export const borrarProductoAPI = async (id) => {
   try {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     });
     return respuesta;
   } catch (error) {
@@ -81,9 +81,9 @@ export const leerUsuariosAPI = async () => {
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
     const respuesta = await fetch(URL_Registro, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(usuarioNuevo),
     });
@@ -96,9 +96,9 @@ export const crearUsuarioAPI = async (usuarioNuevo) => {
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URL_Login, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(usuario),
     });
@@ -111,9 +111,9 @@ export const login = async (usuario) => {
 export const crearPedidoApi = async (pedido) => {
   try {
     const respuesta = await fetch(URL_pedidos, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(pedido),
     });
@@ -135,10 +135,10 @@ export const leerPedidosAPI = async () => {
 
 export const editarPedidoAPI = async (pedido, id) => {
   try {
-    const respuesta = await fetch(URL_pedido + id, {
-      method: "PUT",
+    const respuesta = await fetch(`${URL_pedido}/${id}`, {
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(pedido),
     });
@@ -149,23 +149,24 @@ export const editarPedidoAPI = async (pedido, id) => {
 
 export const editarEstadoUsuario = async (usuario) => {
   try {
-    const respuesta = await fetch(URL_usuario + usuario._id, {
+    const respuesta = await fetch(`${URL_usuario}/${usuario._id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(usuario),
     });
-     } catch (error) {
+  } catch (error) {
     console.log(error);
-     };
-  
+  }
+};
+
 export const enviarDatosCorreo = async (correo) => {
   try {
     const respuesta = await fetch(URL_Mailer, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(correo),
     });
