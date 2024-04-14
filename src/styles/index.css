@@ -10,7 +10,7 @@
   background-size: 250%;
   height: 60vh;
   font-family: "Exo";
-  animation: movimiento 7s infinite linear alternate;
+  animation: movimiento 8s infinite linear alternate;
 }
 
 @keyframes movimiento {
@@ -88,6 +88,6 @@
 
   .banner{
     background-size: 120%;
-    animation: movimiento 6s infinite linear alternate;
+    animation: movimiento 7s infinite linear alternate;
   }
 }
