@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 
 const ListaProductos = () => {
 
-  const [productos, setProductos] = useState ([])
+  const [productos, setProductos] = useState ([]);
+  const [busqueda, setBusqueda] = useState("");
+  const [productosFiltrados, setProductosFiltrados] = useState([]);
 
   useEffect(() =>{
     consultarAPI()
@@ -22,6 +24,19 @@ const ListaProductos = () => {
       console.log(error)
     }
   }
+
+  const filtrarProductosPorNombre = () => {
+    const inputBusqueda = busqueda.toLowerCase().trim();
+
+    if (inputBusqueda === "") {
+      setProductosFiltrados([]);
+    } else {
+      const productosEncontrados = productos.filter((producto) =>
+        producto.nombre.toLowerCase().startsWith(inputBusqueda)
+      );
+      setProductosFiltrados(productosEncontrados);
+    }
+  };
 
   return (
     <section className="mainSection pt-3 pb-5">
