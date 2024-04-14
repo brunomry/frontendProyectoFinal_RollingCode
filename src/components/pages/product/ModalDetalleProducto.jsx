@@ -74,7 +74,7 @@ const ModalDetalleProducto = ({
               </div>
             </Form.Group>
           )}
-          <div className='d-flex containerBTN'>
+          <div className='d-flex containerBTN mt-3'>
             <Button
               className='btn btn-secondary closeBTN'
               onClick={handleShowModal}
