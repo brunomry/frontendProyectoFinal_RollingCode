@@ -10,7 +10,7 @@ const ListaProductosUsuario = ({
   quitarProductoCarrito,
 }) => {
   return (
-    <div className="orderTable">
+    <div className="orderTable sectionTop">
       <Table responsive hover>
         <thead>
           <tr>

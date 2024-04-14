@@ -11,6 +11,11 @@
         object-fit: cover;
         height: 70vh;
     }
+
+    .imgLogin:hover{
+        filter: saturate(130%);
+    }
+
     .sectionLogin{
         width: 50vw;
     }
@@ -29,6 +34,7 @@
         width: 70vw;
         object-fit: cover;
         height: 70vh;
+       
     }
     .sectionLogin{
         width: 30vw;

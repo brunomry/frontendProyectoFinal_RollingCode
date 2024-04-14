@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
 
 .cardProduct {
   width: 100%;
   min-height: 175px;
-  max-height: 185px;
+  max-height: 200px;
   border: solid 1px #000;
   border-radius: 8px;
   margin: 5px 0px;
   background-color: #fbf8ea;
-  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 12px 1px;
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 12px 1px;
+  filter: saturate(110%);
 }
 
 .cardInformation {
+  width: 100%;
   padding: 10px;
 }
 
@@ -23,7 +25,6 @@
   -webkit-line-clamp: 1;
   white-space: normal;
   text-overflow: ellipsis;
-  font-size: 1rem;
 }
 
 .cardParagraph {
@@ -42,16 +43,17 @@
 }
 
 .cardPrice {
-  font-size: 1.125rem;
   font-weight: bold;
-  color: green;
+  color: rgb(61, 177, 11);
+  padding-bottom: 2px;
 }
 
 .cardBTN {
-  background-color: #e5a95b;
+  background-color: #f4b562;
   color: #000;
   border-radius: 7px;
   border: 1px solid #000;
+  width: 100%;
 }
 
 .cardBTN:hover {
@@ -66,32 +68,74 @@
   height: 100%;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+  filter: saturate(130%);
 }
 
-@media all and (min-width: 0px) and (max-width: 767px) {
-  .cardParagraph {
-    -webkit-line-clamp: 1;
+.cardProduct {
+  width: 100%;
+  max-height: 170px;
+}
+
+.cardTitle h5 {
+  font-size: 1rem;
+}
+
+.flexPriceAndBtn {
+  width: 100%;
+  display: flex;
+  width: 75px;
+  flex-direction: column;
+}
+
+.cardIMG {
+  object-fit: cover;
+  width: 100px;
+  height: 100%;
+}
+
+@media all and (min-width: 315px) {
+  .cardProduct {
+    max-height: 185px;
   }
 
-  .cardBTN {
-    padding: 4px 6px;
-  }
-
-  .cardIMG {
-    object-fit: cover;
-    width: 100px;
-    height: 100%;
+  .cardPrice {
+    padding-bottom: 5px;
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (min-width: 375px) {
   .cardBTN {
-    padding: 6px 8px;
+    font-size: 1rem;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .flexPriceAndBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 75px;
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .cardPrice p{
+    font-size: 1.2rem;
+  }
+
+  .cardTitle h5 {
+    font-size: 1.2rem;
   }
 }
 
 @media all and (min-width: 992px) {
   .cardIMG {
     width: 180px;
+  }
+
+  .cardProduct {
+    width: 100%;
+    height: 150px;
   }
 }

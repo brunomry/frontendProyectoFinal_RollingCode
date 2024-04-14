@@ -1,6 +1,6 @@
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import imgLogin from '../../assets/imgLogin.jpeg';
+import imgLogin from "../../assets/imgLogin.webp";
 import '../../styles/login.css';
 import { useForm } from 'react-hook-form';
 import { leerUsuariosAPI, login } from '../../helpers/queries';
@@ -101,7 +101,7 @@ const Login = ({ setUsuarioLogeado }) => {
   };
 
   return (
-    <div className='d-flex'>
+    <div className='d-flex sectionTop'>
       <section className='d-none d-sm-block'>
         <img
           src={imgLogin}

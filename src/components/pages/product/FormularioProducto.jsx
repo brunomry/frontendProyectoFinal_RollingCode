@@ -89,12 +89,10 @@ const FormularioProducto = ({
   };
 
   return (
-    <section className='mainSection px-2 pt-2 pb-5'>
-      <div className='container-md'>
-        <h1 className='mt-5 titleColor'>
-          {titulo}
-        </h1>
-        <hr className='container-md text-start my-0 mb-4' />
+    <section className="mainSection px-2 pt-2 pb-5 sectionTop">
+      <div className="container-md">
+        <h1 className="mt-5 titleColor">{titulo}</h1>
+        <hr className="container-md text-start my-0 mb-4" />
       </div>
       <Form
         onSubmit={handleSubmit(productoValidado)}
@@ -132,7 +130,8 @@ const FormularioProducto = ({
         </Form.Group>
         <Form.Group className="mb-3 " controlId="formDescription">
           <Form.Label className="fw-bold">
-            Descripción <span className={`text-danger ${ocultar ? "d-none" : ""}`}>*</span>
+            Descripción{" "}
+            <span className={`text-danger ${ocultar ? "d-none" : ""}`}>*</span>
           </Form.Label>
           <Form.Control
             className="textarea"
@@ -160,7 +159,10 @@ const FormularioProducto = ({
         <div className="row">
           <Form.Group className="mb-3 col-sm-4" controlId="formCategory">
             <Form.Label className="fw-bold">
-              Categoría <span className={`text-danger ${ocultar ? "d-none" : ""}`}>*</span>
+              Categoría{" "}
+              <span className={`text-danger ${ocultar ? "d-none" : ""}`}>
+                *
+              </span>
             </Form.Label>
             <Form.Select
               disabled={deshabilitado}
@@ -180,7 +182,10 @@ const FormularioProducto = ({
           </Form.Group>
           <Form.Group className="mb-3 col-sm-4" controlId="formState">
             <Form.Label className="fw-bold">
-              Estado <span className={`text-danger ${ocultar ? "d-none" : ""}`}>*</span>
+              Estado{" "}
+              <span className={`text-danger ${ocultar ? "d-none" : ""}`}>
+                *
+              </span>
             </Form.Label>
             <Form.Select
               disabled={deshabilitado}
@@ -198,7 +203,10 @@ const FormularioProducto = ({
           </Form.Group>
           <Form.Group className="mb-3 col-sm-4" controlId="formPrice">
             <Form.Label className="fw-bold">
-              Precio <span className={`text-danger ${ocultar ? "d-none" : ""}`}>*</span>
+              Precio{" "}
+              <span className={`text-danger ${ocultar ? "d-none" : ""}`}>
+                *
+              </span>
             </Form.Label>
             <Form.Control
               type="number"

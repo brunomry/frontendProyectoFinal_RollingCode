@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../styles/horariosIndex.css";
-import interior from "../../../assets/Inicio/interior.jpg";
+import interior from "../../../assets/Inicio/interior.webp";
 
 const HorariosYServicios = () => {
   return (
@@ -56,7 +56,7 @@ const HorariosYServicios = () => {
           </Button>
         </div>
       </article>
-      <article className="order-1 order-lg-1">
+      <article className="order-1 order-lg-1 containerImgInterior">
         <img
           src={interior}
           alt="interior del restaurante"

@@ -6,25 +6,23 @@ import { leerProductosAPI } from "../../../helpers/queries.js";
 import { useEffect, useState } from "react";
 import Load from "../../common/Load.jsx";
 
-
 const ListaProductos = () => {
-
-  const [productos, setProductos] = useState ([]);
+  const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
 
-  useEffect(() =>{
-    consultarAPI()
-  }, [])
-  
-  const consultarAPI = async () =>{
-    try{
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    try {
       const respuesta = await leerProductosAPI();
-      setProductos(respuesta)
-    }catch(error){
-      console.log(error)
+      setProductos(respuesta);
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   const filtrarProductosPorNombre = () => {
     const inputBusqueda = busqueda.toLowerCase().trim();
@@ -50,7 +48,7 @@ const ListaProductos = () => {
   }
 
   return (
-    <section className="mainSection pt-3 pb-5">
+    <section className="mainSection pt-3 pb-5 sectionTop">
       <div className="ps-2 ps-md-5 mb-5">
         <Link
           className="btn btn-dark text-decoration-none text-white border px-3 pt-2 rounded-2"
@@ -100,24 +98,28 @@ const ListaProductos = () => {
         </thead>
         <tbody>
           {busqueda === "" &&
-            productos.map((producto) => <ItemProducto key={producto._id} producto={producto} setProductos={setProductos}></ItemProducto>)
-          }
+            productos.map((producto) => (
+              <ItemProducto
+                key={producto._id}
+                producto={producto}
+                setProductos={setProductos}
+              ></ItemProducto>
+            ))}
         </tbody>
         <tbody className={busqueda == "" ? "d-none" : "pb-5"}>
-        {productosFiltrados.length > 0 && (
+          {productosFiltrados.length > 0 &&
             productosFiltrados.map((producto) => (
               <ItemProducto
                 key={producto._id}
                 producto={producto}
                 setProductos={setProductos}
               ></ItemProducto>
-            ))
-        )}
-        {productosFiltrados.length === 0 && busqueda !== "" && (
-          <tr>
-            <td colSpan={"6"}>No se encontraron productos.</td>
-          </tr>
-        )}
+            ))}
+          {productosFiltrados.length === 0 && busqueda !== "" && (
+            <tr>
+              <td colSpan={"6"}>No se encontraron productos.</td>
+            </tr>
+          )}
         </tbody>
       </Table>
     </section>

@@ -7,10 +7,14 @@
   background-color: #f5ebdc;
 }
 
+#root .titleColor{
+  color: #fd6100ce;
+}
+
 .bannerPedido {
   width: 100%;
   position: relative;
-  background-image: url('../assets/imgPedido.jpg');
+  background-image: url('../assets/imgPedido.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

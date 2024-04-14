@@ -1,8 +1,8 @@
 import { Carousel, Card, Row, Col } from "react-bootstrap";
-import pizzas from "../../../assets/Inicio/pizzas.jpg";
-import pastas from "../../../assets/Inicio/pastas(1).jpg";
-import empanadas from "../../../assets/Inicio/empanadas.jpg";
-import hamburguesas from "../../../assets/Inicio/hamburguesas.jpg";
+import pizzas from "../../../assets/Inicio/pizzas.webp";
+import pastas from "../../../assets/Inicio/pastas(1).webp";
+import empanadas from "../../../assets/Inicio/empanadas.webp";
+import hamburguesas from "../../../assets/Inicio/hamburguesas.webp";
 import "../../../styles/categoriasIndex.css";
 
 const CarruselCategorias = () => {

@@ -12,6 +12,7 @@ const Footer = () => {
           <img
             src={logo}
             alt="Logo de ambiente bohemio"
+            title='Logo Ambiente Bohemio'
             className="footerIMG"
           />
         </Col>
@@ -57,15 +58,15 @@ const Footer = () => {
               </p>
             </div>
             <div className="socialMedia d-md-flex flex-column gap-3">
-              <Link to="*" target="_blank">
+            <Link to="*" target="_blank" title="facebook">
+                <i className="fa-brands fa-facebook-f fa-2xl link-dark me-4 me-md-0"></i>
+              </Link>
+              <Link to="*" target="_blank" title="instagram" className="text-center">
                 <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 link-dark"></i>
               </Link>
-              <Link to="*" target="_blank">
+              <Link to="*" target="_blank" title="twitter">
                 <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-2 link-dark"></i>
-              </Link>
-              <Link to="*" target="_blank">
-                <i className="fa-brands fa-facebook-f fa-2xl link-dark"></i>
-              </Link>
+              </Link>      
             </div>
           </div>
           <div className="formContainer pt-2">
