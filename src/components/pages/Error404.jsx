@@ -13,6 +13,7 @@ const Error404 = () => {
             src={error404}
             alt='error 404'
             title='error 404'
+            className='imgError404'
           />
         </article>
         <article className='pb-2'>

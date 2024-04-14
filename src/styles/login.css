@@ -29,6 +29,7 @@
         width: 70vw;
         object-fit: cover;
         height: 70vh;
+        filter: saturate(130%);
     }
     .sectionLogin{
         width: 30vw;

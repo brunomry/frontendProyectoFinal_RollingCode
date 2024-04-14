@@ -8,7 +8,8 @@
   border-radius: 8px;
   margin: 5px 0px;
   background-color: #fbf8ea;
-  box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 12px 1px;
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 12px 1px;
+  filter: saturate(130%);
 }
 
 .cardInformation {
@@ -67,6 +68,7 @@
   height: 100%;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+  filter: saturate(130%);
 }
 
 .cardProduct {

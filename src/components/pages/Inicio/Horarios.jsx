@@ -56,7 +56,7 @@ const HorariosYServicios = () => {
           </Button>
         </div>
       </article>
-      <article className="order-1 order-lg-1">
+      <article className="order-1 order-lg-1 containerImgInterior">
         <img
           src={interior}
           alt="interior del restaurante"

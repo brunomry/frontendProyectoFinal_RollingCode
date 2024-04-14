@@ -9,6 +9,7 @@
 .cardCategory .imgCategory{
   width: 250px;
   height: 300px;
+  filter: saturate(130%);
 }
 
 .carousel .carousel-indicators{
