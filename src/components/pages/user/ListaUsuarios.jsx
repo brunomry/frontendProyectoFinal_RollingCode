@@ -4,6 +4,7 @@ import ItemUsuario from "./ItemUsuario";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerUsuariosAPI } from "../../../helpers/queries";
+import Load from "../../common/Load";
 
 const ListaUsuarios = () => {
 
@@ -20,6 +21,10 @@ const ListaUsuarios = () => {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  if (usuarios.length === 0) {
+    return <Load />;
   }
 
   return (
