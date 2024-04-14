@@ -1,5 +1,5 @@
 import "../../styles/menu.css";
-import { Container, Form, Row } from "react-bootstrap";
+import { Container, Form, Row, Spinner } from "react-bootstrap";
 import CardProducto from "./product/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
@@ -9,6 +9,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
   const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
+  const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
     consultarAPI();
@@ -18,9 +19,15 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
     try {
       const respuesta = await leerProductosAPI();
       setProductos(respuesta);
+      setSpinner(false);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleDownloadPDF = () => {
+    const urlPDF = pdf;
+    window.open(urlPDF, "_blank");
   };
 
   const filtrarProductosPorCategoria = (categoria) =>
@@ -28,27 +35,24 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
       (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
     );
 
-  const handleDownloadPDF = () => {
-    const urlPDF = pdf;
-    window.open(urlPDF, "_blank");
-  };
-
   const filtrarProductosPorNombre = () => {
     const inputBusqueda = busqueda.toLowerCase().trim();
 
     if (inputBusqueda === "") {
       setProductosFiltrados([]);
     } else {
-      const productosFiltrados = productos.filter((producto) =>
+      const productosEncontrados = productos.filter((producto) =>
         producto.nombre.toLowerCase().startsWith(inputBusqueda)
       );
-      setProductosFiltrados(productosFiltrados);
+      setProductosFiltrados(productosEncontrados);
     }
   };
 
   useEffect(() => {
     filtrarProductosPorNombre();
   }, [busqueda]);
+
+  const handleEnter = (e) => (e.key === "Enter" ? e.preventDefault() : null);
 
   return (
     <>
@@ -92,19 +96,25 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
       </div>
       <Form className="d-flex justify-content-center my-3 px-2">
         <Form.Group className="mb-3 search" controlId="buscarMenu">
+          <Form.Label>
+            Busca tu producto <i className="fa-solid fa-arrow-down ms-1"></i>
+          </Form.Label>
           <Form.Control
             type="text"
-            placeholder="nombre de producto"
+            placeholder="Por ej: cheeseburger"
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault();
-              }
-            }}
+            onKeyDown={(e) => handleEnter(e)}
           />
         </Form.Group>
       </Form>
+      <div
+        className={`d-flex align-items-start justify-content-center custom-spinner ${
+          !spinner ? "d-none" : "mb-5"
+        } `}
+      >
+        {spinner && <Spinner animation="border" role="status"></Spinner>}
+      </div>
       <Container
         className={
           filtrarProductosPorCategoria("Pizzas").length === 0 || busqueda !== ""
@@ -118,7 +128,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
               <h2 className="categoryTitle">Pizzas</h2>
             </div>
           )}
-        <Row className="gy-2 gx-3">
+        <Row className="gy-3 gx-4">
           {busqueda === "" &&
             filtrarProductosPorCategoria("Pizzas").length > 0 &&
             filtrarProductosPorCategoria("Pizzas").map((producto) => (
@@ -160,6 +170,32 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
       </Container>
       <Container
         className={
+          filtrarProductosPorCategoria("Pastas").length === 0 || busqueda !== ""
+            ? "d-none"
+            : "pb-5"
+        }
+      >
+        {busqueda === "" &&
+          filtrarProductosPorCategoria("Pastas").length > 0 && (
+            <div className="d-flex align-items-center" id="pastas">
+              <h2 className="categoryTitle">Pastas</h2>
+            </div>
+          )}
+        <Row className="gy-3 gx-4">
+          {busqueda === "" &&
+            filtrarProductosPorCategoria("Pastas").length > 0 &&
+            filtrarProductosPorCategoria("Pastas").map((producto) => (
+              <CardProducto
+                key={producto._id}
+                producto={producto}
+                productosCarrito={productosCarrito}
+                agregarProductoCarrito={agregarProductoCarrito}
+              ></CardProducto>
+            ))}
+        </Row>
+      </Container>
+      <Container
+        className={
           filtrarProductosPorCategoria("Empanadas").length === 0 ||
           busqueda !== ""
             ? "d-none"
@@ -185,35 +221,9 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
             ))}
         </Row>
       </Container>
-      <Container
-        className={
-          filtrarProductosPorCategoria("Pastas").length === 0 || busqueda !== ""
-            ? "d-none"
-            : "pb-5"
-        }
-      >
-        {busqueda === "" &&
-          filtrarProductosPorCategoria("Pastas").length > 0 && (
-            <div className="d-flex align-items-center" id="pastas">
-              <h2 className="categoryTitle">Pastas</h2>
-            </div>
-          )}
-        <Row className="gy-3 gx-4">
-          {busqueda === "" &&
-            filtrarProductosPorCategoria("Pastas").length > 0 &&
-            filtrarProductosPorCategoria("Pastas").map((producto) => (
-              <CardProducto
-                key={producto._id}
-                producto={producto}
-                productosCarrito={productosCarrito}
-                agregarProductoCarrito={agregarProductoCarrito}
-              ></CardProducto>
-            ))}
-        </Row>
-      </Container>
       <Container className={busqueda == "" ? "d-none" : "pb-5"}>
         {productosFiltrados.length > 0 && (
-          <Row className="gy-2 gx-3">
+          <Row className="gy-3 gx-4">
             {productosFiltrados.map((producto) => (
               <CardProducto
                 key={producto._id}
@@ -225,8 +235,8 @@ const Menu = ({ agregarProductoCarrito, productosCarrito }) => {
           </Row>
         )}
         {productosFiltrados.length === 0 && busqueda !== "" && (
-          <div className="py-5">
-            No se encontraron productos.
+          <div className="py-5 text-center">
+            <p>No se encontraron productos.</p>
           </div>
         )}
       </Container>
