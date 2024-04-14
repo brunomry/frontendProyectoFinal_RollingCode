@@ -42,19 +42,24 @@ const Login = ({ setUsuarioLogeado }) => {
         (u) => u.correo === usuario.correo
       );
       if (usuarioBuscado.rol === 'Administrador' && usuarioBuscado.estado) {
+        const datos = await respuesta.json()
         sessionStorage.setItem(
           'usuarioLogeado',
           JSON.stringify({
             id: usuarioBuscado._id,
             correo: usuarioBuscado.correo,
             rol: usuarioBuscado.rol,
+            token: datos.token
           })
         );
         setUsuarioLogeado({
           id: usuarioBuscado._id,
           correo: usuarioBuscado.correo,
           rol: usuarioBuscado.rol,
+          token: datos.token
         });
+        console.log(datos.token)
+        console.log(datos)
         navegacion('/administrador');
         Swal.fire({
           icon: 'success',
