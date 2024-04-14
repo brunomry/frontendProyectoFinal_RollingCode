@@ -6,7 +6,7 @@ import error404 from '../../assets/Error404.webp'
 
 const Error404 = () => {
   return (
-    <section className='errorSection d-flex justify-content-center py-2'>
+    <section className='errorSection d-flex justify-content-center py-2 sectionTop'>
       <div className='d-flex flex-column gap-2'>
         <article className=''>
           <img

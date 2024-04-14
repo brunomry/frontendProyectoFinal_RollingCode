@@ -61,7 +61,7 @@
   overflow-x: scroll;
   padding-left: 190px;
   background-color: #e9dfd2;
-  z-index: 99;
+  z-index: 999;
 }
 
 @media all and (min-width: 375px) {

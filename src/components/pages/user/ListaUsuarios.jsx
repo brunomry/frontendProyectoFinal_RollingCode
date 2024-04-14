@@ -27,7 +27,7 @@ const ListaUsuarios = () => {
   }
 
   return (
-    <section className='mainSection pt-3 pb-5'>
+    <section className='mainSection pt-3 pb-5 sectionTop'>
       <div className='ps-2 ps-md-5 mb-5'>
         <Link
           className='btn btn-dark text-decoration-none text-white border px-3 py-2 rounded-2'

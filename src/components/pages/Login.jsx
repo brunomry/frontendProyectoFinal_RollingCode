@@ -101,7 +101,7 @@ const Login = ({ setUsuarioLogeado }) => {
   };
 
   return (
-    <div className='d-flex'>
+    <div className='d-flex sectionTop'>
       <section className='d-none d-sm-block'>
         <img
           src={imgLogin}

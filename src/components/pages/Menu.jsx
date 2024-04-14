@@ -60,7 +60,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
 
   return (
     <>
-      <section className='bannerMenu d-flex flex-column justify-content-center align-items-center'>
+      <section className='bannerMenu d-flex flex-column justify-content-center align-items-center sectionTop'>
         <h1 className='title pb-3'>Nuestro Menú</h1>
         <p className='fw-bold bannerText pb-3'>
           ¡Descubre nuestro festín de sabores!

@@ -68,7 +68,7 @@ const Registro = () => {
   };
 
   return (
-    <div className='d-flex'>
+    <div className='d-flex sectionTop'>
       <section className='sectionRegistroImage d-none d-sm-block'>
         <img
           src={imgRegistro}

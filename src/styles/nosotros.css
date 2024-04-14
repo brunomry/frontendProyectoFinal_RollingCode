@@ -10,8 +10,7 @@
 .bannerContainer {
   background-image: url("../assets/bannerNosotros.webp");
   color: white;
-  max-width: 1920px;
-  max-height: 35rem;
+  max-height: 32rem;
   height: 60vw;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,6 +96,10 @@
 
   .bannerContainer h1 {
     font-size: 4.0625rem;
+  }
+
+  .bannerContainer{
+    max-height: 32rem;
   }
 
   .bannerContainer p {

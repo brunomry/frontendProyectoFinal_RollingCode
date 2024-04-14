@@ -25,3 +25,25 @@
 #root .btn {
   font-family: 'Exo', sans-serif;
 }
+
+#root .navBarSticky{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+
+#root .sectionTop{
+  margin-top: 89px;
+}
+
+@media all and (min-width:768px){
+  #root .navBarSticky{
+    position: sticky;
+    top: 0px;
+    border-bottom: .1px solid rgb(200, 198, 198);
+  }
+
+  #root .sectionTop{
+    margin-top: 0px;
+  }
+}  

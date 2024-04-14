@@ -7,7 +7,7 @@ import Opiniones from "./Inicio/Opiniones";
 const Inicio = () => {
   return (
     <>
-      <section className="banner d-flex justify-content-center align-items-center">
+      <section className="banner d-flex justify-content-center align-items-center sectionTop">
         <div className="bannerOpacity"></div>
         <article className="bannerContent d-flex flex-column justify-content-center align-items-center gap-3 gap-md-4 gap-lg-3 gap-xl-4 pb-md-5 text-white">
           <small className="fw-bold text-center bannerAddress mt-2 mt-lg-2">

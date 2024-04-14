@@ -5,7 +5,7 @@ import "../../styles/loadSpinner.css";
 const Load = () => {
   return (
     <div
-      className="d-flex justify-content-center custom-spinner"
+      className="d-flex justify-content-center align-items-center custom-spinner sectionTop"
       style={{ margin: "10vw 0" }}
     >
       <Spinner animation="border" role="status">

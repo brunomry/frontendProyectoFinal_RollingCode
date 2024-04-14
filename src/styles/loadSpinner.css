@@ -1,3 +1,11 @@
 #root .custom-spinner {
   color: #ce7846;
+  height: 400px;
+  z-index: 999;
+}
+
+@media all and (min-width:768px){
+  #root .custom-spinner {
+    height: 200px;
+  }
 }

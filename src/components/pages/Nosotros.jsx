@@ -9,9 +9,9 @@ import elias from "../../assets/nosotros/eliasJavierJuarez.webp";
 const Nosotros = () => {
   return (
     <>
-      <section className="d-flex flex-column align-items-center justify-content-center mx-auto bannerContainer">
+      <section className="d-flex flex-column align-items-center justify-content-center mx-auto bannerContainer sectionTop">
         <div className="bannerOpacity"> </div>
-        <div className="d-flex flex-column align-items-center justify-content-center bannerContent pb-5">
+        <div className="d-flex flex-column align-items-center justify-content-center bannerContent">
           <h1>Ambiente Bohemio</h1>
           <p className="w-100 text-center">
             Ambiente Bohemio surgió para brindar experiencias gastronómicas

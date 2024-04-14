@@ -40,7 +40,7 @@ const Pedido = ({
   }
 
   return (
-    <section className='bannerPedido border-1 border-secondary border-top'>
+    <section className='bannerPedido border-1 border-secondary border-top sectionTop'>
       <div className='container'>
         <div className='pt-5 pb-2 pb-md-4'>
           <h1 className='orderTitle fw-bold titleColor'>- Mi pedido -</h1>
