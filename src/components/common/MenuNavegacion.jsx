@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 
-const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
+const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado, productosCarrito }) => {
   const navegacion = useNavigate();
   const cerrarSesion = () => {
     Swal.fire({
@@ -49,6 +49,8 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
       confirmButtonText: 'Entendido',
     });
   };
+
+  let contadorCarrito = productosCarrito.length;
 
   return (
     <>

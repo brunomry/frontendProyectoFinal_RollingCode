@@ -174,6 +174,7 @@ function App() {
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
+          productosCarrito={productosCarrito}
         ></MenuNavegacion>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
