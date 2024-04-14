@@ -24,6 +24,7 @@ const MenuNavegacion = ({ usuarioLogeado, setUsuarioLogeado }) => {
         sessionStorage.removeItem('usuarioLogeado');
         sessionStorage.removeItem('carrito');
         navegacion('/');
+        window.location.reload();
         Swal.fire({
           title: 'Sesión cerrada',
           icon: 'success',
