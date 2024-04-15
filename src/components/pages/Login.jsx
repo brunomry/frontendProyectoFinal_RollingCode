@@ -58,8 +58,6 @@ const Login = ({ setUsuarioLogeado }) => {
           rol: usuarioBuscado.rol,
           token: datos.token
         });
-        console.log(datos.token)
-        console.log(datos)
         navegacion('/administrador');
         Swal.fire({
           icon: 'success',

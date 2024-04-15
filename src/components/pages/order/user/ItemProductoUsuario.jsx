@@ -11,9 +11,6 @@ const ItemProductoUsuario = ({
   const productoCarrito = carrito.find(
     (productoBuscado) => productoBuscado.producto == producto._id
   );
-  // if (!producto || !productoCarrito) {
-  //   return <h1>cargando</h1>;
-  // }
   return (
     productoCarrito && (
       <tr>

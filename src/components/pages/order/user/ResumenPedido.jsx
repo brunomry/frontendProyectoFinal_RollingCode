@@ -27,7 +27,7 @@ const ResumenPedido = ({
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
-    let usuario = usuarioLogeado.id; //reemplazar por el id de usuario logueado
+    let usuario = usuarioLogeado.id;
 
     let fecha = new Date().toLocaleString();
 

@@ -1,4 +1,4 @@
-import { Form, Spinner, Table } from "react-bootstrap";
+import { Form, Table } from "react-bootstrap";
 import "../../../styles/administrador.css";
 import ItemProducto from "./ItemProducto.jsx";
 import { Link } from "react-router-dom";

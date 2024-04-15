@@ -1,4 +1,4 @@
-import { Button, Table } from "react-bootstrap";
+import {Table } from "react-bootstrap";
 import "../../../styles/administrador.css";
 import ItemUsuario from "./ItemUsuario";
 import { Link } from "react-router-dom";

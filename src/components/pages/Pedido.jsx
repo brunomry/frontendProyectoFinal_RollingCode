@@ -1,10 +1,7 @@
 import ListaProductosUsuario from './order/user/ListaProductosUsuario';
 import ResumenPedido from './order/user/ResumenPedido';
 import '../../styles/pedido.css';
-import { Breadcrumb, BreadcrumbItem, Button } from 'react-bootstrap';
-import { NavLink, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { leerProductosAPI } from '../../helpers/queries';
+import { Link } from 'react-router-dom';
 import Load from '../common/Load';
 
 const Pedido = ({

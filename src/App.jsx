@@ -6,7 +6,6 @@ import Inicio from "./components/pages/Inicio";
 import Menu from "./components/pages/Menu";
 import Nosotros from "./components/pages/Nosotros";
 import MenuNavegacion from "./components/common/MenuNavegacion";
-import Pedido from "./components/pages/Pedido";
 import Error404 from "./components/pages/Error404";
 import Registro from "./components/pages/Registro";
 import Footer from "./components/common/Footer";
@@ -26,7 +25,6 @@ function App() {
     JSON.parse(sessionStorage.getItem("carrito")) || []
   );
   const [montoCarrito, setMontoCarrito] = useState(0);
-  const [pedidos, setPedidos] = useState([]);
   const [productosCarrito, setProductosCarrito] = useState([]);
 
   const calcularMonto = () => {
@@ -127,7 +125,6 @@ function App() {
         title: "Producto agregado",
         text: "El producto se agrego correctamente.",
       });
-      console.log(Object.keys(usuario));
       let carritoAux = [...carrito];
 
       let productoRepetido = carritoAux.find(

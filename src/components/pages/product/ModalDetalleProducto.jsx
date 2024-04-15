@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import '../../../styles/modalDetalleProducto.css';
-import { obtenerProductoAPI } from '../../../helpers/queries';
-import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const ModalDetalleProducto = ({
