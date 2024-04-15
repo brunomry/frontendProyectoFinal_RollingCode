@@ -37,7 +37,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
 
   return (
     <tr>
-      <td>{usuarioEncontrado.nombreCompleto}</td>
+      <td>{usuarioEncontrado ? usuarioEncontrado.nombreCompleto : "[Usuario eliminado]" }</td>
       <td>{pedido.fecha}</td>
       <td>${pedido.monto}</td>
       <td>
