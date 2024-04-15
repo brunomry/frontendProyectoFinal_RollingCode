@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+#root {
+  background-color: #f5ebdc;
+}
+
+* {
+  scroll-margin-top: 75px;
+}
+
+.title {
+  color: #9a5534;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #fff;
+  font-size: 35px;
+}
+
+.bannerMenu {
+  background-image: url("../assets/bannerMenu.webp");
+  background-size: 300%;
+  background-repeat: no-repeat;
+  color: white;
+  height: 60vh;
+  animation: movimiento 9s infinite;
+}
+
+@keyframes movimiento {
+  from {
+    background-position: bottom left;
+  }to{
+    background-position: top right;
+  }
+}
+
+.bannerBTN {
+  width: 200px;
+  font-size: 16px;
+  background-color: #9a5534;
+  color: #fff;
+  border-radius: 50px;
+  border: 3px solid #ffffff;
+  padding: 8px 10px;
+  transition: transform 0.3s ease;
+}
+
+.bannerBTN:hover {
+  transition: 0.7s;
+  transform: scale(1.1);
+}
+
+.search {
+  width: 100%;
+}
+
+.searchBTN {
+  height: 100%;
+}
+
+.menuCategoryContainer {
+  overflow-x: scroll;
+  padding-left: 190px;
+  background-color: #e9dfd2;
+  z-index: 999;
+}
+
+@media all and (min-width: 375px) {
+  .menuCategoryContainer {
+    padding-left: 100px;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .menuCategoryContainer {
+    overflow-x: hidden;
+    padding-left: 0px;
+  }
+
+  .search {
+    width: 350px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .title {
+    font-size: 65px;
+  }
+  .bannerText {
+    font-size: 18px;
+  }
+
+  .bannerMenu{
+    background-size: 150%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .title {
+    font-size: 75px;
+  }
+  .bannerText {
+    font-size: 20px;
+  }
+  .bannerBTN {
+    width: 240px;
+    font-size: 20px;
+  }
+
+  .bannerMenu{
+    background-size: 100%;
+  }
+}

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+header {
+  background-color: #ce7846;
+}
+
+.navbarBackground {
+  background-color: #f5ebdc;
+}
+
+.myOrderBTN{
+  border-bottom: 3px solid #f5ebdc;
+  transition: transform 0.3s ease;
+}
+.myOrderBTN:hover{
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+.navbar{
+  z-index: 999;
+}
+
+.navLink {
+  border-bottom: 3px solid #f5ebdc;
+  transition: transform 0.3s ease;
+}
+
+.navLink.active {
+  border-bottom: 3px solid #9a5534;
+}
+
+.navLink:hover {
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+.navLinkBTN {
+  transition: transform 0.3s ease;
+}
+
+.navLinkBTN:hover {
+  transition: 0.4s;
+  background-color: #f3d9b0;
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 200px;
+}
+
+.logoMobile {
+  width: 120px;
+  background-color: #9a5534;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+@media all and (min-width: 768px) {
+  .navLink {
+    width: inherit;
+  }
+}

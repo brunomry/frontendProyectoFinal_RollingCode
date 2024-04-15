@@ -1,1 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Exo', sans-serif;
+}
+
+#root h1,
+#root h2,
+#root h3,
+#root h4,
+#root h5 {
+  font-family: 'Oswald', sans-serif;
+}
+
+#root h1,
+#root h2 {
+  color: #9a5534;
+}
+
+#root a,
+#root p,
+#root .btn {
+  font-family: 'Exo', sans-serif;
+}
+
+#root .navBarSticky{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+
+#root .sectionTop{
+  margin-top: 89px;
+}
+
+@media all and (min-width:768px){
+  #root .navBarSticky{
+    position: sticky;
+    top: 0px;
+    border-bottom: .1px solid rgb(200, 198, 198);
+  }
+
+  #root .sectionTop{
+    margin-top: 0px;
+  }
+}  

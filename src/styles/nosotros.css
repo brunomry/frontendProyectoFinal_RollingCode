@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  background-color: #f1e4c3;
+}
+
+.bannerContainer {
+  background-image: url("../assets/bannerNosotros.webp");
+  color: white;
+  max-height: 32rem;
+  height: 60vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.bannerContainer > div {
+  height: 100%;
+}
+
+.bannerContainer h1{
+  font-family: 'Oswald';
+  text-align: center;
+  -webkit-text-stroke: 0.5px #fff;
+  font-size: 4.6875rem;
+}
+
+.bannerContent {
+  width: 100%;
+  height: 18.75rem;
+  z-index: 99;
+}
+
+.bannerOpacity {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cardsContainer {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.imgContainer {
+  position: relative;
+  width: 350px;
+  height: 380px;
+}
+
+.linkContainer i {
+  font-size: 2.5rem;
+}
+
+.fa-linkedin {
+  color: blue;
+}
+
+.fa-linkedin:hover {
+  color: rgb(96, 96, 255);
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-github:hover {
+  color: rgb(97, 97, 97);
+}
+
+.imgProfileP {
+  border-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(150%);
+}
+
+@media all and (max-width: 1150px) {
+  .bannerContainer h1 {
+    font-size: 3rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.125rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .carouselSM {
+    display: none;
+  }
+
+  .bannerContainer h1 {
+    font-size: 4.0625rem;
+  }
+
+  .bannerContainer{
+    max-height: 32rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.125rem;
+    width: 90vw;
+  }
+
+  .bannerContent {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .bannerContainer h1 {
+    font-size: 2rem;
+  }
+
+  .bannerContainer p {
+    width: 90vw;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .bannerContainer {
+    height: 200vh;
+  }
+
+  .imgContainer {
+    width: 250px;
+    height: 280px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .bannerContainer h1 {
+    font-size: 4.6875rem;
+  }
+
+  .bannerContainer p {
+    font-size: 1.25rem;
+  }
+
+  .bannerContainer p {
+    width: 600px;
+  }
+
+  .bannerContent {
+    width: 50%;
+  }
+}
