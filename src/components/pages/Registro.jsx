@@ -41,8 +41,6 @@ const Registro = () => {
         }
       });
       const respuesta = await crearUsuarioAPI(usuario);
-      console.log(respuesta)
-      console.log(usuario.correo)
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Te registraste exitosamente',
@@ -50,9 +48,7 @@ const Registro = () => {
           icon: 'success',
         });
         const direccionCorreo = {correo: usuario.correo}
-        console.log(direccionCorreo)
-        const respuestaCorreo = await enviarDatosCorreo(direccionCorreo)
-        console.log(respuestaCorreo)
+        await enviarDatosCorreo(direccionCorreo)
         reset();
         navegacion('/login');
       }

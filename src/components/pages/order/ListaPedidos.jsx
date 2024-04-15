@@ -17,7 +17,6 @@ const ListaPedidos = () => {
 
   const traerUsuarios = async () => {
     const respuestaUsuarios = await leerUsuariosAPI();
-    console.log(respuestaUsuarios);
     setListaUsuarios(respuestaUsuarios);
   };
 
