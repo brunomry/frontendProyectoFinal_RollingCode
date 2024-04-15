@@ -9,13 +9,10 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
   const [show, setShow] = useState(false);
   const [estadoPedido, setEstadoPedido] = useState(pedido.estadoEnvio);
 
-  console.log(pedido);
-
   const usuarioEncontrado = listaUsuarios.find(
     (usuario) => usuario._id == pedido.usuario
   );
 
-  console.log(usuarioEncontrado);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -38,7 +35,6 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
     (metodo) => metodo.id == pedido.metodoEnvio
   );
 
-  console.log('Usuario:', usuarioEncontrado);
   return (
     <tr>
       <td>{usuarioEncontrado.nombreCompleto}</td>

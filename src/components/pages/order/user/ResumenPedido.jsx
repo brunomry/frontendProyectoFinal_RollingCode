@@ -30,7 +30,6 @@ const ResumenPedido = ({
     let usuario = usuarioLogeado.id; //reemplazar por el id de usuario logueado
 
     let fecha = new Date().toLocaleString();
-    console.log(fecha);
 
     for (let i = 0; i < carritoAux.length; i++) {
       let producto = productosCarrito.find(
@@ -52,7 +51,6 @@ const ResumenPedido = ({
     pedido.fecha = fecha;
 
     const crearPedidoVar = await crearPedidoApi(pedido);
-    console.log(crearPedidoVar);
     if (crearPedidoVar.ok) {
       sessionStorage.removeItem('carrito');
       setCarrito([]);
@@ -66,7 +64,6 @@ const ResumenPedido = ({
         title: 'Su pedido no fue generado, vuelva a intentarlo.',
       });
     }
-    console.log('pedido: ', pedido);
   };
 
   return (

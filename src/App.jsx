@@ -32,8 +32,6 @@ function App() {
   const calcularMonto = () => {
     let productoCarritoAux = [...productosCarrito];
     let montoAux = 0;
-    // console.log("productoCarritoAux: ", productoCarritoAux);
-    // console.log("carrito: ", carrito);
     if (carrito.length > 0 && productosCarrito.length > 0) {
       for (let i = 0; i < productoCarritoAux.length; i++) {
         let precioProductoCarrito = carrito.find(
@@ -152,12 +150,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // console.log("Monto:", montoCarrito);
   }, [montoCarrito]);
 
   useEffect(() => {
     consultarAPI();
-    // console.log("carrito: ", carrito);
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
   }, [carrito]);
 
@@ -165,7 +161,6 @@ function App() {
     if (productosCarrito) {
       calcularMonto();
     }
-    // console.log("ProductosCarrito:", productosCarrito);
   }, [productosCarrito]);
 
   return (
