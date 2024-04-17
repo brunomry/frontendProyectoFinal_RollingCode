@@ -168,7 +168,7 @@ const MenuNavegacion = ({
                     onClick={myOrderAlert}
                   >
                     <i className="fa-solid fa-cart-shopping fa-xl"></i>
-                    <b>MI PEDIDO</b>
+                    <b> PEDIDO</b>
                   </NavLink>
                   <NavLink
                     className="navLinkBTN nav-link border border-1 border-dark rounded-2 mx-2 my-1 px-2"
