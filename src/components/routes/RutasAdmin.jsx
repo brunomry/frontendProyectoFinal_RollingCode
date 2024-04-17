@@ -16,6 +16,15 @@ const RutasAdmin = () => {
           path="/usuarios"
           element={<ListaUsuarios></ListaUsuarios>}
         ></Route>
+        <Route
+          path="/usuarios/crearUsuario"
+          element={
+            <FormularioUsuario
+              titulo="Nuevo usuario"
+              boton="Cancelar"
+            ></FormularioUsuario>
+          }
+        ></Route>
         <Route path="/pedidos" element={<ListaPedidos></ListaPedidos>}></Route>
         <Route
           path="/productos"
