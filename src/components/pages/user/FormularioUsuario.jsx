@@ -1,7 +1,8 @@
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../../styles/administrador.css";
 
-const FormularioUsuario = ({titulo, boton}) => {
+const FormularioUsuario = ({titulo}) => {
   return (
     <section className="mainSection px-2 pt-2 pb-5 sectionTop">
       <div className="container-md">
@@ -40,6 +41,23 @@ const FormularioUsuario = ({titulo, boton}) => {
             <Form.Text className='text-danger'>
             </Form.Text>
           </Form.Group>
+          <div className="text-end">
+            <Form.Group className="mb-3">
+              <Button
+              type="submit"
+              variant="success"
+              className="border border-white border-2 fw-bold px-4 px-sm-5 me-2 btnAddProduct"
+              >
+                Agregar
+              </Button>
+              <Link
+              className="btnCancel btn border border-white border-2 text-white fw-bold px-3 px-sm-5"
+              to={"/administrador/usuarios"}
+              >
+                Cancelar
+              </Link>
+            </Form.Group>
+          </div>
       </Form>
     </section>
   );
