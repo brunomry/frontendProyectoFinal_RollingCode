@@ -21,7 +21,7 @@ const MisPedidos = () => {
   }, []);
 
   if (listaPedidos.length == 0) {
-    return <Load />;
+    return <h1 className='mt-5 text-center'>No tienes pedidos realizados</h1>;
   }
 
   console.log(listaPedidos);
@@ -30,8 +30,8 @@ const MisPedidos = () => {
     <section className='text-center my-5 sectionTop px-2 sectionOrdersUser'>
       <h1 className='mb-5'>Mis pedidos realizados</h1>
       <article className='d-flex flex-column gap-4 justify-content-center align-items-center containerOrdersUser'>
-        {listaPedidos.map((pedidos) => (
-          <CardPedido key={pedidos._id} />
+        {listaPedidos.map((pedido) => (
+          <CardPedido key={pedido._id} pedido={pedido} />
         ))}
       </article>
     </section>
