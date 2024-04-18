@@ -24,8 +24,6 @@ const MisPedidos = () => {
     return <h1 className='mt-5 text-center'>No tienes pedidos realizados</h1>;
   }
 
-  console.log(listaPedidos);
-
   return (
     <section className='text-center my-5 sectionTop px-2 sectionOrdersUser'>
       <h1 className='mb-5'>Mis pedidos realizados</h1>
