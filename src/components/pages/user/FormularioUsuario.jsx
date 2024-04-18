@@ -18,7 +18,10 @@ const FormularioUsuario = ({titulo}) => {
         <h1 className="mt-5 titleColor">{titulo}</h1>
         <hr className="container-md text-start my-0 mb-4" />
       </div>
-      <Form className="my-4 mx-auto border border border-1 border-white formProduct px-3 px-sm-5 py-4 rounded-2">
+      <Form 
+      className="my-4 mx-auto border border border-1 border-white formProduct px-3 px-sm-5 py-4 rounded-2"
+      onSubmit={handleSubmit()}
+      >
         <h3 className="mb-4">
           Campo obligatorio
           <span className="text-danger fw-bold">*</span>
@@ -28,8 +31,22 @@ const FormularioUsuario = ({titulo}) => {
             <Form.Control
               type='text'
               placeholder='nombre'
+              {...register('nombreCompleto', {
+                required: 'El nombre y apellido son obligatorios',
+                minLength: {
+                  value: 7,
+                  message:
+                    'El nombre de usuario debe tener como minimo 7 caracteres',
+                },
+                maxLength: {
+                  value: 30,
+                  message:
+                    'El nombre de usuario debe tener como maximo 30 caracteres',
+                },
+              })}
             />
             <Form.Text className='text-danger'>
+            {errors.nombreCompleto?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
