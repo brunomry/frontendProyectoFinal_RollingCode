@@ -16,6 +16,7 @@ import { leerProductosAPI } from "./helpers/queries";
 import Swal from "sweetalert2";
 import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
 import RutasUsuario from "./components/routes/RutasUsuario";
+import MisPedidos from "./components/pages/order/userOrders/MisPedidos";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
@@ -197,7 +198,7 @@ function App() {
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route
             exact
-            path="/miPedido/*"
+            path="/pedido/*"
             element={
               <RutasProtegidasUsuario>
                 <RutasUsuario
@@ -209,7 +210,8 @@ function App() {
                   montoCarrito={montoCarrito}
                   quitarProductoCarrito={quitarProductoCarrito}
                   setCarrito={setCarrito}
-                ></RutasUsuario>
+                >
+                </RutasUsuario>
               </RutasProtegidasUsuario>
             }
           ></Route>
