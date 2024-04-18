@@ -27,8 +27,8 @@ const Pedido = ({
           </h2>
           ;
           <div className='text-center '>
-            <Link to='/menu' className='fw-bold btn btn-danger'>
-              Ir al Menú
+            <Link to='/pedido/misPedidos' className='fw-bold btn btn-danger'>
+              Ir al historial de pedidos
             </Link>
           </div>
         </div>
