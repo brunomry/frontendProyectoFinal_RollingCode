@@ -1,8 +1,17 @@
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../styles/administrador.css";
+import { useForm } from "react-hook-form";
 
 const FormularioUsuario = ({titulo}) => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm();
+
   return (
     <section className="mainSection px-2 pt-2 pb-5 sectionTop">
       <div className="container-md">
