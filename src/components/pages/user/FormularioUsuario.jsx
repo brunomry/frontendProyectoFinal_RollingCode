@@ -19,8 +19,7 @@ const FormularioUsuario = ({titulo}) => {
         <hr className="container-md text-start my-0 mb-4" />
       </div>
       <Form 
-      className="my-4 mx-auto border border border-1 border-white formProduct px-3 px-sm-5 py-4 rounded-2"
-      onSubmit={handleSubmit()}
+      className="my-4 mx-auto border border border-1 border-white formUser px-3 px-sm-5 py-4 rounded-2"
       >
         <h3 className="mb-4">
           Campo obligatorio
@@ -103,11 +102,11 @@ const FormularioUsuario = ({titulo}) => {
             </Form.Text>
           </Form.Group>
           <div className="text-end">
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3 d-flex flex-column flex-sm-row gap-3 justify-content-sm-end">
               <Button
               type="submit"
               variant="success"
-              className="border border-white border-2 fw-bold px-4 px-sm-5 me-2 btnAddProduct"
+              className="border border-white border-2 fw-bold px-4 px-sm-5 btnAddUser"
               >
                 Agregar
               </Button>

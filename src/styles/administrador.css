@@ -54,7 +54,7 @@
   height: 100px;
 }
 
-.formProduct {
+.formProduct, .formUser {
   width: 100%;
   background-color: #0009;
   background-color: rgba(33, 13, 13, 0.75);
@@ -64,21 +64,25 @@
   resize: none;
 }
 
-.formProduct .btnAddProduct{
+.formProduct .btnAddProduct,
+.formUser .btnAddUser{
   background-color: rgba(71, 157, 76, 0.8);
 }
 
-.formProduct .btnAddProduct:hover{
+.formProduct .btnAddProduct:hover,
+.formUser .btnAddUser:hover{
   background-color: #2b9332;
   transition: .5s;
   transform: scale(1.02);
 }
 
-.formProduct .btnCancel{
+.formProduct .btnCancel,
+.formUser .btnCancel{
   background-color: #9b8787;
 }
 
-.formProduct .btnCancel:hover{
+.formProduct .btnCancel:hover,
+.formUser .btnCancel:hover{
   background-color: #645757;
   transition: .5s;
   transform: scale(1.02);
@@ -104,9 +108,15 @@
     width: 750px;
   }
 
+  .formUser{
+    width: 600px;
+  }
+
   .formProduct,
   .formProduct .btnAddProduct,
-  .formProduct .btnCancel {
+  .formProduct .btnCancel,
+  .formUser .btnAddUser,
+  .formUser .btnCancel {
     font-size: 1.125rem;
   }
 
@@ -115,7 +125,9 @@
 @media all and (min-width: 992px) {
   .formProduct,
   .formProduct .btnAddProduct,
-  .formProduct .btnCancel{
+  .formProduct .btnCancel,
+  .formUser .btnAddUser,
+  .formUser .btnCancel{
     font-size: 1.1875rem;
   }
 }
