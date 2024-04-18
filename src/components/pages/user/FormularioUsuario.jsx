@@ -22,6 +22,15 @@ const FormularioUsuario = ({titulo, boton}) => {
             <Form.Text className='text-danger'>
             </Form.Text>
           </Form.Group>
+          <Form.Group className='mb-3' controlId='formBasicEmail'>
+            <Form.Label className="fw-bold">Email:</Form.Label>
+            <Form.Control
+              type='email'
+              placeholder='email'
+            />
+            <Form.Text className='text-danger'>
+            </Form.Text>
+          </Form.Group>
       </Form>
     </section>
   );
