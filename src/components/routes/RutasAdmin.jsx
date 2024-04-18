@@ -20,8 +20,6 @@ const RutasAdmin = () => {
           path="/usuarios/crearUsuario"
           element={
             <FormularioUsuario
-              titulo="Nuevo usuario"
-              boton="Cancelar"
             ></FormularioUsuario>
           }
         ></Route>
