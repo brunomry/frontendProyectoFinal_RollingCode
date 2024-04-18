@@ -5,6 +5,7 @@ import ListaUsuarios from "../pages/user/ListaUsuarios";
 import ListaPedidos from "../pages/order/ListaPedidos";
 import ListaProductos from "../pages/product/ListaProductos";
 import FormularioProducto from "../pages/product/FormularioProducto";
+import FormularioUsuario from "../pages/user/FormularioUsuario";
 
 const RutasAdmin = () => {
   return (
@@ -14,6 +15,13 @@ const RutasAdmin = () => {
         <Route
           path="/usuarios"
           element={<ListaUsuarios></ListaUsuarios>}
+        ></Route>
+        <Route
+          path="/usuarios/crearUsuario"
+          element={
+            <FormularioUsuario
+            ></FormularioUsuario>
+          }
         ></Route>
         <Route path="/pedidos" element={<ListaPedidos></ListaPedidos>}></Route>
         <Route

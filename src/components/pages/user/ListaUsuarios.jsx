@@ -41,7 +41,7 @@ const ListaUsuarios = () => {
         <Link
           className='btnNewUser border border-1 border-white fw-bold p-2 rounded-2 text-decoration-none'
           title='Nuevo usuario'
-          to='/*'
+          to='/administrador/usuarios/crearUsuario'
         >
           <i className='fa-solid fa-plus'></i> Nuevo usuario
         </Link>
