@@ -17,6 +17,7 @@ import Swal from "sweetalert2";
 import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
 import RutasUsuario from "./components/routes/RutasUsuario";
 import MisPedidos from "./components/pages/order/userOrders/MisPedidos";
+import Contacto from "./components/pages/Contacto";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
@@ -223,6 +224,7 @@ function App() {
             }
           ></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
+          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
