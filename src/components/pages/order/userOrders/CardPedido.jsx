@@ -36,7 +36,7 @@ const CardPedido = ({ pedido }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <Card.Header>{pedido.fecha}</Card.Header>
+      <Card.Header className='fw-bold'>{pedido.fecha}</Card.Header>
       <Card.Body>
         {pedido.estadoEnvio ? (
           <p className='text-success fw-bold mt-0 pt-0 text-center text-sm-start'>
@@ -44,7 +44,7 @@ const CardPedido = ({ pedido }) => {
           </p>
         ) : (
           <p className='text-warning fw-bold mt-0 pt-0 text-center text-sm-start'>
-            Pedido realizado
+            Realizado
           </p>
         )}
         <Card.Text className='text-center'>
