@@ -10,9 +10,10 @@ const MisPedidos = () => {
   const listarPedidos = async () => {
     const idUsuario = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
     const respuesta = await leerPedidosAPI();
-    const pedidosFiltrados = respuesta.filter(
+    const pedidosDeUsuarios = respuesta.filter(
       (pedido) => pedido.usuario === idUsuario.id
     );
+    const pedidosFiltrados = pedidosDeUsuarios.reverse();
     setListaPedidos(pedidosFiltrados);
   };
 
