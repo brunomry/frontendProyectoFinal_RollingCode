@@ -1,4 +1,5 @@
 import { Card, Button } from "react-bootstrap";
+import "../../../../styles/detalleCompraMP.css";
 
 const DetalleCompraMP = () => {
   return (
