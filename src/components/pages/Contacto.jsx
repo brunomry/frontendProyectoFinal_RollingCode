@@ -1,4 +1,5 @@
 import "../../styles/contacto.css";
+import HorariosContacto from "./contacto/HorariosContacto";
 
 const Contacto = () => {
   return (
@@ -35,6 +36,9 @@ const Contacto = () => {
             </div>
           </div>
         </article>
+        <div className="d-flex justify-content-center mb-4">
+          <HorariosContacto></HorariosContacto>
+        </div>
       </section>
     </>
   );
