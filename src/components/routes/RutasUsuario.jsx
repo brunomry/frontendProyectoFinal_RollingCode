@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Pedido from "../pages/Pedido";
 import MisPedidos from "../pages/order/userOrders/MisPedidos";
-import DetalleCompraMP from "../pages/order/userOrders/DetalleCompraMP";
+import DetalleCompraMP from "../pages/order/user/DetalleCompraMP";
 
 const RutasUsuario = ({
   usuarioLogeado,

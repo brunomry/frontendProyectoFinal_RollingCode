@@ -7,11 +7,10 @@ import {
   CardHeader,
   CardTitle,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { crearPedidoApi } from '../../../../helpers/queries';
 import Swal from 'sweetalert2';
 import { METODO_ENVIO } from '../../../../helpers/constants';
-
 
 
 const ResumenPedido = ({
@@ -22,6 +21,8 @@ const ResumenPedido = ({
   setCarrito,
 }) => {
   const [metodoEnvio, setMetodoEnvio] = useState(1);
+
+  const navegacion = useNavigate();
 
   const confirmarPedido = async () => {
     let carritoAux = [...carrito];
@@ -58,6 +59,7 @@ const ResumenPedido = ({
         icon: 'success',
         title: 'Su pedido fue generado con exito.',
       });
+      navegacion("/pedido/detalleCompra");
     } else {
       Swal.fire({
         icon: 'error',

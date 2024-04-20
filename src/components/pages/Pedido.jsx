@@ -22,13 +22,13 @@ const Pedido = ({
     return (
       <div className='bannerPedido d-flex flex-column justify-content-center'>
         <div className='bannerPedidoContent'>
-          <h2 className='bannerTitlePedido titleColor text-center mt-5'>
+          <h2 className='bannerTitlePedido titleColor text-center '>
             Tu pedido está vacío.
           </h2>
           ;
-          <div className='text-center '>
+          <div className='text-center pb-5'>
             <Link to='/pedido/misPedidos' className='fw-bold btn btn-danger'>
-              Ir al historial de pedidos
+              Ir a MIS PEDIDOS
             </Link>
           </div>
         </div>
