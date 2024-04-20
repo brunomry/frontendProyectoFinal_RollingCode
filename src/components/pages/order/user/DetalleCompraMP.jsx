@@ -1,5 +1,4 @@
 import { Card, Button, Spinner } from "react-bootstrap";
-// import { useLocation } from "react-router-dom";
 import "../../../../styles/detalleCompraMP.css";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState, useEffect } from "react";
@@ -17,7 +16,7 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
       try {
         const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado"));
         const pedidos = await leerPedidosAPI();
-        console.log(pedidos)
+
         const usuarios = await leerUsuariosAPI();
         const usuarioBuscado = usuarios.find((u)=> u.correo === usuario.correo)
         setnombreUsuario(usuarioBuscado.nombreCompleto)
@@ -28,7 +27,7 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
         const pedidoUsuario = pedidosFiltrados[pedidosFiltrados.length - 1];
         setPedido(pedidoUsuario);
       } catch (error) {
-        console.error("Error al obtener los datos:", error);
+        console.error(error);
       }
     };
 
