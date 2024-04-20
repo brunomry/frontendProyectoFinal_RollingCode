@@ -1,12 +1,12 @@
-import {Table } from "react-bootstrap";
-import "../../../styles/administrador.css";
-import ItemUsuario from "./ItemUsuario";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { leerUsuariosAPI } from "../../../helpers/queries";
-import Load from "../../common/Load";
+import { Table } from 'react-bootstrap';
+import '../../../styles/administrador.css';
+import ItemUsuario from './ItemUsuario';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { leerUsuariosAPI } from '../../../helpers/queries';
+import Load from '../../common/Load';
 
-const ListaUsuarios = () => {
+const ListaUsuarios = ({ superAdmin }) => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {

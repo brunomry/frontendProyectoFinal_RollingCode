@@ -19,13 +19,11 @@ const RutasAdmin = () => {
         <Route path='/' element={<Administracion></Administracion>}></Route>
         <Route
           path='/usuarios'
-          element={<ListaUsuarios></ListaUsuarios>}
+          element={<ListaUsuarios superAdmin={superAdmin}></ListaUsuarios>}
         ></Route>
         <Route
           path='/usuarios/crearUsuario'
-          element={
-            <FormularioUsuario superAdmin={superAdmin}></FormularioUsuario>
-          }
+          element={<FormularioUsuario></FormularioUsuario>}
         ></Route>
         <Route path='/pedidos' element={<ListaPedidos></ListaPedidos>}></Route>
         <Route
