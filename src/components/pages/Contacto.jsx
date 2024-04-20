@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../styles/contacto.css";
 import HorariosContacto from "./contacto/HorariosContacto";
+import { Button, Form } from "react-bootstrap";
 
 const Contacto = () => {
   return (
@@ -31,9 +32,9 @@ const Contacto = () => {
           <div className="mb-4">
             <div className="containerMap w-100 d-flex align-items-center justify-content-center">
               <iframe
-              className="rounded-3"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gral.%20Paz%20576,%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n,%20Tucum%C3%A1n+(Ambiente%20Bohemio)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-              </iframe>
+                className="rounded-3"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gral.%20Paz%20576,%20T4000%20San%20Miguel%20de%20Tucum%C3%A1n,%20Tucum%C3%A1n+(Ambiente%20Bohemio)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ></iframe>
             </div>
           </div>
         </article>
@@ -41,15 +42,37 @@ const Contacto = () => {
           <HorariosContacto></HorariosContacto>
         </div>
         <div className="d-flex justify-content-center mb-4 gap-2">
-          <Link to='*' target='_blank' title='facebook'>
-          <i className='fa-brands fa-facebook-f fa-2xl mx-3 link-primary'></i>
+          <Link to="*" target="_blank" title="facebook">
+            <i className="fa-brands fa-facebook-f fa-2xl mx-3 link-primary"></i>
           </Link>
-          <Link to='*' target='_blank' title='instagram'>
-          <i className='fa-brands fa-instagram fa-2xl me-3 link-danger'></i>
+          <Link to="*" target="_blank" title="instagram">
+            <i className="fa-brands fa-instagram fa-2xl me-3 link-danger"></i>
           </Link>
-          <Link to='*' target='_blank' title='twitter'>
-          <i className='fa-brands fa-x-twitter fa-2xl link-dark'></i>
+          <Link to="*" target="_blank" title="twitter">
+            <i className="fa-brands fa-x-twitter fa-2xl link-dark"></i>
           </Link>
+        </div>
+        <div className="d-flex justify-content-center">
+          <Form className="text-center formContact mb-4">
+            <h4>Contáctate con nosotros</h4>
+            <Form.Group className="mb-3 text-start" controlId="formBasicEmail">
+              <Form.Label className="fw-bold mt-2">Email:</Form.Label>
+              <Form.Control type="email" placeholder="email" />
+            </Form.Group>
+            <Form.Group className="text-start" controlId="formBasicmessage">
+              <Form.Label className="fw-bold">Mensaje:</Form.Label>
+              <Form.Control
+                type="textarea"
+                placeholder="Escribe un mensaje"
+                className="textareaContact"
+              ></Form.Control>
+            </Form.Group>
+            <div className="text-end mt-3">
+              <Button type="submit" variant="success" className="px-5">
+                Enviar
+              </Button>
+            </div>
+          </Form>
         </div>
       </section>
     </>
