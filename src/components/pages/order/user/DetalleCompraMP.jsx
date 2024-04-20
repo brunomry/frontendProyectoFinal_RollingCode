@@ -82,8 +82,9 @@ const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
     }).then(async (result) => {
       if (result.isConfirmed) {
         navegacion("/pedido/misPedidos");
+        window.location.reload();
         setRecarga(false);
-        setMostrarBtn(false);
+        setMostrarBtn(false);  
       }
     });
     }
