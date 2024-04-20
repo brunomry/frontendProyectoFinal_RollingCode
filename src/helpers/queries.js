@@ -6,6 +6,7 @@ const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
 const URL_Mailer = import.meta.env.VITE_API_MAILER;
+const id_super = import.meta.env.VITE_API_SUPERADMIN;
 
 export const leerProductosAPI = async () => {
   try {
@@ -33,7 +34,7 @@ export const crearProductoAPI = async (productoNuevo) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(productoNuevo),
     });
@@ -49,7 +50,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(productoModificado),
     });
@@ -64,8 +65,8 @@ export const borrarProductoAPI = async (id) => {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: 'DELETE',
       headers: {
-        'x-token':JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
-      }
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
+      },
     });
     return respuesta;
   } catch (error) {
@@ -113,6 +114,14 @@ export const login = async (usuario) => {
   }
 };
 
+export const validarSuperAdmin = (idUsuario) => {
+  if (idUsuario == id_super) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 export const crearPedidoApi = async (pedido) => {
   try {
     const respuesta = await fetch(URL_pedidos, {
@@ -144,7 +153,7 @@ export const editarPedidoAPI = async (pedido, id) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(pedido),
     });
@@ -159,7 +168,7 @@ export const editarEstadoUsuario = async (usuario) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(usuario),
     });
