@@ -22,6 +22,9 @@ function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
 
+  const [recarga, setRecarga] = useState(true);
+  const [mostrarBtnMP, setMostrarBtnMP] = useState(false);
+
   const [carrito, setCarrito] = useState(
     JSON.parse(sessionStorage.getItem("carrito")) || []
   );
@@ -210,6 +213,10 @@ function App() {
                   montoCarrito={montoCarrito}
                   quitarProductoCarrito={quitarProductoCarrito}
                   setCarrito={setCarrito}
+                  recarga={recarga}
+                  setRecarga={setRecarga}
+                  mostrarBtnMP={mostrarBtnMP}
+                  setMostrarBtnMP={setMostrarBtnMP}
                 >
                 </RutasUsuario>
               </RutasProtegidasUsuario>

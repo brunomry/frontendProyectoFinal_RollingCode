@@ -3,13 +3,16 @@ import "../../../../styles/detalleCompraMP.css";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState, useEffect } from "react";
 import { crearOrdenMP, leerPedidosAPI, leerUsuariosAPI } from "../../../../helpers/queries";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const DetalleCompraMP = ({ usuarioLogeado }) => {
+const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
+  mostrarBtnMP}) => {
   const [preferenceId, setPreferenceId] = useState(null);
   const [pedido, setPedido] = useState({});
   const [actualizado, setActualizado] = useState(false);
-  const [nombreUsuario, setnombreUsuario] = useState("");
+  const [nombreUsuario, setNombreUsuario] = useState("");
+  const navegacion = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,19 +22,29 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
 
         const usuarios = await leerUsuariosAPI();
         const usuarioBuscado = usuarios.find((u)=> u.correo === usuario.correo)
-        setnombreUsuario(usuarioBuscado.nombreCompleto)
+        setNombreUsuario(usuarioBuscado.nombreCompleto)
 
         const pedidosFiltrados = pedidos.filter(
           (p) => p.usuario === usuario.id
         );
         const pedidoUsuario = pedidosFiltrados[pedidosFiltrados.length - 1];
+
         setPedido(pedidoUsuario);
       } catch (error) {
         console.error(error);
       }
     };
-
+    setRecarga(true);
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      setRecarga(false);
+      setMostrarBtnMP(false);
+      setPedido({});
+      setNombreUsuario("");
+    };
   }, []);
 
   const pagar = async () => {
@@ -48,11 +61,35 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
     });
 
     setActualizado(true);
-
     const timer = setTimeout(() => {
       setActualizado(false);
     }, 1000);
   };
+
+  const cancelarPagoMP = () => {
+    if(!mostrarBtnMP){
+      navegacion("/pedido/misPedidos");
+    }else{
+ Swal.fire({
+      title: "¿No deseas realizar el pago con MERCADOPAGO?",
+      text: "Una vez que confirmes, ya no tendrás la opción habilitada.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#60b0fc",
+      cancelButtonColor: "#f77266e2",
+      confirmButtonText: "Eliminar",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        navegacion("/pedido/misPedidos");
+        setRecarga(false);
+        setMostrarBtn(false);
+      }
+    });
+    }
+   
+  
+  }
 
   return (
     <section className="pt-3 pb-5 sectionTop d-flex sectionDetailMP flex-column justify-content-center align-items-center">
@@ -67,7 +104,7 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
       <div className="mt-3 text-start card cardMP shadow ">
         <Card.Header className="fw-bold d-flex justify-content-between">
           <span>
-            {pedido.metodoEnvio ? "Delivery (Gratis)" : "Retiro en Local"}
+            {pedido.metodoEnvio === 1 ? "Delivery (Gratis)" : "Retiro en Local"}
           </span>
           <span>{pedido.fecha}</span>
         </Card.Header>
@@ -79,12 +116,12 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
             </p>
             <div className="mt-3 text-center">
               <span className="fw-bold fs-5">Total:</span>{" "}
-              <span className="text-danger fs-5 fw-bold">{pedido.monto}</span>
+              <span className="text-danger fs-5 fw-bold">${pedido.monto}</span>
             </div>
           </div>
           <div
             className={
-              pedido.estadoEnvio
+              !mostrarBtnMP
                 ? "d-none"
                 : "d-flex flex-column gap-2 align-items-center justify-content-center px-lg-5 pt-3"
             }
@@ -109,6 +146,7 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
             {!actualizado && (
               <div className="containerWallet">
                 <Wallet
+
                   initialization={{
                     preferenceId: preferenceId,
                   }}>
@@ -119,12 +157,12 @@ const DetalleCompraMP = ({ usuarioLogeado }) => {
         </Card.Body>
       </div>
       <div className="text-center mt-4">
-        <Link
-          to="/pedido/misPedidos"
+        <Button
+          onClick={cancelarPagoMP}
           className="mt-2 btn btn-warning border border-1 border-dark btnBuy fw-bold px-4"
         >
           Ir a MIS PEDIDOS
-        </Link>
+        </Button>
       </div>
     </section>
   );

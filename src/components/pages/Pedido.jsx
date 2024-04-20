@@ -13,6 +13,10 @@ const Pedido = ({
   quitarProductoCarrito,
   montoCarrito,
   setCarrito,
+  recarga,
+  setRecarga,
+  mostrarBtnMP,
+  setMostrarBtnMP
 }) => {
   if (!productosCarrito) {
     return <Load />;
@@ -55,6 +59,10 @@ const Pedido = ({
           productosCarrito={productosCarrito}
           montoCarrito={montoCarrito}
           setCarrito={setCarrito}
+          recarga={recarga}
+          setRecarga={setRecarga}
+          mostrarBtnMP={mostrarBtnMP}
+          setMostrarBtnMP={setMostrarBtnMP}
         />
       </div>
     </section>
