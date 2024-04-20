@@ -53,6 +53,7 @@
 
 .formContact .textareaContact{
   height: 100px;
+  resize: none;
 }
 
 @media all and (min-width:768px){

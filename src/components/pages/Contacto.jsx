@@ -93,7 +93,7 @@ const Contacto = () => {
             <Form.Group className="text-start" controlId="formBasicmessage">
               <Form.Label className="fw-bold">Mensaje:</Form.Label>
               <Form.Control
-                type="textarea"
+                as="textarea"
                 placeholder="Escribe un mensaje"
                 className="textareaContact"
                 {...register("mensaje",{
