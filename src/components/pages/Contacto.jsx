@@ -2,8 +2,16 @@ import { Link } from "react-router-dom";
 import "../../styles/contacto.css";
 import HorariosContacto from "./contacto/HorariosContacto";
 import { Button, Form } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const Contacto = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
   return (
     <>
       <section className="bannerContact d-flex justify-content-center align-items-center sectionTop">
@@ -53,11 +61,34 @@ const Contacto = () => {
           </Link>
         </div>
         <div className="d-flex justify-content-center">
-          <Form className="text-center formContact mb-4">
+          <Form className="text-center formContact mb-4" onSubmit={handleSubmit()}>
             <h4>Contáctate con nosotros</h4>
             <Form.Group className="mb-3 text-start" controlId="formBasicEmail">
               <Form.Label className="fw-bold mt-2">Email:</Form.Label>
-              <Form.Control type="email" placeholder="email" />
+              <Form.Control
+                type="email"
+                placeholder="email"
+                {...register("correo", {
+                  required: "El email es obligatorio",
+                  minLength: {
+                    value: 3,
+                    message: "El email debe contener al menos 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 265,
+                    message:
+                      "El email debe contener como máximo 265 caracteres",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+                    message:
+                      "Ingrese una dirección de correo electrónico válida",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger">
+                {errors.correo?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="text-start" controlId="formBasicmessage">
               <Form.Label className="fw-bold">Mensaje:</Form.Label>
