@@ -1,0 +1,31 @@
+.sectionTopsectionDetailMP{
+  margin: 125px;
+}
+
+.cardMP{
+  width: 100%;
+}
+
+.btnPay{
+  width: 100%;
+}
+
+@media all and (min-width:576px){
+  .cardMP{
+    width: 550px;
+  }
+
+  .btnPay{
+    width: 300px;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardMP{
+    width: 650px;
+  }
+
+  .btnPay{
+    width: 300px;
+  }
+}

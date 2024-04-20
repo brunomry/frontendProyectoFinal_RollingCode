@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Pedido from "../pages/Pedido";
 import MisPedidos from "../pages/order/userOrders/MisPedidos";
+import DetalleCompraMP from "../pages/order/userOrders/DetalleCompraMP";
 
 const RutasUsuario = ({
   usuarioLogeado,
@@ -33,10 +34,12 @@ const RutasUsuario = ({
         ></Route>
         <Route
           path="/misPedidos"
+          element={<MisPedidos usuarioLogeado={usuarioLogeado}></MisPedidos>}
+        ></Route>
+        <Route
+          path="/detalleCompra"
           element={
-            <MisPedidos
-              usuarioLogeado={usuarioLogeado}
-            ></MisPedidos>
+            <DetalleCompraMP usuarioLogeado={usuarioLogeado}></DetalleCompraMP>
           }
         ></Route>
       </Routes>
