@@ -47,6 +47,14 @@
   height: 300px;
 }
 
+.formContact{
+  width: 90%;
+}
+
+.formContact .textareaContact{
+  height: 100px;
+}
+
 @media all and (min-width:768px){
   .bannerContent .bannerTitle{
     font-size: 4.0625rem;
@@ -63,6 +71,14 @@
   .containerMap iframe{
     width: 90%;
     height: 400px;
+  }
+
+  .formContact{
+    font-size: 18px;
+  }
+
+  .formContact .textareaContact{
+    height: 150px;
   }
 }
 
@@ -83,5 +99,9 @@
   .containerMap iframe{
     width: 60%;
     height: 450px;
+  }
+
+  .formContact{
+    width: 60%;
   }
 }
