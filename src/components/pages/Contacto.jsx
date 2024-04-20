@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../styles/contacto.css";
 import HorariosContacto from "./contacto/HorariosContacto";
 
@@ -38,6 +39,17 @@ const Contacto = () => {
         </article>
         <div className="d-flex justify-content-center mb-4">
           <HorariosContacto></HorariosContacto>
+        </div>
+        <div className="d-flex justify-content-center mb-4 gap-2">
+          <Link to='*' target='_blank' title='facebook'>
+          <i className='fa-brands fa-facebook-f fa-2xl mx-3 link-primary'></i>
+          </Link>
+          <Link to='*' target='_blank' title='instagram'>
+          <i className='fa-brands fa-instagram fa-2xl me-3 link-danger'></i>
+          </Link>
+          <Link to='*' target='_blank' title='twitter'>
+          <i className='fa-brands fa-x-twitter fa-2xl link-dark'></i>
+          </Link>
         </div>
       </section>
     </>
