@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Pedido from "../pages/Pedido";
 import MisPedidos from "../pages/order/userOrders/MisPedidos";
-import DetalleCompraMP from "../pages/order/userOrders/DetalleCompraMP";
+import DetalleCompraMP from "../pages/order/user/DetalleCompraMP";
 
 const RutasUsuario = ({
   usuarioLogeado,
@@ -13,6 +13,10 @@ const RutasUsuario = ({
   montoCarrito,
   quitarProductoCarrito,
   setCarrito,
+  recarga,
+  setRecarga,
+  mostrarBtnMP,
+  setMostrarBtnMP
 }) => {
   return (
     <>
@@ -29,6 +33,10 @@ const RutasUsuario = ({
               montoCarrito={montoCarrito}
               quitarProductoCarrito={quitarProductoCarrito}
               setCarrito={setCarrito}
+              recarga={recarga}
+              setRecarga={setRecarga}
+              mostrarBtnMP={mostrarBtnMP}
+              setMostrarBtnMP={setMostrarBtnMP}
             ></Pedido>
           }
         ></Route>
@@ -39,7 +47,13 @@ const RutasUsuario = ({
         <Route
           path="/detalleCompra"
           element={
-            <DetalleCompraMP usuarioLogeado={usuarioLogeado}></DetalleCompraMP>
+            <DetalleCompraMP
+              usuarioLogeado={usuarioLogeado}
+              recarga={recarga}
+              setRecarga={setRecarga}
+              mostrarBtnMP={mostrarBtnMP}
+              setMostrarBtnMP={setMostrarBtnMP}
+            ></DetalleCompraMP>
           }
         ></Route>
       </Routes>

@@ -6,6 +6,7 @@ const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
 const URL_Mailer = import.meta.env.VITE_API_MAILER;
+const URL_MercadoPago = import.meta.env.VITE_API_MP;
 
 export const leerProductosAPI = async () => {
   try {
@@ -178,6 +179,23 @@ export const enviarDatosCorreo = async (correo) => {
       body: JSON.stringify(correo),
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearOrdenMP = async (orden) => {
+  try {
+    const respuesta = await fetch(URL_MercadoPago, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orden),
+    });
+    console.log(respuesta)
+    const data = await respuesta.json();
+    return data;
   } catch (error) {
     console.log(error);
   }

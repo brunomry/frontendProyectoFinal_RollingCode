@@ -3,7 +3,7 @@ import "../../../../styles/cardPedido.css";
 import { useEffect, useState } from "react";
 import { leerPedidosAPI } from "../../../../helpers/queries";
 import { Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom/dist";
+import { Link } from "react-router-dom";
 
 const MisPedidos = () => {
   const [listaPedidos, setListaPedidos] = useState([]);
@@ -45,7 +45,13 @@ const MisPedidos = () => {
           !spinner ? "d-none" : "mb-5"
         } `}
       >
-        {spinner && <Spinner animation="border" role="status"></Spinner>}
+        {spinner && (
+          <div className="d-flex flex-column">
+            <Spinner animation="border" role="status" className="ms-3 mb-2"></Spinner>
+            <span>Cargando...</span>
+          </div>
+        )
+        }
       </div>
       {!spinner && (
         <section className="text-center my-5 sectionTop px-2 sectionOrdersUser">
