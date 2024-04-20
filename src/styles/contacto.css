@@ -67,12 +67,6 @@
 }
 
 @media all and (min-width:1200px){
-  .banner{
-    background-size: 120%;
-  }
-}
-
-@media all and (min-width:1200px){
   .bannerContent .bannerTitle{
     font-size: 4.6875rem;
   }
@@ -84,5 +78,10 @@
   .banner{
     background-size: 120%;
     animation: movimiento 7s infinite linear alternate;
+  }
+
+  .containerMap iframe{
+    width: 60%;
+    height: 450px;
   }
 }
