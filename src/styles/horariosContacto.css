@@ -5,3 +5,9 @@
 .containerScheduleContact{
     width: 300px;
 }
+
+@media all and (min-width:768px){
+    .containerScheduleContact{
+      font-size: 18px;
+    }
+  }
