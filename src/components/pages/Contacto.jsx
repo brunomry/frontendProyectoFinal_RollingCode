@@ -96,7 +96,22 @@ const Contacto = () => {
                 type="textarea"
                 placeholder="Escribe un mensaje"
                 className="textareaContact"
-              ></Form.Control>
+                {...register("mensaje",{
+                  required:"El mensaje es obligatorio",
+                  minLength: {
+                    value: 10,
+                    message: "El mensaje debe contener al menos 10 caracteres",
+                  },
+                  maxLength: {
+                    value: 350,
+                    message:
+                      "El mensaje debe contener como máximo 350 caracteres",
+                  },
+                })}
+                />
+                <Form.Text className="text-danger">
+                {errors.mensaje?.message}
+              </Form.Text>
             </Form.Group>
             <div className="text-end mt-3">
               <Button type="submit" variant="success" className="px-5">
