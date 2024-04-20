@@ -38,13 +38,24 @@ const ListaUsuarios = ({ superAdmin }) => {
       </div>
       <div className='container d-flex justify-content-between align-items-center flex-wrap gap-2'>
         <h1 className='titleColor'>Gestión de usuarios</h1>
-        <Link
-          className='btnNewUser border border-1 border-white fw-bold p-2 rounded-2 text-decoration-none'
-          title='Nuevo usuario'
-          to='/administrador/usuarios/crearUsuario'
-        >
-          <i className='fa-solid fa-plus'></i> Nuevo usuario
-        </Link>
+        {superAdmin ? (
+          <Link
+            className='btnNewUser border border-1 border-white fw-bold p-2 rounded-2 text-decoration-none'
+            title='Nuevo usuario'
+            to='/administrador/usuarios/crearUsuario'
+            disabled
+          >
+            <i className='fa-solid fa-plus'></i> Nuevo usuario
+          </Link>
+        ) : (
+          <Link
+            className='btnNewUser border border-1 border-white fw-bold p-2 rounded-2 text-decoration-none'
+            title='Volver al inicio'
+            to='/'
+          >
+            <i className='fa-solid fa-house'></i> Volver al inicio
+          </Link>
+        )}
       </div>
       <hr className='container' />
       <Table

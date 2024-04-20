@@ -6,6 +6,7 @@ const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
 const URL_Mailer = import.meta.env.VITE_API_MAILER;
+const URL_crearUsuario = import.meta.env.VITE_API_CREARUSUARIO;
 const id_super = import.meta.env.VITE_API_SUPERADMIN;
 
 export const leerProductosAPI = async () => {
@@ -87,6 +88,21 @@ export const leerUsuariosAPI = async () => {
 export const crearUsuarioAPI = async (usuarioNuevo) => {
   try {
     const respuesta = await fetch(URL_Registro, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(usuarioNuevo),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const crearUsuarioAdmin = async (usuarioNuevo) => {
+  try {
+    const respuesta = await fetch(URL_crearUsuario, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

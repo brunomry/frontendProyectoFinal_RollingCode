@@ -23,7 +23,9 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           path='/usuarios/crearUsuario'
-          element={<FormularioUsuario></FormularioUsuario>}
+          element={
+            <FormularioUsuario superAdmin={superAdmin}></FormularioUsuario>
+          }
         ></Route>
         <Route path='/pedidos' element={<ListaPedidos></ListaPedidos>}></Route>
         <Route
