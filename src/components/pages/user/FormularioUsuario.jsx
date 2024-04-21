@@ -21,14 +21,11 @@ const FormularioUsuario = ({ superAdmin }) => {
     window.location.href = '/administrador';
   }
 
-  //validacion
-
   const usuarioValidado = async (usuario) => {
     const listaUsuarios = await leerUsuariosAPI();
     const usuarioBuscado = listaUsuarios.find(
       (u) => u.correo === usuario.correo
     );
-    console.log(usuario);
     if (!usuarioBuscado) {
       let timerInterval;
       Swal.fire({
@@ -50,12 +47,9 @@ const FormularioUsuario = ({ superAdmin }) => {
       const respuesta = await crearUsuarioAdmin(usuario);
       if (respuesta.status === 201) {
         Swal.fire({
-          title: 'El usuario se cargo correctamente',
-          html: 'Se envió un correo de verificacion a la bandeja de entrada (principal o spam) del usuario',
+          title: 'Usuario creado correctamente',
           icon: 'success',
         });
-        const direccionCorreo = { correo: usuario.correo };
-        await enviarDatosCorreo(direccionCorreo);
         reset();
       }
     } else {
@@ -164,7 +158,7 @@ const FormularioUsuario = ({ superAdmin }) => {
         </Form.Group>
         <Form.Group className='mb-3 col-sm-4' controlId='formCategory'>
           <Form.Label className='fw-bold'>
-            Categoría <span className='text-danger fw-bold'>*</span>
+            Rol <span className='text-danger fw-bold'>*</span>
           </Form.Label>
           <Form.Select
             {...register('rol', {
