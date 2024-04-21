@@ -70,12 +70,6 @@
 }
 
 @media all and (min-width:1200px){
-  .banner{
-    background-size: 120%;
-  }
-}
-
-@media all and (min-width:1200px){
   .bannerContent .bannerTitle{
     font-size: 4.6875rem;
   }
