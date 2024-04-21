@@ -169,6 +169,7 @@ NOTAS IMPORTANTES A TENER EN CUENTA:
     - [SweetAlert2](https://sweetalert2.github.io/#download)
     - [Json-server](https://github.com/typicode/json-server)
     - [Form-submit](https://formsubmit.co/)
+    - [MercadoPago](https://www.mercadopago.com.ar/developers/es/docs/checkout-pro/landing)
 
 
 ## Requisitos previos
