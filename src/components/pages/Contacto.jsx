@@ -16,8 +16,6 @@ const Contacto = () => {
     setMensaje(e.target.value);
   };
 
-  const correo = "brunomadozzo@gmail.com";
-
   return (
     <>
       <section className="bannerContact d-flex justify-content-center align-items-center sectionTop">
@@ -67,7 +65,7 @@ const Contacto = () => {
           </Link>
         </div>
         <div className="d-flex justify-content-center">
-          <Form className="text-center formContact mb-4" method="POST" action={`https://formsubmit.co/${correo}`}>
+          <Form className="text-center formContact mb-4" method="POST" action={`https://formsubmit.co/brunomadozzo@gmail.com`}>
             <h2 className="mt-3 mb-4">Contáctate con nosotros</h2>
             <Form.Group className="mb-3 text-start" controlId="formBasicEmail">
               <Form.Label className="fw-bold mt-2">Email:</Form.Label>
