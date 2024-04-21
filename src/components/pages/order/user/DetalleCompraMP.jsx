@@ -2,12 +2,21 @@ import { Card, Button, Spinner } from "react-bootstrap";
 import "../../../../styles/detalleCompraMP.css";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState, useEffect } from "react";
-import { crearOrdenMP, leerPedidosAPI, leerUsuariosAPI } from "../../../../helpers/queries";
+import {
+  crearOrdenMP,
+  leerPedidosAPI,
+  leerUsuariosAPI,
+} from "../../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
-  mostrarBtnMP}) => {
+const DetalleCompraMP = ({
+  usuarioLogeado,
+  recarga,
+  setRecarga,
+  setMostrarBtnMP,
+  mostrarBtnMP,
+}) => {
   const [preferenceId, setPreferenceId] = useState(null);
   const [pedido, setPedido] = useState({});
   const [actualizado, setActualizado] = useState(false);
@@ -21,8 +30,10 @@ const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
         const pedidos = await leerPedidosAPI();
 
         const usuarios = await leerUsuariosAPI();
-        const usuarioBuscado = usuarios.find((u)=> u.correo === usuario.correo)
-        setNombreUsuario(usuarioBuscado.nombreCompleto)
+        const usuarioBuscado = usuarios.find(
+          (u) => u.correo === usuario.correo
+        );
+        setNombreUsuario(usuarioBuscado.nombreCompleto);
 
         const pedidosFiltrados = pedidos.filter(
           (p) => p.usuario === usuario.id
@@ -67,30 +78,28 @@ const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
   };
 
   const cancelarPagoMP = () => {
-    if(!mostrarBtnMP){
+    if (!mostrarBtnMP) {
       navegacion("/pedido/misPedidos");
-    }else{
- Swal.fire({
-      title: "¿No deseas realizar el pago con MERCADOPAGO?",
-      text: "Una vez que confirmes, ya no tendrás la opción habilitada.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#60b0fc",
-      cancelButtonColor: "#f77266e2",
-      confirmButtonText: "Eliminar",
-      cancelButtonText: "Cancelar",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        navegacion("/pedido/misPedidos");
-        window.location.reload();
-        setRecarga(false);
-        setMostrarBtn(false);  
-      }
-    });
+    } else {
+      Swal.fire({
+        title: "¿No deseas realizar el pago con MERCADOPAGO?",
+        text: "Una vez que confirmes, ya no tendrás la opción habilitada.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#60b0fc",
+        cancelButtonColor: "#f77266e2",
+        confirmButtonText: "Aceptar",
+        cancelButtonText: "Cancelar",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          navegacion("/pedido/misPedidos");
+          window.location.reload();
+          setRecarga(false);
+          setMostrarBtnMP(false);
+        }
+      });
     }
-   
-  
-  }
+  };
 
   return (
     <section className="pt-3 pb-5 sectionTop d-flex sectionDetailMP flex-column justify-content-center align-items-center">
@@ -147,13 +156,18 @@ const DetalleCompraMP = ({ usuarioLogeado, recarga, setRecarga, setMostrarBtnMP,
             {!actualizado && (
               <div className="containerWallet">
                 <Wallet
-
                   initialization={{
                     preferenceId: preferenceId,
-                  }}>
-                </Wallet>
+                  }}
+                ></Wallet>
               </div>
             )}
+            <div className="text-center">
+              <small>
+                Si recargas o sales de la página se perderá la opción de pago
+                online.
+              </small>
+            </div>
           </div>
         </Card.Body>
       </div>
