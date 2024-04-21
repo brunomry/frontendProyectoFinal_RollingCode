@@ -9,19 +9,23 @@
     width: 200px;
 }
 
+.sectionRegister{
+    width: 100%;
+}
+
 @media all and (min-width:576px){
-    .imgRegistro{
+    .imgRegister{
         width: 50vw;
         object-fit: cover;
         height: 70vh;
       
     }
 
-    .imgRegistro:hover{
+    .imgRegister:hover{
         filter: saturate(150%);
     }
     
-    .sectionRegistro{
+    .sectionRegister{
         width: 50vw;
     }
 }
@@ -33,11 +37,11 @@
 }
 
 @media all and (min-width:1200px){
-    .imgRegistro{
+    .imgRegister{
         width: 70vw;
     }
 
-    .sectionRegistro{
+    .sectionRegister{
         width: 30vw;
     }
 }

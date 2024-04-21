@@ -66,20 +66,20 @@ const Registro = () => {
 
   return (
     <div className='d-flex sectionTop'>
-      <section className='sectionRegistroImage d-none d-sm-block'>
+      <section className='sectionRegisterImage d-none d-sm-block'>
         <img
           src={imgRegistro}
           alt='mesa con menú'
           title='mesa con menú'
-          className='imgRegistro h-100'
+          className='imgRegister h-100'
         />
       </section>
-      <section className='sectionRegistro bg-white'>
+      <section className='sectionRegister bg-white'>
         <div className='text-center'>
           <h1 className='mt-3'>Regístrate</h1>
         </div>
         <Form
-          className='px-2 px-md-5 pb-2 formText'
+          className='px-2 px-md-5 pb-2 formText formRegister'
           onSubmit={handleSubmit(usuarioValidado)}
         >
           <Form.Group className='mb-3' controlId='formBasicName'>

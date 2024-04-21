@@ -10,7 +10,7 @@
   background-size: 250%;
   height: 60vh;
   font-family: "Exo";
-  animation: movimiento 7s infinite linear alternate;
+  animation: movimiento 5s infinite linear alternate;
 }
 
 @keyframes movimiento {
@@ -65,8 +65,8 @@
     font-size: 1.125rem;
   }
 
-  .banner{
-    background-size: 150%;
+  .bannerContact{
+    background-size: 120%;
   }
 
   .containerMap iframe{
@@ -93,9 +93,9 @@
     font-size: 1.25rem;
   }
 
-  .banner{
-    background-size: 150%;
-    animation: movimiento 9s infinite;
+  .bannerContact{
+    background-size: 120%;
+    animation: movimiento 6s infinite;
   }
 
   .containerMap iframe{
