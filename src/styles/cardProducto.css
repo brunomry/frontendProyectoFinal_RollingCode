@@ -27,6 +27,10 @@
   text-overflow: ellipsis;
 }
 
+.cardDescription{
+  width: 125px;
+}
+
 .cardParagraph {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -93,13 +97,29 @@
   height: 100%;
 }
 
+@media all and (min-width: 300px) {
+  .cardDescription{
+    width: 150px;
+  }
+}
+
 @media all and (min-width: 315px) {
   .cardProduct {
     max-height: 185px;
   }
 
+  .cardDescription{
+    width: 175px;
+  }
+
   .cardPrice {
     padding-bottom: 5px;
+  }
+}
+
+@media all and (min-width: 340px) {
+  .cardDescription{
+    width: 190px;
   }
 }
 
@@ -108,6 +128,10 @@
     font-size: 1rem;
     padding-right: 5px;
     padding-left: 5px;
+  }
+
+  .cardDescription{
+    width: 230px;
   }
 
   .flexPriceAndBtn {
@@ -119,7 +143,35 @@
   }
 }
 
+@media all and (min-width: 400px) {
+  .cardDescription{
+    width: 250px;
+  }
+}
+
+@media all and (min-width: 412px) {
+  .cardDescription{
+    width: 260px;
+  }
+}
+
+@media all and (min-width: 500px) {
+  .cardDescription{
+    width: 355px;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .cardDescription{
+    width: 375px;
+  }
+}
+
 @media all and (min-width: 768px) {
+  .cardDescription{
+    width: 200px;
+  }
+
   .cardPrice p{
     font-size: 1.2rem;
   }
@@ -137,5 +189,21 @@
   .cardProduct {
     width: 100%;
     height: 150px;
+  }
+
+  .cardDescription{
+    width: 248px;
+  }
+}
+
+@media all and (min-width:1200px){
+  .cardDescription{
+    width: 330px;
+  }
+}
+
+@media all and (min-width:1400px){
+  .cardDescription{
+    width: 430px;
   }
 }
