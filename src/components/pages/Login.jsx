@@ -1,6 +1,6 @@
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import imgLogin from "../../assets/imgLogin.webp";
+import imgLogin from '../../assets/imgLogin.webp';
 import '../../styles/login.css';
 import { useForm } from 'react-hook-form';
 import { leerUsuariosAPI, login } from '../../helpers/queries';
@@ -42,22 +42,23 @@ const Login = ({ setUsuarioLogeado }) => {
         (u) => u.correo === usuario.correo
       );
       if (usuarioBuscado.rol === 'Administrador' && usuarioBuscado.estado) {
-        const datos = await respuesta.json()
+        const datos = await respuesta.json();
         sessionStorage.setItem(
           'usuarioLogeado',
           JSON.stringify({
             id: usuarioBuscado._id,
             correo: usuarioBuscado.correo,
             rol: usuarioBuscado.rol,
-            token: datos.token
+            token: datos.token,
           })
         );
         setUsuarioLogeado({
           id: usuarioBuscado._id,
           correo: usuarioBuscado.correo,
           rol: usuarioBuscado.rol,
-          token: datos.token
+          token: datos.token,
         });
+
         navegacion('/administrador');
         Swal.fire({
           icon: 'success',

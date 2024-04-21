@@ -9,7 +9,7 @@ const ModalDetalleProducto = ({
   producto,
   agregarProductoCarrito,
   productosCarrito,
-  usuarioLogeado
+  usuarioLogeado,
 }) => {
   const [cantidad, setCantidad] = useState(1);
   const [productoEncontrado, setProductoEncontrado] = useState();
@@ -51,7 +51,7 @@ const ModalDetalleProducto = ({
         <p className='text-success price mb-1 fw-bold'>${producto.precio}</p>
         <p>{producto.detalle}</p>
         <div>
-          {!productoEncontrado && usuarioLogeado.rol != "Administrador" && (
+          {!productoEncontrado && usuarioLogeado.rol != 'Administrador' && (
             <Form.Group className='mb-3'>
               <div className='d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos mt-2'>
                 <Button
@@ -79,12 +79,12 @@ const ModalDetalleProducto = ({
             >
               Cerrar
             </Button>
-            {productoEncontrado && usuarioLogeado.rol != "Administrador" && (
-              <Link to='/miPedido' className='btn btn-danger mt-3'>
+            {productoEncontrado && usuarioLogeado.rol != 'Administrador' && (
+              <Link to='/pedido/miPedido' className='btn btn-danger mt-3'>
                 Ir al carrito
               </Link>
-            ) }
-            {!productoEncontrado && usuarioLogeado.rol != "Administrador" &&(
+            )}
+            {!productoEncontrado && usuarioLogeado.rol != 'Administrador' && (
               <Button
                 className='addBTN btn-success'
                 type='submit'

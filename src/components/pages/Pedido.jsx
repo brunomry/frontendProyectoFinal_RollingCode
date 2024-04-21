@@ -13,6 +13,10 @@ const Pedido = ({
   quitarProductoCarrito,
   montoCarrito,
   setCarrito,
+  recarga,
+  setRecarga,
+  mostrarBtnMP,
+  setMostrarBtnMP
 }) => {
   if (!productosCarrito) {
     return <Load />;
@@ -22,13 +26,13 @@ const Pedido = ({
     return (
       <div className='bannerPedido d-flex flex-column justify-content-center'>
         <div className='bannerPedidoContent'>
-          <h2 className='bannerTitlePedido titleColor text-center mt-5'>
+          <h2 className='bannerTitlePedido titleColor text-center '>
             Tu pedido está vacío.
           </h2>
           ;
-          <div className='text-center '>
-            <Link to='/menu' className='fw-bold btn btn-danger'>
-              Ir al Menú
+          <div className='text-center pb-5'>
+            <Link to='/pedido/misPedidos' className='fw-bold btn btn-danger'>
+              Ir a MIS PEDIDOS
             </Link>
           </div>
         </div>
@@ -55,6 +59,10 @@ const Pedido = ({
           productosCarrito={productosCarrito}
           montoCarrito={montoCarrito}
           setCarrito={setCarrito}
+          recarga={recarga}
+          setRecarga={setRecarga}
+          mostrarBtnMP={mostrarBtnMP}
+          setMostrarBtnMP={setMostrarBtnMP}
         />
       </div>
     </section>

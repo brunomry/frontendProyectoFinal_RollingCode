@@ -6,6 +6,10 @@ const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
 const URL_Mailer = import.meta.env.VITE_API_MAILER;
+const URL_crearUsuario = import.meta.env.VITE_API_CREARUSUARIO;
+const id_super = import.meta.env.VITE_API_SUPERADMIN;
+const URL_MercadoPago = import.meta.env.VITE_API_MP;
+
 
 export const leerProductosAPI = async () => {
   try {
@@ -33,7 +37,7 @@ export const crearProductoAPI = async (productoNuevo) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(productoNuevo),
     });
@@ -49,7 +53,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(productoModificado),
     });
@@ -64,8 +68,8 @@ export const borrarProductoAPI = async (id) => {
     const respuesta = await fetch(`${URL_Producto}/${id}`, {
       method: 'DELETE',
       headers: {
-        'x-token':JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
-      }
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
+      },
     });
     return respuesta;
   } catch (error) {
@@ -98,6 +102,21 @@ export const crearUsuarioAPI = async (usuarioNuevo) => {
   }
 };
 
+export const crearUsuarioAdmin = async (usuarioNuevo) => {
+  try {
+    const respuesta = await fetch(URL_crearUsuario, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(usuarioNuevo),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const login = async (usuario) => {
   try {
     const respuesta = await fetch(URL_Login, {
@@ -110,6 +129,14 @@ export const login = async (usuario) => {
     return respuesta;
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const validarSuperAdmin = (idUsuario) => {
+  if (idUsuario == id_super) {
+    return true;
+  } else {
+    return false;
   }
 };
 
@@ -144,7 +171,7 @@ export const editarPedidoAPI = async (pedido, id) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(pedido),
     });
@@ -159,7 +186,7 @@ export const editarEstadoUsuario = async (usuario) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token
+        'x-token': JSON.parse(sessionStorage.getItem('usuarioLogeado')).token,
       },
       body: JSON.stringify(usuario),
     });
@@ -178,6 +205,23 @@ export const enviarDatosCorreo = async (correo) => {
       body: JSON.stringify(correo),
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearOrdenMP = async (orden) => {
+  try {
+    const respuesta = await fetch(URL_MercadoPago, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orden),
+    });
+    console.log(respuesta)
+    const data = await respuesta.json();
+    return data;
   } catch (error) {
     console.log(error);
   }
