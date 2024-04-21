@@ -96,7 +96,8 @@ const Contacto = () => {
                 />
             </Form.Group>
             <Form.Control type="text" hidden id="inputNext" name="_next" value="https://ambiente-bohemio-restaurante.netlify.app/contacto" readOnly />
-            <Form.Control type="text" hidden name="_subject" value="" readOnly />
+            <Form.Control type="text" hidden name="_subject" value=" *MENSAJE* - AMBIENTE BOHEMIO" readOnly />
+            <Form.Control type="hidden" name="_autoresponse" value="Gracias por comunicarte con nosotros! En breve responderemos tu mensaje - Ambiente Bohemio" readOnly>
             <div className="text-end mt-3">
               <Button type="submit" variant="dark" className="px-5">
                 Enviar
