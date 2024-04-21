@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "../../styles/contacto.css";
 import HorariosContacto from "./contacto/HorariosContacto";
 import { Button, Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 
 const Contacto = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const [email, setEmail] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleChangeMensaje = (e) => {
+    setMensaje(e.target.value);
+  };
 
   return (
     <>
@@ -21,14 +25,14 @@ const Contacto = () => {
             <p className="mb-0 fw-bold bannerSubtitle text-center">
               Contáctanos
             </p>
-            <h1 className="bannerTitle text-center">¿Donde estamos?</h1>
+            <h1 className="bannerTitle text-center">¿Dónde estamos?</h1>
           </div>
         </article>
       </section>
       <section>
-        <div className="w-100 d-flex flex-column align-items-center my-4 gap-3 gap-md-2 text-center">
+        <div className="mt-3 w-100 d-flex flex-column align-items-center my-4 gap-3 gap-md-2 text-center">
           <p>
-            <i className="fa-solid fa-location-dot fs-5"></i>
+            <i className="fa-solid fa-location-dot fs-2 me-2 "></i>
             General Paz 576, San Miguel de Tucumán, Tucumán
           </p>
           <p title="WhatsApp">
@@ -49,7 +53,7 @@ const Contacto = () => {
         <div className="d-flex justify-content-center mb-4">
           <HorariosContacto></HorariosContacto>
         </div>
-        <div className="d-flex justify-content-center mb-4 gap-2">
+        <div className="d-flex justify-content-center my-5 gap-2">
           <Link to="*" target="_blank" title="facebook">
             <i className="fa-brands fa-facebook-f fa-2xl mx-3 link-primary"></i>
           </Link>
@@ -61,60 +65,41 @@ const Contacto = () => {
           </Link>
         </div>
         <div className="d-flex justify-content-center">
-          <Form className="text-center formContact mb-4" onSubmit={handleSubmit()}>
-            <h4>Contáctate con nosotros</h4>
+          <Form className="text-center formContact mb-4" method="POST" action="https://formsubmit.co/brunomadozzo@gmail.com">
+            <h2 className="mt-3 mb-4">Contáctate con nosotros</h2>
             <Form.Group className="mb-3 text-start" controlId="formBasicEmail">
               <Form.Label className="fw-bold mt-2">Email:</Form.Label>
               <Form.Control
+                name="email"
                 type="email"
                 placeholder="email"
-                {...register("correo", {
-                  required: "El email es obligatorio",
-                  minLength: {
-                    value: 3,
-                    message: "El email debe contener al menos 3 caracteres",
-                  },
-                  maxLength: {
-                    value: 265,
-                    message:
-                      "El email debe contener como máximo 265 caracteres",
-                  },
-                  pattern: {
-                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-                    message:
-                      "Ingrese una dirección de correo electrónico válida",
-                  },
-                })}
+                required
+                minLength={3}
+                maxLength={265}
+                pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$"
+                value={email}
+                onChange={handleChangeEmail}
               />
-              <Form.Text className="text-danger">
-                {errors.correo?.message}
-              </Form.Text>
             </Form.Group>
             <Form.Group className="text-start" controlId="formBasicmessage">
               <Form.Label className="fw-bold">Mensaje:</Form.Label>
               <Form.Control
-                type="textarea"
+                name="mensaje"
+                as="textarea"
                 placeholder="Escribe un mensaje"
                 className="textareaContact"
-                {...register("mensaje",{
-                  required:"El mensaje es obligatorio",
-                  minLength: {
-                    value: 10,
-                    message: "El mensaje debe contener al menos 10 caracteres",
-                  },
-                  maxLength: {
-                    value: 350,
-                    message:
-                      "El mensaje debe contener como máximo 350 caracteres",
-                  },
-                })}
+                required
+                minLength={10}
+                maxLength={350}      
+                value={mensaje}
+                onChange={handleChangeMensaje}
                 />
-                <Form.Text className="text-danger">
-                {errors.mensaje?.message}
-              </Form.Text>
             </Form.Group>
+            <Form.Control type="text" hidden id="inputNext" name="_next" value="https://ambiente-bohemio-restaurante.netlify.app/contacto" readOnly />
+            <Form.Control type="text" hidden name="_subject" value=" *MENSAJE* - AMBIENTE BOHEMIO" readOnly />
+            <Form.Control type="text" hidden name="_autoresponse" value="Gracias por comunicarte con nosotros! En breve responderemos tu mensaje - Ambiente Bohemio" readOnly />
             <div className="text-end mt-3">
-              <Button type="submit" variant="success" className="px-5">
+              <Button type="submit" variant="dark" className="px-5">
                 Enviar
               </Button>
             </div>

@@ -10,7 +10,7 @@
   background-size: 250%;
   height: 60vh;
   font-family: "Exo";
-  animation: movimiento 8s infinite linear alternate;
+  animation: movimiento 7s infinite linear alternate;
 }
 
 @keyframes movimiento {
@@ -53,6 +53,7 @@
 
 .formContact .textareaContact{
   height: 100px;
+  resize: none;
 }
 
 @media all and (min-width:768px){
@@ -75,6 +76,7 @@
 
   .formContact{
     font-size: 18px;
+    width:600px;
   }
 
   .formContact .textareaContact{
@@ -92,8 +94,8 @@
   }
 
   .banner{
-    background-size: 120%;
-    animation: movimiento 7s infinite linear alternate;
+    background-size: 150%;
+    animation: movimiento 9s infinite;
   }
 
   .containerMap iframe{
@@ -102,6 +104,6 @@
   }
 
   .formContact{
-    width: 60%;
+    width: 750px;
   }
 }
