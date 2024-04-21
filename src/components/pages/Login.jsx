@@ -35,11 +35,12 @@ const Login = ({ setUsuarioLogeado }) => {
       if (result.dismiss === Swal.DismissReason.timer) {
       }
     });
-    const respuesta = await login(usuario);
+    const usuarioLowerCase = {correo: usuario.correo.toLowerCase(), clave: usuario.clave}
+    const respuesta = await login(usuarioLowerCase);
     if (respuesta.status === 200) {
       const listaUsuarios = await leerUsuariosAPI();
       const usuarioBuscado = listaUsuarios.find(
-        (u) => u.correo === usuario.correo
+        (u) => u.correo === usuarioLowerCase.correo
       );
       if (usuarioBuscado.rol === 'Administrador' && usuarioBuscado.estado) {
         const datos = await respuesta.json();

@@ -18,9 +18,10 @@ const Registro = () => {
   const navegacion = useNavigate();
 
   const usuarioValidado = async (usuario) => {
+    const usuarioLowerCase = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave}
     const listaUsuarios = await leerUsuariosAPI();
     const usuarioBuscado = listaUsuarios.find(
-      (u) => u.correo === usuario.correo
+      (u) => u.correo === usuarioLowerCase.correo
     );
     if (!usuarioBuscado) {
       let timerInterval;
@@ -40,14 +41,14 @@ const Registro = () => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
-      const respuesta = await crearUsuarioAPI(usuario);
+      const respuesta = await crearUsuarioAPI(usuarioLowerCase);
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Te registraste exitosamente',
           html: 'Se envió un correo de verificacion a tu bandeja de entrada (principal o spam) </br> <b>Por favor, inicia sesion para continuar</b>',
           icon: 'success',
         });
-        const direccionCorreo = {correo: usuario.correo}
+        const direccionCorreo = {correo: usuarioLowerCase.correo}
         await enviarDatosCorreo(direccionCorreo)
         reset();
         navegacion('/login');

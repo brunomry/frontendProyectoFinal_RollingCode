@@ -22,9 +22,10 @@ const FormularioUsuario = ({ superAdmin }) => {
   }
 
   const usuarioValidado = async (usuario) => {
+    const usuarioLowerCase = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave, rol: usuario.rol}
     const listaUsuarios = await leerUsuariosAPI();
     const usuarioBuscado = listaUsuarios.find(
-      (u) => u.correo === usuario.correo
+      (u) => u.correo === usuarioLowerCase.correo
     );
     if (!usuarioBuscado) {
       let timerInterval;
@@ -44,7 +45,7 @@ const FormularioUsuario = ({ superAdmin }) => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
-      const respuesta = await crearUsuarioAdmin(usuario);
+      const respuesta = await crearUsuarioAdmin(usuarioLowerCase);
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Usuario creado correctamente',
@@ -150,7 +151,7 @@ const FormularioUsuario = ({ superAdmin }) => {
               pattern: {
                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                 message:
-                  'El password debe contener al menos una letra mayúscula, una letra minúscula y un número',
+                  'La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número',
               },
             })}
           />
