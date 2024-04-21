@@ -127,6 +127,28 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
     * **Acción Principal:** Confirmar Pedido.
     * **Resultado:** Al hacer clic en "Confirmar Pedido", se guarda el pedido en la base de datos con estado "pendiente" y se muestra un mensaje de confirmación al usuario. 
 
+8. **Pago mediante la aplicación de MERCADOPAGO:**
+
+NOTAS IMPORTANTES A TENER EN CUENTA: 
+- En caso de probar esta funcionalidad, en la página de Menú se encuentra un producto de prueba para MERCADOPAGO. 
+- Es importante destacar que esta funcionalidad está activa y el pago se realizará de manera real. Se te descontarán $10 pesos del producto de prueba.
+- En caso de recargar la página o salir de la misma ya sea con la opción de volver atrás del Navegador o dirigirse a cualquier otra página de la aplicación, se perderá la opción de realizar el pago de forma online.
+- Una vez dentro de la aplicación de MERCADOPAGO, si decides volver atrás, la opción de pago online ya no estará disponible.
+
+    * **Descripción:** Los usuarios logueados al confirmar un pedido, tendrán la opción de realizar el pago del mismo mediante MERCADOPAGO.
+    * **Página de Referencia:** Página de Detalle de Compra.
+    * **Componentes Clave:** Página de Pedido, Tarjeta de Resumen del Pedido, Página de Detalle de Compra.
+    * **Acción Principal:** PAGAR.
+    * **Resultado:** Al hacer clic en "PAGAR", se visualizará el botón de MERCADOPAGO y al presionar el mismo redirigirá al usuario a la aplicación donde podrá realizar el pago correspondiente.
+
+9. **Envío de consulta mediante Formulario de contacto:**
+
+    * **Descripción:** Permite a cualquier usuario enviar consultas a través del formulario ubicado en la página de Contacto, ingresando su correo electrónico y el mensaje correspondiente.
+    * **Página de Referencia:** Página de Contacto.
+    * **Componentes Clave:** Página de Contacto, Formulario de contacto.
+    * **Acción Principal:** Enviar.
+    * **Resultado:** Al hacer clic en "Enviar", los datos del usuario se remitirán al correo electrónico designado para la aplicación. Además, el usuario recibirá una confirmación por correo electrónico que el mensaje ha sido enviado exitosamente.
+
 ## Tecnologías utilizadas
 
 <div style="display: flex;">
@@ -146,6 +168,7 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
     - [React-Hook-Form](https://react-hook-form.com/get-started)
     - [SweetAlert2](https://sweetalert2.github.io/#download)
     - [Json-server](https://github.com/typicode/json-server)
+    - [Form-submit](https://formsubmit.co/)
 
 
 ## Requisitos previos
