@@ -37,12 +37,12 @@ const ItemUsuario = ({ usuario }) => {
       <td>{usuario.correo}</td>
       <td>
         {res ? (
-          <Button onClick={cambiarEstadoUsuario} disabled>
-            {valorEstado ? 'Habilitado' : 'Deshabilitado'}
+          <Button onClick={cambiarEstadoUsuario} disabled className={valorEstado ? "btn-success" : "btn-danger"}>
+            {valorEstado ? 'Habilitado' : 'Suspendido'}
           </Button>
         ) : (
-          <Button onClick={cambiarEstadoUsuario}>
-            {valorEstado ? 'Habilitado' : 'Deshabilitado'}
+          <Button onClick={cambiarEstadoUsuario} className={valorEstado ? "btn-success fw-bold" : "btn-danger fw-bold"}>
+            {valorEstado ? 'Habilitado' : 'Suspendido'}
           </Button>
         )}
       </td>

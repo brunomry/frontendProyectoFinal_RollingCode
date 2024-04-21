@@ -13,7 +13,6 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
     (usuario) => usuario._id == pedido.usuario
   );
 
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -26,7 +25,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
     await editarPedidoAPI(pedido, pedido._id);
     Swal.fire({
       icon: 'success',
-      title: 'El estado del envio fue actalizado correctamente.',
+      title: 'El estado del Pedido fue actualizado correctamente.',
     });
     setEstadoPedido(pedido.estadoEnvio);
   };
@@ -42,7 +41,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
       <td>${pedido.monto}</td>
       <td>
         <>
-          <Button variant='primary' onClick={handleShow}>
+          <Button variant='primary' onClick={handleShow} className='w-100'>
             Ver detalles
           </Button>
 
@@ -71,7 +70,7 @@ const ItemPedido = ({ listaUsuarios, pedido }) => {
       </td>
       <td>
         <Button
-          className='me-lg-2 btn btn-warning'
+          className={`me-lg-2 btn fw-bold w-100 ${estadoPedido ? "btn-success" : " btn-warning "}`}
           onClick={cambiarEstadoEnvio}
         >
           {estadoPedido ? 'Enviado' : 'Pendiente'}

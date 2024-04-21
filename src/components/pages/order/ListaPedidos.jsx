@@ -12,7 +12,7 @@ const ListaPedidos = () => {
 
   const listarPedidos = async () => {
     const respuesta = await leerPedidosAPI();
-    setListaPedidos(respuesta);
+    setListaPedidos(respuesta.reverse());
   };
 
   const traerUsuarios = async () => {
