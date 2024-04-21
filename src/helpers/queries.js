@@ -8,6 +8,8 @@ const URL_usuario = import.meta.env.VITE_API_USUARIO;
 const URL_Mailer = import.meta.env.VITE_API_MAILER;
 const URL_crearUsuario = import.meta.env.VITE_API_CREARUSUARIO;
 const id_super = import.meta.env.VITE_API_SUPERADMIN;
+const URL_MercadoPago = import.meta.env.VITE_API_MP;
+
 
 export const leerProductosAPI = async () => {
   try {
@@ -203,6 +205,23 @@ export const enviarDatosCorreo = async (correo) => {
       body: JSON.stringify(correo),
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearOrdenMP = async (orden) => {
+  try {
+    const respuesta = await fetch(URL_MercadoPago, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orden),
+    });
+    console.log(respuesta)
+    const data = await respuesta.json();
+    return data;
   } catch (error) {
     console.log(error);
   }

@@ -117,7 +117,13 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
           !spinner ? 'd-none' : 'mb-5'
         } `}
       >
-        {spinner && <Spinner animation='border' role='status'></Spinner>}
+        {spinner && (
+          <div className="d-flex flex-column">
+            <Spinner animation="border" role="status" className="ms-3 mb-2"></Spinner>
+            <span>Cargando...</span>
+          </div>
+        )
+        }
       </div>
       <Container
         className={

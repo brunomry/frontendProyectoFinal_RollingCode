@@ -1,0 +1,29 @@
+.containerSchedulesContact{
+    width: 280px;
+}
+
+.containerScheduleContact{
+    width: 260px;
+}
+
+@media all and (min-width:768px){
+    .containerSchedulesContact{
+        width: 330px;
+    }
+
+    .containerScheduleContact{
+      font-size: 18px;
+      width: 300px;
+    }
+  }
+
+  @media all and (min-width:1200px){
+    .containerSchedulesContact{
+        width: 380px;
+    }
+
+    .containerScheduleContact{
+      font-size: 20px;
+      width: 350px;
+    }
+  }
