@@ -22,9 +22,10 @@ const FormularioUsuario = ({ superAdmin }) => {
   }
 
   const usuarioValidado = async (usuario) => {
+    const usuarioLowerCase = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave, rol: rol}
     const listaUsuarios = await leerUsuariosAPI();
     const usuarioBuscado = listaUsuarios.find(
-      (u) => u.correo === usuario.correo
+      (u) => u.correo === usuarioLowerCase.correo
     );
     if (!usuarioBuscado) {
       let timerInterval;
@@ -44,7 +45,7 @@ const FormularioUsuario = ({ superAdmin }) => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
-      const respuesta = await crearUsuarioAdmin(usuario);
+      const respuesta = await crearUsuarioAdmin(usuarioLowerCase);
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Usuario creado correctamente',
