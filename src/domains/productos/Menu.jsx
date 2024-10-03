@@ -62,11 +62,11 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
     <>
       <section className='bannerMenu d-flex flex-column justify-content-center align-items-center sectionTop'>
         <h1 className='title pb-3'>Nuestro Menú</h1>
-        <p className='fw-bold bannerText pb-3'>
+        <p className='fw-normal bannerText pb-3'>
           ¡Descubre nuestro festín de sabores!
         </p>
         <button
-          className='bannerBTN text-center py-3 text-decoration-none fw-bold'
+          className='bannerBTN text-center py-3 text-decoration-none '
           onClick={handleDownloadPDF}
         >
           DESCARGAR MENÚ
@@ -101,7 +101,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
       <Form className='d-flex justify-content-center my-3 px-2'>
         <Form.Group className='mb-3 search' controlId='buscarMenu'>
           <Form.Label>
-            Busca tu producto <i className='fa-solid fa-arrow-down ms-1'></i>
+            Buscar productos
           </Form.Label>
           <Form.Control
             type='text'
@@ -120,7 +120,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         {spinner && (
           <div className="d-flex flex-column">
             <Spinner animation="border" role="status" className="ms-3 mb-2"></Spinner>
-            <span>Cargando...</span>
+            <span>Espera un momento...</span>
           </div>
         )
         }
@@ -138,7 +138,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
               <h2 className='categoryTitle'>Pizzas</h2>
             </div>
           )}
-        <Row className='gy-3 gx-4'>
+        <Row className='gy-3'>
           {busqueda === '' &&
             filtrarProductosPorCategoria('Pizzas').length > 0 &&
             filtrarProductosPorCategoria('Pizzas').map((producto) => (

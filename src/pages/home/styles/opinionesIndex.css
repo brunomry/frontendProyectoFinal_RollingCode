@@ -1,7 +1,6 @@
 .opinions {
   background: #fff;
   min-height: 700px;
-  font-family: "Exo";
 }
 
 .opinions .containerOpinions{
@@ -10,7 +9,6 @@
 
 .opinions h2{
   color: #9a5534;
-  font-family: "Oswald";
 }
 
 .btnOpinion{

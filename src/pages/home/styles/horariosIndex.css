@@ -4,6 +4,15 @@
 
 .containerImgInterior{
   overflow: hidden;
+  width: 50%;
+  height: 100%;
+}
+
+.imgInterior{
+  width: 100%;
+  max-height: 100%;
+  transition: 1.3s;
+  filter: saturate(130%);
 }
 
 .containerImgInterior:hover .imgInterior{
@@ -12,11 +21,8 @@
   transition: 1.3s;
 }
 
-.imgInterior{
-  width: 100%;
-  height: 300px;
-  transition: 1.3s;
-  filter: saturate(130%);
+.descriptionSchedules{
+  width: 50%;
 }
 
 .containerSchedule{
@@ -25,11 +31,9 @@
 
 .btnMenu{
   transition: transform 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .btnMenu:hover{
-  transform: scale(0.95);
   transition: .7s;
 }
 
@@ -37,20 +41,12 @@
   .containerSchedule{
     font-size: 18px;
   }
-
-  .imgInterior{
-    width: 550px;
-    height: 500px;
-  }
 }
 
 @media all and (min-width:1200px){
   .containerSchedule{
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  .imgInterior{
-    width: 650px;
-    height: 500px;
-  }
+
 }

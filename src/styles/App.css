@@ -1,30 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Exo', sans-serif;
-  background: #000;
+  background-color: #f7f7f7;
 }
 
-#root h1,
-#root h2,
-#root h3,
-#root h4,
-#root h5 {
-  font-family: 'Oswald', sans-serif;
-}
-
-#root h1,
-#root h2 {
-  color: #9a5534;
-}
-
-#root a,
-#root p,
-#root .btn {
-  font-family: 'Exo', sans-serif;
+body *{
+  font-family: 'Kalam', sans-serif;
 }
 
 #root .navBarSticky{

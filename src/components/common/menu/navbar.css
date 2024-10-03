@@ -1,21 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
-
-header {
-  background-color: #ce7846;
-}
 
 .navbarBackground {
   background-color: #fff;
-}
-
-.myOrderBTN{
-
-  transition: transform 0.3s ease;
-}
-.myOrderBTN:hover{
-  transition: 0.4s;
-  transform: scale(1.1);
 }
 
 .navbar{
@@ -23,12 +9,12 @@ header {
 }
 
 .navLink {
-  border-bottom: 3px solid #fff;
+  border-bottom: 1px solid #fff;
   transition: transform 0.3s ease;
 }
 
 .navLink.active {
-  border-bottom: 3px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 .navLinkBTN {

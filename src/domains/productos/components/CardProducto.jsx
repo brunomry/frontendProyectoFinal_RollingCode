@@ -17,38 +17,35 @@ const CardProducto = ({
 
   return (
     <>
-      <Col md={6} lg={6} className='d-flex justify-content-center'>
-        <div className='cardProduct border d-flex justify-content-between'>
-          <div className='cardInformation d-flex flex-column gap-2 justify-content-between'>
-            <div className='cardTitle'>
-              <h5 className='pt-0'>{producto.nombre}</h5>
-            </div>
-            <div className='cardDescription'>
-              <p className='cardParagraph'>{producto.detalle}</p>
-            </div>
-            <div className='flexPriceAndBtn w-100'>
-              <div className=' text-center'>
-                <p>${producto.precio}</p>
-              </div>
-              <div className='text-center containerBtnCard'>
-                {' '}
-                <Button
-                  className='cardBTN px-md-3 border border-1'
-                  onClick={handleShowModal}
-                >
-                  ver más
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className='cardIMGContainer'>
+      <Col md={6} lg={3} className='d-flex'>
+        <div className='cardProduct border d-flex flex-column rounded-2'>
+        <div className='w-100'>
             <img
               src={producto.imagen}
               alt={producto.nombre}
               title={producto.nombre}
-              className='cardIMG rounded-end'
+              className='cardImg rounded-top  w-100'
             />
           </div>
+          <div className='cardInformation p-2 d-flex flex-column gap-2 justify-content-between'>
+            <div className='cardTitle'>
+              <p className='pt-0 fw-normal'>{producto.nombre}</p>
+            </div>
+              <div>
+                <p className='mt-0 fw-bold'>${producto.precio}</p>
+              </div>
+              <div className='w-100 mt-3'>
+                {' '}
+                <Button
+                  className='cardBtn px-md-2 border-0 w-100'
+                  onClick={handleShowModal}
+                >
+                  Ver más
+                </Button>
+              </div>
+           
+          </div>
+          
         </div>
       </Col>
       <ModalDetalleProducto

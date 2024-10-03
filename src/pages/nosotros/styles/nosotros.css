@@ -16,11 +16,9 @@
   background-repeat: no-repeat;
   background-size: 350%;
   animation: movimiento 9s infinite;
-  font-family: "Exo";
 }
 
 .bannerContent h1{
-  font-family: "Oswald";
   font-size: 2.1875rem;
   text-align: center;
   color:#9a5534;

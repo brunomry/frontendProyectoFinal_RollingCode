@@ -8,7 +8,7 @@ const Load = () => {
       style={{ margin: "10vw 0" }}
     >
       <Spinner animation="border" role="status">
-        <span className="visually-hidden">Cargando...</span>
+        <span className="visually-hidden">Espera un momento...</span>
       </Spinner>
     </div>
   );

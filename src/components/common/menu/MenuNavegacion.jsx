@@ -110,17 +110,17 @@ const MenuNavegacion = ({
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={menuBTNClick} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto align-items-center">
-              <NavLink className="navLink nav-link text-center" to="/" onClick={navLinkClick}>
-                <b>INICIO</b>
+              <NavLink className="navLink nav-link text-center fw-normal" to="/" onClick={navLinkClick}>
+                Home
               </NavLink>
               <NavLink className="navLink nav-link text-center" to="/menu" onClick={navLinkClick}>
-                <b>MENÚ</b>
+                Menú
               </NavLink>
               <NavLink className="navLink nav-link text-center" to="/nosotros" onClick={navLinkClick}>
-                <b>NOSOTROS</b>
+                Nosotros
               </NavLink>
               <NavLink className="navLink nav-link text-center" to="/contacto" onClick={navLinkClick}>
-                <b>CONTACTO</b>
+                Contacto
               </NavLink>
               {usuarioLogeado.rol === "Administrador" && (
                 <>
@@ -129,13 +129,13 @@ const MenuNavegacion = ({
                     to="/administrador"
                     onClick={navLinkClick}
                   >
-                    <b>ADMINISTRACIÓN</b>
+                    Administración
                   </NavLink>
                   <button
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-bold"
+                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal"
                     onClick={cerrarSesion}
                   >
-                    CERRAR SESION
+                    Cerrar sesión
                   </button>
                 </>
               )}
@@ -150,49 +150,49 @@ const MenuNavegacion = ({
                       <i className="fa-solid fa-cart-shopping fa-xl"></i>
                     )}
                     {contadorCarrito > 0 && (
-                      <span className="bg-danger me-2 px-2 fw-bold text-white rounded-pill">
+                      <span className="bg-danger me-2 px-2 fw-normal text-white rounded-pill">
                         {contadorCarrito}
                       </span>
                     )}
-                    <b>PEDIDO</b>
+                    Pedido
                   </NavLink>
                   <NavLink
-                    className="navLink nav-link text-center fw-bold"
+                    className="navLink nav-link text-center fw-normal"
                     to="/pedido/misPedidos"
                     onClick={navLinkClick}
                   >
-                    MIS PEDIDOS
+                    Mis pedidos
                   </NavLink>
                   <button
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-bold"
+                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal"
                     onClick={cerrarSesion}
                   >
-                    CERRAR SESION
+                    Cerrar sesión
                   </button>
                 </>
               )}
               {usuarioLogeado.rol === undefined && (
                 <>
                   <NavLink
-                    className="myOrderBTN nav-link text-center"
+                    className="myOrderBTN nav-link fw-normal text-center"
                     onClick={myOrderAlert}
                   >
                     <i className="fa-solid fa-cart-shopping fa-xl"></i>
-                    <b> PEDIDO</b>
+                    <span className="fw-normal"> Pedido</span>
                   </NavLink>
                   <NavLink
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2"
+                    className="navLinkBTN nav-link border rounded-2 mx-2 my-1 px-2"
                     to="/login"
                     onClick={navLinkClick}
                   >
-                    <b>INICIAR SESIÓN</b>
+                    Iniciar sesión
                   </NavLink>
                   <NavLink
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2"
+                    className="navLinkBTN nav-link border rounded-2 mx-2 my-1 px-2"
                     to="/registro"
                     onClick={navLinkClick}
                   >
-                    <b>REGISTRARME</b>
+                    Registrarme
                   </NavLink>
                 </>
               )}

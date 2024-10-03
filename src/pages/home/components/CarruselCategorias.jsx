@@ -19,7 +19,7 @@ const CarruselCategorias = () => {
               title="opción de pizzas"
             />
             <Card.Body>
-              <Card.Title className="text-center fs-4 fw-bold fw-bold">Pizzas</Card.Title>
+              <Card.Title className="text-center fs-4 fw-normal">Pizzas</Card.Title>
             </Card.Body>
           </Card>
         </Carousel.Item>
@@ -33,7 +33,7 @@ const CarruselCategorias = () => {
               title="opción de hamburguesa"
             />
             <Card.Body>
-              <Card.Title className="text-center fs-4 fw-bold">Hamburguesas</Card.Title>
+              <Card.Title className="text-center fs-4 fw-normal">Hamburguesas</Card.Title>
             </Card.Body>
           </Card>
         </Carousel.Item>
@@ -47,7 +47,7 @@ const CarruselCategorias = () => {
               title="opción de pastas"
             />
             <Card.Body>
-              <Card.Title className="text-center fs-4 fw-bold">Pastas</Card.Title>
+              <Card.Title className="text-center fs-4 fw-normal">Pastas</Card.Title>
             </Card.Body>
           </Card>
         </Carousel.Item>
@@ -61,7 +61,7 @@ const CarruselCategorias = () => {
               title="opción de empanadas"
             />
             <Card.Body>
-              <Card.Title className="text-center fs-4 fw-bold">Empanadas</Card.Title>
+              <Card.Title className="text-center fs-4 fw-normal">Empanadas</Card.Title>
             </Card.Body>
           </Card>
         </Carousel.Item>
@@ -79,7 +79,7 @@ const CarruselCategorias = () => {
                   title="opción de pizza"
                 />
                 <Card.Body>
-                  <Card.Title className="text-center fs-4 fw-bold">Pizzas</Card.Title>
+                  <Card.Title className="text-center fs-4 fw-normal">Pizzas</Card.Title>
                 </Card.Body>
               </Card>
             </Col>
@@ -93,7 +93,7 @@ const CarruselCategorias = () => {
                   title="opción de hamburguesa"
                 />
                 <Card.Body>
-                  <Card.Title className="text-center fs-4 fw-bold">
+                  <Card.Title className="text-center fs-4 fw-normal">
                     Hamburguesas
                   </Card.Title>
                 </Card.Body>
@@ -114,7 +114,7 @@ const CarruselCategorias = () => {
 
                 />
                 <Card.Body>
-                  <Card.Title className="text-center fs-4 fw-bold">Pastas</Card.Title>
+                  <Card.Title className="text-center fs-4 fw-normal">Pastas</Card.Title>
                 </Card.Body>
               </Card>
             </Col>
@@ -128,7 +128,7 @@ const CarruselCategorias = () => {
                   title="opción de empanadas"
                 />
                 <Card.Body>
-                  <Card.Title className="text-center fs-4 fw-bold">
+                  <Card.Title className="text-center fs-4 fw-normal">
                     Empanadas
                   </Card.Title>
                 </Card.Body>

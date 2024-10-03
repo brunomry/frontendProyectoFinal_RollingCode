@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
 * {
   scroll-margin-top: 75px;
 }
 
 .title {
-  color: #9a5534;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #fff;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .bannerMenu {
@@ -16,16 +15,7 @@
   background-size: 300%;
   background-repeat: no-repeat;
   color: white;
-  height: 60vh;
-  animation: movimiento 9s infinite;
-}
-
-@keyframes movimiento {
-  from {
-    background-position: bottom left;
-  }to{
-    background-position: top right;
-  }
+  height: 40vh;
 }
 
 .bannerBTN {
@@ -41,7 +31,6 @@
 
 .bannerBTN:hover {
   transition: 0.7s;
-  transform: scale(1.1);
 }
 
 .search {

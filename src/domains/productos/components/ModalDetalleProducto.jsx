@@ -47,9 +47,9 @@ const ModalDetalleProducto = ({
         />
       </Modal.Header>
       <Modal.Body className='pt-1'>
-        <h4 className='mb-1'>{producto.nombre}</h4>
-        <p className='text-success price mb-1 fw-bold'>${producto.precio}</p>
-        <p>{producto.detalle}</p>
+      <p className='price mb-1 fw-bold'>${producto.precio}</p>
+        <p className='mb-1 fw-normal'>{producto.nombre}</p>   
+        <p className='fw-normal text-secondary'>{producto.detalle}</p>
         <div>
           {!productoEncontrado && usuarioLogeado.rol != 'Administrador' && (
             <Form.Group className='mb-3'>
@@ -74,7 +74,7 @@ const ModalDetalleProducto = ({
           )}
           <div className='d-flex containerBTN mt-3'>
             <Button
-              className='btn btn-secondary closeBTN'
+              className='btn closeBTN'
               onClick={handleShowModal}
             >
               Cerrar
@@ -86,7 +86,7 @@ const ModalDetalleProducto = ({
             )}
             {!productoEncontrado && usuarioLogeado.rol != 'Administrador' && (
               <Button
-                className='addBTN btn-success'
+                className='btnAddProduct'
                 type='submit'
                 onClick={() => {
                   agregarProductoCarrito(producto, cantidad);

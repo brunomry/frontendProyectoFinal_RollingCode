@@ -18,7 +18,7 @@ p {
 .footerTitleSection{
     margin-bottom: 15px;
     padding-bottom: 8px;
-    border-bottom: solid 2px black;
+    border-bottom: solid 1px rgb(199, 196, 196);
 }
 
 .contactForm{

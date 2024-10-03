@@ -1,58 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;1,300&family=Oswald:wght@500&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
-p{
-    font-family: "Exo", sans-serif;
+.modalIMG {
+  border-radius: 8px;
+  width: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  filter: saturate(130%);
 }
-h1,h2,h3,h4,h5,h6{
-    font-family: "Oswald", sans-serif;
-}
-.modalIMG{
-    border-radius: 8px;
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    filter: saturate(150%);
-}
-.addBTN{
-    width: 45%;
-}
-.closeBTN{
-    width: 45%;
-}
-.price{
-    font-size: 20px;
-}
-@media all and (min-width:0px){
-    p{
-        font-size: 15px;
-    }
-    .modalIMG{
-        height: 230px;
-    }
-    .addBTN{
-        font-size: 15px;
-        width: 100%;
-    }
-    .closeBTN{
-        font-size: 15px;
-        width: 100%;
-    }
-    .containerBTN{
-        flex-direction: column-reverse;
-        gap: 10px
-    }
-    .modalHeaderIMGContainer{
-        padding-bottom: 5px;
-    }
-}
-@media all and (min-width:375px) and (max-width:767px){
-    .modalIMG{
-        height: 300px;
-    }
-}
-@media all and (min-width:768px){
-    .modalIMG{
-        height: 320px;
-    }
+
+@media all and (min-width: 375px) {
+  .modalIMG {
+    height: 300px;
+  }
 }
