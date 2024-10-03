@@ -1,0 +1,10 @@
+.errorSection{
+  background-color: #fff;
+  margin-top: 89px;
+}
+
+.imgError404 {
+  width: 100%;
+  filter: saturate(130%);
+}
+

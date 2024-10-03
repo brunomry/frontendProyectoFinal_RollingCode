@@ -1,0 +1,32 @@
+.categories{
+  background: #fff;
+}
+
+.cardCategory{
+  width: 100%;
+}
+
+.cardCategory .imgCategory{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  filter: saturate(130%);
+}
+
+.carousel .carousel-indicators{
+  display: none;
+}
+
+@media all and (min-width:375px){
+  .cardCategory .imgCategory{
+    width: 325px;
+    height: 300px;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardCategory .imgCategory{
+    width: 400px;
+    height: 400px;
+  }
+}

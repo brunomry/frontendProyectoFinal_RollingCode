@@ -1,0 +1,56 @@
+.sectionOrdersUser{
+  padding-top: 80px;
+
+}
+
+.containerOrdersUser{
+  width: 100%;
+}
+
+.cardPedido{
+  width: 100%;
+  background-color: #fbf8ea;
+}
+
+.btnDetailsOrder{
+  background-color: rgb(37, 127, 236);
+}
+
+.btnDetailsOrder:hover{
+  background-color: rgb(34, 98, 177);
+}
+
+.cardPedido .btnBuy{
+  background-color: rgb(142, 142, 141);
+}
+
+.cardPedido .btnBuy:hover{
+  background-color: rgb(103, 103, 101);
+}
+
+.cardPedido .btn{
+  width: 100%;
+}
+
+@media all and (min-width:375px){
+  .cardPedido{
+    width: 90%;
+  }
+}
+
+@media all and (min-width:768px){
+  .sectionOrdersUser{
+    padding-top: 0;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardPedido{
+    width: 800px;
+  }
+
+  .cardPedido .btnDetailsOrder,
+  .cardPedido .btnBuy{
+    width: 75%;
+  }
+}

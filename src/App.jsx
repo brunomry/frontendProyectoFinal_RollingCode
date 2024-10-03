@@ -1,23 +1,22 @@
-import "./App.css";
+import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./components/pages/Login";
-import Inicio from "./components/pages/Inicio";
-import Menu from "./components/pages/Menu";
-import Nosotros from "./components/pages/Nosotros";
-import MenuNavegacion from "./components/common/MenuNavegacion";
-import Error404 from "./components/pages/Error404";
-import Registro from "./components/pages/Registro";
-import Footer from "./components/common/Footer";
-import RutasProtegidas from "./components/routes/RutasProtegidas";
-import RutasAdmin from "./components/routes/RutasAdmin";
 import { useEffect, useState } from "react";
 import { leerProductosAPI } from "./helpers/queries";
 import Swal from "sweetalert2";
-import RutasProtegidasUsuario from "./components/routes/RutasProtegidasUsuario";
-import RutasUsuario from "./components/routes/RutasUsuario";
-import MisPedidos from "./components/pages/order/userOrders/MisPedidos";
-import Contacto from "./components/pages/Contacto";
+import MenuNavegacion from "./components/common/menu/MenuNavegacion";
+import Inicio from "./pages/home/Inicio";
+import Menu from "./domains/productos/Menu";
+import Login from "./domains/auth/Login";
+import RutasProtegidas from "./routes/RutasProtegidas";
+import RutasAdmin from "./routes/RutasAdmin";
+import Registro from "./domains/auth/Registro";
+import RutasProtegidasUsuario from "./routes/RutasProtegidasUsuario";
+import RutasUsuario from "./routes/RutasUsuario";
+import Nosotros from "./pages/nosotros/Nosotros";
+import Contacto from "./pages/contacto/Contacto";
+import Error404 from "./pages/error404/Error404";
+import Footer from "./components/common/footer/Footer";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
@@ -172,7 +171,7 @@ function App() {
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
           productosCarrito={productosCarrito}
-        ></MenuNavegacion>
+        />
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
           <Route
