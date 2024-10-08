@@ -98,7 +98,7 @@ const MenuNavegacion = ({
     <>
       <Navbar expand="md" className="navBarSticky navLinks navbarBackground" expanded={desplegarNavbar}>
         <Container fluid>
-          <Navbar.Brand className="d-block d-md-none" as={Link} to="/">
+          <Navbar.Brand className="d-block" as={Link} to="/">
             <img
               src={logo}
               alt="Logo ambiente bohemio"
@@ -110,29 +110,29 @@ const MenuNavegacion = ({
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={menuBTNClick} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto align-items-center">
-              <NavLink className="navLink nav-link text-center fw-normal" to="/" onClick={navLinkClick}>
+              <NavLink className="navLink nav-link text-center text-white fw-normal" to="/" onClick={navLinkClick}>
                 Home
               </NavLink>
-              <NavLink className="navLink nav-link text-center" to="/menu" onClick={navLinkClick}>
+              <NavLink className="navLink nav-link text-center text-white" to="/menu" onClick={navLinkClick}>
                 Menú
               </NavLink>
-              <NavLink className="navLink nav-link text-center" to="/nosotros" onClick={navLinkClick}>
+              <NavLink className="navLink nav-link text-center text-white" to="/nosotros" onClick={navLinkClick}>
                 Nosotros
               </NavLink>
-              <NavLink className="navLink nav-link text-center" to="/contacto" onClick={navLinkClick}>
+              <NavLink className="navLink nav-link text-center text-white" to="/contacto" onClick={navLinkClick}>
                 Contacto
               </NavLink>
               {usuarioLogeado.rol === "Administrador" && (
                 <>
                   <NavLink
-                    className="navLink nav-link text-center"
+                    className="navLink nav-link text-center text-white"
                     to="/administrador"
                     onClick={navLinkClick}
                   >
                     Administración
                   </NavLink>
                   <button
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal"
+                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal text-white"
                     onClick={cerrarSesion}
                   >
                     Cerrar sesión
@@ -142,7 +142,7 @@ const MenuNavegacion = ({
               {usuarioLogeado.rol === "Usuario" && (
                 <>
                   <NavLink
-                    className="navLink nav-link text-center"
+                    className="navLink nav-link text-center text-white"
                     to="/pedido/miPedido"
                     onClick={navLinkClick}
                   >
@@ -157,14 +157,14 @@ const MenuNavegacion = ({
                     Pedido
                   </NavLink>
                   <NavLink
-                    className="navLink nav-link text-center fw-normal"
+                    className="navLink nav-link text-center fw-normal text-white"
                     to="/pedido/misPedidos"
                     onClick={navLinkClick}
                   >
                     Mis pedidos
                   </NavLink>
                   <button
-                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal"
+                    className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal text-white"
                     onClick={cerrarSesion}
                   >
                     Cerrar sesión
@@ -174,21 +174,21 @@ const MenuNavegacion = ({
               {usuarioLogeado.rol === undefined && (
                 <>
                   <NavLink
-                    className="myOrderBTN nav-link fw-normal text-center"
+                    className="myOrderBTN nav-link fw-normal text-center text-white"
                     onClick={myOrderAlert}
                   >
                     <i className="fa-solid fa-cart-shopping fa-xl"></i>
                     <span className="fw-normal"> Pedido</span>
                   </NavLink>
                   <NavLink
-                    className="navLinkBTN nav-link border rounded-2 mx-2 my-1 px-2"
+                    className="nav-link btnNav rounded-2 mx-2 my-1 px-2 text-white"
                     to="/login"
                     onClick={navLinkClick}
                   >
                     Iniciar sesión
                   </NavLink>
                   <NavLink
-                    className="navLinkBTN nav-link border rounded-2 mx-2 my-1 px-2"
+                    className="nav-link btnNav rounded-2 mx-2 my-1 px-2 text-white"
                     to="/registro"
                     onClick={navLinkClick}
                   >

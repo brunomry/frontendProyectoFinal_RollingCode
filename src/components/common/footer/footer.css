@@ -2,27 +2,20 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
 .footerContainer {
-  background-color: #f7f7f7;
+  border-top: 1px solid white;
+  background-color: #000;
 }
 
 .footerIMG {
-  width: 240px;
-  height: 125px;
-}
-
-p {
-  margin: 0px;
-  font-weight: bold;
+  width: 200px;
+  height: 90px;
+  object-fit: cover;
 }
 
 .footerTitleSection{
     margin-bottom: 15px;
     padding-bottom: 8px;
     border-bottom: solid 1px rgb(199, 196, 196);
-}
-
-.contactForm{
-    width: 100%;
 }
 
 @media all and (min-width: 0px) and (max-width:767px){
@@ -38,57 +31,5 @@ p {
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
-  }
-
-  .containerSocialMedia{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .socialMedia{
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .socialMedia a{
-    font-size: 20px;
-  }
-
-  .instagramIcon{
-    margin-right: 20px;
-  }
-
-  .twitterIcon{
-    margin-right: 20px;
-  }
-
-  .formContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .formTitle{
-    text-align: center;
-    color: #9a5534;
-  }
-
-  .footerIMG{
-    width: 150px;
-    height: 80px;
-  }
-}
-
-@media all and (min-width: 992px){
-  p{
-    margin-top: 7px;
-  }
-}
-
-@media all and (min-width: 1200px){
-  p{
-    font-size: 18px;
-    margin-top: 10px;
   }
 }

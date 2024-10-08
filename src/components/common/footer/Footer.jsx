@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Container fluid className="footerContainer pt-5 pb-1 mt-auto">
+    <Container fluid className="footerContainer pt-5 pb-1 mt-auto text-secondary">
       <Row>
         <Col md={12} lg={3} className="d-flex justify-content-center mb-3">
           <img
@@ -16,7 +16,7 @@ const Footer = () => {
           />
         </Col>
         <Col className="d-none d-md-block">
-          <h5 className="footerTitleSection">Opciones</h5>
+          <h5 className="footerTitleSection ">Opciones</h5>
           <Link className="text-decoration-none text-secondary" to="/">
             <p className="fw-normal">Inicio</p>
           </Link>
@@ -47,7 +47,7 @@ const Footer = () => {
         </Col>
         <Col xs={12} md={4} lg={3} className="containerContact">
           <h5 className="footerTitleSection">Contacto</h5>
-          <div className="d-flex justify-content-between containerSocialMedia">
+          <div className="d-flex justify-content-between d-flex flex-column align-items-center flex-md-row gap-2">
             <div>
               <p className="fw-normal text-secondary">
                 <i className="fa-brands fa-whatsapp fa-xl"></i> <span className="text-secondary">1231234567</span>
@@ -56,24 +56,21 @@ const Footer = () => {
                 <i className="fa-solid fa-location-dot fa-xl"></i> Gral. Paz 576
               </p>
             </div>
-            <div className="socialMedia d-md-flex flex-column gap-3">
+            <div className="socialMedia d-flex flex-md-column gap-md-3">
             <Link to="*" target="_blank" title="facebook">
                 <i className="fa-brands fa-facebook-f fa-2xl text-secondary me-4 me-md-0"></i>
               </Link>
               <Link to="*" target="_blank" title="instagram" className="text-center">
-                <i className="instagramIcon fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 text-secondary"></i>
-              </Link>
-              <Link to="*" target="_blank" title="twitter">
-                <i className="twitterIcon fa-brands fa-x-twitter fa-2xl me-md-2 me-lg-2 text-secondary"></i>
-              </Link>      
+                <i className="iconSocial fa-brands fa-instagram fa-2xl me-md-2 me-lg-2 text-secondary"></i>
+              </Link>  
             </div>
           </div>
-          <div className="formContainer pt-2">
+          <div className="formContainer w-100 pt-3 d-flex flex-column align-items-center align-items-md-start">
             <h5 className="formTitle">
               {" "}
               Suscríbete para recibir más información
             </h5>
-            <Form className="contactForm d-flex">
+            <Form className="contactForm d-flex w-100">
               <div className="input-group mb-3">
                 <input
                   type="text"
