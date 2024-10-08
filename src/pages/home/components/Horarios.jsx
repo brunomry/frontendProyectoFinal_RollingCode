@@ -5,9 +5,9 @@ import interior from "../../../assets/Inicio/interior.webp";
 
 const HorariosYServicios = () => {
   return (
-    <div className="container-fluid px-0 containerSchedules h-100 py-0 d-flex flex-column align-items-center flex-lg-row justify-content-center gap-5">
-      <article className="textSize order-0 descriptionSchedules order-lg-2 text-center text-lg-start align-items-center h-100">
-        <h2 className="mb-5 text-center">
+    <div className="container-fluid text-white px-0 containerSchedules h-100 py-0 d-flex flex-column align-items-center flex-lg-row justify-content-center gap-5">
+      <article className="my-5 descriptionSchedules d-flex justify-content-center gap-5 align-items-center">
+        <h2 className=" text-center">
           Disfruta de una buena comida en{" "}
           <span className="d-block">
             - <i className="fa-solid fa-pizza-slice fs-3"></i> Ambiente Bohemio
@@ -20,8 +20,7 @@ const HorariosYServicios = () => {
           </h3>
 
           <p className="fw-normal">Lunes a Sábado de 12:00 a 00:00</p>
-        </div>
-
+          
         <div className="mt-4 text-center">
           <Button
             as={Link}
@@ -32,14 +31,16 @@ const HorariosYServicios = () => {
             <i className="fa-solid fa-utensils me-2"></i> ver Menú
           </Button>
         </div>
+        </div>
+
       </article>
       <article className="order-1 order-lg-1 containerImgInterior h-100">
-        <img
+        {/* <img
           src={interior}
           alt="interior del restaurante"
           title="interior del restaurante"
           className="imgInterior"
-        />
+        /> */}
       </article>
     </div>
   );

@@ -1,14 +1,10 @@
 .opinions {
-  background: #fff;
+  background:#fff;
   min-height: 700px;
 }
 
 .opinions .containerOpinions{
   min-height: 700px;
-}
-
-.opinions h2{
-  color: #9a5534;
 }
 
 .btnOpinion{
@@ -33,7 +29,6 @@
 .containerCardOpinions .card{
   width: 100%;
   min-height: 175px;
-  background: #fff;
 }
 
 .iconStar{

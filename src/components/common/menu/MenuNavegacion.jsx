@@ -116,12 +116,6 @@ const MenuNavegacion = ({
               <NavLink className="navLink nav-link text-center text-white" to="/menu" onClick={navLinkClick}>
                 Menú
               </NavLink>
-              <NavLink className="navLink nav-link text-center text-white" to="/nosotros" onClick={navLinkClick}>
-                Nosotros
-              </NavLink>
-              <NavLink className="navLink nav-link text-center text-white" to="/contacto" onClick={navLinkClick}>
-                Contacto
-              </NavLink>
               {usuarioLogeado.rol === "Administrador" && (
                 <>
                   <NavLink

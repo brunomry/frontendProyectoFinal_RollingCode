@@ -2,7 +2,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
 .footerContainer {
-  border-top: 1px solid white;
+  border-top: 1px solid #222222;
   background-color: #000;
 }
 
@@ -15,7 +15,7 @@
 .footerTitleSection{
     margin-bottom: 15px;
     padding-bottom: 8px;
-    border-bottom: solid 1px rgb(199, 196, 196);
+    border-bottom: solid 1px #222222;
 }
 
 @media all and (min-width: 0px) and (max-width:767px){

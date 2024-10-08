@@ -3,7 +3,6 @@ import { Container, Form, Row, Spinner } from 'react-bootstrap';
 import CardProducto from './components/CardProducto';
 import { useState, useEffect } from 'react';
 import { leerProductosAPI } from '../../helpers/queries';
-import pdf from '../../assets/Menú_Ambiente_Bohemio.pdf';
 
 const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
@@ -23,11 +22,6 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleDownloadPDF = () => {
-    const urlPDF = pdf;
-    window.open(urlPDF, '_blank');
   };
 
   const filtrarProductosPorCategoria = (categoria) =>
@@ -60,19 +54,27 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
 
   return (
     <>
-      <section className='bannerMenu d-flex flex-column justify-content-center align-items-center sectionTop'>
-        <h1 className='title pb-3'>Nuestro Menú</h1>
-        <p className='fw-normal bannerText pb-3'>
-          ¡Descubre nuestro festín de sabores!
-        </p>
-        <button
-          className='bannerBTN text-center py-3 text-decoration-none '
-          onClick={handleDownloadPDF}
-        >
-          DESCARGAR MENÚ
-        </button>
-      </section>
-      <div className='border-bottom border-secondary d-flex justify-content-center py-3 pe-2 menuCategoryContainer position-sticky top-0'>
+      <Form className='d-flex justify-content-center my-3 mt-md-5 px-2 formSearch'>
+        <Form.Group className='mb-3 search input-group' controlId='buscarMenu'>
+          <Form.Control
+            type='text'
+            placeholder='Buscar producto...'
+            value={busqueda}
+            className='input inputSearch text-white'
+            onChange={(e) => setBusqueda(e.target.value)}
+            onKeyDown={(e) => handleEnter(e)}
+            id='inputSearch'
+          />
+          <label class="input-group-text labelSearch" htmlFor='inputSearch'><svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" class="bi bi-search text-secondary" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+</svg></label>
+        </Form.Group>
+        <div className='iconSearch'>
+        
+        </div>
+      
+      </Form>
+      <div className='d-flex justify-content-center pt-4 pb-3 pe-2 menuCategoryContainer position-sticky top-0 mb-5'>
         <a
           className='link-dark text-decoration-none btn btn-warning me-2'
           href='#pizzas'
@@ -98,20 +100,6 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
           Empanadas
         </a>
       </div>
-      <Form className='d-flex justify-content-center my-3 px-2'>
-        <Form.Group className='mb-3 search' controlId='buscarMenu'>
-          <Form.Label>
-            Buscar productos
-          </Form.Label>
-          <Form.Control
-            type='text'
-            placeholder='Por ej: cheeseburger'
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-            onKeyDown={(e) => handleEnter(e)}
-          />
-        </Form.Group>
-      </Form>
       <div
         className={`d-flex align-items-start justify-content-center custom-spinner ${
           !spinner ? 'd-none' : 'mb-5'
@@ -135,10 +123,10 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         {busqueda === '' &&
           filtrarProductosPorCategoria('Pizzas').length > 0 && (
             <div className='d-flex align-items-center' id='pizzas'>
-              <h2 className='categoryTitle'>Pizzas</h2>
+              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Pizzas</h2>
             </div>
           )}
-        <Row className='gy-3'>
+        <Row className='g-5'>
           {busqueda === '' &&
             filtrarProductosPorCategoria('Pizzas').length > 0 &&
             filtrarProductosPorCategoria('Pizzas').map((producto) => (
@@ -163,10 +151,10 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         {busqueda === '' &&
           filtrarProductosPorCategoria('Hamburguesas').length > 0 && (
             <div className='d-flex align-items-center' id='hamburguesas'>
-              <h2 className='categoryTitle'>Hamburguesas</h2>
+              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Hamburguesas</h2>
             </div>
           )}
-        <Row className='gy-3 gx-4'>
+        <Row className='g-5'>
           {busqueda === '' &&
             filtrarProductosPorCategoria('Hamburguesas').length > 0 &&
             filtrarProductosPorCategoria('Hamburguesas').map((producto) => (
@@ -190,10 +178,10 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         {busqueda === '' &&
           filtrarProductosPorCategoria('Pastas').length > 0 && (
             <div className='d-flex align-items-center' id='pastas'>
-              <h2 className='categoryTitle'>Pastas</h2>
+              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Pastas</h2>
             </div>
           )}
-        <Row className='gy-3 gx-4'>
+        <Row className='g-5'>
           {busqueda === '' &&
             filtrarProductosPorCategoria('Pastas').length > 0 &&
             filtrarProductosPorCategoria('Pastas').map((producto) => (
@@ -218,10 +206,10 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         {busqueda === '' &&
           filtrarProductosPorCategoria('Empanadas').length > 0 && (
             <div className='d-flex align-items-center' id='empanadas'>
-              <h2 className='categoryTitle'>Empanadas</h2>
+              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Empanadas</h2>
             </div>
           )}
-        <Row className='gy-3 gx-4'>
+        <Row className='g-5'>
           {busqueda === '' &&
             filtrarProductosPorCategoria('Empanadas').length > 0 &&
             filtrarProductosPorCategoria('Empanadas').map((producto) => (
@@ -237,7 +225,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
       </Container>
       <Container className={busqueda == '' ? 'd-none' : 'pb-5'}>
         {productosFiltrados.length > 0 && (
-          <Row className='gy-3 gx-4'>
+          <Row className='g-5'>
             {productosFiltrados.map((producto) => (
               <CardProducto
                 key={producto._id}
@@ -255,6 +243,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
           </div>
         )}
       </Container>
+  
     </>
   );
 };

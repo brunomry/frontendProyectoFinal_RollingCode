@@ -17,27 +17,27 @@ const CardProducto = ({
 
   return (
     <>
-      <Col md={6} lg={3} className='d-flex'>
-        <div className='cardProduct border d-flex flex-column rounded-2'>
-        <div className='w-100'>
+      <Col md={6} lg={3} className='d-flex justify-content-center'>
+        <div className='cardProduct d-flex flex-column rounded-4 py-3' onClick={handleShowModal} title='Clic para ver más'>
+        <div className='w-100 px-5 d-flex justify-content-center'>
             <img
               src={producto.imagen}
               alt={producto.nombre}
               title={producto.nombre}
-              className='cardImg rounded-top  w-100'
+              className='cardImg rounded-circle'
             />
           </div>
-          <div className='cardInformation p-2 d-flex flex-column gap-2 justify-content-between'>
+          <div className='cardInformation px-3 d-flex flex-column gap-2 justify-content-between'>
             <div className='cardTitle'>
-              <p className='pt-0 fw-normal'>{producto.nombre}</p>
+              <p className='mb-0 fw-normal text-center text-white'>{producto.nombre}</p>
             </div>
               <div>
-                <p className='mt-0 fw-bold'>${producto.precio}</p>
+                <p className='my-0 fw-bold text-center text-success cardPrice'>${producto.precio}</p>
               </div>
-              <div className='w-100 mt-3'>
+              <div className='w-100'>
                 {' '}
                 <Button
-                  className='cardBtn px-md-2 border-0 w-100'
+                  className='cardBtn px-md-2 border-0 w-100 rounded-5 py-md-3'
                   onClick={handleShowModal}
                 >
                   Ver más

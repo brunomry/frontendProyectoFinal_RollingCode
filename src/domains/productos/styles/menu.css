@@ -16,6 +16,7 @@
   background-repeat: no-repeat;
   color: white;
   height: 40vh;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .bannerBTN {
@@ -37,15 +38,49 @@
   width: 100%;
 }
 
-.searchBTN {
-  height: 100%;
+.inputSearch{
+  color: white;
+  background: #000;
+  border: 1px solid #797878;
+  outline: none;
+  border-right: 0;
 }
+
+.inputSearch::placeholder{
+  color: gray;
+}
+
+.labelSearch{
+  background: #000;
+  border: 1px solid #797878;
+  cursor: pointer;
+}
+
+.inputSearch:focus{
+  background: #000;
+  border: 1px solid #797878;
+  color: white;
+  box-shadow: none;
+  outline: none;
+  border-right: 0;
+}
+
+.iconSearch{
+  position: absolute;
+  right: 100px;
+}
+
+
 
 .menuCategoryContainer {
   overflow-x: scroll;
   padding-left: 190px;
-  background: #fff;
   z-index: 999;
+  background: #000;
+}
+
+.categoryTitle{
+  border-bottom: 1px solid #222222;
 }
 
 @media all and (min-width: 375px) {

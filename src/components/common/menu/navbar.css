@@ -5,7 +5,7 @@
 }
 
 .navbar{
-  z-index: 999;
+  z-index: 1;
 }
 
 .navLink {
@@ -35,7 +35,6 @@
   width: 120px;
   height: 60px;
   object-fit: cover;
-
   border-radius: 15px;
   padding: 8px;
 }
