@@ -19,7 +19,7 @@ const CardProducto = ({
     <>
       <Col md={6} lg={3} className='d-flex justify-content-center'>
         <div className='cardProduct d-flex flex-column rounded-4 py-3' onClick={handleShowModal} title='Clic para ver más'>
-        <div className='w-100 px-5 d-flex justify-content-center'>
+        <div className='w-100 d-flex justify-content-center'>
             <img
               src={producto.imagen}
               alt={producto.nombre}
@@ -30,7 +30,9 @@ const CardProducto = ({
           <div className='cardInformation px-3 d-flex flex-column gap-2 justify-content-between'>
             <div className='cardTitle'>
               <p className='mb-0 fw-normal text-center text-white'>{producto.nombre}</p>
+              
             </div>
+            <p className='text-secondary text-center detailProduct'>{producto.detalle}</p>
               <div>
                 <p className='my-0 fw-bold text-center text-success cardPrice'>${producto.precio}</p>
               </div>
@@ -40,7 +42,7 @@ const CardProducto = ({
                   className='cardBtn px-md-2 border-0 w-100 rounded-5 py-md-3'
                   onClick={handleShowModal}
                 >
-                  Ver más
+                  Comprar
                 </Button>
               </div>
            

@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 280px;
   object-fit: cover;
-  filter: saturate(130%);
+  filter: saturate(110%);
 }
 
 @media all and (min-width: 375px) {

@@ -40,7 +40,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
       const productosEncontrados = productos.filter(
         (producto) =>
           producto.estado === 'Disponible' &&
-          producto.nombre.toLowerCase().startsWith(inputBusqueda)
+          producto.nombre.toLowerCase().includes(inputBusqueda)
       );
       setProductosFiltrados(productosEncontrados);
     }

@@ -3,7 +3,7 @@
   min-width: 200px;
   max-width: 300px;
   min-height: 275px;
-  border: 1px solid #000;
+  border: 1px solid rgb(29, 29, 29);
   transition: 0.7s;
 }
 
@@ -20,6 +20,16 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 1;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+
+.detailProduct{
+  padding-top: 8px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
   white-space: normal;
   text-overflow: ellipsis;
 }
@@ -41,7 +51,7 @@
 
 @media all and (min-width: 992px){
   .cardProduct:hover{
-    border: 1px solid rgb(54, 54, 54);
+    border: 1px solid #717171;
     cursor: pointer;
     transition: 0.7s;
   }
