@@ -10,17 +10,14 @@
   background-size: 300%;
   background-repeat: no-repeat;
   color: white;
-  height: 40vh;
+  height: 50vh;
   background-color: rgba(0,0,0,0.5);
 }
 
 .bannerBTN {
   width: 200px;
-  font-size: 16px;
   background-color: #9a5534;
-  color: #fff;
   border-radius: 50px;
-  border: 3px solid #ffffff;
   padding: 8px 10px;
 }
 
@@ -41,6 +38,7 @@
   .title {
     font-size: 75px;
   }
+  
   .bannerText {
     font-size: 20px;
   }

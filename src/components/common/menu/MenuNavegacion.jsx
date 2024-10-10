@@ -109,7 +109,7 @@ const MenuNavegacion = ({
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={menuBTNClick} />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto align-items-center">
+            <Nav className="mx-auto align-items-center gap-2">
               <NavLink className="navLink nav-link text-center text-white fw-normal" to="/" onClick={navLinkClick}>
                 Home
               </NavLink>

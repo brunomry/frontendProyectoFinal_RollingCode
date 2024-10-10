@@ -4,11 +4,11 @@ import interior from "../../../assets/Inicio/interior.webp";
 
 const HorariosYServicios = () => {
   return (
-    <article className="my-5 text-white d-flex flex-column flex-md-row justify-content-center gap-5 align-items-center">
+    <article className="my-4 my-md-5 text-white d-flex flex-column flex-md-row justify-content-center gap-3 gap-md-5 align-items-center">
       <h2 className="text-white text-center">
         Disfruta de una buena comida en{" "}
         <span className="d-block">
-          - <i className="fa-solid fa-pizza-slice fs-3"></i> Ambiente Bohemio -
+           Ambiente Bohemio
         </span>
       </h2>
       <div className="d-flex flex-column align-items-center ">
@@ -18,7 +18,7 @@ const HorariosYServicios = () => {
 
         <p className="fw-normal">Lunes a Sábado de 12:00 a 00:00</p>
 
-        <div className="mt-4 text-center">
+        <div className="mt-2 mt-md-4 text-center">
           <Button
             as={Link}
             variant="warning"

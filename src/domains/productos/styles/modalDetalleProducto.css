@@ -1,15 +1,46 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
-
-.modalIMG {
-  border-radius: 8px;
+.modalProduct{
+  background: #000;
   width: 100%;
-  min-height: 280px;
+}
+
+.modalImg {
+  border-radius: 12px;
+  width: 225px;
+  height: 225px;
   object-fit: cover;
   filter: saturate(110%);
 }
 
+.btnAddProduct{
+  background: #bb6c06;
+  border: none;
+}
+
+.btnAddProduct:hover{
+  background: #e08106;
+  border: none;
+}
+
+.btnOrder{
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.btnOrder:hover{
+  color: #000;
+  background: #fff;
+  border: 1px solid white;
+}
+
 @media all and (min-width: 375px) {
-  .modalIMG {
-    height: 300px;
+  .modalImg {
+    height: 225px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .priceModal{
+    font-size: 20px;
   }
 }

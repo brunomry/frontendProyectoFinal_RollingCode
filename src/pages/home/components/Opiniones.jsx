@@ -4,7 +4,7 @@ import CardOpinion from "./CardOpinion";
 
 const Opiniones = () => {
   return (
-    <article className="containerCardOpinions w-100 d-flex justify-content-center gap-4 flex-wrap px-2">
+    <article className="containerCardOpinions d-flex justify-content-md-center gap-2 gap-lg-4 flex-md-wrap px-2">
       {opiniones.map((opinion) => (
         <CardOpinion key={opinion.id} opinion={opinion}></CardOpinion>
       ))}

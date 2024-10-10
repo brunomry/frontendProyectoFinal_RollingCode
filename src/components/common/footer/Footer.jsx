@@ -18,13 +18,13 @@ const Footer = () => {
         <Col className="d-none d-md-block">
           <h5 className="footerTitleSection ">Opciones</h5>
           <Link className="text-decoration-none text-secondary" to="/">
-            <p className="fw-normal">Inicio</p>
+            <p className="fw-normal">Home</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="/menu">
             <p className="fw-normal">Menú</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="/nosotros">
-            <p className="fw-normal">Nosotros</p>
+            <p className="fw-normal">Sobre Nosotros</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="*">
             <p className="fw-normal">Contacto</p>
@@ -36,7 +36,7 @@ const Footer = () => {
             <p className="fw-normal">Políticas de privacidad</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="*">
-            <p className="fw-normal">Legal</p>
+            <p className="fw-normal">Empresa</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="*">
             <p className="fw-normal">Promociones</p>
@@ -91,7 +91,7 @@ const Footer = () => {
         </Col>
       </Row>
       <p className="text-center mt-3 fw-normal">
-        &copy; AmbienteBohemio. Todos los derechos reservados. 2024.
+        &copy;AmbienteBohemio. Todos los derechos reservados. 2024.
       </p>
     </Container>
   );

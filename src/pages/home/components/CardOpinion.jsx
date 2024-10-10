@@ -9,7 +9,7 @@ const CardOpinion = ({ opinion }) => {
   }
 
   return (
-    <Card className="border p-3 cardReview d-flex flex-column gap-3" onClick={()=>verOpinionEnGoogle()} title="Clic para ver reseña en Google">
+    <Card className="border p-3 mb-3 mb-md-0 cardReview d-flex flex-column gap-3" onClick={()=>verOpinionEnGoogle()} title="Clic para ver reseña en Google">
       <div className="d-flex justify-content-between mb-2">
         <div className="d-flex gap-3">
           <img

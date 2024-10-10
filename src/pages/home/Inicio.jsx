@@ -12,14 +12,14 @@ const Inicio = () => {
 
   return (
     <>
-      <section className="banner d-flex justify-content-center align-items-center pb-5 sectionTop">
+      <section className="banner d-flex justify-content-center align-items-center sectionTop">
         <BannerHome></BannerHome>
       </section>
       <section className="container-fluid schedules px-0">
         <Horarios></Horarios>
       </section>
       <section className="opinions py-4 py-sm-5">
-        <div className="container-fluid containerOpinions d-flex flex-column align-items-center gap-3">
+        <div className="container-fluid containerOpinions d-flex flex-column align-items-center gap-md-3">
           <h2 className="mb-4">Algunas reseñas de nuestros clientes:</h2>
           <Opiniones></Opiniones>
           <a href="https://www.google.com.ar" target="_blank" className="mt-3">
@@ -27,13 +27,13 @@ const Inicio = () => {
           </a>
         </div>
       </section>
-      <section className="bannerMenu d-flex flex-column justify-content-center align-items-center">
+      <section className="bannerMenu d-flex flex-column py-3 justify-content-center align-items-center">
         <h1 className="title pb-3">Nuestro Menú</h1>
-        <p className="fw-normal bannerText pb-3">
-          ¡Descubre nuestro festín de sabores!
+        <p className="fw-normal bannerText text-center pb-md-3">
+          ¡Descarga nuestra carta y conoce todo lo que ofrecemos!
         </p>
         <button
-          className="bannerBTN text-center py-3 text-decoration-none "
+          className="bannerBTN text-center border border-1 text-white py-3 text-decoration-none "
           onClick={handleDownloadPDF}
         >
           DESCARGAR MENÚ

@@ -17,7 +17,7 @@ const CardProducto = ({
 
   return (
     <>
-      <Col md={6} lg={3} className='d-flex justify-content-center'>
+      <Col md={6} lg={3} className='d-flex justify-content-center mb-4'>
         <div className='cardProduct d-flex flex-column rounded-4 py-3' onClick={handleShowModal} title='Clic para ver más'>
         <div className='w-100 d-flex justify-content-center'>
             <img

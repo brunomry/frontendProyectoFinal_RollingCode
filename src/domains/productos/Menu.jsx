@@ -1,12 +1,12 @@
-import './styles/menu.css';
-import { Container, Form, Row, Spinner } from 'react-bootstrap';
-import CardProducto from './components/CardProducto';
-import { useState, useEffect } from 'react';
-import { leerProductosAPI } from '../../helpers/queries';
+import "./styles/menu.css";
+import { Container, Form, Row, Spinner } from "react-bootstrap";
+import CardProducto from "./components/CardProducto";
+import { useState, useEffect } from "react";
+import { leerProductosAPI } from "../../helpers/queries";
 
 const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const [productos, setProductos] = useState([]);
-  const [busqueda, setBusqueda] = useState('');
+  const [busqueda, setBusqueda] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
   const [spinner, setSpinner] = useState(true);
 
@@ -27,19 +27,19 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const filtrarProductosPorCategoria = (categoria) =>
     productos.filter(
       (producto) =>
-        producto.estado === 'Disponible' &&
+        producto.estado === "Disponible" &&
         producto.categoria.toLowerCase() === categoria.toLowerCase()
     );
 
   const filtrarProductosPorNombre = () => {
     const inputBusqueda = busqueda.toLowerCase().trim();
 
-    if (inputBusqueda === '') {
+    if (inputBusqueda === "") {
       setProductosFiltrados([]);
     } else {
       const productosEncontrados = productos.filter(
         (producto) =>
-          producto.estado === 'Disponible' &&
+          producto.estado === "Disponible" &&
           producto.nombre.toLowerCase().includes(inputBusqueda)
       );
       setProductosFiltrados(productosEncontrados);
@@ -50,86 +50,97 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
     filtrarProductosPorNombre();
   }, [busqueda]);
 
-  const handleEnter = (e) => (e.key === 'Enter' ? e.preventDefault() : null);
+  const handleEnter = (e) => (e.key === "Enter" ? e.preventDefault() : null);
 
   return (
     <>
-      <Form className='d-flex justify-content-center my-3 mt-md-5 px-2 formSearch'>
-        <Form.Group className='mb-3 search input-group' controlId='buscarMenu'>
+      <Form className="d-flex justify-content-center mt-md-5 px-2 formSearch">
+        <Form.Group className="mb-3 search input-group" controlId="buscarMenu">
           <Form.Control
-            type='text'
-            placeholder='Buscar producto...'
+            type="text"
+            placeholder="Buscar producto..."
             value={busqueda}
-            className='input inputSearch text-white'
+            className="input inputSearch text-white"
             onChange={(e) => setBusqueda(e.target.value)}
             onKeyDown={(e) => handleEnter(e)}
-            id='inputSearch'
+            id="inputSearch"
           />
-          <label class="input-group-text labelSearch" htmlFor='inputSearch'><svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" class="bi bi-search text-secondary" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-</svg></label>
+          <label class="input-group-text labelSearch" htmlFor="inputSearch">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="24"
+              fill="currentColor"
+              class="bi bi-search text-secondary"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </label>
         </Form.Group>
-        <div className='iconSearch'>
-        
-        </div>
-      
+        <div className="iconSearch"></div>
       </Form>
-      <div className='d-flex justify-content-center pt-4 pb-3 pe-2 menuCategoryContainer position-sticky top-0 mb-5'>
+      <div className="d-flex justify-content-center pt-4 pb-3 pe-2 menuCategoryContainer position-sticky top-0 mb-5">
         <a
-          className='link-dark text-decoration-none btn btn-warning me-2'
-          href='#pizzas'
+          className="link-dark text-decoration-none btn btn-warning me-2"
+          href="#pizzas"
         >
           Pizzas
         </a>
         <a
-          className='link-dark text-decoration-none btn btn-warning me-2'
-          href='#hamburguesas'
+          className="link-dark text-decoration-none btn btn-warning me-2"
+          href="#hamburguesas"
         >
           Hamburguesas
         </a>
         <a
-          className='link-dark text-decoration-none btn btn-warning me-2'
-          href='#pastas'
+          className="link-dark text-decoration-none btn btn-warning me-2"
+          href="#pastas"
         >
           Pastas
         </a>
         <a
-          className='link-dark text-decoration-none btn btn-warning me-2'
-          href='#empanadas'
+          className="link-dark text-decoration-none btn btn-warning me-2"
+          href="#empanadas"
         >
           Empanadas
         </a>
       </div>
       <div
         className={`d-flex align-items-start justify-content-center custom-spinner ${
-          !spinner ? 'd-none' : 'mb-5'
+          !spinner ? "d-none" : "mb-5"
         } `}
       >
         {spinner && (
           <div className="d-flex flex-column">
-            <Spinner animation="border" role="status" className="ms-3 mb-2"></Spinner>
+            <Spinner
+              animation="border"
+              role="status"
+              className="ms-3 mb-2"
+            ></Spinner>
             <span>Espera un momento...</span>
           </div>
-        )
-        }
+        )}
       </div>
       <Container
         className={
-          filtrarProductosPorCategoria('Pizzas').length === 0 || busqueda !== ''
-            ? 'd-none'
-            : 'pb-5'
+          filtrarProductosPorCategoria("Pizzas").length === 0 || busqueda !== ""
+            ? "d-none"
+            : "pb-5 "
         }
       >
-        {busqueda === '' &&
-          filtrarProductosPorCategoria('Pizzas').length > 0 && (
-            <div className='d-flex align-items-center' id='pizzas'>
-              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Pizzas</h2>
+        {busqueda === "" &&
+          filtrarProductosPorCategoria("Pizzas").length > 0 && (
+            <div className="d-flex align-items-center" id="pizzas">
+              <h2 className="categoryTitle text-white mt-4 mb-5 w-100">
+                Pizzas
+              </h2>
             </div>
           )}
-        <Row className='g-5'>
-          {busqueda === '' &&
-            filtrarProductosPorCategoria('Pizzas').length > 0 &&
-            filtrarProductosPorCategoria('Pizzas').map((producto) => (
+        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+          {busqueda === "" &&
+            filtrarProductosPorCategoria("Pizzas").length > 0 &&
+            filtrarProductosPorCategoria("Pizzas").map((producto) => (
               <CardProducto
                 key={producto._id}
                 producto={producto}
@@ -138,26 +149,28 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 usuarioLogeado={usuarioLogeado}
               ></CardProducto>
             ))}
-        </Row>
+        </div>
       </Container>
       <Container
         className={
-          filtrarProductosPorCategoria('Hamburguesas').length === 0 ||
-          busqueda !== ''
-            ? 'd-none'
-            : 'pb-5'
+          filtrarProductosPorCategoria("Hamburguesas").length === 0 ||
+          busqueda !== ""
+            ? "d-none"
+            : "pb-5"
         }
       >
-        {busqueda === '' &&
-          filtrarProductosPorCategoria('Hamburguesas').length > 0 && (
-            <div className='d-flex align-items-center' id='hamburguesas'>
-              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Hamburguesas</h2>
+        {busqueda === "" &&
+          filtrarProductosPorCategoria("Hamburguesas").length > 0 && (
+            <div className="d-flex align-items-center" id="hamburguesas">
+              <h2 className="categoryTitle text-white mt-4 mb-5 w-100">
+                Hamburguesas
+              </h2>
             </div>
           )}
-        <Row className='g-5'>
-          {busqueda === '' &&
-            filtrarProductosPorCategoria('Hamburguesas').length > 0 &&
-            filtrarProductosPorCategoria('Hamburguesas').map((producto) => (
+        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+          {busqueda === "" &&
+            filtrarProductosPorCategoria("Hamburguesas").length > 0 &&
+            filtrarProductosPorCategoria("Hamburguesas").map((producto) => (
               <CardProducto
                 key={producto._id}
                 producto={producto}
@@ -166,25 +179,27 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 usuarioLogeado={usuarioLogeado}
               ></CardProducto>
             ))}
-        </Row>
+        </div>
       </Container>
       <Container
         className={
-          filtrarProductosPorCategoria('Pastas').length === 0 || busqueda !== ''
-            ? 'd-none'
-            : 'pb-5'
+          filtrarProductosPorCategoria("Pastas").length === 0 || busqueda !== ""
+            ? "d-none"
+            : "pb-5"
         }
       >
-        {busqueda === '' &&
-          filtrarProductosPorCategoria('Pastas').length > 0 && (
-            <div className='d-flex align-items-center' id='pastas'>
-              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Pastas</h2>
+        {busqueda === "" &&
+          filtrarProductosPorCategoria("Pastas").length > 0 && (
+            <div className="d-flex align-items-center" id="pastas">
+              <h2 className="categoryTitle text-white mt-4 mb-5 w-100">
+                Pastas
+              </h2>
             </div>
           )}
-        <Row className='g-5'>
-          {busqueda === '' &&
-            filtrarProductosPorCategoria('Pastas').length > 0 &&
-            filtrarProductosPorCategoria('Pastas').map((producto) => (
+        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+          {busqueda === "" &&
+            filtrarProductosPorCategoria("Pastas").length > 0 &&
+            filtrarProductosPorCategoria("Pastas").map((producto) => (
               <CardProducto
                 key={producto._id}
                 producto={producto}
@@ -193,26 +208,28 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 usuarioLogeado={usuarioLogeado}
               ></CardProducto>
             ))}
-        </Row>
+        </div>
       </Container>
       <Container
         className={
-          filtrarProductosPorCategoria('Empanadas').length === 0 ||
-          busqueda !== ''
-            ? 'd-none'
-            : 'pb-5'
+          filtrarProductosPorCategoria("Empanadas").length === 0 ||
+          busqueda !== ""
+            ? "d-none"
+            : "pb-5"
         }
       >
-        {busqueda === '' &&
-          filtrarProductosPorCategoria('Empanadas').length > 0 && (
-            <div className='d-flex align-items-center' id='empanadas'>
-              <h2 className='categoryTitle text-white mt-4 mb-5 w-100'>Empanadas</h2>
+        {busqueda === "" &&
+          filtrarProductosPorCategoria("Empanadas").length > 0 && (
+            <div className="d-flex align-items-center" id="empanadas">
+              <h2 className="categoryTitle text-white mt-4 mb-5 w-100">
+                Empanadas
+              </h2>
             </div>
           )}
-        <Row className='g-5'>
-          {busqueda === '' &&
-            filtrarProductosPorCategoria('Empanadas').length > 0 &&
-            filtrarProductosPorCategoria('Empanadas').map((producto) => (
+        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+          {busqueda === "" &&
+            filtrarProductosPorCategoria("Empanadas").length > 0 &&
+            filtrarProductosPorCategoria("Empanadas").map((producto) => (
               <CardProducto
                 key={producto._id}
                 producto={producto}
@@ -221,11 +238,11 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 usuarioLogeado={usuarioLogeado}
               ></CardProducto>
             ))}
-        </Row>
+        </div>
       </Container>
-      <Container className={busqueda == '' ? 'd-none' : 'pb-5'}>
+      <Container className={busqueda == "" ? "d-none" : "pb-5"}>
         {productosFiltrados.length > 0 && (
-          <Row className='g-5'>
+          <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
             {productosFiltrados.map((producto) => (
               <CardProducto
                 key={producto._id}
@@ -235,15 +252,14 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 usuarioLogeado={usuarioLogeado}
               ></CardProducto>
             ))}
-          </Row>
+          </div>
         )}
-        {productosFiltrados.length === 0 && busqueda !== '' && (
-          <div className='py-5 text-center'>
+        {productosFiltrados.length === 0 && busqueda !== "" && (
+          <div className="py-5 text-center">
             <p>No se encontraron productos.</p>
           </div>
         )}
       </Container>
-  
     </>
   );
 };
