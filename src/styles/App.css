@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 #root {
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 body *{
-  font-family: 'Kalam', sans-serif;
+  font-family: 'Questrial', sans-serif;
 }
 
 #root .navBarSticky{

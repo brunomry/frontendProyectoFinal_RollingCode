@@ -76,13 +76,16 @@ const ResumenPedido = ({
   };
 
   return (
-    <div className='resumeCardContainer'>
-      <div className='resumeCard my-5'>
-        <Card className='text-dark'>
+    <article className='col-lg-4 mt-5'>
+        <Card className='orderSummary rounded-4 text-white p-3'>
           <CardHeader>
-            <CardTitle className='mt-2 fw-bold'>Detalles del pedido</CardTitle>
+            <CardTitle className='mt-2 text-start'>Resumen del Pedido</CardTitle>
           </CardHeader>
           <CardBody>
+          <div className='d-flex justify-content-between mt-3 '>
+              <span>Subtotal</span>
+              <span>${montoCarrito}</span>
+            </div>
             {METODO_ENVIO.map((check) => (
               <div className='my-2 d-flex' key={check.id}>
                 <input
@@ -99,22 +102,20 @@ const ResumenPedido = ({
               </div>
             ))}
 
-            <div className='d-flex justify-content-between mt-3 fw-bold'>
+            <div className='d-flex border-top pt-4 justify-content-between mt-3 fw-bold'>
               <span>Total</span>
               <span>${montoCarrito}</span>
             </div>
-            <hr className='mt-0' />
           </CardBody>
           <CardFooter>
             <div className='d-flex justify-content-center'>
               {productosCarrito.length > 0 ? (
-                <Button
+                <button
                   onClick={confirmarPedido}
-                  className='w-100 fw-bold'
-                  variant='success'
+                  className='w-100 text-white btn btn-secondary rounded-3'
                 >
                   Confirmar Pedido
-                </Button>
+                </button>
               ) : (
                 <Link to='/menu' className='w-100 fw-bold btn btn-danger'>
                   Ir al Menú
@@ -123,8 +124,7 @@ const ResumenPedido = ({
             </div>
           </CardFooter>
         </Card>
-      </div>
-    </div>
+    </article>
   );
 };
 

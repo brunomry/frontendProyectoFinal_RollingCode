@@ -24,21 +24,6 @@ const MisPedidos = () => {
   }, []);
 
   return listaPedidos.length > 0 ? (
-    <section className="text-center my-5 sectionTop px-2 sectionOrdersUser">
-      <h1 className="mb-3">Mis pedidos realizados</h1>
-      <Link
-        className="btn border border-1 mt-4 btn-warning border-dark px-4 fw-bold"
-        to="/menu"
-      >
-        Ir al MENÚ
-      </Link>
-      <article className="mt-4 d-flex flex-column gap-4 justify-content-center align-items-center containerOrdersUser">
-        {listaPedidos.map((pedido) => (
-          <CardPedido key={pedido._id} pedido={pedido} />
-        ))}
-      </article>
-    </section>
-  ) : (
     <>
       <div
         className={`mt-5 pt-5 d-flex align-items-start justify-content-center custom-spinner ${
@@ -47,24 +32,42 @@ const MisPedidos = () => {
       >
         {spinner && (
           <div className="d-flex flex-column">
-            <Spinner animation="border" role="status" className="ms-3 mb-2"></Spinner>
+            <Spinner
+              animation="border"
+              role="status"
+              className="ms-3 mb-2"
+            ></Spinner>
             <span>Cargando...</span>
           </div>
-        )
-        }
+        )}
       </div>
-      {!spinner && (
-        <section className="text-center my-5 sectionTop px-2 sectionOrdersUser">
-          <h1 className="mb-5">Mis pedidos realizados</h1>
-          <p>No tienes pedidos realizados hasta el momento.</p>
-          <Link
-            className="btn border border-1 mt-4 btn-warning border-dark px-4 fw-bold"
-            to="/menu"
-          >
-            Ir al MENÚ
-          </Link>
-        </section>
-      )}
+      <section className="text-center my-5 sectionTop px-2 sectionOrdersUser">
+        <h1 className="mb-3 text-white">Mis pedidos realizados</h1>
+        <Link
+          className="btn border border-1 mt-4 btn-warning border-dark rounded-5 px-5 py-3 fw-bold"
+          to="/menu"
+        >
+          Ir al Menú
+        </Link>
+        <article className="mt-4 d-flex flex-column gap-4 justify-content-center align-items-center containerOrdersUser">
+          {listaPedidos.map((pedido) => (
+            <CardPedido key={pedido._id} pedido={pedido} />
+          ))}
+        </article>
+      </section>
+    </>
+  ) : (
+    <>
+      <section className="text-center d-flex flex-column justify-content-center h-100 align-items-center text-white py-5 sectionTop px-2 sectionOrdersUser">
+        <h1 className="py-5">Mis pedidos realizados</h1>
+        <p>No tienes pedidos realizados hasta el momento.</p>
+        <Link
+          className="btn border border-1 btn-warning border-dark px-5 py-3 rounded-5 fw-bold"
+          to="/menu"
+        >
+          ir al Menú
+        </Link>
+      </section>
     </>
   );
 };

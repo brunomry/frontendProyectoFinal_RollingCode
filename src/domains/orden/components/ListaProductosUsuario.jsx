@@ -9,18 +9,9 @@ const ListaProductosUsuario = ({
   quitarProductoCarrito,
 }) => {
   return (
-    <div className="orderTable sectionTop">
-      <Table responsive hover>
-        <thead>
-          <tr>
-            <th className="text-center align-middle">Imagen</th>
-            <th className="text-center align-middle">Producto</th>
-            <th className="text-center align-middle">Precio</th>
-            <th className="text-center align-middle">Cantidad</th>
-            <th className="text-center align-middle">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div className="col-lg-6">
+        <h2 className="text-start">Tu lista de productos</h2>
+        <article className="containerProductsOrder px-2 py-4 p-md-4 d-flex flex-column gap-4 rounded-4">
           {productosCarrito.map((producto) => (
             <ItemProductoUsuario
               carrito={carrito}
@@ -31,8 +22,7 @@ const ListaProductosUsuario = ({
               quitarProductoCarrito={quitarProductoCarrito}
             />
           ))}
-        </tbody>
-      </Table>
+        </article>
     </div>
   );
 };
