@@ -73,9 +73,9 @@ const ModalDetalleProducto = ({
         <div>
           {!productoEncontrado && usuarioLogeado.rol != "Administrador" && (
             <Form.Group className="mb-3">
-              <div className="d-flex flex-row gap-3 gap-md-1 align-items-center justify-content-center quantityProductos">
+              <div className="d-flex flex-row gap-3 align-items-center justify-content-center quantityProductos">
                 <Button
-                  className="mx-sm-3 fs-5"
+                  className="fs-4 py-0"
                   variant="secondary"
                   onClick={quitar}
                 >
@@ -83,7 +83,7 @@ const ModalDetalleProducto = ({
                 </Button>
                 <span className="text-white">{cantidad}</span>
                 <Button
-                  className="mx-sm-3 fs-5"
+                  className="fs-4 py-0"
                   variant="secondary"
                   onClick={agregar}
                 >

@@ -23,7 +23,7 @@ const HorariosYServicios = () => {
             as={Link}
             variant="warning"
             to={"/menu"}
-            className="btnMenu px-4 py-2 fw-normal"
+            className="btnMenu px-5 rounded-5 fw-bold py-3 fw-normal"
           >
             <i className="fa-solid fa-utensils me-2"></i> ver Menú
           </Button>
