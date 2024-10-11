@@ -1,56 +1,36 @@
 .sectionOrdersUser{
   padding-top: 80px;
-
 }
 
-.containerOrdersUser{
+.cardOrder{
   width: 100%;
+  background-color: #141414;
 }
 
-.cardPedido{
-  width: 100%;
-  background-color: #fbf8ea;
+.modalOrder{
+  background: #141414;
 }
 
 .btnDetailsOrder{
-  background-color: rgb(37, 127, 236);
+  background-color: rgb(10, 47, 94);
 }
 
 .btnDetailsOrder:hover{
-  background-color: rgb(34, 98, 177);
-}
-
-.cardPedido .btnBuy{
-  background-color: rgb(142, 142, 141);
-}
-
-.cardPedido .btnBuy:hover{
-  background-color: rgb(103, 103, 101);
-}
-
-.cardPedido .btn{
-  width: 100%;
-}
-
-@media all and (min-width:375px){
-  .cardPedido{
-    width: 90%;
-  }
+  background-color: rgb(42, 61, 83);
 }
 
 @media all and (min-width:768px){
   .sectionOrdersUser{
     padding-top: 0;
   }
+
+  .cardOrder{
+    width: 60%;
+  }
 }
 
 @media all and (min-width:992px){
-  .cardPedido{
-    width: 800px;
-  }
-
-  .cardPedido .btnDetailsOrder,
-  .cardPedido .btnBuy{
-    width: 75%;
+  .cardOrder{
+    width: 40%;
   }
 }

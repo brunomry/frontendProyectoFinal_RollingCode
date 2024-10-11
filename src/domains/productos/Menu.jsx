@@ -112,13 +112,13 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         } `}
       >
         {spinner && (
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <Spinner
               animation="border"
               role="status"
-              className="ms-3 mb-2"
+              className="mb-2 text-warning"
             ></Spinner>
-            <span>Espera un momento...</span>
+            <span className="text-white">Espera un momento...</span>
           </div>
         )}
       </div>
