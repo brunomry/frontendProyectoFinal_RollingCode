@@ -17,6 +17,8 @@ import Nosotros from "./pages/nosotros/Nosotros";
 import Contacto from "./pages/contacto/Contacto";
 import Error404 from "./pages/error404/Error404";
 import Footer from "./components/common/footer/Footer";
+import Equipo from "./pages/Equipo/Equipo";
+import ScrollTop from "./components/common/ScrollTop";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
@@ -167,6 +169,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollTop></ScrollTop>
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
@@ -224,6 +227,7 @@ function App() {
           ></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
+          <Route exact path="/equipo" element={<Equipo></Equipo>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>

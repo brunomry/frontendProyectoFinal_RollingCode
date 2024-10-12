@@ -6,8 +6,9 @@ import { METODO_ENVIO } from '../../../helpers/constants';
 const CardPedido = ({ pedido }) => {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShowModal = () => {
+    setShow(!show);
+  };
 
   const metodoDelEnvio = METODO_ENVIO.find(
     (metodo) => metodo.id == pedido.metodoEnvio
@@ -15,11 +16,11 @@ const CardPedido = ({ pedido }) => {
 
   return (
     <div className='text-start cardOrder p-3 rounded-4'>
-      <Modal show={show} onHide={handleClose} centered>
+      <Modal show={show} onHide={handleShowModal} centered>
         <div className='modalOrder rounded-2 text-white'>
           <div className="d-flex justify-content-between align-items-center p-3">
             <p className='mb-0 align-middle'>Detalles del Pedido</p>
-          <a className="text-secondary" onclick={handleClose}>
+          <a className="text-secondary" onClick={handleShowModal}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -65,7 +66,7 @@ const CardPedido = ({ pedido }) => {
         <div className='d-flex flex-column gap-2 align-items-center justify-content-center'>
           <Button
             className='btn btn-secondary border-0 text-white w-100'
-            onClick={handleShow}
+            onClick={handleShowModal}
           >
             ver detalles del Pedido
           </Button>

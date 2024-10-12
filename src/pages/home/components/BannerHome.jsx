@@ -23,7 +23,7 @@ const BannerHome = () => {
         className="text-center border border-1 border-white rounded-5 px-2 px-md-4 py-2 py-md-3 text-decoration-none text-white btnBanner fw-normal"
         to={"/menu"}
       >
-        CONOCE NUESTRO MENÚ
+        CONOCE NUESTRA CARTA
       </Link>
     </article>
   );

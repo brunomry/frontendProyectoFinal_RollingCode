@@ -114,7 +114,10 @@ const MenuNavegacion = ({
                 Home
               </NavLink>
               <NavLink className="navLink nav-link text-center text-white" to="/menu" onClick={navLinkClick}>
-                Menú
+                Nuestro Menú
+              </NavLink>
+              <NavLink className="navLink nav-link text-center text-white" to="/nosotros" onClick={navLinkClick}>
+                Sobre Nosotros
               </NavLink>
               {usuarioLogeado.rol === "Administrador" && (
                 <>
@@ -148,7 +151,7 @@ const MenuNavegacion = ({
                         {contadorCarrito}
                       </span>
                     )}
-                    Pedido
+                    Mi Pedido
                   </NavLink>
                   <NavLink
                     className="navLink nav-link text-center fw-normal text-white"
@@ -171,8 +174,7 @@ const MenuNavegacion = ({
                     className="myOrderBTN nav-link fw-normal text-center text-white"
                     onClick={myOrderAlert}
                   >
-                    <i className="fa-solid fa-cart-shopping fa-xl"></i>
-                    <span className="fw-normal"> Pedido</span>
+                    <span className="fw-normal">Mi Pedido</span>
                   </NavLink>
                   <NavLink
                     className="nav-link btnNav rounded-2 mx-2 my-1 px-2 text-white"

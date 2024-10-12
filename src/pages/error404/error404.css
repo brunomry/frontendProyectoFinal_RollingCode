@@ -1,10 +1,10 @@
-.errorSection{
-  background-color: #fff;
+.containerError404{
+  background-color: #000;
+  min-height: 75vh;
   margin-top: 89px;
 }
 
-.imgError404 {
-  width: 100%;
-  filter: saturate(130%);
+.containerDescriptionError{
+  background: #141414;
 }
 

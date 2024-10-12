@@ -28,7 +28,7 @@ const Inicio = () => {
         </div>
       </section>
       <section className="bannerMenu d-flex flex-column py-3 justify-content-center align-items-center">
-        <h1 className="title pb-3">Nuestro Menú</h1>
+        <h1 className="title pb-3">Nuestra Carta</h1>
         <p className="fw-normal bannerText text-center pb-md-3">
           ¡Descarga nuestra carta y conoce todo lo que ofrecemos!
         </p>
@@ -36,7 +36,7 @@ const Inicio = () => {
           className="bannerBTN text-center border border-1 text-white py-3 text-decoration-none "
           onClick={handleDownloadPDF}
         >
-          DESCARGAR MENÚ
+          Descargar Menú
         </button>
       </section>
     </>

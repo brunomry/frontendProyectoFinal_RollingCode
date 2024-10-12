@@ -26,7 +26,7 @@ const Footer = () => {
           <Link className="text-decoration-none text-secondary" to="/nosotros">
             <p className="fw-normal">Sobre Nosotros</p>
           </Link>
-          <Link className="text-decoration-none text-secondary" to="*">
+          <Link className="text-decoration-none text-secondary" to="/contacto">
             <p className="fw-normal">Contacto</p>
           </Link>
         </Col>
@@ -35,8 +35,8 @@ const Footer = () => {
           <Link className="text-decoration-none text-secondary" to="*">
             <p className="fw-normal">Políticas de privacidad</p>
           </Link>
-          <Link className="text-decoration-none text-secondary" to="*">
-            <p className="fw-normal">Empresa</p>
+          <Link className="text-decoration-none text-secondary" to="/equipo">
+            <p className="fw-normal">Equipo de Desarrollo</p>
           </Link>
           <Link className="text-decoration-none text-secondary" to="*">
             <p className="fw-normal">Promociones</p>
@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="input-group mb-3">
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control "
                   placeholder="ejemplo@correo.com"
                   required
                 />

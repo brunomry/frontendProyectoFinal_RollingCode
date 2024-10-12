@@ -1,0 +1,31 @@
+.containerMembers {
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  min-height: 350px;
+  width: 100%;
+}
+
+.cardMember {
+  min-width: 250px;
+  min-height: 350px;
+  border: 1px solid #141414;
+}
+
+.cardMember .imgMember {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.containerIconSocial {
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  .containerMembers {
+    scroll-snap-type: none;
+    overflow-x: hidden;
+  }
+}
