@@ -32,10 +32,6 @@ const RutasUsuario = ({
               montoCarrito={montoCarrito}
               quitarProductoCarrito={quitarProductoCarrito}
               setCarrito={setCarrito}
-              recarga={recarga}
-              setRecarga={setRecarga}
-              mostrarBtnMP={mostrarBtnMP}
-              setMostrarBtnMP={setMostrarBtnMP}
             ></Pedido>
           }
         ></Route>
@@ -48,10 +44,6 @@ const RutasUsuario = ({
           element={
             <DetalleCompraMP
               usuarioLogeado={usuarioLogeado}
-              recarga={recarga}
-              setRecarga={setRecarga}
-              mostrarBtnMP={mostrarBtnMP}
-              setMostrarBtnMP={setMostrarBtnMP}
             ></DetalleCompraMP>
           }
         ></Route>

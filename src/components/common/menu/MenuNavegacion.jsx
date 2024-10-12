@@ -142,10 +142,7 @@ const MenuNavegacion = ({
                     className="navLink nav-link text-center text-white"
                     to="/pedido/miPedido"
                     onClick={navLinkClick}
-                  >
-                    {contadorCarrito === 0 && (
-                      <i className="fa-solid fa-cart-shopping fa-xl"></i>
-                    )}
+                  >                  
                     {contadorCarrito > 0 && (
                       <span className="bg-danger me-2 px-2 fw-normal text-white rounded-pill">
                         {contadorCarrito}
@@ -158,7 +155,7 @@ const MenuNavegacion = ({
                     to="/pedido/misPedidos"
                     onClick={navLinkClick}
                   >
-                    Mis pedidos
+                    Mis Pedidos
                   </NavLink>
                   <button
                     className="navLinkBTN nav-link border border-1 border-secondary rounded-2 mx-2 my-1 px-2 fw-normal text-white"

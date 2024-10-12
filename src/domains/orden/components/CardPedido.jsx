@@ -2,6 +2,7 @@ import { Card, Button, Modal } from 'react-bootstrap';
 import '../styles/cardPedido.css';
 import { useState } from 'react';
 import { METODO_ENVIO } from '../../../helpers/constants';
+import { Link } from 'react-router-dom';
 
 const CardPedido = ({ pedido }) => {
   const [show, setShow] = useState(false);
@@ -70,6 +71,16 @@ const CardPedido = ({ pedido }) => {
           >
             ver detalles del Pedido
           </Button>
+          {
+            !pedido.estadoEnvio && (
+              <Link
+              to={`/pedido/detalleCompra`}
+            className='btn btnPay text-white w-100'
+          >
+            Pagar
+          </Link>
+            )
+          }
         </div>
       </Card.Body>
     </div>

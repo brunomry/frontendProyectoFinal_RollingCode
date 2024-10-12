@@ -19,10 +19,6 @@ const ResumenPedido = ({
   productosCarrito,
   usuarioLogeado,
   setCarrito,
-  recarga,
-  setRecarga,
-  setMostrarBtnMP,
-  mostrarBtnMP
 }) => {
   const [metodoEnvio, setMetodoEnvio] = useState(1);
 
@@ -64,8 +60,6 @@ const ResumenPedido = ({
         icon: 'success',
         title: 'Su pedido fue generado con exito.',
       });
-      setRecarga(true);
-      setMostrarBtnMP(true);
       navegacion("/pedido/detalleCompra");
     } else {
       Swal.fire({

@@ -27,7 +27,6 @@ const MisPedidos = () => {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center py-5 my-5">
         <Spinner animation="border" variant="warning" role="status">
-        
         </Spinner>
         <span className="text-white">Espera un momento...</span>
       </div>

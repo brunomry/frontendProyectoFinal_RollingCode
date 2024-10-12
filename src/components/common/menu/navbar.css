@@ -18,12 +18,13 @@
 }
 
 .btnNav {
-  border:1px solid rgb(199, 197, 197);
+  border:1px solid gray;
+  
   transition: transform 0.3s ease;
 }
 
 .btnNav:hover {
-  border:1px solid gray;
+  border:1px solid rgb(199, 197, 197);
   transition: transform 0.3s ease;
 }
 

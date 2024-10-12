@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="input-group mb-3">
                 <input
                   type="text"
-                  className="form-control "
+                  className="form-control bg-secondary input"
                   placeholder="ejemplo@correo.com"
                   required
                 />

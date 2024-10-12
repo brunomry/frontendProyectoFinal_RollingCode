@@ -1,4 +1,3 @@
-import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -19,14 +18,12 @@ import Error404 from "./pages/error404/Error404";
 import Footer from "./components/common/footer/Footer";
 import Equipo from "./pages/Equipo/Equipo";
 import ScrollTop from "./components/common/ScrollTop";
+import "./styles/App.css";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
-
-  const [recarga, setRecarga] = useState(true);
-  const [mostrarBtnMP, setMostrarBtnMP] = useState(false);
-
+  
   const [carrito, setCarrito] = useState(
     JSON.parse(sessionStorage.getItem("carrito")) || []
   );
@@ -216,10 +213,6 @@ function App() {
                   montoCarrito={montoCarrito}
                   quitarProductoCarrito={quitarProductoCarrito}
                   setCarrito={setCarrito}
-                  recarga={recarga}
-                  setRecarga={setRecarga}
-                  mostrarBtnMP={mostrarBtnMP}
-                  setMostrarBtnMP={setMostrarBtnMP}
                 >
                 </RutasUsuario>
               </RutasProtegidasUsuario>
