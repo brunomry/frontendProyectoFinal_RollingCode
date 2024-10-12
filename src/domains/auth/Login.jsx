@@ -109,7 +109,7 @@ const Login = ({ setUsuarioLogeado }) => {
 
   return (
     <section className="d-flex sectionTop px-2 containerLogin py-5 d-flex justify-content-center">
-      <div className="containerFormLogin py-xl-5 rounded-5 text-white d-flex flex-column  gap-3">
+      <div className="containerFormLogin  text-white d-flex flex-column  gap-3">
         <h1 className="my-4 text-center">Inicia sesión</h1>
         <Form
           className="px-3 px-md-5 pb-2 text-white formText"
@@ -150,7 +150,7 @@ const Login = ({ setUsuarioLogeado }) => {
               className="py-xl-2 input inputFormLogin"
               type="password"
               id="passwordLogin"
-              placeholder="clave123"
+              placeholder="claVe123"
               {...register("clave", {
                 required: "La contraseña es obligatoria",
                 minLength: {

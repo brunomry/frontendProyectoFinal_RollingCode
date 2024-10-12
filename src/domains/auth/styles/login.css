@@ -8,19 +8,19 @@
 }
 
 .containerFormLogin{
-    background: #5c3d1aba;
+    background: #80776dba;
     width: 500px;
-    max-height: 600px;
+    max-height: 575px;
 }
 
 .inputFormLogin{
-    background: #6155452e;
-    border: 1px solid #d69e7b;
+    background: #69696972;
+    border: 1px solid #ddbaa5;
     color: #fff;
 }
 
 .inputFormLogin:focus{
-    background: #896a44ba;
+    background: #69696972;
     color: #fff;
     outline: none;
     box-shadow: none;
@@ -61,6 +61,6 @@
 
 @media all and (min-width:1400px){
     .containerLogin{
-        min-height: 150vh;
+        min-height: 120vh;
     }
 }
