@@ -8,6 +8,7 @@
 .cardMember {
   min-width: 250px;
   min-height: 350px;
+  background: #141414;
   border: 1px solid #141414;
 }
 
