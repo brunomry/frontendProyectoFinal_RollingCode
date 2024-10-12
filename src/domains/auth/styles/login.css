@@ -1,39 +1,66 @@
-.sectionLogin{
+.containerLogin{
     width: 100%;
+    background-image: url("../../../assets/imgLogin.webp");
+    min-height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-@media all and (min-width:576px){
-    .imgLogin{
-        width: 50vw;
-        object-fit: cover;
-        height: 70vh;
-    }
-
-    .imgLogin:hover{
-        filter: saturate(130%);
-    }
-
-    .sectionLogin{
-        width: 50vw;
-    }
+.containerFormLogin{
+    background: #5c3d1aba;
+    width: 500px;
+    max-height: 600px;
 }
 
-@media all and (min-width:768px){
-    .formText{
-        font-size: 18px;
-    }
+.inputFormLogin{
+    background: #6155452e;
+    border: 1px solid #d69e7b;
+    color: #fff;
 }
-@media all and (min-width:992px){
-   
+
+.inputFormLogin:focus{
+    background: #896a44ba;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #cd560c;
 }
+
+.inputFormLogin::placeholder{
+    color: #d7d4d4;
+}
+
+.btnLogin{
+    width: 100%;
+    background: #ca6323;
+}
+
+.btnLogin:hover{
+    background: #c1591db2;
+}
+
+.optionGoogle{
+    text-decoration: none;
+    border: 1px solid #d69e7b;
+    color: #fff;
+}
+
+.optionGoogle:hover{
+    text-decoration: none;
+    border: 1px solid #fff;
+}
+
 @media all and (min-width:1200px){
-    .imgLogin{
-        width: 70vw;
-        object-fit: cover;
-        height: 70vh;
-       
+    .containerLogin{
+        width: 100%;
+        background-image: url("../../../assets/imgLogin.webp");
+        min-height: 100vh;
     }
-    .sectionLogin{
-        width: 30vw;
+}
+
+@media all and (min-width:1400px){
+    .containerLogin{
+        min-height: 150vh;
     }
 }

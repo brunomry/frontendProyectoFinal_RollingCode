@@ -61,9 +61,12 @@
   }
 
   .bannerContent .bannerDescription,
-  .bannerContent .bannerSubtitle,
+  .bannerContent .bannerSubtitle{
+    font-size: 1.6rem;
+  }
+
   .btnBanner{
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 
   .bannerContent .bannerTitle{
