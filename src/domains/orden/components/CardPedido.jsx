@@ -50,16 +50,17 @@ const CardPedido = ({ pedido }) => {
       <Card.Header className='fw-bold text-secondary'>{pedido.fecha}</Card.Header>
       <Card.Body className='d-flex flex-column flex-md-row justify-content-between py-2'>
         <div>
+          <p className="text-white mb-0">Código: <span className="text-warning">{pedido._id}</span></p>
         {pedido.estadoEnvio ? (
-          <p className=' my-0 pt-0 text-center text-sm-start'>
+          <p className=' my-0 pt-0'>
             <span className='text-white me-1'>Estado:</span><span className='text-success '>Entregado</span>
           </p>
         ) : (
-          <p className=' my-0 pt-0 text-center text-sm-start'>
+          <p className=' my-0 pt-0'>
             <span className='text-white me-1'>Estado:</span><span className='text-warning '>Realizado</span>
           </p>
         )}
-        <p className='text-white text-center text-sm-start'>
+        <p className='text-white'>
           Total: <span className='text-success fw-bold'>${pedido.monto}</span>
         </p>
         </div>
