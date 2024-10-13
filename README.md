@@ -69,7 +69,7 @@ Este proyecto de Frontend se integró a su proyecto Backend correspondiente dond
 
 1. **Consulta de Productos:** 
 
-    * **Descripción:** Los usuarios pueden ver la lista de productos disponibles en la página de Menú.
+    * **Descripción:** Los usuarios pueden ver la lista de productos disponibles en la página de Menú y buscar un producto en particular.
     * **Página de Referencia:** Página de Menú.
     * **Componentes Clave:** Lista de Productos por categoría.
     * **Acción Principal:** Visualizar Detalle del Producto.
@@ -132,45 +132,25 @@ Las opciones de administrador estarán ocultas para los usuarios que no tengan p
 NOTAS IMPORTANTES A TENER EN CUENTA: 
 - En caso de probar esta funcionalidad, en la página de Menú se encuentra un producto de prueba para MERCADOPAGO. 
 - Es importante destacar que esta funcionalidad está activa y el pago se realizará de manera real. Se te descontarán $10 pesos del producto de prueba.
-- En caso de recargar la página o salir de la misma ya sea con la opción de volver atrás del Navegador o dirigirse a cualquier otra página de la aplicación, se perderá la opción de realizar el pago de forma online.
-- Una vez dentro de la aplicación de MERCADOPAGO, si decides volver atrás, la opción de pago online ya no estará disponible.
 
-    * **Descripción:** Los usuarios logueados al confirmar un pedido, tendrán la opción de realizar el pago del mismo mediante MERCADOPAGO.
+    * **Descripción:** Los usuarios logueados al confirmar un pedido, tendrán la opción de realizar el pago del mismo mediante MERCADOPAGO mientras el estado del pedido sea "Realizado".
     * **Página de Referencia:** Página de Detalle de Compra.
-    * **Componentes Clave:** Página de Pedido, Tarjeta de Resumen del Pedido, Página de Detalle de Compra.
+    * **Componentes Clave:** Página de Pedido, Resumen del Pedido, Página de Detalle de Compra, Pagina Mis Pedidos.
     * **Acción Principal:** PAGAR.
-    * **Resultado:** Al hacer clic en "PAGAR", se visualizará el botón de MERCADOPAGO y al presionar el mismo redirigirá al usuario a la aplicación donde podrá realizar el pago correspondiente.
-
-9. **Envío de consulta mediante Formulario de contacto:**
-
-    * **Descripción:** Permite a cualquier usuario enviar consultas a través del formulario ubicado en la página de Contacto, ingresando su correo electrónico y el mensaje correspondiente.
-    * **Página de Referencia:** Página de Contacto.
-    * **Componentes Clave:** Página de Contacto, Formulario de contacto.
-    * **Acción Principal:** Enviar.
-    * **Resultado:** Al hacer clic en "Enviar", los datos del usuario se remitirán al correo electrónico designado para la aplicación. Además, el usuario recibirá una confirmación por correo electrónico que el mensaje ha sido enviado exitosamente.
+    * **Resultado:** Al hacer clic en "PAGAR AHORA", se visualizará el botón de MERCADOPAGO que al presionar redirigirá al usuario a la aplicación donde podrá realizar el pago correspondiente.
 
 ## Tecnologías utilizadas
 
-<div style="display: flex;">
-  <a href="https://developer.mozilla.org/es/docs/Glossary/HTML5"><img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5" title="HTML5" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" title="CSS3" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://getbootstrap.com/"><img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap5" title="Bootstrap5" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript (ES6+)" title="JavaScript (ES6+)" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://react.dev/"><img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" title="React.js" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://git-scm.com/"><img src="https://img.icons8.com/color/48/000000/git.png" alt="Git" title="Git" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://react-bootstrap.github.io/"> <img src="https://react-bootstrap.netlify.app/img/logo.svg" alt="React-Bootstrap" title="React-Bootstrap" title="Git" width="48" height="48" style="margin-right: 10px"/></a>
-  <a href="https://vitejs.dev/"><img src="https://vitejs.dev/logo.svg" alt="Vite" title="Vite" width="50" style="margin-right: 10px"></a>
-</div>
-
-  * ### Otras:
-
-    - [React-Router-Dom](https://reactrouter.com/en/main/start/tutorial) 
-    - [React-Hook-Form](https://react-hook-form.com/get-started)
-    - [SweetAlert2](https://sweetalert2.github.io/#download)
-    - [Json-server](https://github.com/typicode/json-server)
-    - [Form-submit](https://formsubmit.co/)
-    - [MercadoPago](https://www.mercadopago.com.ar/developers/es/docs/checkout-pro/landing)
-
+* Mockups: Draw.io
+* Frontend:
+HTML5, CSS3, Bootstrap5, Javascript, Reactjs, React-Hook-Form, React-Router-Dom, React-Bootstrap, Jason Web Token (JWT),SweetAlert, Json-server
+* Gestión del proyecto:
+Trello, Metodología Scrum
+* Envío de emails:
+Nodemailer
+* Backend:
+Node js, Express js, MongoDB, Mongoose, bcrypt, 
+* Otras: MercadoPago
 
 ## Requisitos previos
 
