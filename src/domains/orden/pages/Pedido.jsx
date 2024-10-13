@@ -27,7 +27,7 @@ const Pedido = ({
           </h2>
           ;
           <div className='text-center pb-5'>
-            <Link to='/pedido/misPedidos' className='border-dark btn rounded-5 px-5 fw-bold btn-warning py-3'>
+            <Link to='/menu' className='border-dark btn rounded-5 px-5 fw-bold btn-warning py-3'>
               Ir al Menú
             </Link>
           </div>

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
-  Button,
   Card,
   CardBody,
   CardFooter,
@@ -21,7 +20,6 @@ const ResumenPedido = ({
   setCarrito,
 }) => {
   const [metodoEnvio, setMetodoEnvio] = useState(1);
-
 
   const navegacion = useNavigate();
 
@@ -58,13 +56,13 @@ const ResumenPedido = ({
       setCarrito([]);
       Swal.fire({
         icon: 'success',
-        title: 'Su pedido fue generado con exito.',
+        title: 'Su pedido fue realizado con éxito.',
       });
-      navegacion("/pedido/detalleCompra");
+      navegacion(`/pedido/misPedidos`);
     } else {
       Swal.fire({
         icon: 'error',
-        title: 'Su pedido no fue generado, vuelva a intentarlo.',
+        title: 'Su pedido no fue realizado, vuelva a intentarlo.',
       });
     }
   };

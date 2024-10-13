@@ -75,7 +75,7 @@ const CardPedido = ({ pedido }) => {
           {
             !pedido.estadoEnvio && (
               <Link
-              to={`/pedido/detalleCompra`}
+              to={`/pedido/detalleCompra/${pedido._id}`}
             className='btn btnPay text-white w-100'
           >
             Pagar

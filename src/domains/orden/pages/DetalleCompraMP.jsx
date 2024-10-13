@@ -7,6 +7,7 @@ import {
   leerPedidosAPI,
   leerUsuariosAPI,
 } from "../../../helpers/queries";
+import { Link, useParams } from "react-router-dom";
 
 const DetalleCompraMP = () => {
   const [preferenceId, setPreferenceId] = useState(null);
@@ -14,24 +15,19 @@ const DetalleCompraMP = () => {
   const [actualizado, setActualizado] = useState(false);
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [spinner, setSpinner] = useState(true);
+  const [ocultarSpinner, setOcultarSpinner] = useState(false);
+
+  const { id } = useParams();
 
   const fetchData = async () => {
     try {
       const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado"));
       const pedidos = await leerPedidosAPI();
-
       const usuarios = await leerUsuariosAPI();
-      const usuarioBuscado = usuarios.find(
-        (u) => u.correo === usuario.correo
-      );
+      const usuarioBuscado = usuarios.find((u) => u.correo === usuario.correo);
       setNombreUsuario(usuarioBuscado.nombreCompleto);
-
-      const pedidosFiltrados = pedidos.filter(
-        (p) => p.usuario === usuario.id
-      );
-      const pedidoUsuario = pedidosFiltrados[pedidosFiltrados.length - 1];
-
-      setPedido(pedidoUsuario);
+      const pedidoBuscado = pedidos.find((p) => p._id === id);
+      setPedido(pedidoBuscado);
       setSpinner(false);
     } catch (error) {
       console.error(error);
@@ -56,16 +52,16 @@ const DetalleCompraMP = () => {
     });
 
     setActualizado(true);
+    setOcultarSpinner(true);
     const timer = setTimeout(() => {
-      setActualizado(false);
+      setOcultarSpinner(false);
     }, 1000);
   };
 
   if (spinner) {
     return (
       <div className="d-flex flex-column justify-content-center align-items-center py-5 my-5">
-        <Spinner animation="border" variant="warning" role="status">       
-        </Spinner>
+        <Spinner animation="border" variant="warning" role="status"></Spinner>
         <span className="text-white">Espera un momento...</span>
       </div>
     );
@@ -75,47 +71,43 @@ const DetalleCompraMP = () => {
     <section className="pt-3 pb-5 container sectionTop text-white d-flex containerPayMP flex-column align-items-center">
       <div className="text-center">
         <h1 className="my-4">Detalle de Compra</h1>
-        <p>
-          Tenemos habilitada la opción de
-          pago mediante MERCADOPAGO.
-        </p>
+        <p>Tenemos habilitada la opción de pago mediante MERCADOPAGO.</p>
       </div>
       <div className="mt-3 text-start cardPayMP px-3 px-md-5 py-3 rounded-4 text-white">
         <Card.Header className="d-flex flex-column flex-md-row justify-content-md-between">
-        <span>{pedido.fecha}</span>
+          <span>{pedido.fecha}</span>
           <span>
             {pedido.metodoEnvio === 1 ? "Delivery (Gratis)" : "Retiro en Local"}
           </span>
-        
         </Card.Header>
         <Card.Body>
           <div>
             <p className="pt-3">
-              <span >Nombre:</span>
+              <span>Nombre:</span>
               <span className="fw-normal text-warning"> {nombreUsuario}</span>
             </p>
-            <p>Código: <span className="text-warning">{pedido._id}</span></p>
+            <p>
+              Código: <span className="text-warning">{pedido._id}</span>
+            </p>
             <div className="mt-3 text-center fs-5">
               <span className="">Total:</span>{" "}
               <span className="text-success fw-bold">${pedido.monto}</span>
             </div>
           </div>
-          <div
-            className="d-flex flex-column gap-2 align-items-center justify-content-center px-lg-5 pt-3"  
-          >
+          <div className="d-flex flex-column gap-2 align-items-center justify-content-center px-lg-5 pt-3">
             <Button
               onClick={pagar}
               className="btnPay text-white rounded-2 px-5"
             >
               Pagar ahora
             </Button>
-            {actualizado && (
+            {ocultarSpinner && (
               <>
                 <Spinner animation="border" role="status"></Spinner>
                 <small>Espera un momento...</small>
               </>
             )}
-            {!actualizado && (
+            {actualizado && (
               <div className="containerWallet text-dark">
                 <Wallet
                   initialization={{
@@ -129,11 +121,12 @@ const DetalleCompraMP = () => {
       </div>
       <div className="text-center mt-4">
         <p>También aceptamos pago en efectivo</p>
-        <button
+        <Link
+          to={"/pedido/misPedidos"}
           className="mt-2 btn btn-warning border border-1 border-dark btnBuy fw-bold px-5 rounded-5 py-3"
         >
           ir a Mis Pedidos
-        </button>
+        </Link>
       </div>
     </section>
   );

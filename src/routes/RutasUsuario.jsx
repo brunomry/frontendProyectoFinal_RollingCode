@@ -40,7 +40,7 @@ const RutasUsuario = ({
           element={<MisPedidos usuarioLogeado={usuarioLogeado}></MisPedidos>}
         ></Route>
         <Route
-          path="/detalleCompra"
+          path="/detalleCompra/:id"
           element={
             <DetalleCompraMP
               usuarioLogeado={usuarioLogeado}
