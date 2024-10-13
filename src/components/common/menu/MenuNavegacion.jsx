@@ -24,17 +24,15 @@ const MenuNavegacion = ({
     }
   }
   const navegacion = useNavigate();
+
   const cerrarSesion = () => {
-    if (usuarioLogeado.rol === "Usuario") {
       Swal.fire({
-        title: "Cerrar sesión",
-        text: "Si tienes elementos agregados en tu pedido se eliminarán",
-        icon: "warning",
+        text: "¿Estás seguro que deseas salir?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Cerrar sesión",
-        cancelButtonText: "cancelar",
+        confirmButtonText: "Salir",
+        cancelButtonText: "Cancelar",
       }).then((result) => {
         if (result.isConfirmed) {
           setUsuarioLogeado({});
@@ -42,38 +40,8 @@ const MenuNavegacion = ({
           sessionStorage.removeItem("carrito");
           navegacion("/");
           window.location.reload();
-          Swal.fire({
-            title: "Sesión cerrada",
-            icon: "success",
-            timer: 1300,
-          });
         }
       });
-    } else {
-      Swal.fire({
-        title: "Cerrar sesión",
-        text: "¿Estas seguro que deseas salir?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Cerrar sesión",
-        cancelButtonText: "cancelar",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          setUsuarioLogeado({});
-          sessionStorage.removeItem("usuarioLogeado");
-          sessionStorage.removeItem("carrito");
-          navegacion("/");
-          window.location.reload();
-          Swal.fire({
-            title: "Sesión cerrada",
-            icon: "success",
-            timer: 1300,
-          });
-        }
-      });
-    }
   };
 
   const myOrderAlert = () => {

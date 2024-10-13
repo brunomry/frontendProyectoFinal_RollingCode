@@ -31,7 +31,7 @@ const ListaProductos = () => {
       setProductosFiltrados([]);
     } else {
       const productosEncontrados = productos.filter((producto) =>
-        producto.nombre.toLowerCase().startsWith(inputBusqueda)
+        producto.nombre.toLowerCase().includes(inputBusqueda)
       );
       setProductosFiltrados(productosEncontrados);
     }
