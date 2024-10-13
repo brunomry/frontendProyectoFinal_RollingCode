@@ -1,0 +1,66 @@
+.containerRegister{
+    width: 100%;
+    background-image: url("../../../assets/imgRegistro.webp");
+    min-height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.containerFormRegister{
+    background: #5c3d1aba;
+    width: 500px;
+    max-height: 610px;
+}
+
+.inputFormRegister{
+    background: #6155452e;
+    border: 1px solid #d69e7b;
+    color: #fff;
+}
+
+.inputFormRegister:focus{
+    background: #896a44ba;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #cd560c;
+}
+
+.inputFormRegister::placeholder{
+    color: #d7d4d4;
+}
+
+.btnRegister{
+    width: 100%;
+    background: #ca6323;
+}
+
+.btnRegister:hover{
+    background: #c1591db2;
+}
+
+.optionGoogle{
+    text-decoration: none;
+    border: 1px solid #d69e7b;
+    color: #fff;
+}
+
+.optionGoogle:hover{
+    text-decoration: none;
+    border: 1px solid #fff;
+}
+
+@media all and (min-width:1200px){
+    .containerRegister{
+        width: 100%;
+        background-image: url("../../../assets/imgRegistro.webp");
+        min-height: 100vh;
+    }
+}
+
+@media all and (min-width:1400px){
+    .containerRegister{
+        min-height: 100vh;
+    }
+}

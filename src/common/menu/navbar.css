@@ -1,0 +1,47 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+.navbarBackground {
+  background-color: #000;
+}
+
+.navbar{
+  z-index: 1;
+}
+
+.navLink {
+  border-bottom: 1px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.navLink.active {
+  border-bottom: 1px solid #fff;
+}
+
+.btnNav {
+  border:1px solid gray;
+  
+  transition: transform 0.3s ease;
+}
+
+.btnNav:hover {
+  border:1px solid rgb(199, 197, 197);
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logoMobile {
+  width: 120px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+@media all and (min-width: 768px) {
+  .navLink {
+    width: inherit;
+  }
+}

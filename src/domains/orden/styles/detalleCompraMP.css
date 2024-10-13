@@ -1,0 +1,41 @@
+body{
+  overflow-x: hidden;
+}
+
+.containerPayMP{
+  width: 100%;
+  margin-top: 125px;
+}
+
+.cardPayMP{
+  width: 100%;
+  border: 1px solid #141414;
+  background: #141414;
+}
+
+.btnPay{
+  width: 100%;
+  border: 1px solid #c4531f;
+  background: #c4531f;
+}
+
+@media all and (min-width:768px){
+  .cardMP{
+    width: 550px;
+  }
+  
+  .btnPay{
+    width: 50%;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardPayMP{
+    width: 650px;
+  }
+
+  .btnPay:hover{
+    background: #141414;
+    border: 1px solid #8a8a8a;
+  }
+}

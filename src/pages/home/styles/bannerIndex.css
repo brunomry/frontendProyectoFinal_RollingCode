@@ -1,0 +1,75 @@
+.banner{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  background-image: url("../../../assets/Inicio/banner1.webp");
+  background-repeat: no-repeat;
+  background-size: 250%;
+  height: 60vh;
+}
+
+.banner .bannerContent{ 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent .bannerTitle{
+  font-size: 2.1875rem;
+  text-align: center;
+}
+
+.btnBanner{
+  color: #fff;
+  background-color: #c74508;
+  transition: .3s;
+}
+
+.btnBanner:hover {
+  transition: .7s;
+  background-color: #bd511f;
+}
+
+@media all and (min-width:768px){
+  .banner{
+    background-size: 150%;
+  }
+}
+
+@media all and (min-width:992px){
+  .banner{
+    height: 85vh;
+  }
+}
+
+@media all and (min-width:1200px){
+  .banner{
+    width: 100%;
+    position: relative;
+    background-image: url("../../../assets/Inicio/banner1.webp");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    height: 90vh;
+    animation: movimiento 9s infinite linear alternate;
+  }
+  
+  .banner .bannerContent{ 
+    width: 100%;
+    height: 110%;
+  }
+
+  .bannerContent .bannerDescription,
+  .bannerContent .bannerSubtitle{
+    font-size: 1.6rem;
+  }
+
+  .btnBanner{
+    font-size: 1.4rem;
+  }
+
+  .bannerContent .bannerTitle{
+    font-size: 4.0625rem;
+  }
+}

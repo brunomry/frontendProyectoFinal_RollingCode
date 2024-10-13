@@ -1,0 +1,66 @@
+.containerLogin{
+    width: 100%;
+    background-image: url("../../../assets/imgLogin.webp");
+    min-height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.containerFormLogin{
+    background: #80776dba;
+    width: 500px;
+    max-height: 575px;
+}
+
+.inputFormLogin{
+    background: #69696972;
+    border: 1px solid #ddbaa5;
+    color: #fff;
+}
+
+.inputFormLogin:focus{
+    background: #35353572;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #cd560c;
+}
+
+.inputFormLogin::placeholder{
+    color: #d7d4d4;
+}
+
+.btnLogin{
+    width: 100%;
+    background: #ca6323;
+}
+
+.btnLogin:hover{
+    background: #c1591db2;
+}
+
+.optionGoogle{
+    text-decoration: none;
+    border: 1px solid #d69e7b;
+    color: #fff;
+}
+
+.optionGoogle:hover{
+    text-decoration: none;
+    border: 1px solid #fff;
+}
+
+@media all and (min-width:1200px){
+    .containerLogin{
+        width: 100%;
+        background-image: url("../../../assets/imgLogin.webp");
+        min-height: 100vh;
+    }
+}
+
+@media all and (min-width:1400px){
+    .containerLogin{
+        min-height: 120vh;
+    }
+}

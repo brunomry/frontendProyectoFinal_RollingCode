@@ -1,0 +1,28 @@
+.containerMap{
+    width: 100%;
+}
+
+.containerMap iframe{
+  width: 100%;
+  height: 300px;
+}
+
+.containerIconSocial{
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+
+@media all and (min-width:768px){
+  .containerMap iframe{
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media all and (min-width:1200px){
+  .containerMap iframe{
+    width: 100%;
+    height: 450px;
+  }
+}

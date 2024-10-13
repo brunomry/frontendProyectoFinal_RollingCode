@@ -219,7 +219,6 @@ export const crearOrdenMP = async (orden) => {
       },
       body: JSON.stringify(orden),
     });
-    console.log(respuesta)
     const data = await respuesta.json();
     return data;
   } catch (error) {

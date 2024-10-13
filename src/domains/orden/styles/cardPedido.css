@@ -1,0 +1,36 @@
+.sectionOrdersUser{
+  padding-top: 80px;
+}
+
+.cardOrder{
+  width: 100%;
+  background-color: #141414;
+}
+
+.modalOrder{
+  background: #141414;
+}
+
+.btnDetailsOrder{
+  background-color: rgb(10, 47, 94);
+}
+
+.btnDetailsOrder:hover{
+  background-color: rgb(42, 61, 83);
+}
+
+@media all and (min-width:768px){
+  .sectionOrdersUser{
+    padding-top: 0;
+  }
+
+  .cardOrder{
+    width: 60%;
+  }
+}
+
+@media all and (min-width:992px){
+  .cardOrder{
+    width: 40%;
+  }
+}
