@@ -4,7 +4,7 @@ import ItemUsuario from './ItemUsuario';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { leerUsuariosAPI } from '../../../helpers/queries';
-import Load from "../../../components/common/spinner/Load.jsx";
+import Load from "../../../common/spinner/Load";
 
 const ListaUsuarios = ({ superAdmin }) => {
   const [usuarios, setUsuarios] = useState([]);

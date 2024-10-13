@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerProductosAPI } from "./helpers/queries";
 import Swal from "sweetalert2";
-import MenuNavegacion from "./components/common/menu/MenuNavegacion";
+import MenuNavegacion from "./common/menu/MenuNavegacion";
 import Inicio from "./pages/home/Inicio";
 import Menu from "./domains/productos/Menu";
 import Login from "./domains/auth/Login";
@@ -15,9 +15,9 @@ import RutasUsuario from "./routes/RutasUsuario";
 import Nosotros from "./pages/nosotros/Nosotros";
 import Contacto from "./pages/contacto/Contacto";
 import Error404 from "./pages/error404/Error404";
-import Footer from "./components/common/footer/Footer";
+import Footer from "./common/footer/Footer";
 import Equipo from "./pages/Equipo/Equipo";
-import ScrollTop from "./components/common/ScrollTop";
+import ScrollTop from "./common/ScrollTop";
 import "./styles/App.css";
 
 function App() {

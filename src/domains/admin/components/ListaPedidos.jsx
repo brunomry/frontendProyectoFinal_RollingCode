@@ -4,7 +4,7 @@ import ItemPedido from './ItemPedido';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { leerPedidosAPI, leerUsuariosAPI } from '../../../helpers/queries';
-import Load from "../../../components/common/spinner/Load.jsx";
+import Load from "../../../common/spinner/Load";
 
 const ListaPedidos = () => {
   const [listaPedidos, setListaPedidos] = useState(null);

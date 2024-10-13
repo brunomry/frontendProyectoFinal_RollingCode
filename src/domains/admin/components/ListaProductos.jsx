@@ -4,7 +4,7 @@ import ItemProducto from "./ItemProducto.jsx";
 import { Link } from "react-router-dom";
 import { leerProductosAPI } from "../../../helpers/queries.js";
 import { useEffect, useState } from "react";
-import Load from "../../../components/common/spinner/Load.jsx";
+import Load from "../../../common/spinner/Load";
 
 const ListaProductos = () => {
   const [productos, setProductos] = useState([]);

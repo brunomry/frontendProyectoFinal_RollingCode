@@ -2,7 +2,7 @@ import ListaProductosUsuario from '../components/ListaProductosUsuario';
 import ResumenPedido from '../components/ResumenPedido';
 import '../styles/pedido.css';
 import { Link } from 'react-router-dom';
-import Load from '../../../components/common/spinner/Load';
+import Load from "../../../common/spinner/Load";
 
 const Pedido = ({
   usuarioLogeado,

@@ -1,6 +1,6 @@
 import { Col, Container, Form, Row } from "react-bootstrap";
 import "./footer.css";
-import logo from "../../../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
