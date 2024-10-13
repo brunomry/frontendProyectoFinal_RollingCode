@@ -75,7 +75,7 @@ const MenuNavegacion = ({
               onClick={navLinkClick}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={menuBTNClick} />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-secondary" onClick={menuBTNClick} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto align-items-center gap-2">
               <NavLink className="navLink nav-link text-center text-white fw-normal" to="/" onClick={navLinkClick}>
@@ -86,6 +86,9 @@ const MenuNavegacion = ({
               </NavLink>
               <NavLink className="navLink nav-link text-center text-white" to="/nosotros" onClick={navLinkClick}>
                 Sobre Nosotros
+              </NavLink>
+              <NavLink className="navLink d-block d-md-none nav-link text-center text-white" to="/contacto" onClick={navLinkClick}>
+                Contacto
               </NavLink>
               {usuarioLogeado.rol === "Administrador" && (
                 <>
