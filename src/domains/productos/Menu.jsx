@@ -126,7 +126,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
         className={
           filtrarProductosPorCategoria("Pizzas").length === 0 || busqueda !== ""
             ? "d-none"
-            : "pb-5 "
+            : "pb-5 flex-wrap gap-3"
         }
       >
         {busqueda === "" &&
@@ -137,7 +137,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
               </h2>
             </div>
           )}
-        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+        <div className="containerCategory d-flex pb-3 flex-lg-wrap ">
           {busqueda === "" &&
             filtrarProductosPorCategoria("Pizzas").length > 0 &&
             filtrarProductosPorCategoria("Pizzas").map((producto) => (
@@ -167,7 +167,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
               </h2>
             </div>
           )}
-        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+        <div className="containerCategory d-flex pb-3 flex-lg-wrap ">
           {busqueda === "" &&
             filtrarProductosPorCategoria("Hamburguesas").length > 0 &&
             filtrarProductosPorCategoria("Hamburguesas").map((producto) => (
@@ -196,7 +196,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
               </h2>
             </div>
           )}
-        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+        <div className="containerCategory d-flex pb-3 flex-lg-wrap ">
           {busqueda === "" &&
             filtrarProductosPorCategoria("Pastas").length > 0 &&
             filtrarProductosPorCategoria("Pastas").map((producto) => (
@@ -226,7 +226,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
               </h2>
             </div>
           )}
-        <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+        <div className="containerCategory d-flex pb-3 flex-lg-wrap ">
           {busqueda === "" &&
             filtrarProductosPorCategoria("Empanadas").length > 0 &&
             filtrarProductosPorCategoria("Empanadas").map((producto) => (
@@ -242,7 +242,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
       </Container>
       <Container className={busqueda == "" ? "d-none" : "pb-5"}>
         {productosFiltrados.length > 0 && (
-          <div className="containerCategory d-flex pb-3 gap-2 flex-lg-wrap gap-md-0">
+          <div className="containerCategory d-flex pb-3 flex-lg-wrap ">
             {productosFiltrados.map((producto) => (
               <CardProducto
                 key={producto._id}
