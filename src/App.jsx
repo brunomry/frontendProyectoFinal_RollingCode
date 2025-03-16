@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { leerProductosAPI } from "./helpers/queries/productos.queries";
+import { leerProductosAPI } from "./helpers/queries/productos.queries.js";
 import Swal from "sweetalert2";
 import MenuNavegacion from "./common/menu/MenuNavegacion";
 import Inicio from "./pages/home/Inicio";

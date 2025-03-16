@@ -2,9 +2,9 @@ import { Form, FormCheck } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./styles/registro.css";
 import { useForm } from "react-hook-form";
-import { crearUsuarioAPI } from "../../helpers/queries/login.queries";
 import { enviarDatosCorreo } from "../../helpers/queries/correo.queries";
 import Swal from "sweetalert2";
+import { crearUsuarioAPI } from "../../helpers/queries/auth.queries";
 
 const Registro = () => {
   const {
