@@ -52,7 +52,7 @@ const Login = ({ setUsuarioLogeado }) => {
         (u) => u.correo === usuario_sesion.correo
       );
 
-      sesionUsuario(usuarioBuscado, data);
+      sesionUsuario(usuarioBuscado, datos);
       setUsuarioLogeado({
         id: usuarioBuscado._id,
         token: datos.token,

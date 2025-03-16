@@ -3,12 +3,12 @@ export const obtenerUsuario = () => {
   return usuario;
 };
 
-export const sesionUsuario = (usuario, data) => {
+export const sesionUsuario = (usuario, datos) => {
   sessionStorage.setItem(
     "usuarioLogeado",
     JSON.stringify({
       _id: usuario._id,
-      token: data.token,
+      token: datos.token,
     })
   );
 };
