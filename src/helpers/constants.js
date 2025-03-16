@@ -8,3 +8,8 @@ export const METODO_ENVIO = [
     tipo: 'Retiro en el local',
   },
 ];
+
+export const roles = {
+  ADMIN: "Administrador",
+  USUARIO: "Usuario"
+}

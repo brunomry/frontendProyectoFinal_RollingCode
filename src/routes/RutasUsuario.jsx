@@ -11,11 +11,7 @@ const RutasUsuario = ({
   quitarCantidadProducto,
   montoCarrito,
   quitarProductoCarrito,
-  setCarrito,
-  recarga,
-  setRecarga,
-  mostrarBtnMP,
-  setMostrarBtnMP
+  setCarrito
 }) => {
   return (
     <>

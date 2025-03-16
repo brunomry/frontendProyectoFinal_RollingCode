@@ -1,7 +1,7 @@
 import { Button, Modal } from 'react-bootstrap';
 import '../styles/administrador.css';
 import { useState } from 'react';
-import { editarPedidoAPI } from '../../../helpers/queries';
+import { editarPedidoAPI } from '../../../helpers/queries/pedidos.queries';
 import Swal from 'sweetalert2';
 import { METODO_ENVIO } from '../../../helpers/constants';
 

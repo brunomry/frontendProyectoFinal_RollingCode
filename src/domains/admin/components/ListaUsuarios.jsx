@@ -3,7 +3,7 @@ import '../styles/administrador.css';
 import ItemUsuario from './ItemUsuario';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { leerUsuariosAPI } from '../../../helpers/queries';
+import { leerUsuariosAPI } from '../../../helpers/queries/usuarios.queries';
 import Load from "../../../common/spinner/Load";
 
 const ListaUsuarios = ({ superAdmin }) => {

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/administrador.css";
 import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { borrarProductoAPI, leerProductosAPI } from "../../../helpers/queries";
+import { borrarProductoAPI, leerProductosAPI } from "../../../helpers/queries/productos.queries";
 
 const ItemProducto = ({ producto, setProductos }) => {
   const borrarProducto = async () => {

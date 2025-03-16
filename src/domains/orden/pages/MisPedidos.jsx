@@ -1,20 +1,24 @@
 import CardPedido from "../components/CardPedido";
 import "../styles/cardPedido.css";
 import { useEffect, useState } from "react";
-import { leerPedidosAPI } from "../../../helpers/queries";
+import { leerPedidosAPI } from "../../../helpers/queries/pedidos.queries";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { obtenerUsuario } from "../../../helpers/sesion/sesion.functions";
 
 const MisPedidos = () => {
   const [listaPedidos, setListaPedidos] = useState([]);
   const [spinner, setSpinner] = useState(true);
 
   const listarPedidos = async () => {
-    const idUsuario = JSON.parse(sessionStorage.getItem("usuarioLogeado"));
+    const usuario = obtenerUsuario();
+
     const respuesta = await leerPedidosAPI();
+
     const pedidosFiltrados = respuesta.filter(
-      (pedido) => pedido.usuario === idUsuario.id
+      (pedido) => pedido.usuario === usuario._id
     );
+
     setListaPedidos(pedidosFiltrados.reverse());
     setSpinner(false);
   };

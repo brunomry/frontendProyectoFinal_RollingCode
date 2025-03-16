@@ -7,10 +7,9 @@ import {
   CardTitle,
 } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { crearPedidoApi } from '../../../helpers/queries';
+import { crearPedidoApi } from '../../../helpers/queries/pedidos.queries';
 import Swal from 'sweetalert2';
 import { METODO_ENVIO } from '../../../helpers/constants';
-
 
 const ResumenPedido = ({
   carrito,

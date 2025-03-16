@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { leerProductosAPI } from "./helpers/queries";
+import { leerProductosAPI } from "./helpers/queries/productos.queries";
 import Swal from "sweetalert2";
 import MenuNavegacion from "./common/menu/MenuNavegacion";
 import Inicio from "./pages/home/Inicio";
@@ -19,30 +19,19 @@ import Footer from "./common/footer/Footer";
 import Equipo from "./pages/Equipo/Equipo";
 import ScrollTop from "./common/ScrollTop";
 import "./styles/App.css";
+import { buscarProductoCarrito, calcularMonto, guardarCarrito, obtenerCarrito } from "./helpers/carrito/carrito.functions";
+import { obtenerUsuario } from "./helpers/sesion/sesion.functions";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
+  const usuario = obtenerUsuario();
+
   const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
-  
-  const [carrito, setCarrito] = useState(
-    JSON.parse(sessionStorage.getItem("carrito")) || []
-  );
   const [montoCarrito, setMontoCarrito] = useState(0);
   const [productosCarrito, setProductosCarrito] = useState([]);
-
-  const calcularMonto = () => {
-    let productoCarritoAux = [...productosCarrito];
-    let montoAux = 0;
-    if (carrito.length > 0 && productosCarrito.length > 0) {
-      for (let i = 0; i < productoCarritoAux.length; i++) {
-        let precioProductoCarrito = carrito.find(
-          (productoCarrito) =>
-            productoCarrito.producto == productoCarritoAux[i]._id
-        );
-        montoAux +=
-          precioProductoCarrito.cantidad * productoCarritoAux[i].precio;
-      }
-    }
+  const [carrito, setCarrito] = useState(obtenerCarrito());
+ 
+  const calcularTotalAcumulado = () => {
+    let montoAux = calcularMonto(productosCarrito, carrito)
     setMontoCarrito(montoAux);
   };
 
@@ -62,10 +51,8 @@ function App() {
   };
 
   const agregarCantidadProducto = (idProductoCarrito) => {
-    let carritoAux = [...carrito];
-    const indexProductoCarrito = carritoAux.findIndex(
-      (productoCarrito) => productoCarrito.id == idProductoCarrito
-    );
+    const {carritoAux, indexProductoCarrito} = buscarProductoCarrito(idProductoCarrito, carrito);
+
     if (carritoAux[indexProductoCarrito].cantidad < 10) {
       carritoAux[indexProductoCarrito].cantidad++;
       setCarrito(carritoAux);
@@ -73,10 +60,8 @@ function App() {
   };
 
   const quitarCantidadProducto = (idProductoCarrito) => {
-    let carritoAux = [...carrito];
-    const indexProductoCarrito = carritoAux.findIndex(
-      (productoCarrito) => productoCarrito.id == idProductoCarrito
-    );
+    const {carritoAux, indexProductoCarrito} = buscarProductoCarrito(idProductoCarrito, carrito);
+
     if (carritoAux[indexProductoCarrito].cantidad > 1) {
       carritoAux[indexProductoCarrito].cantidad--;
       setCarrito(carritoAux);
@@ -150,16 +135,13 @@ function App() {
   }, []);
 
   useEffect(() => {
-  }, [montoCarrito]);
-
-  useEffect(() => {
     consultarAPI();
-    sessionStorage.setItem("carrito", JSON.stringify(carrito));
+    guardarCarrito(carrito);
   }, [carrito]);
 
   useEffect(() => {
     if (productosCarrito) {
-      calcularMonto();
+      calcularTotalAcumulado();
     }
   }, [productosCarrito]);
 
