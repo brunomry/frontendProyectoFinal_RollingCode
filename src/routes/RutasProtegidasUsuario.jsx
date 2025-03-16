@@ -2,6 +2,7 @@ import { Navigate } from "react-router";
 import { obtenerUsuario } from "../helpers/sesion/sesion.functions";
 import { roles } from "../helpers/constants";
 import { obtenerUsuarioPorId } from "../helpers/queries/usuarios.queries";
+import { useState } from "react";
 
 const RutasProtegidasUsuario = ({ children }) => {
   const [rol, setRol] = useState(null);
