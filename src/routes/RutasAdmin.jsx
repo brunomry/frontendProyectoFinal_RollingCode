@@ -5,12 +5,12 @@ import ListaPedidos from '../domains/admin/components/ListaPedidos';
 import ListaProductos from '../domains/admin/components/ListaProductos';
 import FormularioProducto from '../domains/admin/components/FormularioProducto';
 import FormularioUsuario from '../domains/admin/components/FormularioUsuario';
-import { validarSuperAdmin } from '../helpers/queries';
+import { validarSuperAdmin } from '../helpers/queries/usuarios.queries';
+import { obtenerUsuario } from '../helpers/sesion/sesion.functions';
 
 const RutasAdmin = () => {
-  const usuarioLogeado = JSON.parse(sessionStorage.getItem('usuarioLogeado'));
-
-  const superAdmin = validarSuperAdmin(usuarioLogeado.id);
+  const usuarioLogeado = obtenerUsuario();
+  const superAdmin = validarSuperAdmin(usuarioLogeado._id);
 
   return (
     <>

@@ -2,12 +2,9 @@ import { Form, FormCheck } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./styles/registro.css";
 import { useForm } from "react-hook-form";
-import {
-  crearUsuarioAPI,
-  enviarDatosCorreo,
-  leerUsuariosAPI,
-} from "../../helpers/queries";
+import { enviarDatosCorreo } from "../../helpers/queries/correo.queries";
 import Swal from "sweetalert2";
+import { crearUsuarioAPI } from "../../helpers/queries/auth.queries";
 
 const Registro = () => {
   const {
@@ -20,16 +17,24 @@ const Registro = () => {
   const navegacion = useNavigate();
 
   const usuarioValidado = async (usuario) => {
-    const usuarioLowerCase = {
+    const nuevo_usuario = {
       nombreCompleto: usuario.nombreCompleto,
       correo: usuario.correo.toLowerCase(),
       clave: usuario.clave,
     };
-    const listaUsuarios = await leerUsuariosAPI();
-    const usuarioBuscado = listaUsuarios.find(
-      (u) => u.correo === usuarioLowerCase.correo
-    );
-    if (!usuarioBuscado) {
+
+    const respuesta = await crearUsuarioAPI(nuevo_usuario);
+
+    if (respuesta.status === 400) {
+      Swal.fire({
+        title: "El correo ingresado ya existe",
+        text: "Por favor ingrese un correo nuevo",
+        icon: "error",
+        timer: 3000,
+      });
+      return;
+    }
+
       let timerInterval;
       Swal.fire({
         title: "Espere un momento",
@@ -47,27 +52,18 @@ const Registro = () => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
-      const respuesta = await crearUsuarioAPI(usuarioLowerCase);
+
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Te registraste exitosamente",
-          html: "Se envió un correo de verificacion a tu bandeja de entrada (principal o spam) </br> <b>Por favor, inicia sesion para continuar</b>",
+          html: "Se envió un correo de verificación a tu bandeja de entrada (principal o spam) </br> <b>Por favor, inicia sesión para continuar</b>",
           icon: "success",
         });
-        const direccionCorreo = { correo: usuarioLowerCase.correo };
+        const direccionCorreo = { correo: nuevo_usuario.correo };
         await enviarDatosCorreo(direccionCorreo);
         reset();
         navegacion("/login");
       }
-    } else {
-      Swal.fire({
-        title: "El correo ingresado ya existe",
-        text: "Por favor ingrese un correo nuevo",
-        icon: "error",
-        timer: 3000,
-      });
-      return;
-    }
   };
 
   return (

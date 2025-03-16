@@ -2,9 +2,12 @@ import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles/login.css";
 import { useForm } from "react-hook-form";
-import { leerUsuariosAPI, login } from "../../helpers/queries";
+import { login } from "../../helpers/queries/auth.queries";
+import { leerUsuariosAPI } from "../../helpers/queries/usuarios.queries";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { sesionUsuario } from "../../helpers/sesion/sesion.functions";
+import { roles } from "../../helpers/constants";
 
 const Login = ({ setUsuarioLogeado }) => {
   const {
@@ -34,59 +37,41 @@ const Login = ({ setUsuarioLogeado }) => {
       if (result.dismiss === Swal.DismissReason.timer) {
       }
     });
-    const usuarioLowerCase = {
+
+    const usuario_sesion = {
       correo: usuario.correo.toLowerCase(),
       clave: usuario.clave,
     };
-    const respuesta = await login(usuarioLowerCase);
-    if (respuesta.status === 200) {
-      const listaUsuarios = await leerUsuariosAPI();
-      const usuarioBuscado = listaUsuarios.find(
-        (u) => u.correo === usuarioLowerCase.correo
-      );
-      if (usuarioBuscado.rol === "Administrador" && usuarioBuscado.estado) {
-        const datos = await respuesta.json();
-        sessionStorage.setItem(
-          "usuarioLogeado",
-          JSON.stringify({
-            id: usuarioBuscado._id,
-            correo: usuarioBuscado.correo,
-            rol: usuarioBuscado.rol,
-            token: datos.token,
-          })
-        );
-        setUsuarioLogeado({
-          id: usuarioBuscado._id,
-          correo: usuarioBuscado.correo,
-          rol: usuarioBuscado.rol,
-          token: datos.token,
-        });
 
+    const respuesta = await login(usuario_sesion);
+    const datos = await respuesta.json();
+
+    if (respuesta.status === 200) {
+      const usuarios = await leerUsuariosAPI();
+      const usuarioBuscado = usuarios.find(
+        (u) => u.correo === usuario_sesion.correo
+      );
+
+      sesionUsuario(usuarioBuscado, data);
+      setUsuarioLogeado({
+        id: usuarioBuscado._id,
+        token: datos.token,
+      });
+
+      if (usuarioBuscado.rol === roles.ADMIN && usuarioBuscado.estado) {
         navegacion("/administrador");
         Swal.fire({
           icon: "success",
-          title: "Sesion iniciada como administrador",
+          title: "Sesión iniciada como administrador",
           text: `Bienvenido ${usuarioBuscado.nombreCompleto}`,
         });
       }
-      if (usuarioBuscado.rol === "Usuario" && usuarioBuscado.estado) {
-        sessionStorage.setItem(
-          "usuarioLogeado",
-          JSON.stringify({
-            id: usuarioBuscado._id,
-            correo: usuarioBuscado.correo,
-            rol: usuarioBuscado.rol,
-          })
-        );
-        setUsuarioLogeado({
-          id: usuarioBuscado._id,
-          correo: usuarioBuscado.correo,
-          rol: usuarioBuscado.rol,
-        });
+
+      if (usuarioBuscado.rol === roles.USUARIO && usuarioBuscado.estado) {
         navegacion("/");
         Swal.fire({
           icon: "success",
-          title: "Sesion iniciada",
+          title: "Sesión iniciada",
           text: `Bienvenido ${usuarioBuscado.nombreCompleto}`,
         });
       }
@@ -95,14 +80,14 @@ const Login = ({ setUsuarioLogeado }) => {
         Swal.fire({
           icon: "error",
           title: "Usuario suspendido.",
-          text: "En este momento no puedes iniciar sesion.",
+          text: "En este momento no puedes iniciar sesión.",
         });
       }
     } else {
       Swal.fire({
         icon: "error",
-        title: "No se pudo iniciar sesion",
-        text: "Los datos ingresados no son correctos o esta deshabilitado.",
+        title: "No se pudo iniciar sesión",
+        text: "Los datos ingresados no son correctos o tu usuario está suspendido.",
       });
     }
   };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { Container, Nav, Navbar, Button } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";

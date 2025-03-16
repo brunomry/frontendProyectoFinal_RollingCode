@@ -5,9 +5,8 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import {
   crearUsuarioAdmin,
-  enviarDatosCorreo,
-  leerUsuariosAPI,
-} from '../../../helpers/queries';
+  leerUsuariosAPI
+} from '../../../helpers/queries/usuarios.queries';
 
 const FormularioUsuario = ({ superAdmin }) => {
   const {
@@ -22,11 +21,14 @@ const FormularioUsuario = ({ superAdmin }) => {
   }
 
   const usuarioValidado = async (usuario) => {
-    const usuarioLowerCase = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave, rol: usuario.rol}
-    const listaUsuarios = await leerUsuariosAPI();
-    const usuarioBuscado = listaUsuarios.find(
-      (u) => u.correo === usuarioLowerCase.correo
+    const nuevo_usuario = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave, rol: usuario.rol}
+    
+    const usuarios = await leerUsuariosAPI();
+
+    const usuarioBuscado = usuarios.find(
+      (u) => u.correo === nuevo_usuario.correo
     );
+
     if (!usuarioBuscado) {
       let timerInterval;
       Swal.fire({
@@ -45,7 +47,7 @@ const FormularioUsuario = ({ superAdmin }) => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
-      const respuesta = await crearUsuarioAdmin(usuarioLowerCase);
+      const respuesta = await crearUsuarioAdmin(nuevo_usuario);
       if (respuesta.status === 201) {
         Swal.fire({
           title: 'Usuario creado correctamente',

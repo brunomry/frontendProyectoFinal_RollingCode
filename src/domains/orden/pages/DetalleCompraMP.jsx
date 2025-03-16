@@ -2,12 +2,11 @@ import { Card, Button, Spinner } from "react-bootstrap";
 import "../styles/detalleCompraMP.css";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState, useEffect } from "react";
-import {
-  crearOrdenMP,
-  leerPedidosAPI,
-  leerUsuariosAPI,
-} from "../../../helpers/queries";
+import { crearOrdenMP } from "../../../helpers/queries/mercadopago.queries";
+import { leerPedidosAPI } from "../../../helpers/queries/pedidos.queries";
+import { leerUsuariosAPI } from "../../../helpers/queries/usuarios.queries";
 import { Link, useParams } from "react-router-dom";
+import { obtenerUsuario } from "../../../helpers/sesion/sesion.functions";
 
 const DetalleCompraMP = () => {
   const [preferenceId, setPreferenceId] = useState(null);
@@ -21,12 +20,17 @@ const DetalleCompraMP = () => {
 
   const fetchData = async () => {
     try {
-      const usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado"));
+      const usuario = obtenerUsuario();
+
       const pedidos = await leerPedidosAPI();
       const usuarios = await leerUsuariosAPI();
-      const usuarioBuscado = usuarios.find((u) => u.correo === usuario.correo);
+
+      const usuarioBuscado = usuarios.find((u) => u._id === usuario._id);
+
       setNombreUsuario(usuarioBuscado.nombreCompleto);
+
       const pedidoBuscado = pedidos.find((p) => p._id === id);
+      
       setPedido(pedidoBuscado);
       setSpinner(false);
     } catch (error) {

@@ -3,7 +3,8 @@ import '../styles/administrador.css';
 import ItemPedido from './ItemPedido';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { leerPedidosAPI, leerUsuariosAPI } from '../../../helpers/queries';
+import { leerPedidosAPI } from '../../../helpers/queries/pedidos.queries';
+import { leerUsuariosAPI } from '../../../helpers/queries/usuarios.queries';
 import Load from "../../../common/spinner/Load";
 
 const ListaPedidos = () => {
