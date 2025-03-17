@@ -26,7 +26,7 @@ const ResumenPedido = ({
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
-    let usuario = usuarioLogeado.id;
+    let usuario = usuarioLogeado._id;
 
     let fecha = new Date().toLocaleString();
 
