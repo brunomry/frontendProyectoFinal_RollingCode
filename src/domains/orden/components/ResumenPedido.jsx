@@ -26,7 +26,7 @@ const ResumenPedido = ({
     let carritoAux = [...carrito];
     let productosPedido = [];
     let pedido = new Object();
-    let usuario = usuarioLogeado._id;
+    let usuario = usuarioLogeado.id;
 
     let fecha = new Date().toLocaleString();
 
@@ -100,17 +100,13 @@ const ResumenPedido = ({
           </CardBody>
           <CardFooter>
             <div className='d-flex justify-content-center'>
-              {productosCarrito.length > 0 ? (
+              {productosCarrito.length > 0 && (
                 <button
                   onClick={confirmarPedido}
                   className='w-100 text-white btn btn-secondary rounded-3'
                 >
                   Confirmar Pedido
                 </button>
-              ) : (
-                <Link to='/menu' className='w-100 fw-bold btn btn-danger'>
-                  Ir al Menú
-                </Link>
               )}
             </div>
           </CardFooter>

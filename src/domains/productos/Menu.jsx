@@ -3,9 +3,8 @@ import { Container, Form, Row, Spinner } from "react-bootstrap";
 import CardProducto from "./components/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries/productos.queries";
-import { obtenerUsuarioPorId } from "../../helpers/queries/usuarios.queries";
 
-const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
+const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioActual }) => {
   const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
   const [productosFiltrados, setProductosFiltrados] = useState([]);
@@ -147,7 +146,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 producto={producto}
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
+                usuarioActual={usuarioActual}
               ></CardProducto>
             ))}
         </div>
@@ -177,7 +176,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 producto={producto}
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
+                usuarioActual={usuarioActual}
               ></CardProducto>
             ))}
         </div>
@@ -206,7 +205,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 producto={producto}
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
+                usuarioActual={usuarioActual}
               ></CardProducto>
             ))}
         </div>
@@ -236,7 +235,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 producto={producto}
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
+                usuarioActual={usuarioActual}
               ></CardProducto>
             ))}
         </div>
@@ -250,7 +249,7 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
                 producto={producto}
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
+                usuarioActual={usuarioActual}
               ></CardProducto>
             ))}
           </div>

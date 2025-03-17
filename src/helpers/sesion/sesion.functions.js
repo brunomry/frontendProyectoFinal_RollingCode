@@ -1,5 +1,5 @@
 export const obtenerUsuario = () => {
-  let usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || null;
+  let usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
   return usuario;
 };
 
@@ -7,7 +7,8 @@ export const sesionUsuario = (usuario, datos) => {
   sessionStorage.setItem(
     "usuarioLogeado",
     JSON.stringify({
-      _id: usuario._id,
+      id: usuario._id,
+      rol: usuario.rol,
       token: datos.token,
     })
   );

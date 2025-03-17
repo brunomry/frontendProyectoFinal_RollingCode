@@ -6,10 +6,10 @@ import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { roles } from "../../helpers/constants";
+import { obtenerUsuario } from "../../helpers/sesion/sesion.functions";
 
 const MenuNavegacion = ({
-  usuarioActual,
-  setUsuarioActual,
+  usuarioLogeado,
   setUsuarioLogeado,
   productosCarrito,
 }) => {
@@ -37,11 +37,10 @@ const MenuNavegacion = ({
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        setUsuarioLogeado(null);
-        setUsuarioActual(null);
         sessionStorage.removeItem("usuarioLogeado");
+        setUsuarioLogeado(obtenerUsuario());
         sessionStorage.removeItem("carrito");
-        navegacion("/");
+        navegacion("/login");
         window.location.reload();
       }
     });
@@ -117,7 +116,8 @@ const MenuNavegacion = ({
               >
                 Contacto
               </NavLink>
-              {usuarioActual?.rol === roles.ADMIN && (
+
+              {usuarioLogeado?.rol === roles.ADMIN && (
                 <>
                   <NavLink
                     className="navLink nav-link text-center text-white"
@@ -134,7 +134,7 @@ const MenuNavegacion = ({
                   </button>
                 </>
               )}
-              {usuarioActual?.rol === roles.USUARIO && (
+              {usuarioLogeado?.rol === roles.USUARIO && (
                 <>
                   <NavLink
                     className="navLink nav-link text-center text-white"
@@ -163,10 +163,10 @@ const MenuNavegacion = ({
                   </button>
                 </>
               )}
-              {usuarioActual === null && (
+              {usuarioLogeado?.rol === undefined && (
                 <>
                   <NavLink
-                    className="myOrderBTN nav-link fw-normal text-center text-white"
+                    className="d-none myOrderBTN nav-link fw-normal text-center text-white"
                     onClick={myOrderAlert}
                   >
                     <span className="fw-normal">Mi Pedido</span>

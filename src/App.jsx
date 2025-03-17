@@ -19,23 +19,28 @@ import Footer from "./common/footer/Footer";
 import Equipo from "./pages/Equipo/Equipo";
 import ScrollTop from "./common/ScrollTop";
 import "./styles/App.css";
-import { buscarProductoCarrito, calcularMonto, guardarCarrito, obtenerCarrito } from "./helpers/carrito/carrito.functions";
-import { obtenerUsuario } from "./helpers/sesion/sesion.functions";
+import {
+  buscarProductoCarrito,
+  calcularMonto,
+  guardarCarrito,
+  obtenerCarrito,
+} from "./helpers/carrito/carrito.functions";
+import { obtenerUsuario } from "./helpers/sesion/sesion.functions.js";
 
 function App() {
-  const [usuarioLogeado, setUsuarioLogeado] = useState(obtenerUsuario());
-  const [usuarioActual, setUsuarioActual] = useState(null);
+  const usuario = obtenerUsuario();
+  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
   const [montoCarrito, setMontoCarrito] = useState(0);
   const [productosCarrito, setProductosCarrito] = useState([]);
   const [carrito, setCarrito] = useState(obtenerCarrito());
- 
+
   const calcularTotalAcumulado = () => {
-    let montoAux = calcularMonto(productosCarrito, carrito)
+    let montoAux = calcularMonto(productosCarrito, carrito);
     setMontoCarrito(montoAux);
   };
 
   const consultarAPI = async () => {
-    if (!usuarioLogeado?._id) return;
+    if (Object.keys(usuario).length === 0) return;
     try {
       const respuesta = await leerProductosAPI();
       const carritoVarAux = carrito.map((productoCarrito) => {
@@ -51,7 +56,10 @@ function App() {
   };
 
   const agregarCantidadProducto = (idProductoCarrito) => {
-    const {carritoAux, indexProductoCarrito} = buscarProductoCarrito(idProductoCarrito, carrito);
+    const { carritoAux, indexProductoCarrito } = buscarProductoCarrito(
+      idProductoCarrito,
+      carrito
+    );
 
     if (carritoAux[indexProductoCarrito].cantidad < 10) {
       carritoAux[indexProductoCarrito].cantidad++;
@@ -60,7 +68,10 @@ function App() {
   };
 
   const quitarCantidadProducto = (idProductoCarrito) => {
-    const {carritoAux, indexProductoCarrito} = buscarProductoCarrito(idProductoCarrito, carrito);
+    const { carritoAux, indexProductoCarrito } = buscarProductoCarrito(
+      idProductoCarrito,
+      carrito
+    );
 
     if (carritoAux[indexProductoCarrito].cantidad > 1) {
       carritoAux[indexProductoCarrito].cantidad--;
@@ -111,7 +122,7 @@ function App() {
       Swal.fire({
         icon: "success",
         title: "Producto agregado",
-        text: "El producto se agrego correctamente.",
+        text: "El producto se agregó correctamente.",
       });
       let carritoAux = [...carrito];
 
@@ -152,8 +163,6 @@ function App() {
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
-          usuarioActual={usuarioActual}
-          setUsuarioActual={setUsuarioActual}
           productosCarrito={productosCarrito}
         />
         <Routes>
@@ -165,7 +174,6 @@ function App() {
               <Menu
                 productosCarrito={productosCarrito}
                 agregarProductoCarrito={agregarProductoCarrito}
-                usuarioLogeado={usuarioLogeado}
               ></Menu>
             }
           ></Route>
@@ -180,7 +188,7 @@ function App() {
           <Route
             exact
             path="/login"
-            element={<Login setUsuarioLogeado={setUsuarioLogeado} setUsuarioActual={setUsuarioActual}></Login>}
+            element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
           ></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route
@@ -197,8 +205,7 @@ function App() {
                   montoCarrito={montoCarrito}
                   quitarProductoCarrito={quitarProductoCarrito}
                   setCarrito={setCarrito}
-                >
-                </RutasUsuario>
+                ></RutasUsuario>
               </RutasProtegidasUsuario>
             }
           ></Route>

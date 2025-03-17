@@ -16,7 +16,7 @@ const MisPedidos = () => {
     const respuesta = await leerPedidosAPI();
 
     const pedidosFiltrados = respuesta.filter(
-      (pedido) => pedido.usuario === usuario._id
+      (pedido) => pedido.usuario === usuario.id
     );
 
     setListaPedidos(pedidosFiltrados.reverse());

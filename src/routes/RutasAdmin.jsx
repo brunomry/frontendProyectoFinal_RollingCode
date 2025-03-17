@@ -10,7 +10,7 @@ import { obtenerUsuario } from '../helpers/sesion/sesion.functions';
 
 const RutasAdmin = () => {
   const usuarioLogeado = obtenerUsuario();
-  const superAdmin = validarSuperAdmin(usuarioLogeado._id);
+  const superAdmin = validarSuperAdmin(usuarioLogeado.id);
 
   return (
     <>

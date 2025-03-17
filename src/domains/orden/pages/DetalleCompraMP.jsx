@@ -25,7 +25,7 @@ const DetalleCompraMP = () => {
       const pedidos = await leerPedidosAPI();
       const usuarios = await leerUsuariosAPI();
 
-      const usuarioBuscado = usuarios.find((u) => u._id === usuario._id);
+      const usuarioBuscado = usuarios.find((u) => u._id === usuario.id);
 
       setNombreUsuario(usuarioBuscado.nombreCompleto);
 

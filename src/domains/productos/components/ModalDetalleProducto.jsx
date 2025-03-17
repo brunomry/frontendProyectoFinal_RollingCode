@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import "../styles/modalDetalleProducto.css";
 import { Link } from "react-router-dom";
+import { roles } from "../../../helpers/constants";
 
 const ModalDetalleProducto = ({
   show,
@@ -71,7 +72,7 @@ const ModalDetalleProducto = ({
           {producto.detalle}
         </p>
         <div>
-          {!productoEncontrado && usuarioLogeado.rol != "Administrador" && (
+          {(!productoEncontrado && usuarioLogeado?.rol != roles.ADMIN) && (
             <Form.Group className="mb-3">
               <div className="d-flex flex-row gap-3 align-items-center justify-content-center quantityProductos">
                 <Button
@@ -93,7 +94,7 @@ const ModalDetalleProducto = ({
             </Form.Group>
           )}
           <div className="d-flex containerBTN mt-3 justify-content-center">
-            {productoEncontrado && usuarioLogeado.rol != "Administrador" && (
+            {(productoEncontrado && usuarioLogeado?.rol !== roles.ADMIN) && (
               <Link
                 to="/pedido/miPedido"
                 className="btnOrder mt-3 py-3 px-5 rounded-5"
@@ -101,7 +102,7 @@ const ModalDetalleProducto = ({
                 ir a Mi Pedido
               </Link>
             )}
-            {!productoEncontrado && usuarioLogeado.rol != "Administrador" && (
+            {(!productoEncontrado && usuarioLogeado?.rol !== roles.ADMIN) && (
               <Button
                 className="btnAddProduct py-3 px-5 rounded-5"
                 type="submit"
