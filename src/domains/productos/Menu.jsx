@@ -3,6 +3,7 @@ import { Container, Form, Row, Spinner } from "react-bootstrap";
 import CardProducto from "./components/CardProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries/productos.queries";
+import { obtenerUsuarioPorId } from "../../helpers/queries/usuarios.queries";
 
 const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioLogeado }) => {
   const [productos, setProductos] = useState([]);

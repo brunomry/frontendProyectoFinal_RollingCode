@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import { sesionUsuario } from "../../helpers/sesion/sesion.functions";
 import { roles } from "../../helpers/constants";
 
-const Login = ({ setUsuarioLogeado }) => {
+const Login = ({ setUsuarioLogeado, setUsuarioActual }) => {
   const {
     register,
     handleSubmit,
@@ -53,10 +53,13 @@ const Login = ({ setUsuarioLogeado }) => {
       );
 
       sesionUsuario(usuarioBuscado, datos);
+
       setUsuarioLogeado({
         id: usuarioBuscado._id,
         token: datos.token,
       });
+
+      setUsuarioActual(usuarioBuscado);
 
       if (usuarioBuscado.rol === roles.ADMIN && usuarioBuscado.estado) {
         navegacion("/administrador");

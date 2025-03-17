@@ -1,5 +1,5 @@
 export const obtenerUsuario = () => {
-  let usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || {};
+  let usuario = JSON.parse(sessionStorage.getItem("usuarioLogeado")) || null;
   return usuario;
 };
 

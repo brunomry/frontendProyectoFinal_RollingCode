@@ -5,43 +5,46 @@ import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { roles } from "../../helpers/constants";
 
 const MenuNavegacion = ({
-  usuarioLogeado,
+  usuarioActual,
+  setUsuarioActual,
   setUsuarioLogeado,
   productosCarrito,
 }) => {
   const [desplegarNavbar, setDesplegarNavbar] = useState();
 
   const navLinkClick = () => {
-    setDesplegarNavbar(false)
+    setDesplegarNavbar(false);
   };
 
-  const menuBTNClick = () =>{
+  const menuBTNClick = () => {
     setDesplegarNavbar(true);
     if (desplegarNavbar == true) {
       setDesplegarNavbar(false);
     }
-  }
+  };
   const navegacion = useNavigate();
 
   const cerrarSesion = () => {
-      Swal.fire({
-        text: "¿Estás seguro que deseas salir?",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Salir",
-        cancelButtonText: "Cancelar",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          setUsuarioLogeado({});
-          sessionStorage.removeItem("usuarioLogeado");
-          sessionStorage.removeItem("carrito");
-          navegacion("/");
-          window.location.reload();
-        }
-      });
+    Swal.fire({
+      text: "¿Estás seguro que deseas salir?",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Salir",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setUsuarioLogeado(null);
+        setUsuarioActual(null);
+        sessionStorage.removeItem("usuarioLogeado");
+        sessionStorage.removeItem("carrito");
+        navegacion("/");
+        window.location.reload();
+      }
+    });
   };
 
   const myOrderAlert = () => {
@@ -64,7 +67,11 @@ const MenuNavegacion = ({
 
   return (
     <>
-      <Navbar expand="md" className="navBarSticky navLinks navbarBackground" expanded={desplegarNavbar}>
+      <Navbar
+        expand="md"
+        className="navBarSticky navLinks navbarBackground"
+        expanded={desplegarNavbar}
+      >
         <Container fluid>
           <Navbar.Brand className="d-block" as={Link} to="/">
             <img
@@ -75,22 +82,42 @@ const MenuNavegacion = ({
               onClick={navLinkClick}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-secondary" onClick={menuBTNClick} />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="bg-secondary"
+            onClick={menuBTNClick}
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto align-items-center gap-2">
-              <NavLink className="navLink nav-link text-center text-white fw-normal" to="/" onClick={navLinkClick}>
+              <NavLink
+                className="navLink nav-link text-center text-white fw-normal"
+                to="/"
+                onClick={navLinkClick}
+              >
                 Home
               </NavLink>
-              <NavLink className="navLink nav-link text-center text-white" to="/menu" onClick={navLinkClick}>
+              <NavLink
+                className="navLink nav-link text-center text-white"
+                to="/menu"
+                onClick={navLinkClick}
+              >
                 Nuestro Menú
               </NavLink>
-              <NavLink className="navLink nav-link text-center text-white" to="/nosotros" onClick={navLinkClick}>
+              <NavLink
+                className="navLink nav-link text-center text-white"
+                to="/nosotros"
+                onClick={navLinkClick}
+              >
                 Sobre Nosotros
               </NavLink>
-              <NavLink className="navLink d-block d-md-none nav-link text-center text-white" to="/contacto" onClick={navLinkClick}>
+              <NavLink
+                className="navLink d-block d-md-none nav-link text-center text-white"
+                to="/contacto"
+                onClick={navLinkClick}
+              >
                 Contacto
               </NavLink>
-              {usuarioLogeado.rol === "Administrador" && (
+              {usuarioActual?.rol === roles.ADMIN && (
                 <>
                   <NavLink
                     className="navLink nav-link text-center text-white"
@@ -107,13 +134,13 @@ const MenuNavegacion = ({
                   </button>
                 </>
               )}
-              {usuarioLogeado.rol === "Usuario" && (
+              {usuarioActual?.rol === roles.USUARIO && (
                 <>
                   <NavLink
                     className="navLink nav-link text-center text-white"
                     to="/pedido/miPedido"
                     onClick={navLinkClick}
-                  >                  
+                  >
                     {contadorCarrito > 0 && (
                       <span className="bg-danger me-2 px-2 fw-normal text-white rounded-pill">
                         {contadorCarrito}
@@ -136,7 +163,7 @@ const MenuNavegacion = ({
                   </button>
                 </>
               )}
-              {usuarioLogeado.rol === undefined && (
+              {usuarioActual === null && (
                 <>
                   <NavLink
                     className="myOrderBTN nav-link fw-normal text-center text-white"

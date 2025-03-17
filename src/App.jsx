@@ -23,9 +23,8 @@ import { buscarProductoCarrito, calcularMonto, guardarCarrito, obtenerCarrito } 
 import { obtenerUsuario } from "./helpers/sesion/sesion.functions";
 
 function App() {
-  const usuario = obtenerUsuario();
-
-  const [usuarioLogeado, setUsuarioLogeado] = useState(usuario);
+  const [usuarioLogeado, setUsuarioLogeado] = useState(obtenerUsuario());
+  const [usuarioActual, setUsuarioActual] = useState(null);
   const [montoCarrito, setMontoCarrito] = useState(0);
   const [productosCarrito, setProductosCarrito] = useState([]);
   const [carrito, setCarrito] = useState(obtenerCarrito());
@@ -36,6 +35,7 @@ function App() {
   };
 
   const consultarAPI = async () => {
+    if (!usuarioLogeado?._id) return;
     try {
       const respuesta = await leerProductosAPI();
       const carritoVarAux = carrito.map((productoCarrito) => {
@@ -152,6 +152,8 @@ function App() {
         <MenuNavegacion
           usuarioLogeado={usuarioLogeado}
           setUsuarioLogeado={setUsuarioLogeado}
+          usuarioActual={usuarioActual}
+          setUsuarioActual={setUsuarioActual}
           productosCarrito={productosCarrito}
         />
         <Routes>
@@ -178,7 +180,7 @@ function App() {
           <Route
             exact
             path="/login"
-            element={<Login setUsuarioLogeado={setUsuarioLogeado}></Login>}
+            element={<Login setUsuarioLogeado={setUsuarioLogeado} setUsuarioActual={setUsuarioActual}></Login>}
           ></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route
