@@ -38,13 +38,15 @@ const FormularioProducto = ({
   const cargarDatosProducto = async () => {
     try {
       const respuesta = await obtenerProductoAPI(id);
-      if (respuesta) {
-        setValue("nombre", respuesta.nombre);
-        setValue("categoria", respuesta.categoria);
-        setValue("estado", respuesta.estado);
-        setValue("precio", respuesta.precio);
-        setValue("detalle", respuesta.detalle);
-        setValue("imagen", respuesta.imagen);
+      const datos = respuesta.data;
+      
+      if (respuesta.success) {
+        setValue("nombre", datos.nombre);
+        setValue("categoria", datos.categoria);
+        setValue("estado", datos.estado);
+        setValue("precio", datos.precio);
+        setValue("detalle", datos.detalle);
+        setValue("imagen", datos.imagen);
       }
     } catch (error) {
       console.log(error);
@@ -54,7 +56,9 @@ const FormularioProducto = ({
   const productoValidado = async (producto) => {
     if (editar) {
       const respuesta = await editarProductoAPI(producto, id);
-      if (respuesta.status === 200) {
+      console.log(respuesta);
+      
+      if (respuesta.success) {
         Swal.fire({
           title: "Producto modificado",
           text: `El producto ${producto.nombre} fue modificado correctamente`,
@@ -62,6 +66,8 @@ const FormularioProducto = ({
         });
         navegacion("/administrador/productos");
       } else {
+        console.log(respuesta.error);
+        
         Swal.fire({
           title: "Ocurrio un error",
           text: `El producto ${producto.nombre} no pudo ser modificado, intente nuevamente`,
@@ -70,7 +76,7 @@ const FormularioProducto = ({
       }
     } else {
       const respuesta = await crearProductoAPI(producto);
-      if (respuesta.status === 201) {
+      if (respuesta.success) {
         Swal.fire({
           title: "Producto creado",
           text: `El producto "${producto.nombre}" fue creado correctamente`,
@@ -113,7 +119,7 @@ const FormularioProducto = ({
             {...register("nombre", {
               required: "El nombre del producto es obligatorio",
               minLength: {
-                value: 5,
+                value: 10,
                 message:
                   "El nombre del producto debe tener como minimo 5 caracteres",
               },

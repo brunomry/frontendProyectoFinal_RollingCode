@@ -32,7 +32,7 @@ export const crearUsuarioAdmin = async (usuarioNuevo) => {
       },
       body: JSON.stringify(usuarioNuevo),
     });
-    return respuesta;
+    return respuesta.json();
   } catch (error) {
     console.error(error);
   }

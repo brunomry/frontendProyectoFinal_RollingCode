@@ -49,8 +49,9 @@ const ResumenPedido = ({
     pedido.estadoEnvio = false;
     pedido.fecha = fecha;
 
-    const crearPedidoVar = await crearPedidoApi(pedido);
-    if (crearPedidoVar.ok) {
+    const respuesta = await crearPedidoApi(pedido);
+    
+    if (respuesta.success) {
       sessionStorage.removeItem('carrito');
       setCarrito([]);
       Swal.fire({

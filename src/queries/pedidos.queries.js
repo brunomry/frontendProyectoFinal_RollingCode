@@ -11,7 +11,7 @@ export const crearPedidoApi = async (pedido) => {
       },
       body: JSON.stringify(pedido),
     });
-    return respuesta;
+    return respuesta.json();
   } catch (error) {
     return error;
   }

@@ -23,9 +23,9 @@ const FormularioUsuario = ({ superAdmin }) => {
   const usuarioValidado = async (usuario) => {
     const nuevo_usuario = {nombreCompleto: usuario.nombreCompleto, correo: usuario.correo.toLowerCase(), clave: usuario.clave, rol: usuario.rol}
     
-    const usuarios = await leerUsuariosAPI();
+    const respuesta = await leerUsuariosAPI();
 
-    const usuarioBuscado = usuarios.find(
+    const usuarioBuscado = respuesta.data.find(
       (u) => u.correo === nuevo_usuario.correo
     );
 
@@ -47,8 +47,10 @@ const FormularioUsuario = ({ superAdmin }) => {
         if (result.dismiss === Swal.DismissReason.timer) {
         }
       });
+
       const respuesta = await crearUsuarioAdmin(nuevo_usuario);
-      if (respuesta.status === 201) {
+      
+      if (respuesta.success) {
         Swal.fire({
           title: 'Usuario creado correctamente',
           icon: 'success',

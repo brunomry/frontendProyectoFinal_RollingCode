@@ -48,7 +48,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
       },
       body: JSON.stringify(productoModificado),
     });
-    return respuesta;
+    return respuesta.json();
   } catch (error) {
     console.log(error);
   }
@@ -62,7 +62,7 @@ export const borrarProductoAPI = async (id) => {
         "x-token": JSON.parse(sessionStorage.getItem("usuarioLogeado")).token,
       },
     });
-    return respuesta;
+    return respuesta.json();
   } catch (error) {
     console.log(error);
   }

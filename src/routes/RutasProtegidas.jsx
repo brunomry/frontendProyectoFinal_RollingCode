@@ -12,7 +12,8 @@ const RutasProtegidas = ({ children }) => {
 
   const fetchUsuario = async () => {
     try {
-      const usuarioEncontrado = await obtenerUsuarioPorId(usuario.id);
+      const respuesta = await obtenerUsuarioPorId(usuario.id);
+      const usuarioEncontrado = respuesta.data;
       if (usuarioEncontrado) setRol(usuarioEncontrado.rol);
     } catch (error) {
       console.error(error);
@@ -24,8 +25,6 @@ const RutasProtegidas = ({ children }) => {
   }, []);
 
   if (rol === roles.ADMIN) return children;
-
-  return null;
 };
 
 export default RutasProtegidas;

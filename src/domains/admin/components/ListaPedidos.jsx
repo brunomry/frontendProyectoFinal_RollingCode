@@ -3,8 +3,8 @@ import '../styles/administrador.css';
 import ItemPedido from './ItemPedido';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { leerPedidosAPI } from '../../../queries/pedidos.queries';
-import { leerUsuariosAPI } from '../../../queries/usuarios.queries';
+import { leerPedidosAPI } from '../../../queries/pedidos.queries.js';
+import { leerUsuariosAPI } from '../../../queries/usuarios.queries.js';
 import Load from "../../../common/spinner/Load";
 
 const ListaPedidos = () => {
@@ -13,12 +13,12 @@ const ListaPedidos = () => {
 
   const listarPedidos = async () => {
     const respuesta = await leerPedidosAPI();
-    setListaPedidos(respuesta.reverse());
+    setListaPedidos(respuesta.data.reverse());
   };
 
   const traerUsuarios = async () => {
-    const respuestaUsuarios = await leerUsuariosAPI();
-    setListaUsuarios(respuestaUsuarios);
+    const respuesta = await leerUsuariosAPI();
+    setListaUsuarios(respuesta.data);
   };
 
   useEffect(() => {

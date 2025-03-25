@@ -18,16 +18,16 @@ const ItemProducto = ({ producto, setProductos }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const respuesta = await borrarProductoAPI(producto._id);
-
-        if (respuesta.status === 200) {
+        
+        if (respuesta.success) {
           Swal.fire({
             title: "Producto eliminado",
             text: `El producto "${producto.nombre}" fue eliminado con éxito`,
             icon: "success",
           });
 
-          const listaProductos = await leerProductosAPI();
-          setProductos(listaProductos);
+          const respuesta = await leerProductosAPI();
+          setProductos(respuesta.data);
         } else {
           Swal.fire({
             title: "Ocurrió un error",

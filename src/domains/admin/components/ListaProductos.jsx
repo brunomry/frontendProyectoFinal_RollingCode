@@ -18,7 +18,7 @@ const ListaProductos = () => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerProductosAPI();
-      setProductos(respuesta);
+      setProductos(respuesta.data);
     } catch (error) {
       console.log(error);
     }

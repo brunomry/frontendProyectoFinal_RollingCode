@@ -24,9 +24,8 @@ const Registro = () => {
     };
 
     const respuesta = await crearUsuarioAPI(nuevo_usuario);
-    console.log(respuesta);
     
-    if (respuesta.status === 400) {
+    if (respuesta.error) {
       Swal.fire({
         title: "El correo ingresado ya existe",
         text: "Por favor ingrese un correo nuevo",
@@ -36,24 +35,20 @@ const Registro = () => {
       return;
     }
 
-
-      if (respuesta.status === 201) {
-        Swal.fire({
-          title: "Te registraste exitosamente",
-          html: "Se envió un correo de verificación a tu bandeja de entrada (principal o spam) </br> <b>Por favor, inicia sesión para continuar</b>",
-          icon: "success",
-        });
-        const direccionCorreo = { correo: nuevo_usuario.correo };
-        await enviarDatosCorreo(direccionCorreo);
-        reset();
-        
+    if (respuesta.success) {
       Swal.fire({
-        title: "Espere un momento",
-        timer: 1300
+        title: "Te registraste exitosamente",
+        html: "Se envió un correo de verificación a tu bandeja de entrada (principal o spam). </br> <b>Inicia sesión para continuar.</b>",
+        icon: "success",
+        timer: 6000,
       });
+      
+      const direccionCorreo = { correo: nuevo_usuario.correo };
+      await enviarDatosCorreo(direccionCorreo);
+      reset();
 
-        navegacion("/login");
-      }
+      navegacion("/login");
+    }
   };
 
   return (

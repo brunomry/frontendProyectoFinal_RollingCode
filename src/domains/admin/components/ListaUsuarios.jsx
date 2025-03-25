@@ -16,7 +16,7 @@ const ListaUsuarios = ({ superAdmin }) => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerUsuariosAPI();
-      setUsuarios(respuesta);
+      setUsuarios(respuesta.data);
     } catch (error) {
       console.error(error);
     }
