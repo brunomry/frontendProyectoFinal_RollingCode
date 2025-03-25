@@ -5,7 +5,7 @@ import ListaPedidos from '../domains/admin/components/ListaPedidos';
 import ListaProductos from '../domains/admin/components/ListaProductos';
 import FormularioProducto from '../domains/admin/components/FormularioProducto';
 import FormularioUsuario from '../domains/admin/components/FormularioUsuario';
-import { validarSuperAdmin } from '../helpers/queries/usuarios.queries';
+import { validarSuperAdmin } from '../queries/usuarios.queries';
 import { obtenerUsuario } from '../helpers/sesion/sesion.functions';
 
 const RutasAdmin = () => {

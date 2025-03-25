@@ -1,11 +1,11 @@
 const URL_crearUsuario = import.meta.env.VITE_API_CREARUSUARIO;
 const id_super = import.meta.env.VITE_API_SUPERADMIN;
-const URL_Login = import.meta.env.VITE_API_LOGIN;
 const URL_usuario = import.meta.env.VITE_API_USUARIO;
+const URL_usuarios = import.meta.env.VITE_API_USUARIOS;
 
 export const leerUsuariosAPI = async () => {
   try {
-    const respuesta = await fetch(URL_Login);
+    const respuesta = await fetch(URL_usuarios);
     const listaUsuarios = await respuesta.json();
     return listaUsuarios;
   } catch (error) {

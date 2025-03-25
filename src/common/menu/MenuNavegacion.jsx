@@ -166,7 +166,7 @@ const MenuNavegacion = ({
               {usuarioLogeado?.rol === undefined && (
                 <>
                   <NavLink
-                    className="d-none myOrderBTN nav-link fw-normal text-center text-white"
+                    className="myOrderBTN nav-link fw-normal text-center text-white"
                     onClick={myOrderAlert}
                   >
                     <span className="fw-normal">Mi Pedido</span>

@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import '../styles/administrador.css';
-import { editarEstadoUsuario } from '../../../helpers/queries/usuarios.queries';
+import { editarEstadoUsuario } from '../../../queries/usuarios.queries';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 const id_super = import.meta.env.VITE_API_SUPERADMIN;

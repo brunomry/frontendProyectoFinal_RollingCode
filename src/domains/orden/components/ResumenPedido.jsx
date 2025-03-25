@@ -6,8 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { crearPedidoApi } from '../../../helpers/queries/pedidos.queries';
+import { useNavigate } from 'react-router-dom';
+import { crearPedidoApi } from '../../../queries/pedidos.queries.js';
 import Swal from 'sweetalert2';
 import { METODO_ENVIO } from '../../../helpers/constants';
 

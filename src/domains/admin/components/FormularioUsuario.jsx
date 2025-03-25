@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import {
   crearUsuarioAdmin,
   leerUsuariosAPI
-} from '../../../helpers/queries/usuarios.queries';
+} from '../../../queries/usuarios.queries';
 
 const FormularioUsuario = ({ superAdmin }) => {
   const {

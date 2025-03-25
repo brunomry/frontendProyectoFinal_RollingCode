@@ -2,7 +2,7 @@ import "./styles/menu.css";
 import { Container, Form, Row, Spinner } from "react-bootstrap";
 import CardProducto from "./components/CardProducto";
 import { useState, useEffect } from "react";
-import { leerProductosAPI } from "../../helpers/queries/productos.queries";
+import { leerProductosAPI } from "../../queries/productos.queries";
 
 const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioActual }) => {
   const [productos, setProductos] = useState([]);

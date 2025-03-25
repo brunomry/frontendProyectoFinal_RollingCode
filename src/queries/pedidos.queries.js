@@ -1,9 +1,10 @@
+const URL_createpedido = import.meta.env.VITE_API_CREARPEDIDO;
 const URL_pedidos = import.meta.env.VITE_API_PEDIDOS;
 const URL_pedido = import.meta.env.VITE_API_PEDIDO;
 
 export const crearPedidoApi = async (pedido) => {
   try {
-    const respuesta = await fetch(URL_pedidos, {
+    const respuesta = await fetch(URL_createpedido, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

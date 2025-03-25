@@ -6,7 +6,7 @@ import {
   crearProductoAPI,
   editarProductoAPI,
   obtenerProductoAPI,
-} from "../../../helpers/queries/productos.queries";
+} from "../../../queries/productos.queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 

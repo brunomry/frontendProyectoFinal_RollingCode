@@ -1,4 +1,3 @@
-import { Table } from "react-bootstrap";
 import ItemProductoUsuario from "./ItemProductoUsuario";
 
 const ListaProductosUsuario = ({

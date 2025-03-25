@@ -2,7 +2,7 @@ import { Form, Table } from "react-bootstrap";
 import "../styles/administrador.css";
 import ItemProducto from "./ItemProducto.jsx";
 import { Link } from "react-router-dom";
-import { leerProductosAPI } from "../../../helpers/queries/productos.queries.js";
+import { leerProductosAPI } from "../../../queries/productos.queries.js";
 import { useEffect, useState } from "react";
 import Load from "../../../common/spinner/Load";
 

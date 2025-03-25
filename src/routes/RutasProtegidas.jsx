@@ -1,7 +1,7 @@
 import { Navigate } from "react-router";
 import { obtenerUsuario } from "../helpers/sesion/sesion.functions";
 import { roles } from "../helpers/constants";
-import { obtenerUsuarioPorId } from "../helpers/queries/usuarios.queries";
+import { obtenerUsuarioPorId } from "../queries/usuarios.queries";
 import { useEffect, useState } from "react";
 
 const RutasProtegidas = ({ children }) => {
