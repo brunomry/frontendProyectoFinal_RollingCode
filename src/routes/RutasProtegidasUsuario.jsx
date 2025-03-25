@@ -1,7 +1,7 @@
 import { Navigate } from "react-router";
 import { obtenerUsuario } from "../helpers/sesion/sesion.functions";
 import { roles } from "../helpers/constants";
-import { obtenerUsuarioPorId } from "../queries/usuarios.queries";
+import { obtenerUsuarioPorId } from "../queries/usuarios.queries.js";
 import { useEffect, useState } from "react";
 
 const RutasProtegidasUsuario = ({ children }) => {
@@ -12,7 +12,8 @@ const RutasProtegidasUsuario = ({ children }) => {
 
   const fetchUsuario = async () => {
     try {
-      const usuarioEncontrado = await obtenerUsuarioPorId(usuario.id);
+      const respuesta = await obtenerUsuarioPorId(usuario.id);
+      const usuarioEncontrado = respuesta.data;
       if (usuarioEncontrado) setRol(usuarioEncontrado.rol);
     } catch (error) {
       console.error(error);
@@ -24,7 +25,7 @@ const RutasProtegidasUsuario = ({ children }) => {
   }, []);
 
   if (rol === roles.USUARIO) return children;
-  return null;
+
 };
 
 export default RutasProtegidasUsuario;

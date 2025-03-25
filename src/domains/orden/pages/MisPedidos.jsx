@@ -14,16 +14,16 @@ const MisPedidos = () => {
     const usuario = obtenerUsuario();
 
     const respuesta = await leerPedidosAPI();
-
-    const pedidosFiltrados = respuesta.filter(
+    
+    const pedidosFiltrados = respuesta.data.filter(
       (pedido) => pedido.usuario === usuario.id
     );
-
+    
     setListaPedidos(pedidosFiltrados.reverse());
     setSpinner(false);
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     listarPedidos();
   }, []);
 

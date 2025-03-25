@@ -44,20 +44,21 @@ const Login = ({ setUsuarioLogeado }) => {
     };
 
     const respuesta = await login(usuario_sesion);
-    const datos = await respuesta.json();
+    const { token } = respuesta.data;
 
-    if (respuesta.status === 200) {
+    if (respuesta.success) {
       const usuarios = await leerUsuariosAPI();
-      const usuarioBuscado = usuarios.find(
+      
+      const usuarioBuscado = usuarios.data.find(
         (u) => u.correo === usuario_sesion.correo
       );
-
-      sesionUsuario(usuarioBuscado, datos);
+      
+      sesionUsuario(usuarioBuscado, token);
 
       setUsuarioLogeado({
         id: usuarioBuscado._id,
         rol: usuarioBuscado.rol,
-        token: datos.token,
+        token: token,
       });
 
       if (usuarioBuscado.rol === roles.ADMIN && usuarioBuscado.estado) {

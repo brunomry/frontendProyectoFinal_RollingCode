@@ -1,8 +1,8 @@
 import "./styles/menu.css";
-import { Container, Form, Row, Spinner } from "react-bootstrap";
+import { Container, Form, Spinner } from "react-bootstrap";
 import CardProducto from "./components/CardProducto";
 import { useState, useEffect } from "react";
-import { leerProductosAPI } from "../../queries/productos.queries";
+import { leerProductosAPI } from "../../queries/productos.queries.js";
 
 const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioActual }) => {
   const [productos, setProductos] = useState([]);
@@ -17,10 +17,17 @@ const Menu = ({ agregarProductoCarrito, productosCarrito, usuarioActual }) => {
   const consultarAPI = async () => {
     try {
       const respuesta = await leerProductosAPI();
-      setProductos(respuesta);
+
+      if (respuesta.success) {
+        setProductos(respuesta.data);
+      } else {
+        console.error("Error al obtener productos:", respuesta.message);
+      }
+
       setSpinner(false);
     } catch (error) {
       console.log(error);
+      setSpinner(false);
     }
   };
 

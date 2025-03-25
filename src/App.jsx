@@ -46,7 +46,7 @@ function App() {
       const carritoVarAux = carrito.map((productoCarrito) => {
         return productoCarrito.producto;
       });
-      const datos = respuesta.filter((producto) =>
+      const datos = respuesta.data.filter((producto) =>
         carritoVarAux.includes(producto._id)
       );
       setProductosCarrito(datos);

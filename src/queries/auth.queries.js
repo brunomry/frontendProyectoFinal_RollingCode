@@ -25,7 +25,9 @@ export const login = async (usuario) => {
       },
       body: JSON.stringify(usuario),
     });
-    return respuesta;
+    
+    
+    return respuesta.json();
   } catch (error) {
     console.log(error);
   }

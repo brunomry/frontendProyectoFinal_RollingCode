@@ -25,11 +25,11 @@ const DetalleCompraMP = () => {
       const pedidos = await leerPedidosAPI();
       const usuarios = await leerUsuariosAPI();
 
-      const usuarioBuscado = usuarios.find((u) => u._id === usuario.id);
+      const usuarioBuscado = usuarios.data.find((u) => u._id === usuario.id);
 
       setNombreUsuario(usuarioBuscado.nombreCompleto);
 
-      const pedidoBuscado = pedidos.find((p) => p._id === id);
+      const pedidoBuscado = pedidos.data.find((p) => p._id === id);
       
       setPedido(pedidoBuscado);
       setSpinner(false);

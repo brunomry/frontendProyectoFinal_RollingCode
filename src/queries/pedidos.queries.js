@@ -21,6 +21,7 @@ export const leerPedidosAPI = async () => {
   try {
     const respuesta = await fetch(URL_pedidos);
     const listaPedidos = await respuesta.json();
+    
     return listaPedidos;
   } catch (error) {
     console.log(error);
