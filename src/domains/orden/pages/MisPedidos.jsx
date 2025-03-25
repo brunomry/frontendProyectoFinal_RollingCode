@@ -1,7 +1,7 @@
 import CardPedido from "../components/CardPedido";
 import "../styles/cardPedido.css";
 import { useEffect, useState } from "react";
-import { leerPedidosAPI } from "../../../helpers/queries/pedidos.queries";
+import { leerPedidosAPI } from "../../../queries/pedidos.queries";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { obtenerUsuario } from "../../../helpers/sesion/sesion.functions";

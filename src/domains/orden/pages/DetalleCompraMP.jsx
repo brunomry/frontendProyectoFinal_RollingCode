@@ -2,9 +2,9 @@ import { Card, Button, Spinner } from "react-bootstrap";
 import "../styles/detalleCompraMP.css";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState, useEffect } from "react";
-import { crearOrdenMP } from "../../../helpers/queries/mercadopago.queries";
-import { leerPedidosAPI } from "../../../helpers/queries/pedidos.queries";
-import { leerUsuariosAPI } from "../../../helpers/queries/usuarios.queries";
+import { crearOrdenMP } from "../../../queries/mercadopago.queries";
+import { leerPedidosAPI } from "../../../queries/pedidos.queries";
+import { leerUsuariosAPI } from "../../../queries/usuarios.queries";
 import { Link, useParams } from "react-router-dom";
 import { obtenerUsuario } from "../../../helpers/sesion/sesion.functions";
 
