@@ -1,8 +1,8 @@
 
-import bruno from "../assets/nosotros/brunoMadozzoRomay.webp";
-import leonel from "../assets/nosotros/leonelRodrigoCordero.webp";
-import fernando from "../assets/nosotros/fernandoHerrera.webp";
-import elias from "../assets/nosotros/eliasJavierJuarez.webp";
+import bruno from "../assets/images/us/brunoMadozzoRomay.webp";
+import leonel from "../assets/images/us/leonelRodrigoCordero.webp";
+import fernando from "../assets/images/us/fernandoHerrera.webp";
+import elias from "../assets/images/us/eliasJavierJuarez.webp";
 import usuario from "../assets/usuario.png";
 
 export const opiniones = [

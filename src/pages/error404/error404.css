@@ -1,10 +1,6 @@
 .containerError404{
-  background-color: #000;
-  min-height: 75vh;
+  min-height: 50vh;
   margin-top: 89px;
 }
 
-.containerDescriptionError{
-  background: #141414;
-}
 

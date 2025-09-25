@@ -1,0 +1,39 @@
+.cardProduct {
+  width: 250px;
+  min-height: 300px;
+}
+
+.cardImg {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  background: #141414;
+}
+
+.cardInformation{
+  flex-grow: 1;
+}
+
+.cardInformation .title{
+  font-size: 14px;
+}
+
+.detailProduct{
+  font-size: 12px;
+  flex-grow: 1;
+}
+
+.cardPrice{
+  font-size: 1rem;
+}
+
+.cardBtn {
+  transition: 0.7s;
+  color: #fff;
+  background-color: #bb6c06;
+}
+
+.cardBtn:hover {
+  transition: 0.7s;
+  background-color: #ce7b0d;
+}

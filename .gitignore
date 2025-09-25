@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .env
+src_v1
 db.json
 
 # Editor directories and files

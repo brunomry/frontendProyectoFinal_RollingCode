@@ -1,6 +1,6 @@
 import "../styles/opinionesIndex.css";
 import { Card } from "react-bootstrap";
-import google from "../../../assets/Inicio/google.png";
+import google from "../../../assets/images/home/google.png";
 
 const CardOpinion = ({ opinion }) => {
 
@@ -18,7 +18,7 @@ const CardOpinion = ({ opinion }) => {
             className="imgUser rounded-circle"
           />
           <div>
-            <p className="fw-normal text-white mb-0">{opinion.nombre}</p>
+            <p className="fw-normal  mb-0">{opinion.nombre}</p>
             <span className="text-secondary">{opinion.fecha}</span>
           </div>
         </div>
@@ -43,7 +43,7 @@ const CardOpinion = ({ opinion }) => {
           ))}
         </p>
       </div>
-      <p className="textSize fw-normal text-white">{opinion.comentario}</p>
+      <p className="textSize fw-normal ">{opinion.comentario}</p>
     </Card>
   );
 };
