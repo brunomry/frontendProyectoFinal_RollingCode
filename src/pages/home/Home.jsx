@@ -1,4 +1,4 @@
-import pdf from "../../assets/Menú_Ambiente_Bohemio.pdf";
+import pdf from "@/assets/Menú_Ambiente_Bohemio.pdf";
 import Horarios from "./components/Horarios";
 import Opiniones from "./components/Opiniones";
 import "./styles/menuIndex.css";

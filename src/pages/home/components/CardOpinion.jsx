@@ -1,6 +1,6 @@
 import "../styles/opinionesIndex.css";
 import { Card } from "react-bootstrap";
-import google from "../../../assets/images/home/google.png";
+import google from "@/assets/images/home/google.png";
 
 const CardOpinion = ({ opinion }) => {
 

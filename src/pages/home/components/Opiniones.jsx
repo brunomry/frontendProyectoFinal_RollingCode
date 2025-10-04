@@ -1,5 +1,5 @@
 import "../styles/opinionesIndex.css";
-import { opiniones } from "../../../helpers/opiniones";
+import { opiniones } from "@/helpers/opiniones";
 import CardOpinion from "./CardOpinion";
 
 const Opiniones = () => {

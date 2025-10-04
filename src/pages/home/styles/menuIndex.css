@@ -6,7 +6,7 @@
 }
 
 .bannerMenu {
-  background-image: url("../../../assets/bannerMenu.webp");
+  background-image: url("@/assets/images/bannerMenu.webp");
   background-size: 300%;
   background-repeat: no-repeat;
   color: white;

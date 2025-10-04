@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainSection {
+  flex-grow: 1;
+  background-image: url("../assets/fondoAdministracion.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.managementOptions {
+  width: 100%;
+  height: 37.75vh;
+  background-color: #0009;
+  border-radius: 5px;
+}
+
+.managementOptions div {
+  width: 100%;
+}
+
+.managementOptions div button {
+  width: 100%;
+}
+
+.btnManagement,
+.btnNewUser,
+.btnNewProduct {
+  background-color: rgba(114, 67, 67, 0.533);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.btnManagement:hover {
+  background-color: rgba(55, 20, 20, 0.533);
+  transition: 1s;
+  color: #fca9a9;
+  transform: scale(1.1);
+}
+
+.btnNewUser:hover,
+.btnNewProduct:hover {
+  background-color: rgba(55, 20, 20, 0.533);
+  transition: 1s;
+  transform: scale(1.1);
+}
+
+.imgProduct {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.formProduct,
+.formUser {
+  width: 100%;
+}
+
+.formProduct .btnAddProduct,
+.formUser .btnAddUser {
+  background-color: rgba(71, 157, 76, 0.8);
+}
+
+.formProduct .btnAddProduct:hover,
+.formUser .btnAddUser:hover {
+  background-color: #2b9332;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+.formProduct .btnCancel,
+.formUser .btnCancel {
+  background-color: #9b8787;
+}
+
+.formProduct .btnCancel:hover,
+.formUser .btnCancel:hover {
+  background-color: #645757;
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+#root .titleColor {
+  color: #fd6100ce;
+}
+
+.containerImg {
+  width: 200px;
+  height: 150px;
+}
+
+.imgProductForm {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview {
+  background: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+}
+
+.btnImg {
+  background: #b3b3b3;
+  cursor: pointer;
+}
+
+@media all and (min-width: 576px) {
+  .managementOptions {
+    width: 400px;
+    height: 43.15vh;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .formProduct {
+    width: 750px;
+  }
+
+  .formUser {
+    width: 600px;
+  }
+
+  .formProduct,
+  .formProduct .btnAddProduct,
+  .formProduct .btnCancel,
+  .formUser .btnAddUser,
+  .formUser .btnCancel {
+    font-size: 1rem;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .mainSection {
+    margin-left: 300px;
+  }
+}

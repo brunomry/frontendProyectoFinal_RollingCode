@@ -1,7 +1,7 @@
-import leonel from "../assets/images/us/leonelRodrigoCordero.webp";
-import bruno from "../assets/images/us/brunoMadozzoRomay.webp";
-import fernando from "../assets/images/us/fernandoHerrera.webp";
-import elias from "../assets/images/us/eliasJavierJuarez.webp";
+import leonel from "@/assets/images/us/leonelRodrigoCordero.webp";
+import bruno from "@/assets/images/us/brunoMadozzoRomay.webp";
+import fernando from "@/assets/images/us/fernandoHerrera.webp";
+import elias from "@/assets/images/us/eliasJavierJuarez.webp";
 
 export const equipo = [
     {

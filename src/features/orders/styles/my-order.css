@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bannerPedido {
+  width: 100%;
+  position: relative;
+  background-image: url('../assets/imgPedido.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bannerTitlePedido {
+  font-size: 2.8rem;
+  -webkit-text-stroke: 0.5px #fffefe;
+}
+
+.bannerPedidoContent {
+  z-index: 1;
+  padding-bottom: 200px;
+  padding-top: 200px;
+}
+
+.containerProductsOrder{
+  /* border: 1px solid #292929; */
+  background: #141414;
+}
+
+.imgOrder {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.orderSummary{
+  background: #141414;
+  /* border: 1px solid #292929; */
+}
+
+@media all and (min-width:768px){
+  .imgOrder {
+    width: 120px;
+    height: 120px;
+  }
+}

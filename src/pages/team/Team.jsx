@@ -1,4 +1,4 @@
-import { equipo } from "../../helpers/equipo";
+import { equipo } from "@/helpers/equipo";
 import CardMember from "./CardMember";
 import "./team.css";
 

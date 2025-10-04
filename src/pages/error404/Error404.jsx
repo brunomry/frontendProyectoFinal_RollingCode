@@ -1,7 +1,7 @@
 import "./error404.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import error404 from "../../assets/Error404.webp";
+import error404 from "@/assets/images/Error404.webp";
 
 const Error404 = () => {
   return (

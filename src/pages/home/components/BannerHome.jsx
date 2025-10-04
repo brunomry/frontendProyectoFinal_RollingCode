@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/bannerIndex.css";
-import banner from "../../../assets/images/home/banner.webp";
+import banner from "@/assets/images/home/banner.webp";
 
 const BannerHome = () => {
   return (
@@ -16,7 +16,7 @@ const BannerHome = () => {
             Te esperamos para una experiencia gastronómica inolvidable.
           </p>
           <Link
-            className="d-flex justify-content-center border border-1 border-white px-2 py-2 mt-4 text-decoration-none btnBanner fw-normal"
+            className="d-flex justify-content-center border border-1 border-white px-2 py-2 mt-4 text-decoration-none btnBanner fw-normal rounded-2"
             to={"/menu"}
           >
             <span className="fw-bold">Nuestra Carta</span>

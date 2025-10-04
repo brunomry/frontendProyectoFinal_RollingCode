@@ -1,6 +1,6 @@
-import imgRestaurante from "../../assets/images/bannerNosotros.webp";
-import img from "../../assets/images/imgLogin.webp";
-import vision from "../../assets/images/vision.webp";
+import imgRestaurante from "@/assets/images/bannerNosotros.webp";
+import img from "@/assets/images/imgLogin.webp";
+import vision from "@/assets/images/vision.webp";
 
 const AboutUs = () => {
   return (
