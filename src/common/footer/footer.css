@@ -2,19 +2,19 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
 .footer{
-  background: #f7f7f7;
+  background: #fff;
   padding-top: 100px;
 }
 
 .footer .logo {
-  width: 120px;
+  width: 180px;
   height: 80px;
 }
 
 .title{
     margin-bottom: 15px;
     padding-bottom: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .item{

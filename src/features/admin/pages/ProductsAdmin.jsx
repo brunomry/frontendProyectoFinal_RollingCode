@@ -6,11 +6,12 @@ import { useEffect } from "react";
 import ProductRowAdmin from "../components/table/ProductRowAdmin";
 import HeadAdmin from "../components/HeadAdmin";
 import { useProduct } from "../hooks/useProduct";
-import Filters from "../../../common/filters/Filters";
+import FilterName from "../../../common/filters/FilterName";
+import FilterCategories from "../../../common/filters/FilterCategories";
 
 const ProductsAdmin = () => {
   const { products, filteredProducts } = useSelector((state) => state.products);
-  const { search } = useSelector((state) => state.filters);
+  const { categoria } = useSelector((state) => state.filters);
 
   const { getProducts } = useProduct();
 
@@ -21,8 +22,11 @@ const ProductsAdmin = () => {
   return (
     <section className="container mainSection p-5 sectionTop">
       <HeadAdmin title="Gestión de Menú"></HeadAdmin>
-      <Filters></Filters>
-      {filteredProducts.length > 0 ? (
+      <div className="d-flex flex-column justify-content-center mb-4">
+        <FilterName></FilterName>
+        <FilterCategories categoria={categoria} />
+      </div>
+      {filteredProducts && filteredProducts.length > 0 ? (
         <DataTable
           columns={colsTable.products}
           data={filteredProducts}

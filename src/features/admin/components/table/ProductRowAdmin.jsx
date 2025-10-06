@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import "../../styles/admin.css";
 import { Button } from "react-bootstrap";
 import { useProduct } from "../../hooks/useProduct";
-import useAlert from "../../../../hooks/useAlert";
+import useAlert from "@/hooks/useAlert";
+import IconEye from "@/common/icons/IconEye";
+import IconSquare from "@/common/icons/IconSquare";
+import IconTrash from "@/common/icons/IconTrash";
 
 const ProductRowAdmin = ({ row }) => {
   const { deletProduct } = useProduct();
@@ -33,16 +36,16 @@ const ProductRowAdmin = ({ row }) => {
         <Link
           title="Ver menú"
           to={`/admin/productos/ver-menu/${row._id}`}
-          className="me-lg-2 btn btn-secondary text-dark"
+          className="me-lg-2 btn btn-secondary border-secondary"
         >
-          <i className="fa-solid fa-eye"></i>
+          <IconEye></IconEye>
         </Link>
         <Link
           title="Editar menú"
           to={`/admin/productos/editar-menu/${row._id}`}
           className="me-lg-2 btn btn-warning"
         >
-          <i className="fa-solid fa-pen-to-square"></i>
+          <IconSquare></IconSquare>
         </Link>
         <Button
           variant="danger"
@@ -50,7 +53,7 @@ const ProductRowAdmin = ({ row }) => {
           className="me-lg-2"
           onClick={() => handleDelete(row._id, customAlert, autoCloseAlert)}
         >
-          <i className="fa-solid fa-trash text-dark"></i>
+          <IconTrash></IconTrash>
         </Button>
       </td>
     </tr>

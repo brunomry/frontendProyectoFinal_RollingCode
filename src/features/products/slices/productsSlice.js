@@ -39,7 +39,11 @@ const initialState = {
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    clearFilteredProducts: (state) => {
+      state.filteredProducts = [];
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, fetchProductsPending)
@@ -62,5 +66,7 @@ const productsSlice = createSlice({
       .addCase(filterProducts.rejected, filterProductsRejected)
   },
 });
+
+export const { clearFilteredProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

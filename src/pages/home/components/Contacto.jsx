@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import "../styles/contacto.css";
+import IconInstagram from "../../../common/icons/IconInstagram";
+import IconFacebook from "../../../common/icons/IconFacebook";
+import IconWpp from "../../../common/icons/IconWpp";
+import IconLocation from "../../../common/icons/IconLocation";
 
 const Contacto = () => {
   return (
@@ -8,12 +12,12 @@ const Contacto = () => {
               <article className="col-lg-5 ">
                 <div className=" py-lg-5">
                   <p className="mb-0 bannerSubtitle">
-                    Contáctanos
+                    Visítanos
                   </p>
                   <h1 className="bannerTitle mb-xl-5">¿Dónde estamos?</h1>
                   <div className="mt-3 w-100 d-flex flex-column my-lg-4 gap-3 gap-md-2">
-                    <p className="d-flex align-items-center">
-                      <i className="fa-solid fa-location-dot fa-xl me-2 "></i>
+                    <p className="d-flex align-items-center gap-2">
+                      <IconLocation></IconLocation>
                       <span className="text-secondary">General Paz 576, San Miguel de Tucumán, Tucumán</span>
                     </p>
                     <div
@@ -21,7 +25,7 @@ const Contacto = () => {
                       className="d-flex align-items-center gap-2"
                     >
                       <div className="d-flex justify-content-center bg-white align-items-center rounded-circle">
-                        <i className="fa-brands fa-whatsapp fa-xl link-success"></i>{" "}
+                        <IconWpp></IconWpp>
                       </div>
                       <span className="text-secondary">1231234567</span>
                     </div>
@@ -37,7 +41,7 @@ const Contacto = () => {
                         title="facebook"
                         className="containerIconSocial d-flex justify-content-center bg-white align-items-center rounded-circle"
                       >
-                        <i className="fa-brands fa-facebook-f fa-xl link-primary"></i>
+                        <IconFacebook></IconFacebook>
                       </Link>
                       <Link
                         to="*"
@@ -45,7 +49,7 @@ const Contacto = () => {
                         title="instagram"
                         className="containerIconSocial d-flex justify-content-center bg-white align-items-center rounded-circle"
                       >
-                        <i className="fa-brands fa-instagram fa-xl  link-danger"></i>
+                        <IconInstagram></IconInstagram>
                       </Link>
                     </div>
                   </div>

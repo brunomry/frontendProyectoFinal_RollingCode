@@ -22,14 +22,6 @@ const CardOpinion = ({ opinion }) => {
             <span className="text-secondary">{opinion.fecha}</span>
           </div>
         </div>
-        <div>
-          <img
-            src={google}
-            alt="icono de google"
-            title="icono de google"
-            className="iconGoogle"
-          />
-        </div>
       </div>
       <div className="d-flex justify-content-between flex-column gap-2 flex-sm-row">
         <p className="d-flex gap-1 mb-0">

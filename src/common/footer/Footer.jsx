@@ -2,10 +2,14 @@ import { Col, Container, Form, Row } from "react-bootstrap";
 import "./footer.css";
 import logo from "@/assets/logo.png";
 import { Link } from "react-router-dom";
+import IconFacebook from "../icons/IconFacebook";
+import IconInstagram from "../icons/IconInstagram";
+import IconLocation from "../icons/IconLocation";
+import IconWpp from "../icons/IconWpp";
 
 const Footer = () => {
   return (
-    <Container fluid className="footer ">
+    <Container fluid className="footer border-top container">
       <Row>
         <Col md={12} lg={4} className="d-flex justify-content-center mb-3">
           <div className="d-flex flex-column align-items-center gap-4">
@@ -15,23 +19,23 @@ const Footer = () => {
               title="Logo Ambiente Bohemio"
               className="logo"
             />
-            <div className="socialMedia d-flex  gap-md-3 gap-xl-4">
-              <Link to="*" target="_blank" title="facebook">
-                <i className="fa-brands fa-facebook-f fa-xl text-secondary me-4 me-md-0"></i>
+            <div className="socialMedia d-flex  gap-md-3">
+              <Link to="*" target="_blank" title="perfil de facebook">
+                <IconFacebook></IconFacebook>
               </Link>
               <Link
                 to="*"
                 target="_blank"
-                title="instagram"
+                title="perfil de instagram"
                 className="text-center"
               >
-                <i className="iconSocial fa-brands fa-instagram fa-xl me-md-2 me-lg-2 text-secondary"></i>
+                <IconInstagram></IconInstagram>
               </Link>
             </div>
           </div>
         </Col>
         <Col className="d-none d-md-block">
-          <h5 className="title">Opciones</h5>
+          <p className="">Opciones</p>
           <Link className="text-decoration-none text-secondary item" to="/">
             <p className="fw-normal">Home</p>
           </Link>
@@ -46,7 +50,7 @@ const Footer = () => {
           </Link>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerInformation">
-          <h5 className="title">Información</h5>
+          <p className="">Información</p>
           <Link className="text-decoration-none text-secondary item" to="*">
             <p className="fw-normal">Políticas de privacidad</p>
           </Link>
@@ -58,28 +62,29 @@ const Footer = () => {
           </Link>
         </Col>
         <Col xs={12} md={4} lg={3} className="containerContact">
-          <h5 className="title">Contacto</h5>
+          <p className="">Contacto</p>
           <div className="d-flex justify-content-between d-flex flex-column align-items-center flex-md-row gap-2">
             <div>
-              <p className="fw-normal text-secondary item">
-                <i className="fa-brands fa-whatsapp fa-xl"></i>{" "}
+              <p className="fw-normal text-secondary item d-flex gap-2 align-items-center">
+                <IconWpp></IconWpp>
                 <span className="text-secondary">1231234567</span>
               </p>
-              <p className="fw-normal text-secondary item">
-                <i className="fa-solid fa-location-dot fa-xl"></i> General Paz
-                576, San Miguel de Tucumán
+              <p className="fw-normal text-secondary item d-flex gap-2 align-items-center">
+                <IconLocation></IconLocation>
+                <span> General Paz 576, San Miguel de Tucumán</span> 
               </p>
             </div>
             
           </div>
           <div className="formContainer w-100 pt-3 d-flex flex-column align-items-center align-items-md-start">
-            <h5 className="title"> Suscríbete para recibir más información</h5>
+            <p className=""> Suscríbete para recibir más información</p>
             <Form className="contactForm d-flex w-100">
               <div className="input-group mb-3 ">
                 <input
                   type="text"
                   className="form-control  input item"
-                  placeholder="ejemplo@correo.com"
+                  placeholder="juanperez@ejemplo.com"
+                  title="Escribe tu correo"
                   required
                 />
                 <button
@@ -95,7 +100,7 @@ const Footer = () => {
         </Col>
       </Row>
       <p className="text-center mt-3 fw-normal item text-secondary">
-        &copy;AmbienteBohemio. Todos los derechos reservados. 2024.
+        &copy; AmbienteBohemio. Todos los derechos reservados. 2024 - 2025.
       </p>
     </Container>
   );

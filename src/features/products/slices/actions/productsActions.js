@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 const URL_Products = import.meta.env.VITE_API_PRODUCTOS;
 const URL_Product = import.meta.env.VITE_API_PRODUCTO;
+const URL_Products_filters = import.meta.env.VITE_API_PRODUCTOS_FILTROS;
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
@@ -21,23 +22,22 @@ export const fetchProduct = createAsyncThunk(
 export const createProduct = createAsyncThunk(
   "products/createProduct",
   async (product, { getState, rejectWithValue }) => {
- 
-      const { auth } = getState();
-      const token = auth?.user?.token;
+    const { auth } = getState();
+    const token = auth?.user?.token;
 
-   try {
+    try {
       const response = await fetch(`${URL_Products}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(product),
       });
 
       const data = await response.json();
 
-      if(!data.success) throw data.error;
+      if (!data.success) throw data.error;
 
       return data;
     } catch (error) {
@@ -55,7 +55,7 @@ export const deleteProduct = createAsyncThunk(
     const response = await fetch(`${URL_Product}/${id}`, {
       method: "DELETE",
       headers: {
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 
@@ -73,7 +73,7 @@ export const updateProduct = createAsyncThunk(
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });
@@ -84,9 +84,9 @@ export const updateProduct = createAsyncThunk(
 
 export const filterProducts = createAsyncThunk(
   "products/filterProducts",
-  async (filters) => {
+  async (filters = {}) => {
     const query = new URLSearchParams(filters).toString();
-    const response = await fetch(`${URL_Products}?${query}`);
+    const response = await fetch(`${URL_Products_filters}?${query}`);
     return await response.json();
   }
 );

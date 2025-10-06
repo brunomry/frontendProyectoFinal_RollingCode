@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  search: "",
-  category: "",
-  status: "",
-  price: ""
+  nombre: "",
+  categoria: "",
+  estado: "",
+  precio: ""
 }
 
 const filtersSlice = createSlice({
@@ -14,22 +14,22 @@ const filtersSlice = createSlice({
      setFilters: (state, action) => {
       return { ...state, ...action.payload };
     },
-    setSearch: (state, action) => {
-      state.search = action.payload;
+    setNombre: (state, action) => {
+      state.nombre = action.payload;
     },
-    setCategory: (state,action) => {
-      state.category = action.payload;
+    setCategoria: (state,action) => {
+      state.categoria = action.payload;
     },
-    setStatus: (state, action) => {
-      state.status = action.payload;
+    setEstado: (state, action) => {
+      state.estado = action.payload;
     },
-    setPrice: (state, action) => {
-      state.price = action.payload;
+    setPrecio: (state, action) => {
+      state.precio = action.payload;
     },
     clearFilters: () => initialState,
   }
 });
 
-export const { setFilters, setSearch, setCategory, setStatus, setPrice, clearFilters} = filtersSlice.actions;
+export const { setFilters, setNombre, setCategoria, setEstado, setPrecio, clearFilters} = filtersSlice.actions;
 
 export default filtersSlice.reducer;

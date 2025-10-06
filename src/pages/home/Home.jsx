@@ -17,11 +17,11 @@ const Home = () => {
       <Horarios></Horarios>
       <Opiniones></Opiniones>
       <section className="bannerMenu d-flex flex-column py-5 justify-content-center align-items-center gap-4">
-        <p className="fw-bold bannerText text-center fz-3">
+        <p className="fw-bold text-center fs-2">
           Descarga nuestra Carta y conoce todo lo que tenemos para ofrecerte
         </p>
         <button
-          className="px-4 bg-secondary text-white fw-bold text-center border border-1  py-2 text-decoration-none "
+          className="px-5 py-3 bg-dark rounded-3 text-white text-center border border-1 text-decoration-none "
           onClick={handleDownloadPDF}
         >
           Descargar Menú

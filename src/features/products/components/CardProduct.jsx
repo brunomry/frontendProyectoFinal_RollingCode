@@ -1,13 +1,10 @@
+import IconPlus from "../../../common/icons/IconPlus";
 import "../styles/cardProducto.css";
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
-const CardProducto = ({
-  product
-}) => {
+const CardProducto = ({ product }) => {
   return (
-    <div
-      className="border d-flex flex-column rounded-4 py-3 cardProduct"
-    >
+    <div className="border d-flex flex-column rounded-4 py-3 cardProduct">
       <div className="cardInformation px-3 d-flex flex-column gap-2">
         <div className="w-100 d-flex justify-content-center">
           <img
@@ -20,16 +17,13 @@ const CardProducto = ({
         <p className="mb-0 fw-bold text-secondary">{product.nombre}</p>
         <p className="text-secondary detailProduct mb-0">{product.detalle}</p>
         <div className="d-flex justify-content-end">
-        <p className="my-0 fw-bold price">${product.precio}</p>
-
+          <p className="my-0 fw-bold price">${product.precio}</p>
         </div>
       </div>
       <div className="w-100 px-3 mt-2">
         {" "}
-        <Button
-          className="cardBtn px-md-2 border-0 w-100 fw-bold rounded-4 "
-        >
-          Agregar al Pedido
+        <Button className="cardBtn px-md-2 border-0 w-100 fw-bold rounded-4 d-flex justify-content-center align-items-center">
+          <IconPlus></IconPlus> <span>Agregar al Pedido</span>
         </Button>
       </div>
     </div>

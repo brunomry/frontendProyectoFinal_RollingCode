@@ -1,0 +1,22 @@
+.filterCategoryContainer {
+  overflow-x: scroll;
+}
+
+@media all and (min-width: 375px) {
+  .filterCategoryContainer {
+    padding-left: 100px;
+  }
+}
+
+@media all and (min-width: 576px) {
+  .filterCategoryContainer {
+    overflow-x: hidden;
+    padding-left: 0px;
+  }
+}
+
+@media all and (min-width:992px){
+  .filterCategoryContainer {
+    width: fit-content;
+  }
+}

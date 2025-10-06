@@ -12,9 +12,9 @@ const Opiniones = () => {
             <CardOpinion key={opinion.id} opinion={opinion}></CardOpinion>
           ))}
         </article>
-        <a href="https://www.google.com.ar" target="_blank" className="mt-3">
-          Ver todas las reseñas
-        </a>
+        <button href="https://www.google.com.ar" target="_blank" className="btn btn-secondary border py-3 px-4 rounded-3">
+          Ver más reseñas
+        </button>
       </div>
     </section>
   );

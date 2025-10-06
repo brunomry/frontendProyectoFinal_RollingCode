@@ -1,6 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearFilters, setFilters, setSearch } from "../../filters/filtersSlice";
-import { filterProducts } from "../../products/slices/actions/productsActions";
+import {
+  clearFilters,
+  setFilters,
+  setNombre,
+  setCategoria,
+} from "../../filters/filtersSlice";
+import {
+  fetchProducts,
+  filterProducts,
+} from "../../products/slices/actions/productsActions";
+import { clearFilteredProducts } from "../../products/slices/productsSlice";
 
 export const useProductsFilters = () => {
   const dispatch = useDispatch();
@@ -9,7 +18,8 @@ export const useProductsFilters = () => {
   const applyFilters = (currentFilters) => {
     dispatch(setFilters(currentFilters));
 
-    const hasOtherFilters = currentFilters.category || currentFilters.status || currentFilters.price;
+    const hasOtherFilters =
+      currentFilters.category || currentFilters.status || currentFilters.price;
 
     if (currentFilters.search.length >= 3 || hasOtherFilters) {
       dispatch(filterProducts(currentFilters));
@@ -17,17 +27,25 @@ export const useProductsFilters = () => {
   };
 
   const filterSearch = (value) => {
-    dispatch(setSearch(value));
-    
+    dispatch(setNombre(value));
+
     if (value.length >= 3) {
-      dispatch(filterProducts({value}));
+      dispatch(filterProducts({ nombre: value }));
+    } else if (value.length === 0) {
+      clearAllFilters();
     }
-  }
+  };
+
+  const filterCategory = (value) => {
+    dispatch(setCategoria(value));
+    dispatch(filterProducts({ categoria: value }));
+  };
 
   const clearAllFilters = () => {
     dispatch(clearFilters());
-    dispatch(filterProducts({}));
+    dispatch(clearFilteredProducts());
+    dispatch(fetchProducts());
   };
 
-  return { applyFilters, filterSearch, clearAllFilters };
+  return { applyFilters, filterSearch, clearAllFilters, filterCategory };
 };
